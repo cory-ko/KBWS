@@ -1,0 +1,29 @@
+application: kseqboot [
+  documentation: "Bootstrapped sequences algorithm using seqboot"
+  groups: "PHYLOGENY MOLECULAR SEQUENCE"
+  embassy: "kbws"
+]
+
+section: input [
+	       information: "Input section"
+	       type: "page"
+]
+
+  seqall: seqall [
+	       parameter: "Y"
+	       type: "gapany"
+  ]
+
+endsection: input
+
+section: output [
+		information: "Output section"
+		type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "kseqboot output"
+  ]
+
+endsection: output

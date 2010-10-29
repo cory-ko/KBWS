@@ -1,0 +1,28 @@
+application: kdollop [
+  documentation: "Dollo and polymorphism parsimony algorithm using dollop"
+  groups: "PHYLOGENY MOLECULAR SEQUENCE"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  infile: infile [
+    parameter: "Y"
+  ]
+
+endsection: input
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "kdollop output"
+  ]
+
+endsection: output

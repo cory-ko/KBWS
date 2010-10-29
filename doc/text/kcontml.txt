@@ -1,0 +1,190 @@
+
+                                  kcontml
+
+
+Function
+
+   
+   Gene frequency and continuous character Maximum Likelihood using contml
+
+
+Description
+
+   kcontml is gene frequency and continuous character Maximum Likelihood
+   utilizing "contml" methods provided in PHYLIP web service.
+
+   Following block is a quotation from fcontml included in PHYLIPNEW
+   package.
+     
+     Estimates phylogenies from gene frequency data by maximum likelihood
+     under a model in which all divergence is due to genetic drift in the
+     absence of new mutations. Does not assume a molecular clock. An
+     alternative method of analyzing this data is to compute Nei's genetic
+     distance and use one of the distance matrix programs. This program can
+     also do maximum likelihood analysis of continuous characters that
+     evolve by a Brownian Motion model, but it assumes that the characters
+     evolve at equal rates and in an uncorrelated fashion, so that it does
+     not take into account the usual correlations of characters.
+  
+   PHYLIP web service is provided by National University of Singapore.
+   Original web-service is located at the following URL:
+
+   http://bioportal.bic.nus.edu.sg/phylip/contml.html
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kcontml is thus an interface of "runContml"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kcontml
+
+% kcontml
+Gene frequency and continuous character Maximum Likelihood using contml
+Input (gapped) sequence(s): test.fasta
+Output file [55-110.kcontml]:
+Jobid: 12547145
+***********
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kcontml] output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+Input file format
+
+  Input files for usage example
+
+  File: sample.dat
+
+   
+    5    10
+2 2 2 2 2 2 2 2 2 2
+European   0.2868 0.5684 0.4422 0.4286 0.3828 0.7285 0.6386 0.0205
+0.8055 0.5043
+African    0.1356 0.4840 0.0602 0.0397 0.5977 0.9675 0.9511 0.0600
+0.7582 0.6207
+Chinese    0.1628 0.5958 0.7298 1.0000 0.3811 0.7986 0.7782 0.0726
+0.7482 0.7334
+American   0.0144 0.6990 0.3280 0.7421 0.6606 0.8603 0.7924 0.0000
+0.8086 0.8636
+Australian 0.1211 0.2274 0.5821 1.0000 0.2018 0.9000 0.9837 0.0396
+0.9097 0.2976
+
+
+Output file format
+
+  Output files for usage example
+
+  File: sample.kcontml
+
+  
+   5 Populations,   10 Loci
+
+Continuous character Maximum Likelihood method version 3.57c
+
+
+  +-----------------------------------------------------------
+Australia
+  !  
+  !  +--------
+African  
+--3--1  
+  !  !   +-
+American 
+  !  +---2  
+  !      +----
+Chinese  
+  !  
+  +
+European 
+
+
+remember: this is an unrooted tree!
+
+Ln Likelihood =    22.00022
+
+examined   15 trees
+
+Between     And             Length      Approx. Confidence Limits
+-------     ---             ------      ------- ---------- ------
+  3       
+Australia        0.59063   (     0.19034,     1.20969)
+  3          1              0.00641   (    -0.01944,     0.04640)
+  1       
+African          0.08446   (     0.02336,     0.17896)
+  1          2              0.03614   (    -0.00236,     0.09568)
+  2       
+American         0.02029   (    -0.00942,     0.06625)
+  2       
+Chinese          0.05347   (     0.00795,     0.12387)
+  3       
+European         0.00000   (    -0.02428,     0.03756)
+
+
+
+
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Felsenstein, J.,(1995) PHYLIP(Phylogeny Interface Package), version3.57c,
+      Department of Genetics, University of Washington, Seattle.
+
+   Swofford, D., et al.,(1996) Phylogenetic interface. In Hillis, D.M.,
+      Moritz, C., and Mble, B.K.(eds), Molecular Systematics 2nd Edition,
+      Sinauer Associates, Mss.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

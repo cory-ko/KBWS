@@ -1,0 +1,893 @@
+<!--START OF HEADER - DON'T ALTER -->
+
+<HTML>
+<HEAD>
+  <TITLE> EMBOSS: kblast </TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" text="#000000">
+
+
+
+<table align=center border=0 cellspacing=0 cellpadding=0>
+<tr><td valign=top>
+<A HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
+</td>
+<td align=left valign=middle>
+<b><font size="+6">
+kblast
+</font></b>
+</td></tr>
+</table>
+<br>&nbsp;
+<p>
+
+
+<!--END OF HEADER-->
+
+
+
+
+
+
+<H2> Function </H2>
+Search similar sequences in public repositories using BLAST
+<!--
+DON'T WRITE ANYTHING HERE.
+IT IS DONE FOR YOU.
+-->
+
+
+
+
+<h2>Description</h2>
+
+
+   kblast finds regions of local similarity between sequences usinb BLAST
+   (Basic Local Alignment Search Tool). kblast is supported "blastn" and
+   "blastp" methods.
+   BLAST compares nucleotide or protein sequences to sequence databases
+   and calculates the statistical significance of matches.
+</p>
+
+<p>   kblast utilizing three BLAST web services produced by NCBI(National Center
+   for Biotechnology Information), EBI (European Bioinformatics Institute) and<br />
+   DDBJ (DNA Data Bank of Japan). original web-services is located at the
+   following URL:
+</p>
+
+<p>   NCBI: http://blast.ncbi.nlm.nih.gov/Blast.cgi<br />
+   EBI : http://www.ebi.ac.uk/Tools/webservices/services/sss/ncbi_blast_soap<br />
+   DDBJ: http://www.xml.nig.ac.jp/wabi/Method?serviceName=DDBJ&mode=methodList&lang=en
+</p>
+
+<p>   kblast is able to search against all databases produced by those service providers.
+   This program selects automatically and access a provider which support the database
+   you specified. Available databases are listed in the Notes section.
+</p>
+
+<p>   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kblast is thus an interface of "runBlast"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+</p>
+
+<p>
+
+<h2>Usage</h2>
+
+<table width="90%"><tr><td bgcolor="#CCFFFF"><pre>
+
+   Here is a sample session with kblast
+
+% kblast
+Search similar sequences in public repositories using BLAST
+Input (gapped) sequence(s): swissprot:FOXP2_HUMAN
+database name about target for your search: swissprot
+Output file [foxp2_human.kblast]: 
+Jobid: 1267966
+*****
+
+
+BLASTP 2.2.22+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro
+A. Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and
+David J. Lipman (1997), "Gapped BLAST and PSI-BLAST: a new
+generation of protein database search programs", Nucleic
+Acids Res. 25:3389-3402.
+
+
+RID: STANM4WF01S
+
+
+Database: Non-redundant SwissProt sequences
+           432,088 sequences; 159,864,915 total letters
+Query=  FOXP2_HUMAN 
+Length=715
+
+
+                                                                   Score     E
+Sequences producing significant alignments:                       (Bits)  Value
+
+sp|Q8MJ98.3|FOXP2_PONPY  RecName: Full=Forkhead box protein P2      776    0.0   
+sp|Q5QL03.1|FOXP2_HYLLA  RecName: Full=Forkhead box protein P2      776    0.0   
+sp|Q8MJ99.1|FOXP2_GORGO  RecName: Full=Forkhead box protein P2      776    0.0   
+sp|Q8MJA0.1|FOXP2_PANTR  RecName: Full=Forkhead box protein P2...   776    0.0   
+sp|P58463.2|FOXP2_MOUSE  RecName: Full=Forkhead box protein P2      776    0.0   
+sp|Q8MJ97.1|FOXP2_MACMU  RecName: Full=Forkhead box protein P2      776    0.0   
+sp|O15409.2|FOXP2_HUMAN  RecName: Full=Forkhead box protein P2...   776    0.0   
+sp|Q4VYS1.1|FOXP2_XENLA  RecName: Full=Forkhead box protein P2...   754    0.0   
+sp|Q5W1J5.1|FOXP1_XENLA  RecName: Full=Forkhead box protein P1...   524    7e-148
+sp|A4IFD2.1|FOXP1_BOVIN  RecName: Full=Forkhead box protein P1      518    4e-146
+sp|Q9H334.1|FOXP1_HUMAN  RecName: Full=Forkhead box protein P1      513    2e-144
+sp|Q498D1.1|FOXP1_RAT  RecName: Full=Forkhead box protein P1        511    8e-144
+sp|P58462.1|FOXP1_MOUSE  RecName: Full=Forkhead box protein P1...   510    1e-143
+sp|Q58NQ4.1|FOXP1_CHICK  RecName: Full=Forkhead box protein P1      510    1e-143
+sp|Q2LE08.1|FXP1B_DANRE  RecName: Full=Forkhead box protein P1-B    484    1e-135
+sp|Q8IVH2.1|FOXP4_HUMAN  RecName: Full=Forkhead box protein P4...   468    6e-131
+sp|Q9DBY0.1|FOXP4_MOUSE  RecName: Full=Forkhead box protein P4...   453    2e-126
+sp|Q4VYR7.1|FOXP4_XENLA  RecName: Full=Forkhead box protein P4...   451    6e-126
+sp|Q99JB6.1|FOXP3_MOUSE  RecName: Full=Forkhead box protein P3...   215    1e-54 
+sp|Q6U8D7.1|FOXP3_MACFA  RecName: Full=Forkhead box protein P3      209    7e-53 
+sp|Q9BZS1.1|FOXP3_HUMAN  RecName: Full=Forkhead box protein P3...   209    7e-53 
+sp|Q66IG8.1|FXJ12_XENTR  RecName: Full=Forkhead box protein J1...  90.5    4e-17 
+sp|Q32NH9.1|FXJ12_XENLA  RecName: Full=Forkhead box protein J1...  89.7    6e-17 
+sp|Q5M7N6.2|FOXJ1_XENTR  RecName: Full=Forkhead box protein J1...  87.0    4e-16 
+sp|Q708W1.1|FXJ1B_XENLA  RecName: Full=Forkhead box protein J1...  87.0    4e-16 
+
+( omitting... )
+
+ALIGNMENTS
+>sp|Q8MJ98.3|FOXP2_PONPY RecName: Full=Forkhead box protein P2
+Length=713
+
+ Score =  776 bits (2005),  Expect = 0.0
+ Identities = 456/458 (99%), Positives = 457/458 (99%), Gaps = 0/458 (0%)
+
+Query  240  GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLttnnssst  299
+            GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNNSSST
+Sbjct  238  GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNNSSST  297
+
+Query  300  tssntsKASPPITHHSIVNGQssvlsarrdsssHEETGASHTLYGHGVCKWPGCESICED  359
+            TSS TSKASPPITHHSIVNGQSSVL+ARRDSSSHEETGASHTLYGHGVCKWPGCESICED
+Sbjct  298  TSSTTSKASPPITHHSIVNGQSSVLNARRDSSSHEETGASHTLYGHGVCKWPGCESICED  357
+
+Query  360  FGQFLKHLNNEHALDDRSTAQCRVQMQVVQQLEIQLSKERERLQAMMTHLHMRPSEPKPS  419
+            FGQFLKHLNNEHALDDRSTAQCRVQMQVVQQLEIQLSKERERLQAMMTHLHMRPSEPKPS
+Sbjct  358  FGQFLKHLNNEHALDDRSTAQCRVQMQVVQQLEIQLSKERERLQAMMTHLHMRPSEPKPS  417
+
+Query  420  PKPLNLVSSVTMSKNMLEtspqslpqtpttptapvtpitqGPSVITPASVPNVGAIRRRH  479
+            PKPLNLVSSVTMSKNMLETSPQSLPQTPTTPTAPVTPITQGPSVITPASVPNVGAIRRRH
+Sbjct  418  PKPLNLVSSVTMSKNMLETSPQSLPQTPTTPTAPVTPITQGPSVITPASVPNVGAIRRRH  477
+
+Query  480  SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA  539
+            SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA
+Sbjct  478  SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA  537
+
+Query  540  YFRRNAATWKNAVRHNLSLHKCFVRVENVKGAVWTVDEVEYQKRRSQKITGSPTLVKNIP  599
+            YFRRNAATWKNAVRHNLSLHKCFVRVENVKGAVWTVDEVEYQKRRSQKITGSPTLVKNIP
+Sbjct  538  YFRRNAATWKNAVRHNLSLHKCFVRVENVKGAVWTVDEVEYQKRRSQKITGSPTLVKNIP  597
+
+Query  600  TSLGYGaalnaslqaalaesslpllsNPGLINNASSGLLQAVHEDLNGSLDHIDSNGNSS  659
+            TSLGYGAALNASLQAALAESSLPLLSNPGLINNASSGLLQAVHEDLNGSLDHIDSNGNSS
+Sbjct  598  TSLGYGAALNASLQAALAESSLPLLSNPGLINNASSGLLQAVHEDLNGSLDHIDSNGNSS  657
+
+Query  660  PGCSPQPHIHSIHVKEEPVIAEDEDCPMSLVTTANHSP  697
+            PGCSPQPHIHSIHVKEEPVIAEDEDCPMSLVTTANHSP
+Sbjct  658  PGCSPQPHIHSIHVKEEPVIAEDEDCPMSLVTTANHSP  695
+
+
+ Score =  112 bits (279),  Expect = 1e-23
+ Identities = 99/100 (99%), Positives = 99/100 (99%), Gaps = 0/100 (0%)
+
+Query  1   MMQESATETISNSSMNQNGMSTLSSQLDAgsrdgrssgdtssEVSTVEllhlqqqqalqa  60
+           MMQES TETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+Sbjct  1   MMQESVTETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA  60
+
+Query  61  arqlllqqqTSGLKSPKSSDKQRPLQVPVSVAMMTPQVIT  100
+           ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVIT
+Sbjct  61  ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVIT  100
+
+
+>sp|Q5QL03.1|FOXP2_HYLLA RecName: Full=Forkhead box protein P2
+Length=713
+
+ Score =  776 bits (2005),  Expect = 0.0
+ Identities = 456/458 (99%), Positives = 457/458 (99%), Gaps = 0/458 (0%)
+
+Query  240  GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLttnnssst  299
+            GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNNSSST
+Sbjct  238  GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNNSSST  297
+
+Query  300  tssntsKASPPITHHSIVNGQssvlsarrdsssHEETGASHTLYGHGVCKWPGCESICED  359
+            TSS TSKASPPITHHSIVNGQSSVL+ARRDSSSHEETGASHTLYGHGVCKWPGCESICED
+Sbjct  298  TSSTTSKASPPITHHSIVNGQSSVLNARRDSSSHEETGASHTLYGHGVCKWPGCESICED  357
+
+Query  360  FGQFLKHLNNEHALDDRSTAQCRVQMQVVQQLEIQLSKERERLQAMMTHLHMRPSEPKPS  419
+            FGQFLKHLNNEHALDDRSTAQCRVQMQVVQQLEIQLSKERERLQAMMTHLHMRPSEPKPS
+Sbjct  358  FGQFLKHLNNEHALDDRSTAQCRVQMQVVQQLEIQLSKERERLQAMMTHLHMRPSEPKPS  417
+
+Query  420  PKPLNLVSSVTMSKNMLEtspqslpqtpttptapvtpitqGPSVITPASVPNVGAIRRRH  479
+            PKPLNLVSSVTMSKNMLETSPQSLPQTPTTPTAPVTPITQGPSVITPASVPNVGAIRRRH
+Sbjct  418  PKPLNLVSSVTMSKNMLETSPQSLPQTPTTPTAPVTPITQGPSVITPASVPNVGAIRRRH  477
+
+Query  480  SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA  539
+            SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA
+Sbjct  478  SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA  537
+
+Query  540  YFRRNAATWKNAVRHNLSLHKCFVRVENVKGAVWTVDEVEYQKRRSQKITGSPTLVKNIP  599
+            YFRRNAATWKNAVRHNLSLHKCFVRVENVKGAVWTVDEVEYQKRRSQKITGSPTLVKNIP
+Sbjct  538  YFRRNAATWKNAVRHNLSLHKCFVRVENVKGAVWTVDEVEYQKRRSQKITGSPTLVKNIP  597
+
+Query  600  TSLGYGaalnaslqaalaesslpllsNPGLINNASSGLLQAVHEDLNGSLDHIDSNGNSS  659
+            TSLGYGAALNASLQAALAESSLPLLSNPGLINNASSGLLQAVHEDLNGSLDHIDSNGNSS
+Sbjct  598  TSLGYGAALNASLQAALAESSLPLLSNPGLINNASSGLLQAVHEDLNGSLDHIDSNGNSS  657
+
+Query  660  PGCSPQPHIHSIHVKEEPVIAEDEDCPMSLVTTANHSP  697
+            PGCSPQPHIHSIHVKEEPVIAEDEDCPMSLVTTANHSP
+Sbjct  658  PGCSPQPHIHSIHVKEEPVIAEDEDCPMSLVTTANHSP  695
+
+
+ Score =  113 bits (283),  Expect = 4e-24
+ Identities = 100/100 (100%), Positives = 100/100 (100%), Gaps = 0/100 (0%)
+
+Query  1   MMQESATETISNSSMNQNGMSTLSSQLDAgsrdgrssgdtssEVSTVEllhlqqqqalqa  60
+           MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+Sbjct  1   MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA  60
+
+Query  61  arqlllqqqTSGLKSPKSSDKQRPLQVPVSVAMMTPQVIT  100
+           ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVIT
+Sbjct  61  ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVIT  100
+
+ ( omitting... )
+
+
+  Database: Non-redundant SwissProt sequences
+    Posted date:  Feb 28, 2010  5:41 PM
+  Number of letters in database: 159,864,915
+  Number of sequences in database:  432,088
+
+Lambda     K      H
+   0.313    0.128    0.376 
+Gapped
+Lambda     K      H
+   0.267   0.0410    0.140 
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Number of Sequences: 432088
+Number of Hits to DB: 7717384
+Number of extensions: 257555
+Number of successful extensions: 471
+Number of sequences better than 10: 3
+Number of HSP's better than 10 without gapping: 0
+Number of HSP's gapped: 473
+Number of HSP's successfully gapped: 4
+Length of query: 715
+Length of database: 159864915
+Length adjustment: 124
+Effective length of query: 591
+Effective length of database: 106286003
+Effective search space: 62815027773
+Effective search space used: 62815027773
+T: 11
+A: 40
+X1: 16 (7.2 bits)
+X2: 38 (14.6 bits)
+X3: 64 (24.7 bits)
+S1: 42 (20.8 bits)
+S2: 73 (32.7 bits)
+
+
+
+
+</pre></td></tr></table>
+
+
+<h2>Command line arguments</h2>
+
+<table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+<tr bgcolor="#FFFFCC">
+<th align="left">Qualifier</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Allowed values</th>
+<th align="left">Default</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-seqall]<br>(Parameter 1)</td>
+<td>seqall</td>
+<td>(Gapped) sequence(s) filename and optional format, or reference (input USA)</td>
+<td>Readable sequence(s)</td>
+<td>2</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-d]<br>(Parameter 2)</td>
+<td>string</td>
+<td>database name about target for your search</td>
+<td>Any string</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-outfile]<br>(Parameter 3)</td>
+<td>outfile</td>
+<td>Output file name</td>
+<td>Output file</td>
+<td><i>&lt;*&gt;</i>.kblast</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Additional (Optional) qualifiers</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-p</td>
+<td>string</td>
+<td>program name. 'blastn' or 'blastp'</td>
+<td>Any string</td>
+<td>auto</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-server</td>
+<td>string</td>
+<td>specify web server for your search. 'NCBI', 'EBI' or 'DDBJ'</td>
+<td>Any string</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-format</td>
+<td>integer</td>
+<td>blast report format</td>
+<td>Any integer value</td>
+<td>0</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-eval</td>
+<td>float</td>
+<td>Expectation value</td>
+<td>Any numeric value</td>
+<td>10.0</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-qfilter</td>
+<td>string</td>
+<td>[T/F] filter query sequence</td>
+<td>Any string</td>
+<td>T</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-op</td>
+<td>integer</td>
+<td>cost to open a gap</td>
+<td>Any integer value</td>
+<td>-1</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-ep</td>
+<td>integer</td>
+<td>cost to extend a gap</td>
+<td>Any integer value</td>
+<td>-1</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-dropoff</td>
+<td>string</td>
+<td>X dropoff value for gapped alignment (in bits)</td>
+<td>Any string</td>
+<td>0</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-q</td>
+<td>integer</td>
+<td>penalty for a nucleotide mismatch (blastn only)</td>
+<td>Any integer value</td>
+<td>-3</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-r</td>
+<td>integer</td>
+<td>reward for a nucleotide match (blastn only)</td>
+<td>Any integer value</td>
+<td>1</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-v</td>
+<td>integer</td>
+<td>number of database sequences to show one-line descriptions for (V)</td>
+<td>Any integer value</td>
+<td>500</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-b</td>
+<td>integer</td>
+<td>number of database sequence to show alignments for (B)</td>
+<td>Any integer value</td>
+<td>250</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-threshold</td>
+<td>integer</td>
+<td>threshold for extending hits, default if zero for each program</td>
+<td>Any integer value</td>
+<td>0</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-g</td>
+<td>boolean</td>
+<td>perform gapped alignment</td>
+<td>Boolean value Yes/No</td>
+<td>No</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-matrix</td>
+<td>string</td>
+<td>matrix</td>
+<td>Any string</td>
+<td>BLOSUM62</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-wordsize</td>
+<td>integer</td>
+<td>word size, default if zero for each program</td>
+<td>Any integer value</td>
+<td>0</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-z</td>
+<td>float</td>
+<td>effective length of the database</td>
+<td>Any numeric value</td>
+<td>0</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-k</td>
+<td>integer</td>
+<td>number of best hits from a region to keep</td>
+<td>Any integer value</td>
+<td>0</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-y</td>
+<td>float</td>
+<td>effective length of the search space</td>
+<td>Any numeric value</td>
+<td>0</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
+</tr>
+
+<tr>
+<td colspan=5>(none)</td>
+</tr>
+
+</table>
+
+
+<h2>Input file format</h2>
+
+
+  kblast can use any genome sequence data that seqret can read.
+
+
+
+<h2>Output file format</h2>
+
+
+  The output from kblast is general BLAST report format. Moreover kblast is able to use -m8 option.
+
+
+
+<h2>Data files</h2>
+
+
+  None.
+
+
+
+<h2>Notes</h2>
+
+
+  None.
+
+
+
+<h2>References</h2>
+
+
+<pre>
+
+   Altschul S.F., et al.,(1997) Gapped BLAST and PSI-BLAST: a new generation
+      of protein database search programs, Nucleic Acids Research, 25(17), 3389-3402.
+
+   McWilliam H., et al.,(2009) Web services at the European Bioinformatics Institute
+     Nucleic Acids Research Web Server Issue 2009, 37, W6-W10.
+
+</pre>
+
+
+<h2>Warnings</h2>
+
+
+   Because of problem in system, we cannot help setting some different optino names
+   from original BLAST.
+
+
+
+<h2>Diagnostic Error Messages</h2>
+
+
+   None.
+
+
+
+<h2>Exit status</h2>
+
+
+   It always exits with a status of 0.
+
+
+
+<h2>Known bugs</h2>
+
+
+   None.
+
+
+
+<h2>See also</h2>
+
+<table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
+<th>Description</th></tr>
+<tr>
+<td><a href="seqret.html">seqret</a></td>
+<td>Reads and writes (returns) sequences</td>
+</tr>
+
+</table>
+
+
+<h2>Author(s)</h2>
+
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+
+
+<h2>History</h2>
+
+
+   2009 - Written by Kazuki Oshita
+
+
+
+<h2>Target users</h2>
+
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+
+
+<h2>Comments</h2>
+
+
+
+<h2>Appendix</h2>
+  The list of available databases is below.
+
+<h3> blastp </h3>
+<table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+  <tr> <th>Server</th>     <th>Name          </th> <th> Short explanation    </th></tr>
+  <tr> <td>DDBJ</td>       <td>DAD           </td> <td> DAD data             </td></tr>
+  <tr> <td>    </td>       <td>PDB           </td> <td> PDB data             </td></tr>
+  <tr> <td>    </td>       <td>PDBSH         </td> <td> PDBSH data           </td></tr>
+  <tr> <td>    </td>       <td>PRF           </td> <td> PRF data             </td></tr>
+  <tr> <td>    </td>       <td>PROTEIN       </td> <td> PROTEIN data         </td></tr>
+  <tr> <td>    </td>       <td>SWISS         </td> <td> SWISSPROT data       </td></tr>
+  <tr> <td>    </td>       <td>WORMPEP       </td> <td> WORM PEPTIDE data    </td></tr>
+  <tr> <td>    </td>       <td>UNIPROT       </td> <td> UNIPROT data         </td></tr>
+  <tr> <td>    </td>       <td>TREMBL        </td> <td> TREMBL data          </td></tr>
+  <tr> <td>EBI </td>       <td>uniprot       </td> <td> UniProt              </td></tr>
+  <tr> <td>    </td>       <td>swissprot     </td> <td> UniProtKB/Swiss-Prot </td></tr>
+  <tr> <td>    </td>       <td>uniref100     </td> <td> UniProt              </td></tr>
+  <tr> <td>    </td>       <td>uniref90      </td> <td> UniProt              </td></tr>
+  <tr> <td>    </td>       <td>uniref50      </td> <td> UniProt              </td></tr>
+  <tr> <td>    </td>       <td>uniparc       </td> <td> UniProt              </td></tr>
+  <tr> <td>    </td>       <td>ipi           </td> <td> International        </td></tr>
+  <tr> <td>    </td>       <td>pdb           </td> <td> Protein              </td></tr>
+  <tr> <td>    </td>       <td>sgt           </td> <td> Structural           </td></tr>
+  <tr> <td>    </td>       <td>intact        </td> <td> IntAct               </td></tr>
+  <tr> <td>    </td>       <td>imgthlap      </td> <td> IMGT/HLA             </td></tr>
+  <tr> <td>    </td>       <td>epop          </td> <td> EPO                  </td></tr>
+  <tr> <td>    </td>       <td>jpop          </td> <td> JPO                  </td></tr>
+  <tr> <td>    </td>       <td>kpop          </td> <td> KIPO                 </td></tr>
+  <tr> <td>    </td>       <td>uspop         </td> <td> USPTO                </td></tr>
+  <tr> <td>NCBI</td>       <td>nr            </td> <td> nr, protein          </td></tr>
+  <tr> <td>    </td>       <td>refseq_protein</td> <td> refseq protein       </td></tr>
+  <tr> <td>    </td>       <td>swissprot     </td> <td> swissprot protein    </td></tr>
+  <tr> <td>    </td>       <td>pataa         </td> <td> pat protein          </td></tr>
+  <tr> <td>    </td>       <td>pdbaa         </td> <td> pdb protein          </td></tr>
+  <tr> <td>    </td>       <td>month.pataa   </td> <td> month pat protein    </td></tr>
+  <tr> <td>    </td>       <td>monthaa       </td> <td> month protein        </td></tr>
+  <tr> <td>    </td>       <td>alu           </td> <td> alu repeat protein   </td></tr>
+  <tr> <td>    </td>       <td>env_nr        </td> <td> env protein          </td></tr>
+</table>
+
+<h3> blastn </h3>
+<table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+  <tr> <th> Server </th> <th> Name          </th> <th> Short explanation                                 </th> </tr>
+
+  <tr> <td> DDBJ  </td> <td> DDBJ          </td> <td> DDBJ Release and New data includes all division   </td> </tr>
+  <tr> <td>       </td> <td> DDBJ_EXEST    </td> <td> DDBJ Release and New data except EST division     </td> </tr>
+  <tr> <td>       </td> <td> DDBJNEW       </td> <td> DDBJ New data includes all division               </td> </tr>
+  <tr> <td>       </td> <td> DDBJNEW_EXEST </td> <td> DDBJ New data except EST division                 </td> </tr>
+  <tr> <td>       </td> <td> ddbjbct       </td> <td> DDBJ Bacteria division                            </td> </tr>
+  <tr> <td>       </td> <td> ddbjenv       </td> <td> DDBJ Env division                                 </td> </tr>
+  <tr> <td>       </td> <td> ddbjest       </td> <td> DDBJ EST division                                 </td> </tr>
+  <tr> <td>       </td> <td> ddbjgss       </td> <td> DDBJ Genome Survey Sequences division             </td> </tr>
+  <tr> <td>       </td> <td> ddbjhtg       </td> <td> DDBJ High Throughput Genomic sequencing division  </td> </tr>
+  <tr> <td>       </td> <td> ddbjhum       </td> <td> DDBJ human division                               </td> </tr>
+  <tr> <td>       </td> <td> ddbjinv       </td> <td> DDBJ invertebrates division                       </td> </tr>
+  <tr> <td>       </td> <td> ddbjmam       </td> <td> DDBJ other mammals division                       </td> </tr>
+  <tr> <td>       </td> <td> ddbjpat       </td> <td> DDBJ patens division                              </td> </tr>
+  <tr> <td>       </td> <td> ddbjphg       </td> <td> DDBJ phages division                              </td> </tr>
+  <tr> <td>       </td> <td> ddbjpln       </td> <td> DDBJ plants, fugi and algae division              </td> </tr>
+  <tr> <td>       </td> <td> ddbjpri       </td> <td> DDBJ primates division                            </td> </tr>
+  <tr> <td>       </td> <td> ddbjrna       </td> <td> DDBJ rna (structual RNAs) division                </td> </tr>
+  <tr> <td>       </td> <td> ddbjrod       </td> <td> DDBJ rodents division                             </td> </tr>
+  <tr> <td>       </td> <td> ddbjsts       </td> <td> DDBJ sts division                                 </td> </tr>
+  <tr> <td>       </td> <td> ddbjsyn       </td> <td> DDBJ synthetic sequences division                 </td> </tr>
+  <tr> <td>       </td> <td> ddbjtsa       </td> <td> DDBJ TSA(Transcriptome Shotgun Assembly) division </td> </tr>
+  <tr> <td>       </td> <td> ddbjuna       </td> <td> DDBJ unannotated sequences division               </td> </tr>
+  <tr> <td>       </td> <td> ddbjvrl       </td> <td> DDBJ viruses division                             </td> </tr>
+  <tr> <td>       </td> <td> ddbjvrt       </td> <td> DDBJ other vertebrates division                   </td> </tr>
+  <tr> <td>       </td> <td> est_atha      </td> <td> A.thaliana                                        </td> </tr>
+  <tr> <td>       </td> <td> est_btra      </td> <td> B.taurus                                          </td> </tr>
+  <tr> <td>       </td> <td> est_cele      </td> <td> C.elegans                                         </td> </tr>
+  <tr> <td>       </td> <td> est_cint      </td> <td> C.intestinalis                                    </td> </tr>
+  <tr> <td>       </td> <td> est_crei      </td> <td> C.reinhardtii                                     </td> </tr>
+  <tr> <td>       </td> <td> est_ddis      </td> <td> D.discoideum                                      </td> </tr>
+  <tr> <td>       </td> <td> est_dmel      </td> <td> D.melanogaster                                    </td> </tr>
+  <tr> <td>       </td> <td> est_drer      </td> <td> D.rerio                                           </td> </tr>
+  <tr> <td>       </td> <td> est_ggal      </td> <td> G.gallus                                          </td> </tr>
+  <tr> <td>       </td> <td> est_gmax      </td> <td> G.max                                             </td> </tr>
+  <tr> <td>       </td> <td> est_hum       </td> <td> H.sapiens                                         </td> </tr>
+  <tr> <td>       </td> <td> est_hvul      </td> <td> H.vulgare                                         </td> </tr>
+  <tr> <td>       </td> <td> est_mous      </td> <td> M.musculus                                        </td> </tr>
+  <tr> <td>       </td> <td> est_mtru      </td> <td> M.truncatula                                      </td> </tr>
+  <tr> <td>       </td> <td> est_osat      </td> <td> O.sativa                                          </td> </tr>
+  <tr> <td>       </td> <td> est_rnor      </td> <td> R.norvegicus                                      </td> </tr>
+  <tr> <td>       </td> <td> est_slyc      </td> <td> S.lycopersicum                                    </td> </tr>
+  <tr> <td>       </td> <td> est_taes      </td> <td> T.aestivum                                        </td> </tr>
+  <tr> <td>       </td> <td> est_xlae      </td> <td> X.laevis                                          </td> </tr>
+  <tr> <td>       </td> <td> est_xtro      </td> <td> X.tropicalis                                      </td> </tr>
+  <tr> <td>       </td> <td> est_zmay      </td> <td> Z.mays                                            </td> </tr>
+  <tr> <td>       </td> <td> est_rest      </td> <td> Others                                            </td> </tr>
+
+  <tr> <td> EBI </td> <td> embl           </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel         </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> emnew          </td> <td> EMBL new     </td> </tr>
+  <tr> <td>     </td> <td> emcds          </td> <td> EMBL CDS     </td> </tr>
+  <tr> <td>     </td> <td> em_rel_env     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_est_env </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_gss_env </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htg_env </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pat_env </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std_env </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_fun     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_est_fun </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_gss_fun </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htc_fun </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htg_fun </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pat_fun </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std_fun </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_sts_fun </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_tpa_fun </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_hum     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_est_hum </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_gss_hum </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htc_hum </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htg_hum </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pat_hum </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std_hum </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_sts_hum </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_tpa_hum </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_inv     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_est_inv </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_gss_inv </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htc_inv </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htg_inv </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pat_inv </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std_inv </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_sts_inv </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_tpa_inv </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_mam     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_est_mam </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_gss_mam </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htc_mam </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htg_mam </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pat_mam </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std_mam </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_sts_mam </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_tpa_mam </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_mus     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_est_mus </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_gss_mus </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htc_mus </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htg_mus </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pat_mus </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std_mus </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_sts_mus </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_tpa_mus </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_phg     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_gss_phg </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htg_phg </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pat_phg </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std_phg </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_tpa_phg </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pln     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_est_pln </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_gss_pln </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htc_pln </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htg_pln </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pat_pln </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std_pln </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_sts_pln </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_tpa_pln </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pro     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_est_pro </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_gss_pro </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htc_pro </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htg_pro </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pat_pro </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std_pro </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_sts_pro </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_tpa_pro </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_rod     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_est_rod </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_gss_rod </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htc_rod </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htg_rod </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pat_rod </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std_rod </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_sts_rod </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_tpa_rod </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_syn     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pat_syn </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std_syn </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_tpa_syn </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_tgn     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std_tgn </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_unc     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pat_unc </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std_unc </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_vrl     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_gss_vrl </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htg_vrl </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pat_vrl </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std_vrl </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_tpa_vrl </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_vrt     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_est_vrt </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_gss_vrt </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htc_vrt </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htg_vrt </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pat_vrt </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std_vrt </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_sts_vrt </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_tpa_vrt </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_est     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_gss     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htc     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_htg     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_pat     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_std     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_sts     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> em_rel_tpa     </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> emall          </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> evec           </td> <td> EMBL         </td> </tr>
+  <tr> <td>     </td> <td> imgtligm       </td> <td> IMGT/LIGM-DB </td> </tr>
+  <tr> <td>     </td> <td> imgthla        </td> <td> IMGT/HLA     </td> </tr>
+
+  <tr> <td> NCBI </td> <td> 10090_genomic        </td> <td> mouse genomic     </td> </tr>
+  <tr> <td>      </td> <td> 10116_genomic        </td> <td> rat genomic     </td> </tr>
+  <tr> <td>      </td> <td> 180454_genomic       </td> <td> anopheles gambiae genomic     </td> </tr>
+  <tr> <td>      </td> <td> 7070_genomic         </td> <td> red flour beetle genomic     </td> </tr>
+  <tr> <td>      </td> <td> 7460_genomic         </td> <td> honey bee genomic     </td> </tr>
+  <tr> <td>      </td> <td> 7955_genomic         </td> <td> zebrafish genomic     </td> </tr>
+  <tr> <td>      </td> <td> 9031_genomic         </td> <td> chicken genomic     </td> </tr>
+  <tr> <td>      </td> <td> 9544_genomic         </td> <td> macaca genomic     </td> </tr>
+  <tr> <td>      </td> <td> 9598_genomic         </td> <td> chimp genomic     </td> </tr>
+  <tr> <td>      </td> <td> 9606_genomic         </td> <td> human genomic     </td> </tr>
+  <tr> <td>      </td> <td> 9615_genomic         </td> <td> dog genomic     </td> </tr>
+  <tr> <td>      </td> <td> 9913_genomic         </td> <td> cow genomic     </td> </tr>
+  <tr> <td>      </td> <td> chromosome           </td> <td> chromosomes     </td> </tr>
+  <tr> <td>      </td> <td> other_genomic        </td> <td> other genomic     </td> </tr>
+  <tr> <td>      </td> <td> refseq_genomic       </td> <td> refseq genomic     </td> </tr>
+  <tr> <td>      </td> <td> refseq_rna           </td> <td> refseq rna     </td> </tr>
+  <tr> <td>      </td> <td> env_nt               </td> <td> env_nt     </td> </tr>
+  <tr> <td>      </td> <td> est                  </td> <td> est combined     </td> </tr>
+  <tr> <td>      </td> <td> est_human            </td> <td> est human     </td> </tr>
+  <tr> <td>      </td> <td> est_mouse            </td> <td> est mouse     </td> </tr>
+  <tr> <td>      </td> <td> est_others           </td> <td> est others     </td> </tr>
+  <tr> <td>      </td> <td> sts                  </td> <td> sts     </td> </tr>
+  <tr> <td>      </td> <td> gss                  </td> <td> gss     </td> </tr>
+  <tr> <td>      </td> <td> htgs                 </td> <td> htgs     </td> </tr>
+  <tr> <td>      </td> <td> month.est            </td> <td> month est     </td> </tr>
+  <tr> <td>      </td> <td> month.gss            </td> <td> month gss     </td> </tr>
+  <tr> <td>      </td> <td> month.htgs           </td> <td> month htgs     </td> </tr>
+  <tr> <td>      </td> <td> month.nt             </td> <td> month nt     </td> </tr>
+  <tr> <td>      </td> <td> month.patnt          </td> <td> month patnt     </td> </tr>
+  <tr> <td>      </td> <td> month.sts            </td> <td> month sts     </td> </tr>
+  <tr> <td>      </td> <td> monthnt              </td> <td> month nt     </td> </tr>
+  <tr> <td>      </td> <td> Test/gpipe/9606/allcontig_and_rna  </td> <td>  human genomic and transcripts     </td> </tr>
+  <tr> <td>      </td> <td> Test/gpipe/10090/allcontig_and_rna </td> <td>  mouse genomic and transcripts     </td> </tr>
+  <tr> <td>      </td> <td> nt                   </td> <td> nt, nucleotide nr     </td> </tr>
+  <tr> <td>      </td> <td> patnt                </td> <td> pat nucleotide     </td> </tr>
+  <tr> <td>      </td> <td> pdbnt                </td> <td> pdb nucleotide     </td> </tr>
+  <tr> <td>      </td> <td> wgs                  </td> <td> wgs     </td> </tr>
+  <tr> <td>      </td> <td> UniVec               </td> <td> UniVec vector library     </td> </tr>
+  <tr> <td>      </td> <td> alu                  </td> <td> alu repeat     </td> </tr>
+  <tr> <td>      </td> <td> danio.lib            </td> <td> danio rerio repeats     </td> </tr>
+  <tr> <td>      </td> <td> humrep               </td> <td> combined human repeat libraries     </td> </tr>
+  <tr> <td>      </td> <td> rodents.lib          </td> <td> rodents repeats     </td> </tr>
+  <tr> <td>      </td> <td> geo                  </td> <td> geo (geo)     </td> </tr>
+  <tr> <td>      </td> <td> cdsearch/cdd         </td> <td> cdd     </td> </tr>
+  <tr> <td>      </td> <td> cdsearch/oasis_cog   </td> <td>  cog     </td> </tr>
+  <tr> <td>      </td> <td> cdsearch/oasis_kog   </td> <td>  kog     </td> </tr>
+  <tr> <td>      </td> <td> cdsearch/oasis_pfam  </td> <td>  pfam     </td> </tr>
+  <tr> <td>      </td> <td> cdsearch/oasis_smart </td> <td>  smart     </td> </tr>
+  <tr> <td>      </td> <td> repeat/repeat_3055   </td> <td>  repeat_3055     </td> </tr>
+  <tr> <td>      </td> <td> repeat/repeat_31032  </td> <td>  repeat_31032     </td> </tr>
+  <tr> <td>      </td> <td> repeat/repeat_35128  </td> <td>  repeat_35128     </td> </tr>
+  <tr> <td>      </td> <td> repeat/repeat_3702   </td> <td>  repeat_3702     </td> </tr>
+  <tr> <td>      </td> <td> repeat/repeat_40674  </td> <td>  repeat_40674     </td> </tr>
+  <tr> <td>      </td> <td> repeat/repeat_4530   </td> <td>  repeat_4530     </td> </tr>
+  <tr> <td>      </td> <td> repeat/repeat_4751   </td> <td>  repeat_4751     </td> </tr>
+  <tr> <td>      </td> <td> repeat/repeat_6238   </td> <td>  repeat_6238     </td> </tr>
+  <tr> <td>      </td> <td> repeat/repeat_6239   </td> <td>  repeat_6239     </td> </tr>
+  <tr> <td>      </td> <td> repeat/repeat_7165   </td> <td>  repeat_7165     </td> </tr>
+  <tr> <td>      </td> <td> repeat/repeat_7227   </td> <td>  repeat_7227     </td> </tr>
+  <tr> <td>      </td> <td> repeat/repeat_7719   </td> <td>  repeat_7719     </td> </tr>
+  <tr> <td>      </td> <td> repeat/repeat_7955   </td> <td>  repeat_7955     </td> </tr>
+  <tr> <td>      </td> <td> repeat/repeat_9606   </td> <td>  repeat_9606     </td> </tr>
+  <tr> <td>      </td> <td> repeat/repeat_9989   </td> <td>  repeat_9989     </td> </tr>
+</table>
+
+
+
+
+
+
+</BODY>
+</HTML>

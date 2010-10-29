@@ -1,0 +1,156 @@
+
+                                  kgendist
+
+
+Function
+
+   
+   Compute genetic distances from gene frequencies using gendist
+
+
+Description
+
+   kgendist is compute genetic distances from gene frequencies
+   utilizing "gendist" methods provided in PHYLIP web service.
+
+   Following block is a quotation from fgendist included in PHYLIPNEW
+   package.
+     
+     Computes one of three different genetic distance formulas from gene
+     frequency data. The formulas are Nei's genetic distance, the
+     Cavalli-Sforza chord measure, and the genetic distance of Reynolds et.
+     al. The former is appropriate for data in which new mutations occur in
+     an infinite isoalleles neutral mutation model, the latter two for a
+     model without mutation and with pure genetic drift. The distances are
+     written to a file in a format appropriate for input to the distance
+     matrix programs.
+  
+   PHYLIP web service is provided by National University of Singapore.
+   Original web-service is located at the following URL:
+
+   http://bioportal.bic.nus.edu.sg/phylip/gendist.html
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kgendistis thus an interface of "runGendist"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kgendist
+
+% kgendist
+Compute genetic distances from gene frequencies using gendist
+Input (gapped) sequence(s): test.fasta
+Output file [55-110.kgendist]:
+Jobid: 12547145
+***********
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kgendist] output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+Input file format
+
+  Input files for usage example
+
+  File: sample.dat
+
+   
+    5    10
+2 2 2 2 2 2 2 2 2 2
+European   0.2868 0.5684 0.4422 0.4286 0.3828 0.7285 0.6386 0.0205
+0.8055 0.5043
+African    0.1356 0.4840 0.0602 0.0397 0.5977 0.9675 0.9511 0.0600
+0.7582 0.6207
+Chinese    0.1628 0.5958 0.7298 1.0000 0.3811 0.7986 0.7782 0.0726
+0.7482 0.7334
+American   0.0144 0.6990 0.3280 0.7421 0.6606 0.8603 0.7924 0.0000
+0.8086 0.8636
+Australian 0.1211 0.2274 0.5821 1.0000 0.2018 0.9000 0.9837 0.0396
+0.9097 0.2976
+
+
+Output file format
+
+  Output files for usage example
+
+  File: sample.kgendist
+
+      5
+
+European   0.0000  0.0780  0.0807  0.0668  0.3942
+
+African    0.0780  0.0000  0.2347  0.1050  0.4856
+
+Chinese    0.0807  0.2347  0.0000  0.0539  0.7243
+
+American   0.0668  0.1050  0.0539  0.0000  0.6934
+
+Australia  0.3942  0.4856  0.7243  0.6934  0.0000
+
+
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Felsenstein, J.,(1995) PHYLIP(Phylogeny Interface Package), version3.57c,
+      Department of Genetics, University of Washington, Seattle.
+
+   Swofford, D., et al.,(1996) Phylogenetic interface. In Hillis, D.M.,
+      Moritz, C., and Mble, B.K.(eds), Molecular Systematics 2nd Edition,
+      Sinauer Associates, Mss.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

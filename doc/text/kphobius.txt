@@ -1,0 +1,142 @@
+
+                                 kphobius
+
+
+
+Function
+
+   Predicts transmembrance topology and signal peptides using Phobius
+
+Description
+
+   kphobius predicts transmembrance topology and signal peptides from
+   the amino acid sequence of a protein utilizing Phobius.
+   Phobius predicts a combined protein topolgy and signal peptide. The
+   predictor is based on a hidden Markovmodel (HMM) that models the
+   different sequence regions of a signal peptide and the different regions
+   of a transmembrane protein in a series ofinterconnected states.
+
+   kphobius utilizes Phobius SOAP service provided by EBI (European Bioinformatics
+   Institute). Original web-service is located at the following URL:
+
+   http://www.ebi.ac.uk/Tools/phobius/
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package, which
+   contains interfaces to bioinformatics web services through a proxy server at
+   Keio University. kphobius is thus an interface of "runPhobius" method included in
+   KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages as SOAP
+   web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kphobius
+
+% kphobius
+Predicts transmembrance topology and signal peptides using Phobius
+Input protein sequence(s): swissprot:MTH_DROME
+Output file [mth_drome.kphobius]: 
+Jobid: 5008285
+****
+
+ID   MTH_DROME
+FT   SIGNAL        1     24       
+FT   DOMAIN        1      3       N-REGION.
+FT   DOMAIN        4     19       H-REGION.
+FT   DOMAIN       20     24       C-REGION.
+FT   DOMAIN       25    218       NON CYTOPLASMIC.
+FT   TRANSMEM    219    238       
+FT   DOMAIN      239    249       CYTOPLASMIC.
+FT   TRANSMEM    250    269       
+FT   DOMAIN      270    280       NON CYTOPLASMIC.
+FT   TRANSMEM    281    302       
+FT   DOMAIN      303    321       CYTOPLASMIC.
+FT   TRANSMEM    322    342       
+FT   DOMAIN      343    371       NON CYTOPLASMIC.
+FT   TRANSMEM    372    391       
+FT   DOMAIN      392    421       CYTOPLASMIC.
+FT   TRANSMEM    422    439       
+FT   DOMAIN      440    450       NON CYTOPLASMIC.
+FT   TRANSMEM    451    476       
+FT   DOMAIN      477    514       CYTOPLASMIC.
+//
+
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     amino acids sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outfile]            outfile   [.kphobius]  output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+   -outputformat       string     [long] The output format: long, short or raw 
+
+Input file format
+
+  kphobius can use any genome sequence data that seqret can read.
+
+Output file format
+
+   The output from kphobius has three format. Default format (long) is a list of
+   the location of the predicted transmembrane helices, the predicted location of
+   the intervening loop regions and signal peptide.
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Kåll, K., et al.,(2004) A combined transmembrane topology and signal peptide
+      prediction method, Journal of Molecular Biology, 338(5), 1027-1036.
+
+   Kåll, K., et al.,(2005) An HMM posterior decoder for sequence feature prediction
+      that includes homology information, Bioinformatics, 21, i251-i257.
+
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.
+

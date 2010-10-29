@@ -1,0 +1,34 @@
+application: kwolfpsort [
+  documentation: "Predicts protein localization for WoLF PSORT"
+  groups: "Protein:Localization"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  seqall: seqall [
+    parameter: "Y"
+    type: "protein"
+  ]
+
+  string: org [
+    parameter: "Y"
+    information: "organism type (animal/plant/fungi)"
+  ]
+
+endsection: input
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "psort output"
+  ]
+
+endsection: output

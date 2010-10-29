@@ -1,0 +1,29 @@
+application: kdnadist [
+  documentation: "Nucleic acid sequence Distance Matrix program using dnadist"
+  groups: "PHYLOGENY MOLECULAR SEQUENCE"
+  embassy: "kbws"
+]
+
+section: input [
+	       information: "Input section"
+	       type: "page"
+]
+
+  seqall: seqall [
+	       parameter: "Y"
+	       type: "gapany"
+  ]
+
+endsection: input
+
+section: output [
+		information: "Output section"
+		type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "kdnadist output"
+  ]
+
+endsection: output

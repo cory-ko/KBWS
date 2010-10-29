@@ -1,0 +1,397 @@
+
+                                 ktcoffee
+
+
+
+Function
+
+   Multiple sequence alignment using T-COFFEE
+
+Description
+
+   ktcoffee computes a multiple sequence alignment utilizing
+   T-Coffee.
+   T-Coffee is a multiple sequence alignment package. T-Coffee
+   is able to align Protein, DNA and RNA sequences or to combine
+   the output of several alignment methods (Clustal, Mafft, Muscle,
+   Probcons...).
+
+   ktcoffee utilizes T-Coffee SOAP server provided by EBI (European
+   Bioinformatics Institute).Original web-service is located at the
+   following URL:
+
+   http://www.ebi.ac.uk/Tools/webservices/services/msa/tcoffee_soap
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. ktcoffee is thus an interface of "runTcoffee"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with ktcoffee
+
+% ktcoffee
+Multiple sequence alignment using T-COFFEE
+Input (gapped) sequence(s): multiNuc.fasta
+Output file [test0.ktcoffee]:
+Dendrogram (tree file) from T-Coffee output file [test0.dnd]:
+(aligned) output sequence set [test0.aln]:
+Jobid: 7768256
+***********
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.ktcoffee] T-Coffee output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+   -matrix             string     Scoring matrix to use (blosum' or 'pam')
+   -outorder           string     [aligned] Sequence order in output alignment
+                                  ('aligned' or 'input')
+
+Input file format
+
+  ktcoffee can use any multiple sequences data that seqret can read.
+
+  Input files for usage example
+
+  File: multiNuc.fasta
+
+>test0
+taagttattatttagttaatacttttaacaatattattaaggtatttaaaaaatactatt
+atagtatttaacatagttaaataccttccttaatactgttaaattatattcaatcaatac
+atatataatattattaaaatacttgataagtattatttagatattagacaaatactaatt
+ttatattgctttaatacttaataaatactacttatgtattaagtaaatattactgtaata
+ctaataacaatattattacaatatgctagaataatattgctagtatcaataattactaat
+atagtattaggaaaataccataataatatttctacataatactaagttaatactatgtgt
+agaataataaataatcagattaaaaaaattttatttatctgaaacatatttaatcaattg
+>testA
+taatgtgaatgaatttccaagaataaggtttaatgaaaaaaacgatttaagtgaatttaa
+tcaattcaaaataaattattcacttttagtaaaaggcattaaaaaaatttttcactcagt
+ttcaaataatcgtgaaatatcttctaaatttaatggagtaaatttcaatggatccaatgg
+tttttccaaacaaaatataagcacgatattcaactgtgccaattgataaaaaaggttgaa
+caattcattctgttgcattttcaatgtttaaatgtttgatctcgtcagcactattaacta
+ttgtttctttactaagaagagaagaattgacagttagaaatctattttgttttaatcatt
+>testB
+aacaaaaaatcaataccgcaataaaaaagttgcattactttactaattttaactgctaaa
+ttttcttgttccttattcaaaaaaaagcgttctgcctttgcccctttattgagattagaa
+cgaaaatcactattattagttgtatgtaaagcacctataactttattgttcacaacaata
+actcttaccgattcacctttagagcaagtaatgtatttttgcacaattgcttgttgatta
+tattataacaattttaatttaaccaaaatacccctcgaattttaacagtttttataatca
+>testC
+ttttcttacctaaagaagctgaagttattcaagcagattttttagagtatgatactaaag
+aacgacaactaaatgaatgacaaaaactaattgttaaagcatttagtgaaaatatcttct
+cttttcaaaagaaaattgaagaacaacaattgaaaaatcaattagaaattcaaactaaat
+acaataaaatatcaggaaaaaagattgatcttttaactactgcagttgttttatgtgcac
+ttagtgaacaaaaggcacataatactgataaaccacttttaattagtgaggcattgttga
+ttatggatcattattcacaaggtgctgaaaaaaaacaaactcatgctttattagataagc
+>testD
+tgatgaagaattgggtactgatgatgaagacttttacttaaaaggagcgatgcaaaactt
+tagttatgtgaactatgtttcaccattaaaagtaatatctgatccaagtactggaatagt
+cagttccaaaaagaataatgctgaaatgaaaagtaaacaaatgtcaactgatcaaatgac
+tagtgaaaaagaatttgattattacactgaaacacttaaagcattattagagaaagaaga
+tagtgcagaattaaatgaaaatgaaaaaaaactagttgaaaccattaagaaagcttacac
+>testE
+gcttgcattactaaattaagagtaacagttaaaaaccctgaacttgttaatgaaactatt
+attaaagacttgggagcagctggggtaatgcgtaccactccaacattctttgtagcagtg
+tttggtactcgagctgctgtttataaatcagcaatgcaagatattatccaaggcaaagta
+aattgaacagagttgcaaaaagtcttagataaaaatgatagtactgttgaaaaaccagaa
+ataaaaccaaccccagttttaaaagttcaagatgaaattgtgatcctctcaccagttaat
+>testF
+aagtcttgctggctttgatactccttttagtccagataacctccagtatttagaaaaaga
+aactgattatgatcagaactttaaaagttttactgaaaagtttaaagatgaaaaaataac
+taacaaccaacttggtattgttgatatctataacttattcagtggttttcacaagagtgt
+cttcccagttgatgatgcttttgttaaattacctaaagtacctactgaattatttaagtt
+agttgatgataatgtctttcctaagttaaatcctaagggcttaaatatctctgataatat
+>testI
+tttatttcaaactttttgttagcaatttgtgcataaacatgattatcagctaagaactgc
+tgaaacttattttgactgtttactgttcataaatttaaaggtaagttaagttttttgatc
+atttggggatacttttcatatattttggttcatgggtggaggaattgacaaatcttttgg
+attctagctgtactaattgtttcaaactgttttttagtccaaaataaaaaaccttttttg
+taactattatctaaatcataaactttttgcaaagattcaaagttaaaggatgaaaacaag
+atttgagataaaaacaattgatccacatatcaaaccaaacaaagcaatggataaacaaat
+>testJ
+taatgaaggataactaccatcatttgctcttttatatggaagaggttgaccccaaccaat
+tgaactttctttagcttccttttgaagtttaatgtagttgttagcacgatcaacaattgc
+ttgttctagtttttctatattagctaaatctgttctaaagttattaagtttattagcagc
+tttaatataagactcataacttgattttatttgtgaaagtgaattattaaaatcttgttg
+ttttttaatagtttcagataaattggtattgttttttaaaagttttttagctaaatcaca
+tacatctttttgaccgttattattagaagttccattttctaacatagttgttaaagctgt
+
+
+Output file format
+
+   The output of ktcoffee is ClustalW output format.
+
+  Output files for usage example
+
+  File: test0.ktcoffee
+
+CLUSTAL FORMAT for T-COFFEE Version_8.06 [http://www.tcoffee.org] [MODE:  ], CPU=0.00 sec, SCORE=9, Nseq=9, Len=1500 
+
+test0           -TAAGTTATTA-TTTAGT--------TAATACTTT---------TAACAATATTATTAAG
+testA           -TAAT--GTGA-ATGAAT--------TTC---------------CAAGAATAAGGTT---
+testB           -A-ACAA-AAA-ATCAATACCGCAATAAAAAAGTTGCA-TTA--CTTTACTAATTT----
+testC           -TTT--TCTTA-CCT-----------AAAGAAGCTGAAGTTATTCAAGCAGATTTTT---
+testD           -TGATG-AAGA-ATTGGG--------TACTG-----------AT---GATGAAGACTTT-
+testE           -G-----CTTGCATT---ACT-A---AATTAAG-----AGTAAC--AGTTAAAAACCCT-
+testF           -AAGT--CTTG-CTG---GCT-TTGATACTCCT-----TTTAG---TCCAGATAACCTC-
+testI           TTTATTT-CAA-A-C----TTTTTGTTAGCAATTTGT----G--CATAAACATGAT----
+testJ           -TAATGA-AGG-ATAACTACC---ATCAT----TTGCT-CT----TT-------------
+                                                                            
+
+test0           GTAT---TTAA----AAAATACT-ATTA-TAG--TATTT------AACATAGTTAAATAC
+testA           -TA----ATGA----AAAAAACG-ATTT-AAGTGAATTT------AA-----TCAAT---
+testB           -TAA---CTGC----TAAATTTT-CTTGTTCCT-TATTCAAAAAAAAGC--GTTC--TGC
+testC           -TAGAGTATGATACTAAAGAACG-A--------C-----------AACTAAATGAAT---
+testD           -TAC---TTAA----AAGGAGCG-ATGC-A------------------------------
+testE           -GA--ACTTG---TTAAT-------------------------GAAACT-A-TT-AT---
+testF           -CAGTATTTAG--AAAAA-------------------------GAAACTGA-TT-AT---
+testI           -TAT---CAGC----TAAGAACT-GCTGAAACT-TATTTT-----GACT--GTTT---AC
+testJ           -TAT---ATGG----AAGAGGTTGACCCCAACC-AATTGAACT---------TTC--T--
+                  *             *                                           
+
+test0           CTTCCTTAAT--ACT-----------------GT-------TAAATTA----TATTCAAT
+testA           --TC-AAAATAAATTATT--CACTTT----T-AG-------TAAAAGG----CATTAAAA
+testB           C----TTTG--------C--CCCTTTATTGAGATTAGAACGAAAATCA----CTATTATT
+testC           -GACAAAAA--------C--TAAT------T-GT-------TAAAG------CATTTAGT
+testD           ------AAA-------------CTTTAGTTATG--------TGAACTA----TGTTTCAC
+testE           -TA--AAGAC---TTGGGAGCAGCTG----G-G-------GTAATGCGT-ACCACTCCAA
+testF           -GATCAGAAC---TTTAAA--AGTTT----T-AC-----TGAAAAGTTTAAAGATG-AAA
+testI           ----------------------TGTTCATAAA-TTTAAAGGTAAGTTA----AGTTTTTT
+testJ           -----TTAG--------C--TTCCTTTTGAAGTTTA-A-TG-TAGT----------TGTT
+                                                           *                
+
+test0           CAATACATATATAATATT-ATTAAA--ATA--C--TTGATA-AG-TATTATTTAGATATT
+testA           AAA----TTTTTCACTCAGTTTCAA--ATA--A--TCGTGA-AA-TATCTTCTAAAT-TT
+testB           AGTTGTATGTAAAGCACC-TATAAC--TTT--A--TTGTTC----ACAACAATAACTCTT
+testC           GAAAATATCTTCTC--TTT-TCAAAAGAAA--A--TTGAAGAAC-AACAATTGAAAAATC
+testD           CATTAAAAGTAATATCTG-ATCCA-A-GTA--C--TGGAAT-AG----------------
+testE           CAT--TC--TTTGTAGCAGTGTTT-G-GTACT----CGAGC-TGCTGTT---TATAAATC
+testF           AAA--TAACTAACAACCAAC--TT-G-GTATTG--TTGATA-TC-TATA---ACTTATTC
+testI           GATCATTTGG-GGATACT-TTTCAT--ATA--TTTTGGTTC----ATGGGTGGAGGAATT
+testJ           AGC-------AC--GATC-AACAAT---TG--C--TTGTTC----TAGTTTTTCTATATT
+                                                     *                      
+
+test0           AGAC----------------AAATACTAATTT-TATAT-TGCTTTAATA----CTTAATA
+testA           AATG----------------GAG-----------------------------------TA
+testB           ACCG-ATTCACCTT---TAGAGCAAGTAATGTATTTT--TGCACAATTG----CT-----
+testC           AATT---------A---G--AAAT--TCAAAC-TAAATACAATAAAATA----T-CAGGA
+testD           -------TCAGTTC---CAAAAAGAATAAT--------G--CTGAAATGAAAAGTAAACA
+testE           A-----GCA--ATG---CAAG-ATATT------------------------AT--C--CA
+testF           A-----GTGGTTTT---CACA-AGAGT------------------------GT--C--AA
+testI           GAC-AAATCTTTTGGATTCTAGCT-GTACT--AATTG--TTTCAAACTG----TT-----
+testJ           AGCTAAATCTGTTC---TAAAGTTATTAAGTT-TATT-------AGCAG----CT-----
+                                                                            
+
+test0           AATACTACTT-----------------ATGTA-TTAA-GTAAATA--T-TACTGTAAT-A
+testA           AATTTCA--------------------ATGGA-TCCA-ATGGTTT--T-T--CCAAAC-A
+testB           -----TGTTGATTAAAAGACATTA-AAGTTTTTCTTA-ATTTTTG--TTCATCTAAAC-A
+testC           AAAAAGATTGATCTTTTAACTACTGCAGTTGT-TTTATGTGCACT--T--AGTGAAC---
+testD           AATGTCA--------------------ACTGA-TCAA-ATGACTA--G-T---GAAAA-A
+testE           AGGCAAA--------------------GTAAA-TTGA-ACAG---AGT-T--GCAAAA--
+testF           AAGCACA--------------------GTTGA-CTTA-ATGAACCAAC-T--GCAAAAGC
+testI           -----TTTTAGTCCAAAATAAAAA-ACCTTTTTTGTA-ACTATT------ATCTAAA--T
+testJ           -----T---TAATATAAGACTCAT-AACTTGATTTTA--TTTGTG---AAAGTGA-----
+                                                    *                       
+
+test0           CT-AATAACAATATT-ATTACAATA---------TG---C-------TAGAATAATATTG
+testA           AAATATAAGCACGAT-ATTCAACTG---------TG---C-------CA-ATTGATAA-A
+testB           CA-AAAAAACATAATCACCAAAAG----------AA---CC------AAAAACACTTTTA
+testC           ---AAAAGGCACATA-ATACTGATA---------AA---CCAC-TTTTA-ATTAGTGA-G
+testD           GAAT-----TTGATT-ATTACACTGAAACACTTAAA---GCAT-TAT-----------TA
+testE           -AGTCTTAG-------ATAAAAA---------TGATAGTACTGTTGA-----------A-
+testF           AAGTTGAAGCTGCTA-ATGCTATCTTCCCAGTTGATGATGCTTTTGT-----------T-
+testI           CA-TAA--ACTTT-TTG-C-AAAG----------AT---TC------AAAG----TTAAA
+testJ           -------------ATTATTAA-------------AA---TC------TTGTTGTTTTTTA
+                                                                            
+
+test0           CT-AGTATCAATAA--TTACT-AATATAGTAT--TAGGAAAATAC-----CATA---ATA
+testA           AA-AGGTTGAACAA--TTCAT-TCTGTTGCAT--TTTC--AATGT-----TTAA---ATG
+testB           AC-AATAACAGGAAACTCCATA-CT-TTGTTT--TATTTGATTAA-----TAAA---AAC
+testC           GCATTGTTGATTATGGATCAT-TATTCACAAGGTGCTG--AAAAA-AAA-CAAACTCATG
+testD           -GA-G-------AAAGAAGAT-AGTG---CAG--AATTA-AA--T-----GAAA---ATG
+testE           AAA-CCAGAAAT--AAAACCA-ACCC---CAG--TTTTA-AAAGTTCA-AGATGAAATTG
+testF           AAA-TTACCTAA--AGTACCT-ACTG---AAT--TATTT-AA-GTTAGTTGATGATAATG
+testI           G--GATGAAAACAAGAT-CTTATCTATTGCTT-------TTTTAC-----CATA---ACC
+testJ           AT-AGTTTCAGATAAATTGGTA-TT-GTTTTT--TAAAAGTTTTT-----TAGC---TAA
+
+
+
+  File: test0.aln
+
+CLUSTAL W (1.83) multiple sequence alignment
+
+test0           -TAAGTTATTA-TTTAGT--------TAATACTTT---------TAACAATATTATTAAG
+testA           -TAAT--GTGA-ATGAAT--------TTC---------------CAAGAATAAGGTT---
+testB           -A-ACAA-AAA-ATCAATACCGCAATAAAAAAGTTGCA-TTA--CTTTACTAATTT----
+testC           -TTT--TCTTA-CCT-----------AAAGAAGCTGAAGTTATTCAAGCAGATTTTT---
+testD           -TGATG-AAGA-ATTGGG--------TACTG-----------AT---GATGAAGACTTT-
+testE           -G-----CTTGCATT---ACT-A---AATTAAG-----AGTAAC--AGTTAAAAACCCT-
+testF           -AAGT--CTTG-CTG---GCT-TTGATACTCCT-----TTTAG---TCCAGATAACCTC-
+testI           TTTATTT-CAA-A-C----TTTTTGTTAGCAATTTGT----G--CATAAACATGAT----
+testJ           -TAATGA-AGG-ATAACTACC---ATCAT----TTGCT-CT----TT-------------
+                                                                            
+
+test0           GTAT---TTAA----AAAATACT-ATTA-TAG--TATTT------AACATAGTTAAATAC
+testA           -TA----ATGA----AAAAAACG-ATTT-AAGTGAATTT------AA-----TCAAT---
+testB           -TAA---CTGC----TAAATTTT-CTTGTTCCT-TATTCAAAAAAAAGC--GTTC--TGC
+testC           -TAGAGTATGATACTAAAGAACG-A--------C-----------AACTAAATGAAT---
+testD           -TAC---TTAA----AAGGAGCG-ATGC-A------------------------------
+testE           -GA--ACTTG---TTAAT-------------------------GAAACT-A-TT-AT---
+testF           -CAGTATTTAG--AAAAA-------------------------GAAACTGA-TT-AT---
+testI           -TAT---CAGC----TAAGAACT-GCTGAAACT-TATTTT-----GACT--GTTT---AC
+testJ           -TAT---ATGG----AAGAGGTTGACCCCAACC-AATTGAACT---------TTC--T--
+                  *             *                                           
+
+test0           CTTCCTTAAT--ACT-----------------GT-------TAAATTA----TATTCAAT
+testA           --TC-AAAATAAATTATT--CACTTT----T-AG-------TAAAAGG----CATTAAAA
+testB           C----TTTG--------C--CCCTTTATTGAGATTAGAACGAAAATCA----CTATTATT
+testC           -GACAAAAA--------C--TAAT------T-GT-------TAAAG------CATTTAGT
+testD           ------AAA-------------CTTTAGTTATG--------TGAACTA----TGTTTCAC
+testE           -TA--AAGAC---TTGGGAGCAGCTG----G-G-------GTAATGCGT-ACCACTCCAA
+testF           -GATCAGAAC---TTTAAA--AGTTT----T-AC-----TGAAAAGTTTAAAGATG-AAA
+testI           ----------------------TGTTCATAAA-TTTAAAGGTAAGTTA----AGTTTTTT
+testJ           -----TTAG--------C--TTCCTTTTGAAGTTTA-A-TG-TAGT----------TGTT
+                                                           *                
+
+test0           CAATACATATATAATATT-ATTAAA--ATA--C--TTGATA-AG-TATTATTTAGATATT
+testA           AAA----TTTTTCACTCAGTTTCAA--ATA--A--TCGTGA-AA-TATCTTCTAAAT-TT
+testB           AGTTGTATGTAAAGCACC-TATAAC--TTT--A--TTGTTC----ACAACAATAACTCTT
+testC           GAAAATATCTTCTC--TTT-TCAAAAGAAA--A--TTGAAGAAC-AACAATTGAAAAATC
+testD           CATTAAAAGTAATATCTG-ATCCA-A-GTA--C--TGGAAT-AG----------------
+testE           CAT--TC--TTTGTAGCAGTGTTT-G-GTACT----CGAGC-TGCTGTT---TATAAATC
+testF           AAA--TAACTAACAACCAAC--TT-G-GTATTG--TTGATA-TC-TATA---ACTTATTC
+testI           GATCATTTGG-GGATACT-TTTCAT--ATA--TTTTGGTTC----ATGGGTGGAGGAATT
+testJ           AGC-------AC--GATC-AACAAT---TG--C--TTGTTC----TAGTTTTTCTATATT
+                                                     *                      
+
+test0           AGAC----------------AAATACTAATTT-TATAT-TGCTTTAATA----CTTAATA
+testA           AATG----------------GAG-----------------------------------TA
+testB           ACCG-ATTCACCTT---TAGAGCAAGTAATGTATTTT--TGCACAATTG----CT-----
+testC           AATT---------A---G--AAAT--TCAAAC-TAAATACAATAAAATA----T-CAGGA
+testD           -------TCAGTTC---CAAAAAGAATAAT--------G--CTGAAATGAAAAGTAAACA
+testE           A-----GCA--ATG---CAAG-ATATT------------------------AT--C--CA
+testF           A-----GTGGTTTT---CACA-AGAGT------------------------GT--C--AA
+testI           GAC-AAATCTTTTGGATTCTAGCT-GTACT--AATTG--TTTCAAACTG----TT-----
+testJ           AGCTAAATCTGTTC---TAAAGTTATTAAGTT-TATT-------AGCAG----CT-----
+                                                                            
+
+test0           AATACTACTT-----------------ATGTA-TTAA-GTAAATA--T-TACTGTAAT-A
+testA           AATTTCA--------------------ATGGA-TCCA-ATGGTTT--T-T--CCAAAC-A
+testB           -----TGTTGATTAAAAGACATTA-AAGTTTTTCTTA-ATTTTTG--TTCATCTAAAC-A
+testC           AAAAAGATTGATCTTTTAACTACTGCAGTTGT-TTTATGTGCACT--T--AGTGAAC---
+testD           AATGTCA--------------------ACTGA-TCAA-ATGACTA--G-T---GAAAA-A
+testE           AGGCAAA--------------------GTAAA-TTGA-ACAG---AGT-T--GCAAAA--
+testF           AAGCACA--------------------GTTGA-CTTA-ATGAACCAAC-T--GCAAAAGC
+testI           -----TTTTAGTCCAAAATAAAAA-ACCTTTTTTGTA-ACTATT------ATCTAAA--T
+testJ           -----T---TAATATAAGACTCAT-AACTTGATTTTA--TTTGTG---AAAGTGA-----
+                                                    *                       
+
+test0           CT-AATAACAATATT-ATTACAATA---------TG---C-------TAGAATAATATTG
+testA           AAATATAAGCACGAT-ATTCAACTG---------TG---C-------CA-ATTGATAA-A
+testB           CA-AAAAAACATAATCACCAAAAG----------AA---CC------AAAAACACTTTTA
+testC           ---AAAAGGCACATA-ATACTGATA---------AA---CCAC-TTTTA-ATTAGTGA-G
+testD           GAAT-----TTGATT-ATTACACTGAAACACTTAAA---GCAT-TAT-----------TA
+testE           -AGTCTTAG-------ATAAAAA---------TGATAGTACTGTTGA-----------A-
+testF           AAGTTGAAGCTGCTA-ATGCTATCTTCCCAGTTGATGATGCTTTTGT-----------T-
+testI           CA-TAA--ACTTT-TTG-C-AAAG----------AT---TC------AAAG----TTAAA
+testJ           -------------ATTATTAA-------------AA---TC------TTGTTGTTTTTTA
+                                                                            
+
+test0           CT-AGTATCAATAA--TTACT-AATATAGTAT--TAGGAAAATAC-----CATA---ATA
+testA           AA-AGGTTGAACAA--TTCAT-TCTGTTGCAT--TTTC--AATGT-----TTAA---ATG
+testB           AC-AATAACAGGAAACTCCATA-CT-TTGTTT--TATTTGATTAA-----TAAA---AAC
+testC           GCATTGTTGATTATGGATCAT-TATTCACAAGGTGCTG--AAAAA-AAA-CAAACTCATG
+testD           -GA-G-------AAAGAAGAT-AGTG---CAG--AATTA-AA--T-----GAAA---ATG
+testE           AAA-CCAGAAAT--AAAACCA-ACCC---CAG--TTTTA-AAAGTTCA-AGATGAAATTG
+testF           AAA-TTACCTAA--AGTACCT-ACTG---AAT--TATTT-AA-GTTAGTTGATGATAATG
+testI           G--GATGAAAACAAGAT-CTTATCTATTGCTT-------TTTTAC-----CATA---ACC
+testJ           AT-AGTTTCAGATAAATTGGTA-TT-GTTTTT--TAAAAGTTTTT-----TAGC---TAA
+
+  File: test0.dnd
+
+(
+(
+(
+(
+test0:0.10475,
+testA:0.08525)
+:0.00297,
+testC:0.09203)
+:0.00406,
+(
+testD:0.10000,
+(
+testE:0.11071,
+testF:0.09929)
+:0.00500)
+:0.00781)
+:0.00094,
+(
+testB:0.08417,
+testJ:0.09583)
+:0.00312,
+testI:0.09187);
+
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Notredam, C., et al.,(2000) T-Coffee: A novel method for fast and accurate
+      multiple sequence alignment, 302(1), 205-217.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+   emma             Multiple sequence alignment (ClustalW wrapper)
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.
+

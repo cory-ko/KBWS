@@ -1,0 +1,304 @@
+<!--START OF HEADER - DON'T ALTER -->
+
+<HTML>
+<HEAD>
+  <TITLE>
+  EMBOSS: kdnacomp
+  </TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" text="#000000">
+
+
+
+<table align=center border=0 cellspacing=0 cellpadding=0>
+<tr><td valign=top>
+<A HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
+</td>
+<td align=left valign=middle>
+<b><font size="+6">
+kdnacomp
+</font></b>
+</td></tr>
+</table>
+<br>&nbsp;
+<p>
+
+
+<!--END OF HEADER-->
+
+
+
+
+
+
+<H2>
+    Function
+</H2>
+DNA compatibility algorithm using dnacomp
+<!--
+DON'T WRITE ANYTHING HERE.
+IT IS DONE FOR YOU.
+-->
+
+
+
+
+<h2>Description</h2>
+
+
+   kdnacomp is dNA compatibility algorithm
+   utilizing "dnacomp" methods provided in PHYLIP web service.
+</p>
+
+<p>   Following block is a quotation from fdnacomp included in PHYLIPNEW
+   package.
+     
+     Estimates phylogenies from nucleic acid sequence data using the
+     compatibility criterion, which searches for the largest number of
+     sites which could have all states (nucleotides) uniquely evolved on
+     the same tree. Compatibility is particularly appropriate when sites
+     vary greatly in their rates of evolution, but we do not know in
+     advance which are the less reliable ones.
+  
+   PHYLIP web service is provided by National University of Singapore.
+   Original web-service is located at the following URL:
+</p>
+
+<p>   http://bioportal.bic.nus.edu.sg/phylip/dnacomp.html
+</p>
+
+<p>   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kdnacompis thus an interface of "runDnacomp"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+</p>
+
+<p>
+
+<h2>Usage</h2>
+
+<table width="90%"><tr><td bgcolor="#CCFFFF"><pre>
+
+   Here is a sample session with kdnacomp
+
+% kdnacomp
+DNA compatibility algorithm using dnacomp
+Input (gapped) sequence(s): test.fasta
+Output file [55-110.kdnacomp]:
+Jobid: 12547145
+***********
+
+
+</pre></td></tr></table>
+
+
+<h2>Command line arguments</h2>
+
+<table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+<tr bgcolor="#FFFFCC">
+<th align="left">Qualifier</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Allowed values</th>
+<th align="left">Default</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-seqall]<br>(Parameter 1)</td>
+<td>seqall</td>
+<td>(Gapped) sequence(s) filename and optional format, or reference (input USA)</td>
+<td>Readable sequence(s)</td>
+<td>2</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-outfile]<br>(Parameter 2)</td>
+<td>outfile</td>
+<td>Output file name</td>
+<td>Output file</td>
+<td><i>&lt;*&gt;</i>.kdnacomp</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Additional (Optional) qualifiers</th>
+</tr>
+
+<tr>
+<td colspan=5>(none)</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
+</tr>
+
+<tr>
+<td colspan=5>(none)</td>
+</tr>
+
+</table>
+
+
+<h2>Input file format</h2>
+
+<h3>Input files for usage example</h3>
+<p><h3>File: sample.dat</h3>
+<table width="90%"><tr><td bgcolor="#FFCCFF">
+<pre>
+     4   13
+Beta      AAGGUCGCCAAAC
+Gamma     CAUUUCGUCACAA
+Delta     GGUAUUUCGGCCU
+Epsilon   GGGAUCUCGGCCC</pre>
+</td></tr></table><p>
+
+<h2>Output file format</h2>
+
+<h3>Output files for usage example</h3>
+<p><h3>File: sample.kdnacomp</h3>
+<table width="90%"><tr><td bgcolor="#CCFFCC">
+<pre>DNA compatibility algorithm, version 3.57c
+
+
+One most parsimonious tree found:
+
+
+
+
+        +--Beta      
+     +--3  
+  +--2  +--Gamma     
+  !  !  
+--1  +-----Epsilon   
+  !  
+  +--------Delta     
+
+  remember: this is an unrooted tree!
+
+
+total number of compatible sites is       15.0
+
+
+
+
+</pre>
+</td></tr></table><p>
+
+<h2>Data files</h2>
+
+
+   None.
+
+
+
+<h2>Notes</h2>
+
+
+   None.
+
+
+
+<h2>References</h2>
+
+
+<pre>
+
+   Felsenstein, J.,(1995) PHYLIP(Phylogeny Interface Package), version3.57c,
+      Department of Genetics, University of Washington, Seattle.
+
+   Swofford, D., et al.,(1996) Phylogenetic interface. In Hillis, D.M.,
+      Moritz, C., and Mble, B.K.(eds), Molecular Systematics 2nd Edition,
+      Sinauer Associates, Mss.
+
+
+</pre>
+
+
+<h2>Warnings</h2>
+
+
+   None.
+
+
+
+<h2>Diagnostic Error Messages</h2>
+
+
+   None.
+
+
+
+<h2>Exit status</h2>
+
+
+   It always exits with a status of 0.
+
+
+
+<h2>Known bugs</h2>
+
+
+   None.
+
+
+
+<h2>See also</h2>
+
+<table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
+<th>Description</th></tr>
+<tr>
+<td><a href="seqret.html">seqret</a></td>
+<td>Reads and writes (returns) sequences</td>
+</tr>
+
+</table>
+
+
+<h2>Author(s)</h2>
+
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+
+
+<h2>History</h2>
+
+
+   2009 - Written by Kazuki Oshita
+
+
+
+<h2>Target users</h2>
+
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+
+
+<h2>Comments</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</BODY>
+</HTML>
+

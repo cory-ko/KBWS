@@ -1,0 +1,111 @@
+application: krnafold [
+  documentation: "Predicts secondary structure of single starnd RNA or DNA using RNAfold"
+  groups: "RNA 2D STRUCTURE"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  seqall: seqall [
+    parameter: "Y"
+    type: "nucleotide"
+  ]
+
+endsection: input
+
+section: additional [
+  information: "Additional section"
+  type: "page"
+]
+
+  string: method [
+    additional: "Y"
+    default: "p"
+    information: "fold algorithms"
+    help: "p:   minimum free energy (MFE) and protein function
+           mfe: minimum free energy (MFE) only"
+  ]
+
+endsection: additional
+
+section: advanced [
+  information: "Advanced section"
+  type: "page"
+]
+
+  boolean: noclosegu [
+    additional: "Y"
+    default: "N"
+    information: "no GU pairs at the end of helices"
+  ]
+
+  boolean: nolp [
+    additional: "Y"
+    default: "Y"
+    information: "avoid isolated base pairs"
+  ]
+
+  string: dangling [
+    additional: "Y"
+    default: "d2"
+    information: "Dangling end options"
+    help: "d1: no dangling end energies
+           d2: unpaired bases can participate in at most one dangling end
+               (MFE folding only)
+           d3: dangling energies on both sides of a helix in any case
+           d4: allow coaxial stacking of adjacent helices n multi-loops
+               (MFE folding only)"
+  ]
+
+  string: param [
+    additional: "Y"
+    default: "rna"
+    information: "Energy Parameters"
+    help: "rna:        RNA parameters (Turner model)
+           andronescu: RNA parameters (Andronescu model)
+           dna:        DNA parameters"
+  ]
+
+  integer: tmp [
+    additional: "Y"
+    default: "37"
+    information: "rescale energy parameters to given temperature (C)"
+  ]
+                                  
+  boolean: circ [
+    additional: "Y"
+    default: "N"
+    information: "assume RNA molecule to be circular"
+  ]
+
+endsection: advanced
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    information: "RNAfold output"
+  ]
+
+  outfile: ctfile [
+    parameter: "Y"
+    extension: "ct"
+    information: "minimum free energy (MFE) structure in Ct format"
+    knowntype: "ct"
+  ]
+
+  outfile: viennafile [
+    parameter: "Y"
+    extension: "vienna"
+    information: "minimum free energy (MFE) structure in Vienna format"
+    knowntype: "vienna"
+  ]
+
+endsection: output
+

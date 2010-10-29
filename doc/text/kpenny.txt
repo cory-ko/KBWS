@@ -1,0 +1,227 @@
+
+                                  kpenny
+
+
+Function
+
+   
+   Penny algorithm, branch-and-bound using penny
+
+
+Description
+
+   kpenny is penny algorithm, branch-and-bound
+   utilizing "penny" methods provided in PHYLIP web service.
+
+   Following block is a quotation from fpenny included in PHYLIPNEW
+   package.
+     
+     Finds all most parsimonious phylogenies for discrete-character data
+     with two states, for the Wagner, Camin-Sokal, and mixed parsimony
+     criteria using the branch-and-bound method of exact search. May be
+     impractical (depending on the data) for more than 10-11 species.
+  
+   PHYLIP web service is provided by National University of Singapore.
+   Original web-service is located at the following URL:
+
+   http://bioportal.bic.nus.edu.sg/phylip/penny.html
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kpennyis thus an interface of "runPenny"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kpenny
+
+% kpenny
+Penny algorithm, branch-and-bound using penny
+Input (gapped) sequence(s): test.fasta
+Output file [55-110.kpenny]:
+Jobid: 12547145
+***********
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kpenny] output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+Input file format
+
+  Input files for usage example
+
+  File: sample.dat
+
+      7    6
+Alpha1    110110
+Alpha2    110110
+Beta1     110000
+Beta2     110000
+Gamma1    100110
+Delta     001001
+Epsilon   001110
+
+
+Output file format
+
+  Output files for usage example
+
+  File: sample.kpenny
+
+  
+Penny algorithm, version 3.57c
+ branch-and-bound to find all most parsimonious trees
+
+Wagner parsimony method
+
+                     
+
+
+requires a total of              8.000
+
+    3 trees in all found
+
+
+
+
+  +-----------------
+Alpha1   
+  !  
+  !        +--------
+Alpha2   
+--1        !  
+  !  +-----4     +--
+Epsilon  
+  !  !     !  +--6  
+  !  !     +--5  +--
+Delta    
+  +--2        !  
+     !        +-----
+Gamma1   
+     !  
+     !           +--
+Beta2    
+     +-----------3  
+                 +--
+Beta1    
+
+  remember: this is an unrooted tree!
+
+
+
+
+  +-----------------
+Alpha1   
+  !  
+--1  +--------------
+Alpha2   
+  !  !  
+  !  !           +--
+Epsilon  
+  +--2        +--6  
+     !  +-----5  +--
+Delta    
+     !  !     !  
+     +--4     +-----
+Gamma1   
+        !  
+        !        +--
+Beta2    
+        +--------3  
+                 +--
+Beta1    
+
+  remember: this is an unrooted tree!
+
+
+
+
+  +-----------------
+Alpha1   
+  !  
+  !           +-----
+Alpha2   
+--1  +--------2  
+  !  !        !  +--
+Beta2    
+  !  !        +--3  
+  +--4           +--
+Beta1    
+     !  
+     !           +--
+Epsilon  
+     !        +--6  
+     +--------5  +--
+Delta    
+              !  
+              +-----
+Gamma1   
+
+  remember: this is an unrooted tree!
+
+
+
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Felsenstein, J.,(1995) PHYLIP(Phylogeny Interface Package), version3.57c,
+      Department of Genetics, University of Washington, Seattle.
+
+   Swofford, D., et al.,(1996) Phylogenetic interface. In Hillis, D.M.,
+      Moritz, C., and Mble, B.K.(eds), Molecular Systematics 2nd Edition,
+      Sinauer Associates, Mss.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

@@ -1,0 +1,48 @@
+application: kpsortb [
+  documentation: "Predicts protein localization for PSORT B"
+  groups: "Protein:Localization"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  seqall: seqall [
+    parameter: "Y"
+    type: "protein"
+  ]
+
+  string: gram [
+    parameter: "Y"
+    default: "negative"
+    information: "negative or positive"
+  ]
+
+endsection: input
+
+section: advanced [
+  information: "Advanced section"
+  type: "page"
+]
+
+  string: format [
+    additional: "Y"
+    default: "normal"
+    information: "output format"
+  ]
+
+endsection: advanced
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "psortb output"
+  ]
+
+endsection: output

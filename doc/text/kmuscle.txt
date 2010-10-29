@@ -1,0 +1,178 @@
+
+                                 kmuscle
+
+
+
+Function
+
+   Multiple sequence alignment using MUSCLE
+
+Description
+
+   kmuscle calculates domain multiple alignment utilizing MUSCLE
+   (MUltiple Sequence Comparison by Log-Expectation).
+   MUSCLE is claimed to achieve both better average accuracy and
+   better speed than ClustalW or T-Coffee, depending on the chosen
+   options.
+
+   kmuscle utilizes MUSCLE SOAP service provided by EBI (European
+   Bioinformatics Institute). Original web-service is located at the
+   following URL:
+
+   http://www.ebi.ac.uk/Tools/webservices/services/msa/muscle_soap
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kmuscle is thus an interface of "runMuscle"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kmuscle
+
+% kmuscle
+Multiple sequence alignment using MUSCLE
+Input (gapped) sequence(s): multiNuc.fasta
+Output alignment format [fasta]: 
+Output file [test0.kmuscle]: 
+Jobid: 5626576
+**************
+
+>testD
+------------------------------------------------------------
+-------------------------TGATGAAGAATTG----------------------
+------------------------GGTACTGATGAT-----------------------G
+AAGACTTTT----ACTTAAAA-----------------------------GGAGCGA---
+-----TGCAAAACTTTAGTTATGT----------------GAACTATGTTTCACCATTAA
+AAG------------TAATATCTGATCCAAGTACTGGAATAGTCA---------------
+GTTCCAAAAAGAATAATGCTGAAA----------------------TGAAAAGTAAACAA
+ATGTCAACTGATCAAATGACTAGTGAAAAAGAATTTGATTATTACACTGA---AACACTT
+AAAGCATTATTAGAGAAAGAAGATAGTG-------------------CAGAATTAAATGA
+AAATGAAAAAAAACTAGTTGAAACCATTAAGAAAGCTTACACTATTGA------------
+----------------AAAAGATAGTTCAA----------------------------TT
+CGGTGAAACCAATTGGTCG----------------------------------------A
+AAAACCAATTTCTCCCT-------------------------------------------
+---------------------------------------TACAACGTAGTAATTTAT---
+------------------CGTTATCTTGATT-------AGACTTTAAATTACACTGGT--
+G-----ATAATAT------------------GGAACAACCGTT----GTGTGTTTTAGGG
+ATTGAAACAA---------------------CCTGTGATGATACAGGTCTTAGTATTGTC
+ATTGATCAAAAAATCAAGAGTAACATTGTTATCTCTTCTGCTAACTTACATGTAAAAACA
+GGAGGAGTTGTACCTGAAATTGC----------------------AGCACGATGCCACGA
+ACAAAATCTCTTTAAAGCAATAAGAGATTTAAATTTTGAGATAAGAGAT-----------
+-----------TTATCTCACATTGCTTATGCATGTAATCCTGGGTT--------------
+------AGCAGGATGTTTACATGTGGGAGCCACTTTTGCTAGAA----------------
+----------------GCTTAAGTTTCTTATTAGACAAACCATTGTTACCCATCAACCAT
+CTTTATGCGCATATCTTTTCTTGTTTAATTGATC-------------
+>testF
+-------------------AAGTCTTGCTGGCTTTGATACTCCTTTTAGTCCAGATAACC
+TCCAG---------------------TATTTAGAAAAA----------------------
+----G--------------------AAACTGATTATGATCAGA------------ACTTT
+AAAAGTTTT----ACTGAAAA-------------------GTTTAAAGATGAAAAAATAA
+CTAACAACCAACTTGGTATTGT------------------TGATATCTATAACTTATTCA
+GTGGTT---------T------TCACAAGAGTGTCAAAAGCACAG---TTGACTTAATGA
+ACCAACTGCAAAAGCAAGTTGAAG----------------------CTGCTAATGCTATC
+TTCCCAGTTGATGATGCTTTTGTTAAA-----------TTACCTAA-------AGTACCT
+ACTGAATTATTTAAGTTAGTTGATGATA----------ATGTCTTTCCTAAGTTAAATCC
+TAAGGGCTTAAATATCTCTGATAATATTGCTGCACTTTTTGAAAGATATAACCTTAAATC
+GATTGA----------ACTTAAGAACTTTG-----------------ACTTAGCTTTCTT
+GAGAAAAGCTGATGTA-------------------------------------ATTATCA
+AAGACAAGGTTCGATAT-----------AACTTTGAGATGCAAATG-------------C
+AGTTTCAAACTGTTTATGTTGGTGGAGGGAATACCGTTATTAACTTAGACTTTACTT---
+-----TAAAAGCCCAAACCGTTAACTTTGCTAACCTCCAAGATTTACAAAACACTTTT--
+G-----TTAAAGT----------------TGGTAATGATCTTTCCACCCAACTCTTTTGG
+ATTCCAACTGTTAATAAATTAACTGATAATGCAGGTAATGATCTTACCCATATTGCT---
+---------AAAACTGTGATTGGTGAATCGTTTTTCCAAACCAATGTTAAC---TTAGCT
+AAATCAGTTAT----------------------------------TGAATATGATAAGGT
+TCAAC-----CATTGGTTAAACAAGCTTTTGA-------------AGAG-----------
+-----------CGAGTTTTAACTCCTTTCAAAAAGGAAAGAGAAGCTGCTAAAAAAGCTT
+ATGAAGAAGAACAACGTCGCTTGGAAGAGGAACGTAAGCGTCAACTAGAAGAGCTAAGGA
+GAAGA---------------GAAGCTGAGGAGAAAAGAAAAGCTGAAGAAGCAAAACGAA
+ATCAAGAAAA-------------------------------------
+
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-output]            string     [fasta] output alignment format
+                                     'fasta'     (FASTA)
+                                     'clw'       (ClustalW)
+                                     'clwstrict' (ClustalW Strict)
+                                     'html'      (HTML)
+                                     'msf'       (MSF)
+                                     'phyi'      (Phylip interleaved),
+                                     'phys'      (Phylip sequential)
+  [-outseq]            outfile    [.kmuscle] output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+   -outputtree         string     'tree1' (From first iteration) or 
+                                  'tree2' (From second iteration)
+   -maxiters           integer    Maximum number of iterations to perform
+   -diags              boolean    Find diagonals (faster for similar sequences)
+
+Input file format
+
+  kmuscle can use any multiple sequences data that seqret can read.
+
+Output file format
+
+   The output from kmuscle is 7 types, and user can specify with "-output"
+   option.
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Edgar, R.C.,(2004) MUSCLE: multiple sequence alignment with high accuracy
+   and high throughput, Nucleic Acids Research 32(5), 1792-1797.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.
+

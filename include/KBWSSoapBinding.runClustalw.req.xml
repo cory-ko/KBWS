@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns1="http://soap.g-language.org/KBWS">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <ns1:runClustalw>
+   <in0></in0>
+   <params>
+    <alignment></alignment>
+    <output></output>
+    <matrix></matrix>
+    <outorder></outorder>
+    <ktup>0</ktup>
+    <window>0</window>
+    <gapopen>0</gapopen>
+    <gapext>0.0</gapext>
+    <gapdist>0</gapdist>
+    <endgaps>false</endgaps>
+    <pairgap>0</pairgap>
+    <topdiags>0</topdiags>
+    <score></score>
+    <tossgaps>false</tossgaps>
+    <kimura>false</kimura>
+    <outputtree></outputtree>
+    <tree>false</tree>
+    <quicktree>false</quicktree>
+    <align>false</align>
+    <clustering></clustering>
+    <numiter>0</numiter>
+    <iteration></iteration>
+   </params>
+  </ns1:runClustalw>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

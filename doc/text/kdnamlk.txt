@@ -1,0 +1,185 @@
+
+                                  kdnamlk
+
+
+Function
+
+   
+   Estimates nucleotide phylogeny by maximum likelihood using dnamlk
+
+
+Description
+
+   kdnamlk is estimates nucleotide phylogeny by maximum likelihood
+   utilizing "dnamlk" methods provided in PHYLIP web service.
+
+   Following block is a quotation from fdnamlk included in PHYLIPNEW
+   package.
+     
+     Same as DNAML but assumes a molecular clock. The use of the two
+     programs together permits a likelihood ratio test of the molecular
+     clock hypothesis to be made.
+     Estimates phylogenies from nucleotide sequences by maximum likelihood.
+     The model employed allows for unequal expected frequencies of the four
+     nucleotides, for unequal rates of transitions and transversions, and
+     for different (prespecified) rates of change in different categories
+     of sites, and also use of a Hidden Markov model of rates, with the
+     program inferring which sites have which rates. This also allows
+     gamma-distribution and gamma-plus-invariant sites distributions of
+     rates across sites.
+  
+   PHYLIP web service is provided by National University of Singapore.
+   Original web-service is located at the following URL:
+
+   http://bioportal.bic.nus.edu.sg/phylip/dnamlk.html
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kdnamlkis thus an interface of "runDnamlk"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kdnamlk
+
+% kdnamlk
+Estimates nucleotide phylogeny by maximum likelihood using dnamlk
+Input (gapped) sequence(s): test.fasta
+Output file [55-110.kdnamlk]:
+Jobid: 12547145
+***********
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kdnamlk] output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+Input file format
+
+  Input files for usage example
+
+  File: sample.dat
+
+     4   13
+Beta      AAGGUCGCCAAAC
+Gamma     CAUUUCGUCACAA
+Delta     GGUAUUUCGGCCU
+Epsilon   GGGAUCUCGGCCC
+
+
+Output file format
+
+  Output files for usage example
+
+  File: sample.kdnamlk
+
+  
+
+   4 Species,   15 Sites
+
+Nucleic acid sequence
+   Maximum Likelihood method with molecular clock, version 3.57c
+
+
+Empirical Base Frequencies:
+
+   A       0.21154
+   C       0.30769
+   G       0.25000
+  T(U)     0.23077
+
+Transition/transversion ratio =   2.000000
+
+(Transition/transversion parameter =   1.514095)
+
+
+
+
+
+  +-----------------------------------------------------------Beta      
+  !  
+--3                                                           +Epsilon   
+  !                                                        +--1  
+  +--------------------------------------------------------2  +Delta     
+                                                           !  
+                                                           +--Gamma     
+
+
+Ln Likelihood =   -59.92907
+
+ Ancestor      Node      Node Time     Length
+ --------      ----      ---- ----     ------
+ root            3      
+   3          Beta         6.47680     6.47680
+   3             2         6.19305     6.19305
+   2             1         6.33023     0.13718
+   1          Epsilon      6.47680     0.14657
+   1          Delta        6.47680     0.14657
+   2          Gamma        6.47680     0.28376
+
+
+
+
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Felsenstein, J.,(1995) PHYLIP(Phylogeny Interface Package), version3.57c,
+      Department of Genetics, University of Washington, Seattle.
+
+   Swofford, D., et al.,(1996) Phylogenetic interface. In Hillis, D.M.,
+      Moritz, C., and Mble, B.K.(eds), Molecular Systematics 2nd Edition,
+      Sinauer Associates, Mss.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

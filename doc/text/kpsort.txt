@@ -1,0 +1,207 @@
+
+                                 kpsort
+
+
+
+Function
+
+   Predicts protein localization for PSORT
+
+Description
+
+   kpsort predicts protein localization sites utilizing PSORT.
+
+   PSORT analyzes the input sequence by applying the stored rules
+   for various sequence features of known protein sorting signals
+   and reports the possiblity for the input protein to be localized
+   at each candidate site with additional information.
+
+   kpsort utilizes PSORT WWW Server provided by Tokyo University.
+   Original web-service is located at the following URL:
+
+   http://psort.ims.u-tokyo.ac.jp/form.html
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kpsort is thus an interface of "runPsort"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kpsort
+
+% kpsort
+prediction protein localization sets for bacterial/plant sequences
+Input protein sequence(s): swissprot:FOXP2_HUMAN
+Output file [foxp2_human.kpsort]:
+Jobid: 1284690
+***
+
+ Nakai server 
+
+Query Information
+
+ORIGIN animal
+BEGIN
+>MYSEQ
+ MMQESATETI SNSSMNQNGM STLSSQLDAG SRDGRSSGDT SSEVSTVELL
+ HLQQQQALQA ARQLLLQQQT SGLKSPKSSD KQRPLQVPVS VAMMTPQVIT
+ PQQMQQILQQ QVLSPQQLQA LLQQQQAVML QQQQLQEFYK KQQEQLHLQL
+ LQQQQQQQQQ QQQQQQQQQQ QQQQQQQQQQ QQQQQQQQQQ QHPGKQAKEQ
+ QQQQQQQQQL AAQQLVFQQQ LLQMQQLQQQ QHLLSLQRQG LISIPPGQAA
+ LPVQSLPQAG LSPAEIQQLW KEVTGVHSME DNGIKHGGLD LTTNNSSSTT
+ SSNTSKASPP ITHHSIVNGQ SSVLSARRDS SSHEETGASH TLYGHGVCKW
+ PGCESICEDF GQFLKHLNNE HALDDRSTAQ CRVQMQVVQQ LEIQLSKERE
+ RLQAMMTHLH MRPSEPKPSP KPLNLVSSVT MSKNMLETSP QSLPQTPTTP
+ TAPVTPITQG PSVITPASVP NVGAIRRRHS DKYNIPMSSE IAPNYEFYKN
+ ADVRPPFTYA TLIRQAIMES SDRQLTLNEI YSWFTRTFAY FRRNAATWKN
+ AVRHNLSLHK CFVRVENVKG AVWTVDEVEY QKRRSQKITG SPTLVKNIPT
+ SLGYGAALNA SLQAALAESS LPLLSNPGLI NNASSGLLQA VHEDLNGSLD
+ HIDSNGNSSP GCSPQPHIHS IHVKEEPVIA EDEDCPMSLV TTANHSPELE
+ DDREIEEEPL SEDLE
+
+
+Result Information
+
+PSORT --- Prediction of Protein Localization Sites
+                                            version 6.4(WWW)
+MYSEQ          715 Residues
+Species classification: 4
+
+*** Reasoning Step: 1
+
+Preliminary Calculation of ALOM (threshold: 0.5)
+     count: 0
+McG: Examining signal sequence (McGeoch)
+     Length  of  UR:   19
+     Peak Value of UR:  -0.16
+     Net Charge of CR: -2
+     Discriminant Score:    -14.88
+GvH: Examining signal sequence (von Heijne)
+     Signal Score (-3.5): -2.15
+     Possible cleavage site: 60
+>>> Seems to have no N-terminal signal seq.
+Amino Acid Composition of Predicted Mature Form:
+   calculated from 1
+ALOM new cnt: 0 ** thrshld changed to -2
+Cleavable signal was detected in ALOM?: 0B
+ALOM: finding transmembrane regions (Klein et al.)
+     count: 0  value:   5.41  threshold: -2.0
+     PERIPHERAL  Likelihood =  5.41
+     modified ALOM score:  -1.98
+( 3) or uncleavable?
+Gavel: Examining the boundary of mitochondrial targeting seq.
+      motif at: 3
+     Uncleavable? Ipos set to: 13
+Discrimination of mitochondrial target seq.: 
+     negative (-1.91)
+
+*** Reasoning Step: 2
+
+KDEL   Count: 0
+Checking apolar signal for intramitochondrial sorting
+Mitochondrial matrix?  Score:  0.10
+SKL motif (signal for peroxisomal protein): 
+     pos: -1(715), count: 0   
+Amino Acid Composition Tendency for Peroxisome:  -5.66
+Peroxisomal proteins?   Status: negative
+Amino Acid Composition tendency for lysosomal proteins
+     score:  0.33  Status: notclr
+Modified score for lysosome: 0.183
+Checking the amount of Basic Residues (nucleus)
+Checking the 4 residue pattern for Nuclear Targeting
+     Found: pos: 475 (3) RRRH
+Checking the 7 residue pattern for Nuclear Targeting
+Checking the Robbins & Dingwall consensus (nucleus)
+Checking the RNA binding motif (nucleus or cytoplasm)
+nuc modified.   Score:  0.60
+Nuclear Signal   Status: notclr ( 0.30)
+Checking CaaX motif..
+Checking N-myristoylation..
+Checking CaaX motif..
+
+----- Final Results -----
+
+                          nucleus --- Certainty= 0.300(Affirmative) 
+                 lysosome (lumen) --- Certainty= 0.183(Affirmative) 
+       mitochondrial matrix space --- Certainty= 0.100(Affirmative) 
+ endoplasmic reticulum (membrane) --- Certainty= 0.000(Not Clear) 
+
+
+----- The End -----
+
+
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     Protein sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kpsort] standard Psort output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers: (none)
+
+Input file format
+
+  kpsort can use any amino acid sequence data that seqret can read.
+
+Output file format
+
+   The output from kpsort is general PSORT output format.
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Nakai, K., and Kanehisa, M.,(1991) Expert system for predicting protein
+      localization sites in gram-negative bacteria., Proteins, 11(2), 95-110.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.
+

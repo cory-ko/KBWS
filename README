@@ -1,0 +1,150 @@
+
+-------------------------------------------------------------------------
+ KBWS - KEIO Bioinformatics Web Service - EMBASSY package ver. 1.0.2
+
+                              Web home: http://soap.g-language.org/kbws/
+
+    All rights reserved. Copyright (C) 2010 by OSHITA Kazuki.
+
+    This EMBASSY package is free software for non-commercial and
+    education use only (limited due to wsdl2h); you can redistribute it
+    and/or modify it under the terms of the GNU General Public License as
+    published by the Free Software Foundation, either version 2 of the
+    License, or any later version expect commercial use.
+
+    See also GNU General Public License Version 2, included in this
+    package as COPYING.
+-------------------------------------------------------------------------
+
+
+[ About ]----------------------------------------------------------------
+   This is an EMBASSY package for the utilization of bioinformatics web servcie.
+
+   All of the tools included in this package are wrapper programs to utilize
+   KBWS SOAP services, which are web APIs to access numerous bioinformatics
+   web services under unified interface with SOAP 1.1.
+
+   Detailed documentation about KBWS SOAP services are available at
+   http://www.g-language.org/kbws/.
+-------------------------------------------------------------------------
+
+
+[ Installation ]---------------------------------------------------------
+ a) Requirement
+  1) EMBOSS (> 6.2.0)
+     This EMBASSY package requires EMBOSS version 6.2.0 or above.
+
+ b) Installation
+  In the following examples, we assume downloaded EMBOSS filename is EMBOSS-6.2.0.tar.gz.
+
+  1) download and compile EMBOSS source code.
+    % wget ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.2.0.tar.gz
+       or
+    % curl -O ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.2.0.tar.gz 
+    % tar -xzf EMBOSS-6.2.0.tar.gz
+    % cd EMBOSS-6.2.0
+    % ./configure
+    % make
+    % sudo make install
+
+  2) make new directory "embassy" (in EMBOSS-6.2.0/ directory) if it does not exist already
+    % mkdir embassy
+
+  3) go into that directory.
+    % cd embassy
+
+  4) place KBWS file in current directory
+   % wget http://soap.g-language.org/kbws/source/KBWS-1.0.2.tar.gz
+      or 
+     curl -O http://soap.g-language.org/kbws/source/KBWS-1.0.2.tar.gz
+
+  5) uncompress the KBWS tarball package, and go into the new KBWS directory
+     tar xzf KBWS-1.0.2.tar
+   % cd KBWS-1.0.2
+    ( EMBOSS-6.2.0/embassy/KBWS-1.0.2 )
+
+  6) configure and compile
+   % ./configure (use same options as you used to compile emboss)
+   % make
+   % sudo make install
+
+ c) Note
+   1) On some systems there may be compatibility problems with different
+   automake, autoconf or libtool versions. If a libtool problem
+   arises you can try deleting the following files:
+
+      config.cache
+      ltmain.sh
+      ltconfig
+      libtool
+
+   and then type
+
+      % aclocal -I m4
+      % autoconf
+      % automake -a
+
+   and then retry make.
+
+   2) When you are upgrading EMBOSS, please be sure to uninstall old version of
+   EMBOSS and KBWS. If you override them, some older version of files may cause errors.
+
+-------------------------------------------------------------------------
+
+
+[QuickStart]-------------------------------------------------------------
+  A) information of KBWS tools
+   1) list of all tools
+     If you want to get list of all tools included in KBWS, you can try
+     the below command.
+
+      % wossname -showembassy KBWS
+
+   2) documentation
+     You can view available documentations with "tfm" utility included in EMBOSS.
+
+      % tfm kblast # example for "kblast"
+
+  B) Usage example
+    * Sample files used in this section are available from EMBOSS package.
+      ( EMBOSS-6.2.0/test/data/* )
+
+   1) kcentroidfold (Centroid Fold)
+      % kcentroidfold
+      RNA 2D structure prediction from an RNA sequence using CentroidFold
+      Input (gapped) sequence(s): dna.fasta
+      Output file [fasta.centroidfold]:
+      Jobid: 13401346
+      ***********
+
+      http://soap.g-language.org/result/13401346.png
+
+      % cat fasta.centroidfold
+      >FASTA
+      ACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGT
+      ((((((((((((((((((((((((((((((((((((((((((((((((....))))))))))))))))))))))))))))))))))))))))))))))))
+
+      % wget http://soap.g-language.org/result/13401346.png
+
+   2) kweblogo (WebLogo)
+      % kweblogo dna.m-fasta
+      make the generation of sequence logos using WebLogo
+      Jobid: 3203930
+      **
+      http://soap.g-language.org/result/3203930.png
+
+  C) Sample data
+    You can use sample data included in EMBOSS.
+    Please check test/ directory in EMBOSS package.
+-------------------------------------------------------------------------
+
+[ Content ]--------------------------------------------------------------
+ gSOAP Toolkit
+   This EMBASSY package is depended on gSOAP Toolkit to use SOAP
+   transfer, which is included in gsoap/ directory and automatically used during compilation.
+-------------------------------------------------------------------------
+
+[Contact]----------------------------------------------------------------
+  Kazuki Oshita < cory@g-language.org >
+    Institute for Advanced Biosciences, Keio University.
+-------------------------------------------------------------------------

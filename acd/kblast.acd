@@ -1,0 +1,156 @@
+application: kblast [
+  documentation: "Search similar sequences in public repositories using BLAST"
+  groups: "Alignment:Local"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  seqall: seqall [
+    parameter: "Y"
+    type: "gapany"
+  ]
+
+  string: d [
+    parameter: "Y"
+    default: ""
+    information: "database name about target for your search"
+  ]
+
+endsection: input
+
+section: advanced [
+  information: "Advanced section"
+  type: "page"
+]
+
+  string: p [
+    additional: "Y"
+    default: "auto"
+    information: "program name. 'blastn' or 'blastp'"
+  ]
+
+  string: server [
+    additional: "Y"
+    default: ""
+    information: "specify web server for your search. 'NCBI', 'EBI' or 'DDBJ'"
+  ]
+
+  integer: format [
+    additional: "Y"
+    default: "0"
+    information: "blast report format"
+  ]
+
+  float: eval [
+    additional: "Y"
+    default: "10.0"
+    information: "Expectation value"
+  ]
+
+  string: qfilter [
+    additional: "Y"
+    default: "T"
+    information: "[T/F] filter query sequence"
+  ]
+
+  integer: op [
+    additional: "Y"
+    default: "-1"
+    information: "cost to open a gap"
+  ]
+
+  integer: ep [
+    additional: "Y"
+    default: "-1"
+    information: "cost to extend a gap"
+  ]
+
+  string: dropoff [
+    additional: "Y"
+    default: "0"
+    information: "X dropoff value for gapped alignment (in bits)"
+  ]
+
+  integer: q [
+    additional: "Y"
+    default: "-3"
+    information: "penalty for a nucleotide mismatch (blastn only)"
+  ]
+
+  integer: r [
+    additional: "Y"
+    default: "1"
+    information: "reward for a nucleotide match (blastn only)"
+  ]
+
+  integer: v [
+    additional: "Y"
+    default: "500"
+    information: "number of database sequences to show one-line descriptions for (V)"
+  ]
+
+  integer: b [
+    additional: "Y"
+    default: "250"
+    information: "number of database sequence to show alignments for (B)"
+  ]
+
+  integer: threshold [
+    additional: "Y"
+    default: "0"
+    information: "threshold for extending hits, default if zero for each program"
+  ]
+
+  boolean: g [
+    additional: "Y"
+    default: "N"
+    information: "perform gapped alignment"
+  ]
+
+  string: matrix [
+    additional: "Y"
+    default: "BLOSUM62"
+    information: "matrix"
+  ]
+
+  integer: wordsize [
+    additional: "Y"
+    default: "0"
+    information: "word size, default if zero for each program"
+  ]
+
+  float: z [
+    additional: "Y"
+    default: "0"
+    information: "effective length of the database"
+  ]
+
+  integer: k [
+    additional: "Y"
+    default: "0"
+    information: "number of best hits from a region to keep"
+  ]
+
+  float: y [
+    additional: "Y"
+    default: "0"
+    information: "effective length of the search space"
+  ]
+
+endsection: advanced
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "blast report"
+  ]
+
+endsection: output

@@ -1,0 +1,28 @@
+application: kpenny [
+  documentation: "Penny algorithm, branch-and-bound using penny"
+  groups: "PHYLOGENY MOLECULAR SEQUENCE"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  infile: infile [
+    parameter: "Y"
+  ]
+
+endsection: input
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "kpenny output"
+  ]
+
+endsection: output

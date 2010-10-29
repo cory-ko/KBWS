@@ -1,0 +1,184 @@
+
+                                  kdnaml
+
+
+Function
+
+   
+   Estimates nucleotide phylogeny by maximum likelihood using dnaml
+
+
+Description
+
+   kdnaml is estimates nucleotide phylogeny by maximum likelihood
+   utilizing "dnaml" methods provided in PHYLIP web service.
+
+   Following block is a quotation from fdnaml included in PHYLIPNEW
+   package.
+     
+     Estimates phylogenies from nucleotide sequences by maximum likelihood.
+     The model employed allows for unequal expected frequencies of the four
+     nucleotides, for unequal rates of transitions and transversions, and
+     for different (prespecified) rates of change in different categories
+     of sites, and also use of a Hidden Markov model of rates, with the
+     program inferring which sites have which rates. This also allows
+     gamma-distribution and gamma-plus-invariant sites distributions of
+     rates across sites.
+  
+   PHYLIP web service is provided by National University of Singapore.
+   Original web-service is located at the following URL:
+
+   http://bioportal.bic.nus.edu.sg/phylip/dnaml.html
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kdnamlis thus an interface of "runDnaml"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kdnaml
+
+% kdnaml
+Estimates nucleotide phylogeny by maximum likelihood using dnaml
+Input (gapped) sequence(s): test.fasta
+Output file [55-110.kdnaml]:
+Jobid: 12547145
+***********
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kdnaml] output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+Input file format
+
+  Input files for usage example
+
+  File: sample.dat
+
+     4   13
+Beta      AAGGUCGCCAAAC
+Gamma     CAUUUCGUCACAA
+Delta     GGUAUUUCGGCCU
+Epsilon   GGGAUCUCGGCCC
+
+
+Output file format
+
+  Output files for usage example
+
+  File: sample.kdnaml
+
+  
+
+
+Nucleic acid sequence Maximum Likelihood method, version 3.57c
+
+
+
+Empirical Base Frequencies:
+
+   A       0.21154
+   C       0.30769
+   G       0.25000
+  T(U)     0.23077
+
+Transition/transversion ratio =   2.000000
+
+(Transition/transversion parameter =   1.514095)
+
+
+  +------Epsilon   
+  !  
+  !             +------------------------------Beta      
+--1-------------2  
+  !             +Gamma     
+  !  
+  +-Delta     
+
+
+remember: this is an unrooted tree!
+
+Ln Likelihood =   -58.73067
+
+Examined    6 trees
+
+ Between        And            Length      Approx. Confidence Limits
+ -------        ---            ------      ------- ---------- ------
+
+   1          Epsilon           0.23054     (     zero,     0.57167) **
+   1             2              0.45943     (     zero,     1.06220) **
+   2          Beta              1.03778     (     zero,     2.33215) **
+   2          Gamma             0.00004     (     zero,     0.51273)
+   1          Delta             0.05856     (     zero,     0.31892)
+
+     *  = significantly positive, P < 0.05
+     ** = significantly positive, P < 0.01
+
+
+
+
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Felsenstein, J.,(1995) PHYLIP(Phylogeny Interface Package), version3.57c,
+      Department of Genetics, University of Washington, Seattle.
+
+   Swofford, D., et al.,(1996) Phylogenetic interface. In Hillis, D.M.,
+      Moritz, C., and Mble, B.K.(eds), Molecular Systematics 2nd Edition,
+      Sinauer Associates, Mss.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

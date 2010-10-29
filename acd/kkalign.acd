@@ -1,0 +1,65 @@
+application: kkalign [
+  documentation: "Multiple sequence alignment using Kalign"
+  groups: "Alignment:Multiple"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  seqall: seqall [
+    parameter: "Y"
+    type: "gapany"
+  ]
+
+endsection: input
+
+section: advanced [
+  information: "Advanced section"
+  type: "page"
+]
+  string: moltype [
+    additional: "Y"
+    default: ""
+    information: "[N/P] molecular type"
+  ]
+
+  float: gpo [
+    additional: "Y"
+    default: ""
+    information: "gap creation penalty"
+  ]
+
+  float: gpe [
+    additional: "Y"
+    default: ""
+    information: "gap extension penalty"
+  ]
+
+  float: tgpe [
+    additional: "Y"
+    default: ""
+    information: "terminal gap penalty"
+  ]
+
+  float: bonus [
+    additional: "Y"
+    default: ""
+    information: "bonus score"
+  ]
+
+endsection: advanced
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "kalign output"
+  ]
+
+endsection: output

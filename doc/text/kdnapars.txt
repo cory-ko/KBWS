@@ -1,0 +1,157 @@
+
+                                  kdnapars
+
+
+Function
+
+   
+   DNA parsimony algorithm using dnapars
+
+
+Description
+
+   kdnapars is dNA parsimony algorithm
+   utilizing "dnapars" methods provided in PHYLIP web service.
+
+   Following block is a quotation from fdnapars included in PHYLIPNEW
+   package.
+     
+     Estimates phylogenies by the parsimony method using nucleic acid
+     sequences. Allows use the full IUB ambiguity codes, and estimates
+     ancestral nucleotide states. Gaps treated as a fifth nucleotide state.
+     It can also fo transversion parsimony. Can cope with multifurcations,
+     reconstruct ancestral states, use 0/1 character weights, and infer
+     branch lengths
+  
+   PHYLIP web service is provided by National University of Singapore.
+   Original web-service is located at the following URL:
+
+   http://bioportal.bic.nus.edu.sg/phylip/dnapars.html
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kdnaparsis thus an interface of "runDnapars"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kdnapars
+
+% kdnapars
+DNA parsimony algorithm using dnapars
+Input (gapped) sequence(s): test.fasta
+Output file [55-110.kdnapars]:
+Jobid: 12547145
+***********
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kdnapars] output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+Input file format
+
+  Input files for usage example
+
+  File: sample.dat
+
+     4   13
+Beta      AAGGUCGCCAAAC
+Gamma     CAUUUCGUCACAA
+Delta     GGUAUUUCGGCCU
+Epsilon   GGGAUCUCGGCCC
+
+
+Output file format
+
+  Output files for usage example
+
+  File: sample.kdnapars
+
+  
+DNA parsimony algorithm, version 3.57c
+
+
+One most parsimonious tree found:
+
+
+
+
+        +--Beta      
+     +--3  
+  +--2  +--Gamma     
+  !  !  
+--1  +-----Epsilon   
+  !  
+  +--------Delta     
+
+  remember: this is an unrooted tree!
+
+
+requires a total of     16.000
+
+
+
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Felsenstein, J.,(1995) PHYLIP(Phylogeny Interface Package), version3.57c,
+      Department of Genetics, University of Washington, Seattle.
+
+   Swofford, D., et al.,(1996) Phylogenetic interface. In Hillis, D.M.,
+      Moritz, C., and Mble, B.K.(eds), Molecular Systematics 2nd Edition,
+      Sinauer Associates, Mss.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

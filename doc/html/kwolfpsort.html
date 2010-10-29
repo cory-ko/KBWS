@@ -1,0 +1,314 @@
+<!--START OF HEADER - DON'T ALTER -->
+
+<HTML>
+<HEAD>
+  <TITLE>
+  EMBOSS: kwolfpsort
+  </TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" text="#000000">
+
+
+
+<table align=center border=0 cellspacing=0 cellpadding=0>
+<tr><td valign=top>
+<A HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
+</td>
+<td align=left valign=middle>
+<b><font size="+6">
+kwolfpsort
+</font></b>
+</td></tr>
+</table>
+<br>&nbsp;
+<p>
+
+
+<!--END OF HEADER-->
+
+
+
+
+
+
+<H2>
+    Function
+</H2>
+Predicts protein localization for WoLF PSORT
+<!--
+DON'T WRITE ANYTHING HERE.
+IT IS DONE FOR YOU.
+-->
+
+
+
+
+<h2>Description</h2>
+
+
+   kwolfpsort predicts the subcellular localization sites of proteins
+   based on their amino acid sequences utilizing WoLF PSORT.
+   WoLF PSORT is a mafor extension to the PSORT II program, and makes
+   predictions based on both known sorting signal motifs and some
+   correlative sequene features such as amino acid content.
+</p>
+
+<p>   kwolfpsort utilize WoLF PSORT web service provided by PSORT WWW Server.
+   Original web-service is located at the following URL:
+</p>
+
+<p>   http://wolfpsort.org/
+</p>
+
+<p>   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kwolfpsort is thus an interface of "runWolfPsort"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+</p>
+
+<p>
+
+<h2>Usage</h2>
+
+<table width="90%"><tr><td bgcolor="#CCFFFF"><pre>
+
+   Here is a sample session with kwolfpsort
+
+% kwolfpsort
+Predicts protein localization for WoLF PSORT
+Input protein sequence(s): swissprot:ARFB_ARATH
+organism type (animal/plant/fungi): animal
+Output file [arfb_arath.kwolfpsort]: 
+Jobid: 8205204
+****
+
+32 Nearest Neighbors
+id	site	distance	identity	comments	
+PHC1_HUMAN	nucl 50.2 16%	[Uniprot] SWISS-PROT45:Nuclear. GO:0005634; C:nucleus; Evidence:TAS.
+PCAP_HUMAN	cyto_nucl 52.6 12%	[Uniprot] SWISS-PROT45:Cytoplasmic and nuclear.
+PHC1_MOUSE	nucl 52.9 15%	[Uniprot] SWISS-PROT45:Nuclear. GO:0005634; C:nucleus; Evidence:IDA.
+P73_HUMAN	nucl 56.3 15%	[Uniprot] SWISS-PROT45:Nuclear.
+SOX5_MOUSE	nucl 56.5 12%	[Uniprot] SWISS-PROT45:Nuclear.
+NCO2_XENLA	nucl 57.0 13%	[Uniprot] SWISS-PROT45:Nuclear.
+RBL2_HUMAN	nucl 57.7 14%	[Uniprot] SWISS-PROT45:Nuclear.
+MLPH_HUMAN	cyto 61.4 15%	[Uniprot] SWISS-PROT45:Cytoplasmic.
+FXR1_XENLA	cyto 61.5 14%	[Uniprot] SWISS-PROT45:Cytoplasmic.
+PTN8_MOUSE	cyto 62.6 12%	[Uniprot] SWISS-PROT45:Cytoplasmic.
+P73_CERAE	nucl 63.3 15%	[Uniprot] SWISS-PROT45:Nuclear.
+ORC2_XENLA	nucl 63.8 14%	[Uniprot] SWISS-PROT45:Nuclear.
+UBP4_HUMAN	cyto 64.0 13%	[Uniprot] SWISS-PROT45:Cytoplasmic. GO:0005634; C:nucleus; Evidence:TAS.
+RGP2_HUMAN	golg 64.1 13%	[Uniprot] SWISS-PROT45:Associated with Golgi membranes.
+MYC2_CYPCA	nucl 64.3 12%	[Uniprot] SWISS-PROT45:Nuclear.
+UB36_HUMAN	nucl 64.3 14%	[Uniprot] SWISS-PROT45:Nuclear; nucleolar.
+SOX2_XENLA	nucl 64.8 11%	[Uniprot] SWISS-PROT45:Nuclear.
+DYRB_HUMAN	nucl 65.0 15%	[Uniprot] SWISS-PROT45:Nuclear. GO:0005634; C:nucleus; Evidence:TAS.
+SOX2_SHEEP	nucl 65.3 11%	[Uniprot] SWISS-PROT45:Nuclear.
+DYRB_MOUSE	nucl 65.6 15%	[Uniprot] SWISS-PROT45:Nuclear.
+KBF2_HUMAN	cyto_nucl 66.3 14%	[Uniprot] SWISS-PROT45:Nuclear, but also found in the cytoplasm in an inactive form complexed to an inhibitor (I-kappa-B).
+SOX2_CHICK	nucl 67.0 10%	[Uniprot] SWISS-PROT45:Nuclear.
+AKA8_RAT	nucl 67.8 14%	[Uniprot] SWISS-PROT45:Nuclear. Associated with the nuclear matrix. Redistributed and detached from condensed chromatin during mitosis (By similarity).
+T7L2_HUMAN	nucl 68.2 15%	[Uniprot] SWISS-PROT45:Nuclear.
+TLE3_MOUSE	nucl 68.4 12%	[Uniprot] SWISS-PROT45:Nuclear.
+CSP7_HUMAN	nucl 68.4 16%	[Uniprot] SWISS-PROT45:Nuclear.
+SOX3_XENLA	nucl 68.7  9%	[Uniprot] SWISS-PROT45:Nuclear.
+PEXE_HUMAN	pero 68.7 12%	[Uniprot] SWISS-PROT45:Peroxisomal; membrane-associated. Outer face. GO:0005777; C:peroxisome; Evidence:TAS.
+LI36_CAEEL	nucl 69.1 13%	[Uniprot] SWISS-PROT45:Nuclear.
+CCT1_HUMAN	nucl 69.2 15%	[Uniprot] SWISS-PROT45:Nuclear.
+BAB1_DROME	nucl 69.8 14%	[Uniprot] SWISS-PROT45:Nuclear. GO:0005634; C:nucleus; Evidence:IDA.
+SX19_BRARE	nucl 69.9 10%	[Uniprot] SWISS-PROT45:Nuclear.
+
+
+
+
+
+
+</pre></td></tr></table>
+
+
+<h2>Command line arguments</h2>
+
+<table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+<tr bgcolor="#FFFFCC">
+<th align="left">Qualifier</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Allowed values</th>
+<th align="left">Default</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-seqall]<br>(Parameter 1)</td>
+<td>seqall</td>
+<td>Protein sequence(s) filename and optional format, or reference (input USA)</td>
+<td>Readable sequence(s)</td>
+<td>2</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-org]<br>(Parameter 2)</td>
+<td>string</td>
+<td>organism type (animal/plant/fungi)</td>
+<td>Any string</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-outfile]<br>(Parameter 3)</td>
+<td>outfile</td>
+<td>Output file name</td>
+<td>Output file</td>
+<td><i>&lt;*&gt;</i>.kwolfpsort</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Additional (Optional) qualifiers</th>
+</tr>
+
+<tr>
+<td colspan=5>(none)</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
+</tr>
+
+<tr>
+<td colspan=5>(none)</td>
+</tr>
+
+</table>
+
+
+<h2>Input file format</h2>
+
+
+  kwolfpsort can use any genome sequence data that seqret can read.
+
+
+
+<h2>Output file format</h2>
+
+
+   The output of kwolfpsort is general WoLF PSORT output format.
+
+
+
+<h2>Data files</h2>
+
+
+   None.
+
+
+
+<h2>Notes</h2>
+
+
+   None.
+
+
+
+<h2>References</h2>
+
+
+<pre>
+
+   Horton, P., et al.,(2006) Protein Subcelluar Localization Prediction
+      with WoLF PSORT, Proceedings of the 4th Annual Asia Pacific Bioinformatics
+      Conference APBC06, 39-48.
+
+   Horton, P., et al.,(2007) WoLF PSORT: Protein Localization Predictor
+      Nucleic Acids Research Web Server issue, 35, 585-587.
+
+
+</pre>
+
+
+<h2>Warnings</h2>
+
+
+   None.
+
+
+
+<h2>Diagnostic Error Messages</h2>
+
+
+   None.
+
+
+
+<h2>Exit status</h2>
+
+
+   It always exits with a status of 0.
+
+
+
+<h2>Known bugs</h2>
+
+
+   None.
+
+
+
+<h2>See also</h2>
+
+<table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
+<th>Description</th></tr>
+<tr>
+<td><a href="seqret.html">seqret</a></td>
+<td>Reads and writes (returns) sequences</td>
+</tr>
+
+</table>
+
+
+<h2>Author(s)</h2>
+
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+
+
+<h2>History</h2>
+
+
+   2009 - Written by Kazuki Oshita
+
+
+
+<h2>Target users</h2>
+
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+
+
+<h2>Comments</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</BODY>
+</HTML>
+

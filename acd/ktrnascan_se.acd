@@ -1,0 +1,114 @@
+application: ktrnascan_se [
+  documentation: "Finds tRNA genes using tRNAscan-SE"
+  groups: "Nucleic:Gene finding"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  seqall: seqall [
+    parameter: "Y"
+    type: "nucleotide"
+  ]
+
+endsection: input
+
+section: advanced [
+  information: "Advanced section"
+  type: "page"
+]
+  string: title [
+    additional: "Y"
+    default: ""
+    information: "title of your job"
+  ]
+
+  string: mode [
+    additional: "Y"
+    default: "Default"
+    information: "search mode"
+  ]
+
+  string: source [
+    additional: "Y"
+    default: "Mixed (general tRNA model)"
+    information: "training data set"
+  ]
+
+  string: gcode [
+    additional: "Y"
+    default: ""
+    information: "Genetic Code for tRNA Isotype Prediction"
+  ]
+
+  boolean: pesudogene [
+    additional: "Y"
+    default: ""
+    information: "Disable pseudo gene checking"
+  ]
+
+  boolean: origin [
+    additional: "Y"
+    default: ""
+    information: "Show origin of first-pass hits"
+  ]
+
+  boolean: ace [
+    additional: "Y"
+    default: ""
+    information: "Display results in ACeDB format"
+  ]
+
+  boolean: codons [
+    additional: "Y"
+    default: ""
+    information: "Show codons instead of tRNA anticodons"
+  ]
+
+  boolean: fpos [
+    additional: "Y"
+    default: ""
+    information: "Show false positives from tRNAscan/EufindtRNA"
+  ]
+
+  boolean: breakdown [
+    additional: "Y"
+    default: ""
+    information: "Show primary and secondary structure components to Cove scores"
+  ]
+
+  string: covescore [
+    additional: "Y"
+    default: ""
+    information: "Cove score cutoff"
+  ]
+
+  string: euparams [
+    additional: "Y"
+    default: "Default"
+    information: "EufindtRNA search parameters"
+  ]
+
+  string: euscore [
+    additional: "Y"
+    default: ""
+    information: "Intermediate score cutoff"
+  ]
+
+endsection: advanced
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "tRNAscan-SE output"
+  ]
+
+endsection: output
+

@@ -1,0 +1,29 @@
+application: kdnapars [
+  documentation: "DNA parsimony algorithm using dnapars"
+  groups: "PHYLOGENY MOLECULAR SEQUENCE"
+  embassy: "kbws"
+]
+
+section: input [
+	       information: "Input section"
+	       type: "page"
+]
+
+  seqall: seqall [
+	       parameter: "Y"
+	       type: "gapany"
+  ]
+
+endsection: input
+
+section: output [
+		information: "Output section"
+		type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "kdnapars output"
+  ]
+
+endsection: output

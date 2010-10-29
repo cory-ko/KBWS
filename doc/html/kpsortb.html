@@ -1,0 +1,315 @@
+<!--START OF HEADER - DON'T ALTER -->
+
+<HTML>
+<HEAD>
+  <TITLE>
+  EMBOSS: kpsortb
+  </TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" text="#000000">
+
+
+
+<table align=center border=0 cellspacing=0 cellpadding=0>
+<tr><td valign=top>
+<A HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
+</td>
+<td align=left valign=middle>
+<b><font size="+6">
+kpsortb
+</font></b>
+</td></tr>
+</table>
+<br>&nbsp;
+<p>
+
+
+<!--END OF HEADER-->
+
+
+
+
+
+
+<H2>
+    Function
+</H2>
+Predicts protein localization for PSORTB
+<!--
+DON'T WRITE ANYTHING HERE.
+IT IS DONE FOR YOU.
+-->
+
+
+
+
+<h2>Description</h2>
+
+
+   kpsortb predicts protein localization sites utilizing PSORTb.
+</p>
+
+<p>   PSORTb analyzes the subcellular localization of proteins from
+   amino acid sequence. PSORTb consists of multiple analytical
+   modules and classifying a protein as either belonging or not
+   belonging to a particular localization site for various sequence
+   features.
+</p>
+
+<p>   kpsortb utilizes PSORT WWW Server provided by www.psort.org. This
+   service is based on PSORTb v.2.0. PSORTb v.2.0 is updated from
+   PSORT-B v.1.1. Differences between those include "updated several
+   algorithms", "utilizing a probabilistic system" and etc.
+   Original web-service is located at the following URL:
+</p>
+
+<p>   http://www.psort.org/psortb/
+</p>
+
+<p>   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kpsortb is thus an interface of "runPsortb"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming
+   languages as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+</p>
+
+<p>
+
+<h2>Usage</h2>
+
+<table width="90%"><tr><td bgcolor="#CCFFFF"><pre>
+
+   Here is a sample session with kpsortb
+
+% kpsortb
+prediction protein localization sets for bacterial sequences
+Input protein sequence(s): swissprot:P50930
+negative or positive [negative]: 
+Output file [17kd_ricpa.kpsortb]: 
+Jobid: 4131647
+**
+
+
+SeqID: YourSeq 
+  Analysis Report:
+    CMSVM-            Unknown                       [No details]
+    CytoSVM-          Unknown                       [No details]
+    ECSVM-            Unknown                       [No details]
+    HMMTOP-           CytoplasmicMembrane           [3 internal helices found]
+    Motif-            Unknown                       [No motifs found]
+    OMPMotif-         Unknown                       [No motifs found]
+    OMSVM-            Unknown                       [No details]
+    PPSVM-            Unknown                       [No details]
+    Profile-          Unknown                       [No matches to profiles found]
+    SCL-BLAST-        Unknown                       [No matches against database]
+    SCL-BLASTe-       Unknown                       [No matches against database]
+    Signal-           Unknown                       [No signal peptide detected]
+  Localization Scores:
+    Cytoplasmic            0.04
+    CytoplasmicMembrane    9.46
+    Periplasmic            0.07
+    OuterMembrane          0.18
+    Extracellular          0.25
+  Final Prediction:
+    CytoplasmicMembrane    9.46
+-------------------------------------------------------------------------------
+
+
+
+</pre></td></tr></table>
+
+
+<h2>Command line arguments</h2>
+
+<table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+<tr bgcolor="#FFFFCC">
+<th align="left">Qualifier</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Allowed values</th>
+<th align="left">Default</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-seqall]<br>(Parameter 1)</td>
+<td>seqall</td>
+<td>Protein sequence(s) filename and optional format, or reference (input USA)</td>
+<td>Readable sequence(s)</td>
+<td>2</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-gram]<br>(Parameter 2)</td>
+<td>string</td>
+<td>negative or positive</td>
+<td>Any string</td>
+<td>negative</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-outfile]<br>(Parameter 3)</td>
+<td>outfile</td>
+<td>Output file name</td>
+<td>Output file</td>
+<td><i>&lt;*&gt;</i>.kpsortb</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Additional (Optional) qualifiers</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-format</td>
+<td>string</td>
+<td>output format</td>
+<td>Any string</td>
+<td>normal</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
+</tr>
+
+<tr>
+<td colspan=5>(none)</td>
+</tr>
+
+</table>
+
+
+<h2>Input file format</h2>
+
+
+  kpsortb can use any amino acid sequence data that seqret can read.
+
+
+
+<h2>Output file format</h2>
+
+
+   The output from kpsortb is general PSORTb output format.
+
+
+
+<h2>Data files</h2>
+
+
+   None.
+
+
+
+<h2>Notes</h2>
+
+
+   None.
+
+
+
+<h2>References</h2>
+
+
+<pre>
+
+   Gardy, JL., et al.,(2003) PSORT-B: improving protein subcellular
+      localization prediction for Gram-negative bacteria, Nucleic Acids Research,
+      31(13), 3613-3617.
+
+   Gardy, JL., et al.,(2005) PSORTb v.2.0: expanded prediction of
+      bacterial protein subcellular localization and insights gained from
+      comparative proteome analysis, Bioinformatics, 21(5), 617-623.
+
+   Yu, NY., et al.,(2010) PSORTb 3.0: improved protein subcellular localization
+      prediction with refined localization subcategories and predictive capabilities
+      for all prokaryotes, Bioinformatics, 26(13), 1608-1615.
+
+</pre>
+
+
+<h2>Warnings</h2>
+
+
+   None.
+
+
+
+<h2>Diagnostic Error Messages</h2>
+
+
+   None.
+
+
+
+<h2>Exit status</h2>
+
+
+   It always exits with a status of 0.
+
+
+
+<h2>Known bugs</h2>
+
+
+   None.
+
+
+
+<h2>See also</h2>
+
+<table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
+<th>Description</th></tr>
+<tr>
+<td><a href="seqret.html">seqret</a></td>
+<td>Reads and writes (returns) sequences</td>
+</tr>
+
+</table>
+
+
+<h2>Author(s)</h2>
+
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+
+
+<h2>History</h2>
+
+
+   2009 - Written by Kazuki Oshita
+
+
+
+<h2>Target users</h2>
+
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+
+
+<h2>Comments</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</BODY>
+</HTML>
+

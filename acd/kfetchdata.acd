@@ -1,0 +1,47 @@
+application: kfetchdata [
+  documentation: "Fetch an entry in a defined format and style"
+  groups: "Protein:Profiles"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  string: id [
+    parameter: "Y"
+    information: "dbName:ID"
+  ]
+
+endsection: input
+
+section: advanced [
+  information: "Advanced section"
+  type: "page"
+]
+
+  string: format [
+    additional: "Y"
+    default: "default"
+    information: "output format"
+  ]
+
+  string: style [
+    additional: "Y"
+    default: "default"
+    information: "output data style"
+  ]
+
+endsection: advanced
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+  ]
+
+endsection: output

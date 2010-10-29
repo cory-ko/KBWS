@@ -1,0 +1,53 @@
+application: kfetchbatch [
+  documentation: "Fetch a set of entries in a defined format and style"
+  groups: "Protein:Profiles"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  string: dbname [
+    parameter: "Y"
+    information: "Database Name (e.g. uniprotkb)"
+  ]
+
+  string: idlist [
+    parameter: "Y"
+    information: "ID list (e.g. 1427T_RAT,WAP_RAT)"
+  ]
+
+endsection: input
+
+section: advanced [
+  information: "Advanced section"
+  type: "page"
+]
+
+  string: format [
+    additional: "Y"
+    default: ""
+    information: "output data format"
+  ]
+
+  string: style [
+    additional: "Y"
+    default: ""
+    information: "output file style"
+  ]
+
+endsection: advanced
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "psort output"
+  ]
+
+endsection: output

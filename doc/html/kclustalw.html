@@ -1,0 +1,562 @@
+<!--START OF HEADER - DON'T ALTER -->
+
+<HTML>
+<HEAD>
+  <TITLE>
+  EMBOSS: kclustalw
+  </TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" text="#000000">
+
+
+
+<table align=center border=0 cellspacing=0 cellpadding=0>
+<tr><td valign=top>
+<A HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
+</td>
+<td align=left valign=middle>
+<b><font size="+6">
+kclustalw
+</font></b>
+</td></tr>
+</table>
+<br>&nbsp;
+<p>
+
+
+<!--END OF HEADER-->
+
+
+
+
+
+
+<H2>
+    Function
+</H2>
+Multiple sequence alignment using ClustalW 2
+<!--
+DON'T WRITE ANYTHING HERE.
+IT IS DONE FOR YOU.
+-->
+
+
+
+
+<h2>Description</h2>
+
+
+   kclustalw calculates global multiple sequence alignment of DNA and
+   protein sequence utilizing ClustalW 2.
+   ClustalW 2 is a general purpose multiple sequence alignment program
+   for DNA or protein. It calculates the best match for the selected
+   sequence, and lines them up so that identifers, similarities, and
+   differences can be seen.
+</p>
+
+<p>   kclustalw utilizes ClustalW 2 SOAP service provided by EBI (European
+   Bioinformatics Institute). Original web-service is located at the
+   following URL:
+</p>
+
+<p>   http://www.ebi.ac.uk/Tools/clustalw2/index.html
+</p>
+
+<p>   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kclustalw is thus an interface of "runClustalw"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+</p>
+
+<p>
+
+<h2>Usage</h2>
+
+<table width="90%"><tr><td bgcolor="#CCFFFF"><pre>
+
+   Here is a sample session with kclustalw
+
+% kclustalw
+Multiple sequence alignment using ClustalW 2
+Input (gapped) sequence(s): swissprot:FOXP2_*
+Output file [foxp2_gorgo.aln]: 
+Dendrogram (tree file) from clustalw output file [foxp2_gorgo.dnd]: 
+Jobid: 7162269
+******
+
+
+ CLUSTAL 2.0.12 Multiple Sequence Alignments
+
+
+Sequence format is Pearson
+Sequence 1: FOXP2_GORGO   713 aa
+Sequence 2: FOXP2_HUMAN   715 aa
+Sequence 3: FOXP2_HYLLA   713 aa
+Sequence 4: FOXP2_MACMU   714 aa
+Sequence 5: FOXP2_MOUSE   714 aa
+Sequence 6: FOXP2_PANPA   716 aa
+Sequence 7: FOXP2_PANTR   716 aa
+Sequence 8: FOXP2_PONPY   713 aa
+Sequence 9: FOXP2_XENLA   706 aa
+
+ comparing  
+paramArg[setSeqNoRange]= off
+ comparing 
+ Start of Pairwise alignments
+Aligning...
+
+
+
+Sequences (1:2) Aligned. Score: 99.1585
+Sequences (1:3) Aligned. Score: 98.7377
+Sequences (1:4) Aligned. Score: 99.439
+Sequences (1:5) Aligned. Score: 98.5975
+Sequences (1:6) Aligned. Score: 99.439
+Sequences (1:7) Aligned. Score: 99.439
+Sequences (1:8) Aligned. Score: 98.5975
+Sequences (1:9) Aligned. Score: 95.1841
+Sequences (2:3) Aligned. Score: 98.5975
+Sequences (2:4) Aligned. Score: 99.1597
+Sequences (2:5) Aligned. Score: 99.0196
+Sequences (2:6) Aligned. Score: 99.1608
+Sequences (2:7) Aligned. Score: 99.1608
+Sequences (2:8) Aligned. Score: 98.4572
+Sequences (2:9) Aligned. Score: 94.6176
+Sequences (3:4) Aligned. Score: 99.439
+Sequences (3:5) Aligned. Score: 99.2987
+Sequences (3:6) Aligned. Score: 98.878
+Sequences (3:7) Aligned. Score: 98.878
+Sequences (3:8) Aligned. Score: 99.8597
+Sequences (3:9) Aligned. Score: 94.6176
+Sequences (4:5) Aligned. Score: 98.5994
+Sequences (4:6) Aligned. Score: 99.4398
+Sequences (4:7) Aligned. Score: 99.4398
+Sequences (4:8) Aligned. Score: 99.2987
+Sequences (4:9) Aligned. Score: 94.6176
+Sequences (5:6) Aligned. Score: 98.7395
+Sequences (5:7) Aligned. Score: 98.7395
+Sequences (5:8) Aligned. Score: 99.1585
+Sequences (5:9) Aligned. Score: 94.7592
+Sequences (6:7) Aligned. Score: 100
+Sequences (6:8) Aligned. Score: 98.7377
+Sequences (6:9) Aligned. Score: 94.6176
+Sequences (7:8) Aligned. Score: 98.7377
+Sequences (7:9) Aligned. Score: 94.6176
+Sequences (8:9) Aligned. Score: 94.4759
+Guide tree file created:   [/ebi/extserv/clustalw-work/interactive/2010010801/clustalw2-20100108-0149342273.dnd]
+
+There are 8 groups
+Start of Multiple Alignment
+
+Aligning...
+Group 1: Sequences:   2      Score:15495
+Group 2: Sequences:   3      Score:15449
+Group 3: Sequences:   4      Score:15441
+Group 4: Sequences:   2      Score:15421
+Group 5: Sequences:   3      Score:15417
+Group 6: Sequences:   7      Score:15416
+Group 7: Sequences:   8      Score:15408
+Group 8: Sequences:   9      Score:15019
+Alignment Score 153560
+
+CLUSTAL-Alignment file created  [/ebi/extserv/clustalw-work/interactive/2010010801/clustalw2-20100108-0149342273.aln]
+
+
+
+
+</pre></td></tr></table>
+
+
+<h2>Command line arguments</h2>
+
+<table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+<tr bgcolor="#FFFFCC">
+<th align="left">Qualifier</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Allowed values</th>
+<th align="left">Default</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-seqall]<br>(Parameter 1)</td>
+<td>seqall</td>
+<td>(Gapped) sequence(s) filename and optional format, or reference (input USA)</td>
+<td>Readable sequence(s)</td>
+<td>2</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-outfile]<br>(Parameter 2)</td>
+<td>outfile</td>
+<td>Output file name</td>
+<td>Output file</td>
+<td><i>&lt;*&gt;</i>.kclustalw</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-dndoutfile]<br>(Parameter 3)</td>
+<td>outfile</td>
+<td>Dendrogram (tree file) from clustalw output file</td>
+<td>Output file</td>
+<td><i>&lt;*&gt;</i>.kclustalw</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Additional (Optional) qualifiers</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-alignment</td>
+<td>string</td>
+<td>method used for pairwise alignment stage</td>
+<td>Any string</td>
+<td>full</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-output</td>
+<td>string</td>
+<td>Alignment output format. Values: 'aln1', 'aln2', 'gcg', 'phylip', 'pir' or 'gde'</td>
+<td>Any string</td>
+<td>aln1</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-matrix</td>
+<td>string</td>
+<td>protein scoring matrix</td>
+<td>Any string</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-outorder</td>
+<td>string</td>
+<td>order of sequences in the alignment</td>
+<td>Any string</td>
+<td>aligned</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-ktup</td>
+<td>integer</td>
+<td>word size</td>
+<td>Any integer value</td>
+<td>0</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-window</td>
+<td>integer</td>
+<td>window size around best diagonals</td>
+<td>Any integer value</td>
+<td>0</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-gapopen</td>
+<td>integer</td>
+<td>gap creation penalty</td>
+<td>Any integer value</td>
+<td>0</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-gapext</td>
+<td>float</td>
+<td>gap extension penalty</td>
+<td>Any numeric value</td>
+<td>0.000</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-gapdist</td>
+<td>integer</td>
+<td>gap separation penalty</td>
+<td>Any integer value</td>
+<td>0</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-endgaps</td>
+<td>boolean</td>
+<td>Do not score end gaps</td>
+<td>Boolean value Yes/No</td>
+<td>No</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-pairgap</td>
+<td>integer</td>
+<td>Gap penalty</td>
+<td>Any integer value</td>
+<td>0</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-topdiags</td>
+<td>integer</td>
+<td>Top diagonals to consider</td>
+<td>Any integer value</td>
+<td>0</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-score</td>
+<td>string</td>
+<td>score type</td>
+<td>Any string</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-tossgaps</td>
+<td>boolean</td>
+<td>Discard gap regions when calculating tree</td>
+<td>Boolean value Yes/No</td>
+<td>No</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-kimura</td>
+<td>boolean</td>
+<td>Use Kimura's correction</td>
+<td>Boolean value Yes/No</td>
+<td>No</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-outputtree</td>
+<td>string</td>
+<td>Tree format. Values: 'none', 'nj', 'phylip' or 'dist'</td>
+<td>Any string</td>
+<td>none</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-tree</td>
+<td>boolean</td>
+<td>Generate phylogenetic tree</td>
+<td>Boolean value Yes/No</td>
+<td>No</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-quicktree</td>
+<td>boolean</td>
+<td>Perform 'fast' alignment</td>
+<td>Boolean value Yes/No</td>
+<td>No</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-align</td>
+<td>boolean</td>
+<td>Perform alignment</td>
+<td>Boolean value Yes/No</td>
+<td>No</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-clustering</td>
+<td>string</td>
+<td>Tree type. Values: 'nj' or 'upgmp'</td>
+<td>Any string</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-numiter</td>
+<td>integer</td>
+<td>Number of iterations</td>
+<td>Any integer value</td>
+<td>0</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-iteration</td>
+<td>string</td>
+<td>Iteration type. Values: 'none', 'alignment' or 'tree'</td>
+<td>Any string</td>
+<td>none</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
+</tr>
+
+<tr>
+<td colspan=5>(none)</td>
+</tr>
+
+</table>
+
+
+<h2>Input file format</h2>
+
+
+  kclustalw can use any genome sequence data that seqret can read.
+
+
+
+<h2>Output file format</h2>
+
+<h3>Output files for usage example</h3>
+<p><h3>File: foxp2_gorgo.dnd</h3>
+<table width="90%"><tr><td bgcolor="#CCFFCC">
+<pre>(
+(
+(
+FOXP2_GORGO:0.00138,
+FOXP2_XENLA:0.04678)
+:0.00205,
+(
+(
+FOXP2_HYLLA:0.00000,
+FOXP2_PONPY:0.00140)
+:0.00293,
+FOXP2_MOUSE:0.00408)
+:0.00359)
+:0.00000,
+FOXP2_HUMAN:0.00481,
+(
+FOXP2_MACMU:0.00245,
+(
+FOXP2_PANPA:0.00000,
+FOXP2_PANTR:0.00000)
+:0.00315)
+:0.00078);
+
+
+
+</pre>
+</td></tr></table><p>
+
+<h2>Data files</h2>
+
+
+   None.
+
+
+
+<h2>Notes</h2>
+
+
+   None.
+
+
+
+<h2>References</h2>
+
+
+<pre>
+
+   Saitou, N., and Nei, M.,(1987) The neighbor-joining method: a new method 
+      for reconstructing phylogenetic trees, Mol. Evol. Biol, 4(4), 406-425.
+
+   Higgins, D., et al.,(1994) CLUSTAL W: improving the sensitivity of progressive
+      multiple sequence alignment through sequence weighting,position-specific
+      gap penalties and weight matrix choice, Nucleic Acids Research, 22, 4673-4680.
+
+   Larkin, M.A., et al.,(2007) ClustalW and ClustalX version 2,
+      Bioinformatics 2007, 23(21), 2947-2948.
+
+
+</pre>
+
+
+<h2>Warnings</h2>
+
+
+   None.
+
+
+
+<h2>Diagnostic Error Messages</h2>
+
+
+   None.
+
+
+
+<h2>Exit status</h2>
+
+
+   It always exits with a status of 0.
+
+
+
+<h2>Known bugs</h2>
+
+
+   None.
+
+
+
+<h2>See also</h2>
+
+<table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
+<th>Description</th></tr>
+<tr>
+<td><a href="seqret.html">seqret</a></td>
+<td>Reads and writes (returns) sequences</td>
+</tr>
+
+<tr>
+<td><a href="emma.html">emma</a></td>
+<td>Multiple sequence alignment (ClustalW wrapper)</td>
+</tr>
+
+</table>
+
+
+<h2>Author(s)</h2>
+
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+
+
+<h2>History</h2>
+
+
+   2009 - Written by Kazuki Oshita
+
+
+
+<h2>Target users</h2>
+
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+
+
+<h2>Comments</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</BODY>
+</HTML>
+

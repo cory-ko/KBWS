@@ -1,0 +1,28 @@
+application: kdolpenny [
+  documentation: "Penny algorithm Dollo or polymorphism using dolpenny"
+  groups: "PHYLOGENY MOLECULAR SEQUENCE"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  infile: infile [
+    parameter: "Y"
+  ]
+
+endsection: input
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "kdolpenny output"
+  ]
+
+endsection: output

@@ -1,0 +1,158 @@
+
+                                 kpsortb
+
+
+
+Function
+
+   Predicts protein localization for PSORTB
+
+Description
+
+   kpsortb predicts protein localization sites utilizing PSORTb.
+
+   PSORTb analyzes the subcellular localization of proteins from
+   amino acid sequence. PSORTb consists of multiple analytical
+   modules and classifying a protein as either belonging or not
+   belonging to a particular localization site for various sequence
+   features.
+
+   kpsortb utilizes PSORT WWW Server provided by www.psort.org. This
+   service is based on PSORTb v.2.0. PSORTb v.2.0 is updated from
+   PSORT-B v.1.1. Differences between those include "updated several
+   algorithms", "utilizing a probabilistic system" and etc.
+   Original web-service is located at the following URL:
+
+   http://www.psort.org/psortb/
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kpsortb is thus an interface of "runPsortb"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming
+   languages as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kpsortb
+
+% kpsortb
+prediction protein localization sets for bacterial sequences
+Input protein sequence(s): swissprot:P50930
+negative or positive [negative]: 
+Output file [17kd_ricpa.kpsortb]: 
+Jobid: 4131647
+**
+
+
+SeqID: YourSeq 
+  Analysis Report:
+    CMSVM-            Unknown                       [No details]
+    CytoSVM-          Unknown                       [No details]
+    ECSVM-            Unknown                       [No details]
+    HMMTOP-           CytoplasmicMembrane           [3 internal helices found]
+    Motif-            Unknown                       [No motifs found]
+    OMPMotif-         Unknown                       [No motifs found]
+    OMSVM-            Unknown                       [No details]
+    PPSVM-            Unknown                       [No details]
+    Profile-          Unknown                       [No matches to profiles found]
+    SCL-BLAST-        Unknown                       [No matches against database]
+    SCL-BLASTe-       Unknown                       [No matches against database]
+    Signal-           Unknown                       [No signal peptide detected]
+  Localization Scores:
+    Cytoplasmic            0.04
+    CytoplasmicMembrane    9.46
+    Periplasmic            0.07
+    OuterMembrane          0.18
+    Extracellular          0.25
+  Final Prediction:
+    CytoplasmicMembrane    9.46
+-------------------------------------------------------------------------------
+
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     Protein sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kpsortb] standard Psort output filename
+  [-gram  ]            string     chose GRAM stain [positive / negative]
+                                  (default: negative)
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+   - format            string     output file format (default: normal)
+                                  - normal: general output format
+                                  - short : Short Format (tab delimited)
+                                  - long  : Long Format (tab delimited)
+
+Input file format
+
+  kpsortb can use any amino acid sequence data that seqret can read.
+
+Output file format
+
+   The output from kpsortb is general PSORTb output format.
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Gardy, JL., et al.,(2003) PSORT-B: improving protein subcellular
+      localization prediction for Gram-negative bacteria, Nucleic Acids Research,
+      31(13), 3613-3617.
+
+   Gardy, JL., et al.,(2005) PSORTb v.2.0: expanded prediction of
+      bacterial protein subcellular localization and insights gained from
+      comparative proteome analysis, Bioinformatics, 21(5), 617-623.
+
+   Yu, NY., et al.,(2010) PSORTb 3.0: improved protein subcellular localization
+      prediction with refined localization subcategories and predictive capabilities 
+      for all prokaryotes, Bioinformatics, 26(13), 1608-1615.
+
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.
+

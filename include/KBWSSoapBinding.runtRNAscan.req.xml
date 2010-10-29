@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns1="http://soap.g-language.org/KBWS">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <ns1:runtRNAscan>
+   <in0></in0>
+   <params>
+    <title></title>
+    <mode></mode>
+    <source></source>
+    <gcode></gcode>
+    <pesudogene>false</pesudogene>
+    <origin>false</origin>
+    <ace>false</ace>
+    <codons>false</codons>
+    <fpos>false</fpos>
+    <breakdown>false</breakdown>
+    <covescore></covescore>
+    <euparams></euparams>
+    <euscore></euscore>
+   </params>
+  </ns1:runtRNAscan>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

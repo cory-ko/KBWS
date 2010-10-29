@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns1="http://soap.g-language.org/KBWS">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <ns1:runBlast>
+   <in0></in0>
+   <params>
+    <p></p>
+    <d></d>
+    <server></server>
+    <e>0.0</e>
+    <m>0</m>
+    <F></F>
+    <G>0</G>
+    <E>0</E>
+    <X></X>
+    <q>0</q>
+    <r>0</r>
+    <v>0</v>
+    <b>0</b>
+    <f>0</f>
+    <g>false</g>
+    <M></M>
+    <W>0</W>
+    <z>0.0</z>
+    <K>0</K>
+    <Y>0.0</Y>
+   </params>
+  </ns1:runBlast>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

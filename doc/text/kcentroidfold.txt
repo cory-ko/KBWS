@@ -1,0 +1,125 @@
+
+                                  kcentroidfold
+
+
+
+Function
+
+   Predicts RNA 2D structure using CentroidFold
+
+Description
+
+   kcentroidfold predicts an RNA 2D structure from given RNA sequence
+   utilizing CentroidFold.
+   CentroidFold is based on the gamma-centroid estimator for high-dimensional
+   discrete spaces.
+
+   kcentroidfold utilizes CentroidFold Web Server provided by ncRNA.org.
+   Original web-service is located at the following URL:
+
+   http://www.ncrna.org/centroidfold/
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kcentroidfold is thus an interface of "runCentroidFold"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kcentroidfold
+
+% kcentroidfold
+Predicts RNA 2D structure using CentroidFold
+Input (gapped) sequence(s): test.fasta
+Output file [55-110.centroidfold]: 
+Jobid: 12547145
+***********
+
+http://soap.g-language.org/alis/result/12547145.png
+
+>M33000.1/55-110
+ACGCUGUCUGUACUUGUAUCAGUACACUGACGAGUCCCUAAAGGACGAAACAGCGC
+.(((((((((((((.(...)))))))..).(..((((.....)))))..)))))).
+
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kcentroidfold] CentroidFold Seq/Fold
+                                  output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+   -model              string     specify "CONTRAfold" or "McCaskill"
+                                  about using model (default "CONTRAfold")
+   -gamma              integer    weight of base pairs (2^-5 ~ 2^10)
+                                  default "1024"
+
+Input file format
+
+  kcentroidfold can use any genome sequence data that seqret can read.
+
+Output file format
+
+   kcentroidfold outputs "Seq/Fold information" and "graph result".
+   "Seq/Fold information" is general CentroidFold output file.
+   "graph result" is an URL about image file of predicted 2D structure.
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Kengo, Sato., et al.,(2009) CentroidFold: a web server for RNA secondary
+      structure prediction, Nucleic Acids Research, 37, 277-280.
+   Michiaki, Hamada., et al.,(2009) Predictions of RNA secondary structure
+      using generalized centroid estimators, Bioinformatics, 25(4), 465-473. 
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+   
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

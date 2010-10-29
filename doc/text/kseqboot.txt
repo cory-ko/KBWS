@@ -1,0 +1,740 @@
+
+                                  kseqboot
+
+
+Function
+
+   
+   Bootstrapped sequences algorithm using seqboot
+
+
+Description
+
+   kseqboot is bootstrapped sequences algorithm
+   utilizing "seqboot" methods provided in PHYLIP web service.
+
+   Following block is a quotation from fseqboot included in PHYLIPNEW
+   package.
+     
+     Reads in a data set, and produces multiple data sets from it by
+     bootstrap resampling. Since most programs in the current version of
+     the package allow processing of multiple data sets, this can be used
+     together with the consensus tree program CONSENSE to do bootstrap (or
+     delete-half-jackknife) analyses with most of the methods in this
+     package. This program also allows the Archie/Faith technique of
+     permutation of species within characters. It can also rewrite a data
+     set to convert it from between the PHYLIP Interleaved and Sequential
+     forms, and into a preliminary version of a new XML sequence alignment
+     format which is under development
+  
+   PHYLIP web service is provided by National University of Singapore.
+   Original web-service is located at the following URL:
+
+   http://bioportal.bic.nus.edu.sg/phylip/seqboot.html
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kseqboot is thus an interface of "runSeqboot"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kseqboot
+
+% kseqboot
+Bootstrapped sequences algorithm using seqboot
+Input (gapped) sequence(s): test.fasta
+Output file [55-110.kseqboot]:
+Jobid: 12547145
+***********
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kseqboot] output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+Input file format
+
+  Input files for usage example
+
+  File: sample.dat
+
+       5    10
+Alpha     ABCDEFGHIK
+Beta      AB--EFGHIK
+Gamma     ?BCDSFG.??
+Delta     CIKDEFGHIK
+Epsilon   DIKDEFGHIK
+
+
+Output file format
+
+  Output files for usage example
+
+  File: sample.kseqboot
+
+      5    10
+Alpha        AABBCCCFHK 
+Beta         AABB---FHK 
+Delta        CCIIKKKFHK 
+Epsilon      DDIIKKKFHK 
+Gamma        XXBBCCCF-X 
+    5    10
+Alpha        AADDEGGIIK 
+Beta         AA--EGGIIK 
+Delta        CCDDEGGIIK 
+Epsilon      DDDDEGGIIK 
+Gamma        XXDDSGGXXX 
+    5    10
+Alpha        AACDDDEGHI 
+Beta         AA----EGHI 
+Delta        CCKDDDEGHI 
+Epsilon      DDKDDDEGHI 
+Gamma        XXCDDDSG-X 
+    5    10
+Alpha        BEEEFGHHII 
+Beta         BEEEFGHHII 
+Delta        IEEEFGHHII 
+Epsilon      IEEEFGHHII 
+Gamma        BSSSFG--XX 
+    5    10
+Alpha        ABBCGGGIIK 
+Beta         ABB-GGGIIK 
+Delta        CIIKGGGIIK 
+Epsilon      DIIKGGGIIK 
+Gamma        XBBCGGGXXX 
+    5    10
+Alpha        BCDDFFGIKK 
+Beta         B---FFGIKK 
+Delta        IKDDFFGIKK 
+Epsilon      IKDDFFGIKK 
+Gamma        BCDDFFGXXX 
+    5    10
+Alpha        ABDEGGKKKK 
+Beta         AB-EGGKKKK 
+Delta        CIDEGGKKKK 
+Epsilon      DIDEGGKKKK 
+Gamma        XBDSGGXXXX 
+    5    10
+Alpha        AAADEFFGHK 
+Beta         AAA-EFFGHK 
+Delta        CCCDEFFGHK 
+Epsilon      DDDDEFFGHK 
+Gamma        XXXDSFFG-X 
+    5    10
+Alpha        ABCCCCDIII 
+Beta         AB-----III 
+Delta        CIKKKKDIII 
+Epsilon      DIKKKKDIII 
+Gamma        XBCCCCDXXX 
+    5    10
+Alpha        BCDDFGHHIK 
+Beta         B---FGHHIK 
+Delta        IKDDFGHHIK 
+Epsilon      IKDDFGHHIK 
+Gamma        BCDDFG--XX 
+    5    10
+Alpha        BCFGGGGHIK 
+Beta         B-FGGGGHIK 
+Delta        IKFGGGGHIK 
+Epsilon      IKFGGGGHIK 
+Gamma        BCFGGGG-XX 
+    5    10
+Alpha        BBBCEGHHIK 
+Beta         BBB-EGHHIK 
+Delta        IIIKEGHHIK 
+Epsilon      IIIKEGHHIK 
+Gamma        BBBCSG--XX 
+    5    10
+Alpha        AEEGGHIIIK 
+Beta         AEEGGHIIIK 
+Delta        CEEGGHIIIK 
+Epsilon      DEEGGHIIIK 
+Gamma        XSSGG-XXXX 
+    5    10
+Alpha        CDDEFGGHHH 
+Beta         ---EFGGHHH 
+Delta        KDDEFGGHHH 
+Epsilon      KDDEFGGHHH 
+Gamma        CDDSFGG--- 
+    5    10
+Alpha        AACCCDEIIK 
+Beta         AA----EIIK 
+Delta        CCKKKDEIIK 
+Epsilon      DDKKKDEIIK 
+Gamma        XXCCCDSXXX 
+    5    10
+Alpha        BBBCDDEIIK 
+Beta         BBB---EIIK 
+Delta        IIIKDDEIIK 
+Epsilon      IIIKDDEIIK 
+Gamma        BBBCDDSXXX 
+    5    10
+Alpha        BDEGGHHHKK 
+Beta         B-EGGHHHKK 
+Delta        IDEGGHHHKK 
+Epsilon      IDEGGHHHKK 
+Gamma        BDSGG---XX 
+    5    10
+Alpha        AABBCEEFHK 
+Beta         AABB-EEFHK 
+Delta        CCIIKEEFHK 
+Epsilon      DDIIKEEFHK 
+Gamma        XXBBCSSF-X 
+    5    10
+Alpha        ABBBCGGHKK 
+Beta         ABBB-GGHKK 
+Delta        CIIIKGGHKK 
+Epsilon      DIIIKGGHKK 
+Gamma        XBBBCGG-XX 
+    5    10
+Alpha        BBCDEFGHHK 
+Beta         BB--EFGHHK 
+Delta        IIKDEFGHHK 
+Epsilon      IIKDEFGHHK 
+Gamma        BBCDSFG--X 
+    5    10
+Alpha        ABBCCEEGHI 
+Beta         ABB--EEGHI 
+Delta        CIIKKEEGHI 
+Epsilon      DIIKKEEGHI 
+Gamma        XBBCCSSG-X 
+    5    10
+Alpha        AABBBDFGGH 
+Beta         AABBB-FGGH 
+Delta        CCIIIDFGGH 
+Epsilon      DDIIIDFGGH 
+Gamma        XXBBBDFGG- 
+    5    10
+Alpha        ABDEEGGHIK 
+Beta         AB-EEGGHIK 
+Delta        CIDEEGGHIK 
+Epsilon      DIDEEGGHIK 
+Gamma        XBDSSGG-XX 
+    5    10
+Alpha        AABBDEEHHI 
+Beta         AABB-EEHHI 
+Delta        CCIIDEEHHI 
+Epsilon      DDIIDEEHHI 
+Gamma        XXBBDSS--X 
+    5    10
+Alpha        AABCDDEFFI 
+Beta         AAB---EFFI 
+Delta        CCIKDDEFFI 
+Epsilon      DDIKDDEFFI 
+Gamma        XXBCDDSFFX 
+    5    10
+Alpha        BFFHHHIIKK 
+Beta         BFFHHHIIKK 
+Delta        IFFHHHIIKK 
+Epsilon      IFFHHHIIKK 
+Gamma        BFF---XXXX 
+    5    10
+Alpha        ABDDEEFFFG 
+Beta         AB--EEFFFG 
+Delta        CIDDEEFFFG 
+Epsilon      DIDDEEFFFG 
+Gamma        XBDDSSFFFG 
+    5    10
+Alpha        AABBCDIIKK 
+Beta         AABB--IIKK 
+Delta        CCIIKDIIKK 
+Epsilon      DDIIKDIIKK 
+Gamma        XXBBCDXXXX 
+    5    10
+Alpha        ABCEEEFHIK 
+Beta         AB-EEEFHIK 
+Delta        CIKEEEFHIK 
+Epsilon      DIKEEEFHIK 
+Gamma        XBCSSSF-XX 
+    5    10
+Alpha        AABDEFHHHK 
+Beta         AAB-EFHHHK 
+Delta        CCIDEFHHHK 
+Epsilon      DDIDEFHHHK 
+Gamma        XXBDSF---X 
+    5    10
+Alpha        BBCEHHIIIK 
+Beta         BB-EHHIIIK 
+Delta        IIKEHHIIIK 
+Epsilon      IIKEHHIIIK 
+Gamma        BBCS--XXXX 
+    5    10
+Alpha        ABBBDFGGGH 
+Beta         ABBB-FGGGH 
+Delta        CIIIDFGGGH 
+Epsilon      DIIIDFGGGH 
+Gamma        XBBBDFGGG- 
+    5    10
+Alpha        AAABCDGHII 
+Beta         AAAB--GHII 
+Delta        CCCIKDGHII 
+Epsilon      DDDIKDGHII 
+Gamma        XXXBCDG-XX 
+    5    10
+Alpha        BCEEGHHHHK 
+Beta         B-EEGHHHHK 
+Delta        IKEEGHHHHK 
+Epsilon      IKEEGHHHHK 
+Gamma        BCSSG----X 
+    5    10
+Alpha        ACCCCFFGHI 
+Beta         A----FFGHI 
+Delta        CKKKKFFGHI 
+Epsilon      DKKKKFFGHI 
+Gamma        XCCCCFFG-X 
+    5    10
+Alpha        ACDFGGGIKK 
+Beta         A--FGGGIKK 
+Delta        CKDFGGGIKK 
+Epsilon      DKDFGGGIKK 
+Gamma        XCDFGGGXXX 
+    5    10
+Alpha        EEFGGGGHIK 
+Beta         EEFGGGGHIK 
+Delta        EEFGGGGHIK 
+Epsilon      EEFGGGGHIK 
+Gamma        SSFGGGG-XX 
+    5    10
+Alpha        BBCEEEFFKK 
+Beta         BB-EEEFFKK 
+Delta        IIKEEEFFKK 
+Epsilon      IIKEEEFFKK 
+Gamma        BBCSSSFFXX 
+    5    10
+Alpha        ABDFHHIKKK 
+Beta         AB-FHHIKKK 
+Delta        CIDFHHIKKK 
+Epsilon      DIDFHHIKKK 
+Gamma        XBDF--XXXX 
+    5    10
+Alpha        BEEFFFGHHK 
+Beta         BEEFFFGHHK 
+Delta        IEEFFFGHHK 
+Epsilon      IEEFFFGHHK 
+Gamma        BSSFFFG--X 
+    5    10
+Alpha        ABCDFFGHIK 
+Beta         AB--FFGHIK 
+Delta        CIKDFFGHIK 
+Epsilon      DIKDFFGHIK 
+Gamma        XBCDFFG-XX 
+    5    10
+Alpha        AABBCCDEEF 
+Beta         AABB---EEF 
+Delta        CCIIKKDEEF 
+Epsilon      DDIIKKDEEF 
+Gamma        XXBBCCDSSF 
+    5    10
+Alpha        BDEFFFFFGH 
+Beta         B-EFFFFFGH 
+Delta        IDEFFFFFGH 
+Epsilon      IDEFFFFFGH 
+Gamma        BDSFFFFFG- 
+    5    10
+Alpha        AABCEEEFGK 
+Beta         AAB-EEEFGK 
+Delta        CCIKEEEFGK 
+Epsilon      DDIKEEEFGK 
+Gamma        XXBCSSSFGX 
+    5    10
+Alpha        BCEFFGHHHH 
+Beta         B-EFFGHHHH 
+Delta        IKEFFGHHHH 
+Epsilon      IKEFFGHHHH 
+Gamma        BCSFFG---- 
+    5    10
+Alpha        AABDEEGGGH 
+Beta         AAB-EEGGGH 
+Delta        CCIDEEGGGH 
+Epsilon      DDIDEEGGGH 
+Gamma        XXBDSSGGG- 
+    5    10
+Alpha        AAACGGHHHK 
+Beta         AAA-GGHHHK 
+Delta        CCCKGGHHHK 
+Epsilon      DDDKGGHHHK 
+Gamma        XXXCGG---X 
+    5    10
+Alpha        BBDEFFGHIK 
+Beta         BB-EFFGHIK 
+Delta        IIDEFFGHIK 
+Epsilon      IIDEFFGHIK 
+Gamma        BBDSFFG-XX 
+    5    10
+Alpha        AABDDEFFHK 
+Beta         AAB--EFFHK 
+Delta        CCIDDEFFHK 
+Epsilon      DDIDDEFFHK 
+Gamma        XXBDDSFF-X 
+    5    10
+Alpha        ABDDEFGHHH 
+Beta         AB--EFGHHH 
+Delta        CIDDEFGHHH 
+Epsilon      DIDDEFGHHH 
+Gamma        XBDDSFG--- 
+    5    10
+Alpha        BBCCDGHHII 
+Beta         BB---GHHII 
+Delta        IIKKDGHHII 
+Epsilon      IIKKDGHHII 
+Gamma        BBCCDG--XX 
+    5    10
+Alpha        AABDEGHIKK 
+Beta         AAB-EGHIKK 
+Delta        CCIDEGHIKK 
+Epsilon      DDIDEGHIKK 
+Gamma        XXBDSG-XXX 
+    5    10
+Alpha        AAAEGGGHHK 
+Beta         AAAEGGGHHK 
+Delta        CCCEGGGHHK 
+Epsilon      DDDEGGGHHK 
+Gamma        XXXSGGG--X 
+    5    10
+Alpha        AAEEFHHHII 
+Beta         AAEEFHHHII 
+Delta        CCEEFHHHII 
+Epsilon      DDEEFHHHII 
+Gamma        XXSSF---XX 
+    5    10
+Alpha        BCDDEFFIII 
+Beta         B---EFFIII 
+Delta        IKDDEFFIII 
+Epsilon      IKDDEFFIII 
+Gamma        BCDDSFFXXX 
+    5    10
+Alpha        BBEEEGGHHK 
+Beta         BBEEEGGHHK 
+Delta        IIEEEGGHHK 
+Epsilon      IIEEEGGHHK 
+Gamma        BBSSSGG--X 
+    5    10
+Alpha        BBBDEFIIKK 
+Beta         BBB-EFIIKK 
+Delta        IIIDEFIIKK 
+Epsilon      IIIDEFIIKK 
+Gamma        BBBDSFXXXX 
+    5    10
+Alpha        AABBBDDDEH 
+Beta         AABBB---EH 
+Delta        CCIIIDDDEH 
+Epsilon      DDIIIDDDEH 
+Gamma        XXBBBDDDS- 
+    5    10
+Alpha        AADEEFHIKK 
+Beta         AA-EEFHIKK 
+Delta        CCDEEFHIKK 
+Epsilon      DDDEEFHIKK 
+Gamma        XXDSSF-XXX 
+    5    10
+Alpha        BBDDDDHIKK 
+Beta         BB----HIKK 
+Delta        IIDDDDHIKK 
+Epsilon      IIDDDDHIKK 
+Gamma        BBDDDD-XXX 
+    5    10
+Alpha        AAABCDDFHI 
+Beta         AAAB---FHI 
+Delta        CCCIKDDFHI 
+Epsilon      DDDIKDDFHI 
+Gamma        XXXBCDDF-X 
+    5    10
+Alpha        ABBCCEFGHK 
+Beta         ABB--EFGHK 
+Delta        CIIKKEFGHK 
+Epsilon      DIIKKEFGHK 
+Gamma        XBBCCSFG-X 
+    5    10
+Alpha        ADDEEEGGHH 
+Beta         A--EEEGGHH 
+Delta        CDDEEEGGHH 
+Epsilon      DDDEEEGGHH 
+Gamma        XDDSSSGG-- 
+    5    10
+Alpha        AACDDGGGII 
+Beta         AA---GGGII 
+Delta        CCKDDGGGII 
+Epsilon      DDKDDGGGII 
+Gamma        XXCDDGGGXX 
+    5    10
+Alpha        CDFGGHHHII 
+Beta         --FGGHHHII 
+Delta        KDFGGHHHII 
+Epsilon      KDFGGHHHII 
+Gamma        CDFGG---XX 
+    5    10
+Alpha        ABCCGHHIIK 
+Beta         AB--GHHIIK 
+Delta        CIKKGHHIIK 
+Epsilon      DIKKGHHIIK 
+Gamma        XBCCG--XXX 
+    5    10
+Alpha        AADFGGHHHK 
+Beta         AA-FGGHHHK 
+Delta        CCDFGGHHHK 
+Epsilon      DDDFGGHHHK 
+Gamma        XXDFGG---X 
+    5    10
+Alpha        ABBCCFFFIK 
+Beta         ABB--FFFIK 
+Delta        CIIKKFFFIK 
+Epsilon      DIIKKFFFIK 
+Gamma        XBBCCFFFXX 
+    5    10
+Alpha        ABCCDEFFHI 
+Beta         AB---EFFHI 
+Delta        CIKKDEFFHI 
+Epsilon      DIKKDEFFHI 
+Gamma        XBCCDSFF-X 
+    5    10
+Alpha        BCCDDDGGHI 
+Beta         B-----GGHI 
+Delta        IKKDDDGGHI 
+Epsilon      IKKDDDGGHI 
+Gamma        BCCDDDGG-X 
+    5    10
+Alpha        ACCCCDFFHI 
+Beta         A-----FFHI 
+Delta        CKKKKDFFHI 
+Epsilon      DKKKKDFFHI 
+Gamma        XCCCCDFF-X 
+    5    10
+Alpha        AAAABBBCDF 
+Beta         AAAABBB--F 
+Delta        CCCCIIIKDF 
+Epsilon      DDDDIIIKDF 
+Gamma        XXXXBBBCDF 
+    5    10
+Alpha        AEEEFGHHIK 
+Beta         AEEEFGHHIK 
+Delta        CEEEFGHHIK 
+Epsilon      DEEEFGHHIK 
+Gamma        XSSSFG--XX 
+    5    10
+Alpha        BCEFFHHHIK 
+Beta         B-EFFHHHIK 
+Delta        IKEFFHHHIK 
+Epsilon      IKEFFHHHIK 
+Gamma        BCSFF---XX 
+    5    10
+Alpha        BBCDEEFGGG 
+Beta         BB--EEFGGG 
+Delta        IIKDEEFGGG 
+Epsilon      IIKDEEFGGG 
+Gamma        BBCDSSFGGG 
+    5    10
+Alpha        ADEFGGHHIK 
+Beta         A-EFGGHHIK 
+Delta        CDEFGGHHIK 
+Epsilon      DDEFGGHHIK 
+Gamma        XDSFGG--XX 
+    5    10
+Alpha        BBBCDDEFHK 
+Beta         BBB---EFHK 
+Delta        IIIKDDEFHK 
+Epsilon      IIIKDDEFHK 
+Gamma        BBBCDDSF-X 
+    5    10
+Alpha        ABCCCFFGKK 
+Beta         AB---FFGKK 
+Delta        CIKKKFFGKK 
+Epsilon      DIKKKFFGKK 
+Gamma        XBCCCFFGXX 
+    5    10
+Alpha        BBBCEEGHIK 
+Beta         BBB-EEGHIK 
+Delta        IIIKEEGHIK 
+Epsilon      IIIKEEGHIK 
+Gamma        BBBCSSG-XX 
+    5    10
+Alpha        ABBCCDDEFH 
+Beta         ABB----EFH 
+Delta        CIIKKDDEFH 
+Epsilon      DIIKKDDEFH 
+Gamma        XBBCCDDSF- 
+    5    10
+Alpha        ABBCDEEGGH 
+Beta         ABB--EEGGH 
+Delta        CIIKDEEGGH 
+Epsilon      DIIKDEEGGH 
+Gamma        XBBCDSSGG- 
+    5    10
+Alpha        ACCCGGHHIK 
+Beta         A---GGHHIK 
+Delta        CKKKGGHHIK 
+Epsilon      DKKKGGHHIK 
+Gamma        XCCCGG--XX 
+    5    10
+Alpha        DEEEHHHIIK 
+Beta         -EEEHHHIIK 
+Delta        DEEEHHHIIK 
+Epsilon      DEEEHHHIIK 
+Gamma        DSSS---XXX 
+    5    10
+Alpha        BDDDEGHIKK 
+Beta         B---EGHIKK 
+Delta        IDDDEGHIKK 
+Epsilon      IDDDEGHIKK 
+Gamma        BDDDSG-XXX 
+    5    10
+Alpha        ABDDGGIKKK 
+Beta         AB--GGIKKK 
+Delta        CIDDGGIKKK 
+Epsilon      DIDDGGIKKK 
+Gamma        XBDDGGXXXX 
+    5    10
+Alpha        AABCCDEEII 
+Beta         AAB---EEII 
+Delta        CCIKKDEEII 
+Epsilon      DDIKKDEEII 
+Gamma        XXBCCDSSXX 
+    5    10
+Alpha        AACEFFGGGI 
+Beta         AA-EFFGGGI 
+Delta        CCKEFFGGGI 
+Epsilon      DDKEFFGGGI 
+Gamma        XXCSFFGGGX 
+    5    10
+Alpha        ABCDDEEHIK 
+Beta         AB---EEHIK 
+Delta        CIKDDEEHIK 
+Epsilon      DIKDDEEHIK 
+Gamma        XBCDDSS-XX 
+    5    10
+Alpha        ABCEEEFGKK 
+Beta         AB-EEEFGKK 
+Delta        CIKEEEFGKK 
+Epsilon      DIKEEEFGKK 
+Gamma        XBCSSSFGXX 
+    5    10
+Alpha        ABBBDHHHIK 
+Beta         ABBB-HHHIK 
+Delta        CIIIDHHHIK 
+Epsilon      DIIIDHHHIK 
+Gamma        XBBBD---XX 
+    5    10
+Alpha        AEEEGGHHIK 
+Beta         AEEEGGHHIK 
+Delta        CEEEGGHHIK 
+Epsilon      DEEEGGHHIK 
+Gamma        XSSSGG--XX 
+    5    10
+Alpha        ABDFGGGHHI 
+Beta         AB-FGGGHHI 
+Delta        CIDFGGGHHI 
+Epsilon      DIDFGGGHHI 
+Gamma        XBDFGGG--X 
+    5    10
+Alpha        AABDHHHHHI 
+Beta         AAB-HHHHHI 
+Delta        CCIDHHHHHI 
+Epsilon      DDIDHHHHHI 
+Gamma        XXBD-----X 
+    5    10
+Alpha        ADDFFGHIKK 
+Beta         A--FFGHIKK 
+Delta        CDDFFGHIKK 
+Epsilon      DDDFFGHIKK 
+Gamma        XDDFFG-XXX 
+    5    10
+Alpha        ACCDDEEFFK 
+Beta         A----EEFFK 
+Delta        CKKDDEEFFK 
+Epsilon      DKKDDEEFFK 
+Gamma        XCCDDSSFFX 
+    5    10
+Alpha        ABCCDEEGII 
+Beta         AB---EEGII 
+Delta        CIKKDEEGII 
+Epsilon      DIKKDEEGII 
+Gamma        XBCCDSSGXX 
+    5    10
+Alpha        CDDDDEFFGH 
+Beta         -----EFFGH 
+Delta        KDDDDEFFGH 
+Epsilon      KDDDDEFFGH 
+Gamma        CDDDDSFFG- 
+    5    10
+Alpha        BBCCDEEEEG 
+Beta         BB---EEEEG 
+Delta        IIKKDEEEEG 
+Epsilon      IIKKDEEEEG 
+Gamma        BBCCDSSSSG 
+    5    10
+Alpha        ACDEEFGGGI 
+Beta         A--EEFGGGI 
+Delta        CKDEEFGGGI 
+Epsilon      DKDEEFGGGI 
+Gamma        XCDSSFGGGX 
+    5    10
+Alpha        BBFFGGHHIK 
+Beta         BBFFGGHHIK 
+Delta        IIFFGGHHIK 
+Epsilon      IIFFGGHHIK 
+Gamma        BBFFGG--XX 
+
+
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Felsenstein, J.,(1995) PHYLIP(Phylogeny Interface Package), version3.57c,
+      Department of Genetics, University of Washington, Seattle.
+
+   Swofford, D., et al.,(1996) Phylogenetic interface. In Hillis, D.M.,
+      Moritz, C., and Mble, B.K.(eds), Molecular Systematics 2nd Edition,
+      Sinauer Associates, Mss.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

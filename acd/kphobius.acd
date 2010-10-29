@@ -1,0 +1,41 @@
+application: kphobius [
+  documentation: "Predicts transmembrance topology and signal peptides using Phobius"
+  groups: "Protein:Motifs"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  seqall: seqall [
+    parameter: "Y"
+    type: "protein"
+  ]
+
+endsection: input
+
+section: advanced [
+  information: "Advanced section"
+  type: "page"
+]
+  string: outputformat [
+    additional: "Y"
+    default: "long"
+    information: "The output format: long, short, raw or grp"
+  ]
+
+endsection: advanced
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "phobius output"
+  ]
+
+endsection: output

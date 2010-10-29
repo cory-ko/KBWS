@@ -1,0 +1,242 @@
+
+                                 krnafold
+
+
+
+Function
+
+   Predicts secondary structure of single starnd RNA or DNA using RNAfold
+
+Description
+
+   krnafold predicts on RNA 2D structure from given RNA or DNA sequences
+   utilizing RNAfold.
+   RNAfold reads RNA sequences, calculates their minimum free energy (mfe)
+   structure and predicts the mfe structure in bracket notation and its free
+   energy.
+
+   krnafold utilizing RNAfold web server produced by Institute for Theoretical
+   Chemistry. original web-services is located at the follwing URL:
+
+   http://rna.tbi.univie.ac.at/cgi-bin/RNAfold.cgi
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kblast is thus an interface of "runRNAfold"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with krnafold
+
+% krnafold
+Predicts secondary structure of single starnd RNA or DNA sequence using RNAfold
+Input (gapped) sequence(s): test_sequence.fasta
+Output file [test_sequence.krnafold]: stdout
+Jobid:12498948
+
+>test_sequenc
+GGGCUAUUAGCUCAGUUGGUUAGAGCGCACCCCUGAUAAGGGUGAGGUCGCUGAUUCGAAUUCAGCAUAGCCC
+(((((((..(((.((((.(....(((((.(((((....)))).)..).))))....).)))).)))))))))) (-28.20)
+(((((((..(((.((((.(....((((({(((((....))))})..,,))))....).)))).)))))))))) [-29.60]
+(((((((..(((.((((.(....((((.(..(((....))).).....))))....).)))).)))))))))) {-18.80 d=11.19}
+ frequency of mfe structure in ensemble 0.103122; ensemble diversity 16.38 
+
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     sequence filename and optional
+                                  format, or reference (input USA)
+  [-outfile]           outfile    [.] RNAfold output format
+  [-ctfile]            outfile    [.] minimum free energy (MFE) structure in Ct format
+  [-viennafile]        outfile    [.] minimum free energy (MFE) structure in Vienna format
+                                  
+   Additional (Optional) qualifiers: (none)
+   -method             string     [p] Fold algorithms.
+                                  p:   minimum free energy (MFE) and protein function
+                                  mfe: minimum free energy (MFE) only
+
+   Advanced (Unprompted) qualifiers:
+   -noclosegu          boolean    [N] no GU pairs at the end of helices
+   -nolp               boolean    [Y] avoid isolated base pairs
+   -dangling           string     [d2] Dangling end options
+                                  d1: no dangling end energies
+                                  d2: unpaired bases can participate in at
+                                      most one dangling end (MFE folding only)
+                                  d3: dangling energies on both sides of a helix
+                                      in any case
+                                  d4: allow coaxial stacking of adjacent helices
+                                      in multi-loops (MFE folding only)
+   -param              string     [rna] Energy Parameters
+                                  rna:        RNA parameters (Turner model)
+                                  andronescu: RNA parameters (Andronescu model)
+                                  dna:        DNA parameters
+   -tmp                integer    [37] rescale energy parameters to given temperature (C)
+   -circ               boolean    [N]  assume RNA molecule to be circular
+
+
+Input file format
+
+  krnafold can use any genome sequence data that seqret can read.
+
+Output file format
+
+  krnafold outputs "Seq/Fold information" of RNAfold standard output (.krnafold),
+  Ct format (.ct) and Vienna format (.vienna).
+
+  Output files for usage example
+
+   File: test_sequence.krnafold
+
+>test_sequenc
+GGGCUAUUAGCUCAGUUGGUUAGAGCGCACCCCUGAUAAGGGUGAGGUCGCUGAUUCGAAUUCAGCAUAGCCC
+(((((((..(((.((((.(....(((((.(((((....)))).)..).))))....).)))).)))))))))) (-28.20)
+(((((((..(((.((((.(....((((({(((((....))))})..,,))))....).)))).)))))))))) [-29.60]
+(((((((..(((.((((.(....((((.(..(((....))).).....))))....).)))).)))))))))) {-18.80 d=11.19}
+ frequency of mfe structure in ensemble 0.103122; ensemble diversity 16.38 
+
+
+   File: test_sequence.vienna
+
+GGGCUAUUAGCUCAGUUGGUUAGAGCGCACCCCUGAUAAGGGUGAGGUCGCUGAUUCGAAUUCAGCAUAGCCC
+(((((((..(((.((((.(....(((((.(((((....)))).)..).))))....).)))).))))))))))
+
+
+   File: test_sequence.ct
+
+   73 ENERGY =   -28.2    1
+    1 G       0    2   73    1
+    2 G       1    3   72    2
+    3 G       2    4   71    3
+    4 C       3    5   70    4
+    5 U       4    6   69    5
+    6 A       5    7   68    6
+    7 U       6    8   67    7
+    8 U       7    9    0    8
+    9 A       8   10    0    9
+   10 G       9   11   66   10
+   11 C      10   12   65   11
+   12 U      11   13   64   12
+   13 C      12   14    0   13
+   14 A      13   15   62   14
+   15 G      14   16   61   15
+   16 U      15   17   60   16
+   17 U      16   18   59   17
+   18 G      17   19    0   18
+   19 G      18   20   57   19
+   20 U      19   21    0   20
+   21 U      20   22    0   21
+   22 A      21   23    0   22
+   23 G      22   24    0   23
+   24 A      23   25   52   24
+   25 G      24   26   51   25
+   26 C      25   27   50   26
+   27 G      26   28   49   27
+   28 C      27   29   47   28
+   29 A      28   30    0   29
+   30 C      29   31   44   30
+   31 C      30   32   42   31
+   32 C      31   33   41   32
+   33 C      32   34   40   33
+   34 U      33   35   39   34
+   35 G      34   36    0   35
+   36 A      35   37    0   36
+   37 U      36   38    0   37
+   38 A      37   39    0   38
+   39 A      38   40   34   39
+   40 G      39   41   33   40
+   41 G      40   42   32   41
+   42 G      41   43   31   42
+   43 U      42   44    0   43
+   44 G      43   45   30   44
+   45 A      44   46    0   45
+   46 G      45   47    0   46
+   47 G      46   48   28   47
+   48 U      47   49    0   48
+   49 C      48   50   27   49
+   50 G      49   51   26   50
+   51 C      50   52   25   51
+   52 U      51   53   24   52
+   53 G      52   54    0   53
+   54 A      53   55    0   54
+   55 U      54   56    0   55
+   56 U      55   57    0   56
+   57 C      56   58   19   57
+   58 G      57   59    0   58
+   59 A      58   60   17   59
+   60 A      59   61   16   60
+   61 U      60   62   15   61
+   62 U      61   63   14   62
+   63 C      62   64    0   63
+   64 A      63   65   12   64
+   65 G      64   66   11   65
+   66 C      65   67   10   66
+   67 A      66   68    7   67
+   68 U      67   69    6   68
+   69 A      68   70    5   69
+   70 G      69   71    4   70
+   71 C      70   72    3   71
+   72 C      71   73    2   72
+   73 C      72    0    1   73
+
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   I.L. Hofacker., et al.,(1994) Fast Folding and Comparison of RNA Secondary
+      Structures, Monatshefte fur Chemie, 125, 167-188.
+
+   M, Zuker., and P, Stiegler.,(1981) Optimal computer folding of large RNA
+      sequences using thermodynamic and auxiliary information,
+      Nucleic Acids Research, 9, 133-148.
+
+   J.S, McCaskill(1990) The equilibrium partition function and base pair binding
+      probabilities for RNA secondary structures, Biopolymers, 29, 1105-1119.
+
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+   kcentroidfold    Predicts RNA 2D structure using CentroidFold
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2010 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

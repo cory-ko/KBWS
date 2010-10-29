@@ -1,0 +1,60 @@
+application: kmuscle [
+  documentation: "Multiple sequence alignment using MUSCLE"
+  groups: "Alignment:Multiple"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  seqall: seqall [
+    parameter: "Y"
+    type: "gapany"
+  ]
+
+  string: output [
+    parameter: "Y"
+    default: "fasta"
+    information: "File type of output alignment"
+  ]
+
+endsection: input
+
+section: advanced [
+  information: "Advanced section"
+  type: "page"
+]
+
+  string: outputtree [
+    additional: "Y"
+    default: ""
+    information: "where first iteration from? (first or second)"
+  ]
+
+  integer: maxiters [
+    additional: "Y"
+    default: ""
+    information: "Maximum number of iterations to perform"
+  ]
+
+  boolean: diags [
+    additional: "Y"
+    information: "Find diagonals (faster for similar sequences)"
+  ]
+
+endsection: advanced
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "MUSCLE output"
+  ]
+
+endsection: output
+

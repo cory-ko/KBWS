@@ -1,0 +1,184 @@
+
+                                  kfitch
+
+
+Function
+
+   
+   Fitch-Margoliash and Least-Squares Distance Methods using fitch
+
+
+Description
+
+   kfitch is fitch-Margoliash and Least-Squares Distance Methods
+   utilizing "fitch" methods provided in PHYLIP web service.
+
+   Following block is a quotation from ffitch included in PHYLIPNEW
+   package.
+     
+     Estimates phylogenies from distance matrix data under the "additive
+     tree model" according to which the distances are expected to equal the
+     sums of branch lengths between the species. Uses the Fitch-Margoliash
+     criterion and some related least squares criteria, or the Minimum
+     Evolution distance matrix method. Does not assume an evolutionary
+     clock. This program will be useful with distances computed from
+     molecular sequences, restriction sites or fragments distances, with
+     DNA hybridization measurements, and with genetic distances computed
+     from gene frequencies.
+  
+   PHYLIP web service is provided by National University of Singapore.
+   Original web-service is located at the following URL:
+
+   http://bioportal.bic.nus.edu.sg/phylip/fitch.html
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kfitchis thus an interface of "runFitch"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kfitch
+
+% kfitch
+Fitch-Margoliash and Least-Squares Distance Methods using fitch
+Input (gapped) sequence(s): test.fasta
+Output file [55-110.kfitch]:
+Jobid: 12547145
+***********
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kfitch] output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+Input file format
+
+  Input files for usage example
+
+  File: sample.dat
+
+  
+    5
+Alpha      0.000 1.000 2.000 3.000 3.000
+Beta       1.000 0.000 2.000 3.000 3.000
+Gamma      2.000 2.000 0.000 3.000 3.000
+Delta      3.000 3.000 3.000 0.000 1.000
+Epsilon    3.000 3.000 3.000 1.000 0.000
+
+
+Output file format
+
+  Output files for usage example
+
+  File: sample.kfitch
+
+  
+   5 Populations
+
+Fitch-Margoliash method version 3.57c
+
+                  __ __             2
+                  \  \   (Obs - Exp)
+Sum of squares =  /_ /_  ------------
+                                2
+                   i  j      Obs
+
+Negative branch lengths not allowed
+
+
+  +          
+  !  
+  !  +          
+--3--2  
+  !  !  +          
+  !  +--1  
+  !     +          
+  !  
+  +          
+
+
+remember: this is an unrooted tree!
+
+Sum of squares =     0.00000
+
+Average percent standard deviation =     0.00000
+
+examined   15 trees
+
+Between        And            Length
+-------        ---            ------
+   3                            0.00000
+   3             2              0.00000
+   2                            0.00000
+   2             1              0.00000
+   1                            0.00000
+   1                            0.00000
+   3                            0.00000
+
+
+
+
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Felsenstein, J.,(1995) PHYLIP(Phylogeny Interface Package), version3.57c,
+      Department of Genetics, University of Washington, Seattle.
+
+   Swofford, D., et al.,(1996) Phylogenetic interface. In Hillis, D.M.,
+      Moritz, C., and Mble, B.K.(eds), Molecular Systematics 2nd Edition,
+      Sinauer Associates, Mss.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

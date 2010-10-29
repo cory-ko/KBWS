@@ -1,0 +1,61 @@
+application: kgenemarkhmm [
+  documentation: "Finds genes in prokaryotic genomes using GeneMarkhmm"
+  groups: "Nucleic:Gene finding"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  seqall: seqall [
+    parameter: "Y"
+    type: "gapany"
+  ]
+
+endsection: input
+
+section: advanced [
+  information: "Advanced section"
+  type: "page"
+]
+
+  string: title [
+    additional: "Y"
+    default: ""
+    information: "your job title"
+  ]
+
+  string: org [
+    additional: "Y"
+    default: ""
+    information: "species of prediction models"
+  ]
+
+  boolean: list [
+    additional: "Y"
+    default: ""
+    information: "show list about species of prediction models"
+  ]
+
+  boolean: rbs [
+    additional: "Y"
+    default: ""
+    information: "use RBS model, if available"
+  ]
+
+endsection: advanced
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "GeneMark.hmm output"
+  ]
+
+endsection: output
+

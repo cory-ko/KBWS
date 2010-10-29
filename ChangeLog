@@ -1,0 +1,9 @@
+Version 1.0.2 26-Oct-2010
+        Added "krnafold" (RNAfold)
+        Added "kshowblastdb" (show database list for kblast)
+Version 1.0.1 13-Aug-2010
+        Added "-format 20" option to kblast.
+        Comma-delimited ID list is returned if "-format 20" option
+        is specified.
+Version 1.0.0 22-jun-2010
+	First version.

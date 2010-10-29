@@ -1,0 +1,28 @@
+application: kcontml [
+  documentation: "Gene frequency and continuous character Maximum Likelihood using contml"
+  groups: "PHYLOGENY MOLECULAR SEQUENCE"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  infile: infile [
+    parameter: "Y"
+  ]
+
+endsection: input
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "kcontml output"
+  ]
+
+endsection: output

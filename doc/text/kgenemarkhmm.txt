@@ -1,0 +1,211 @@
+
+                                 kgenemarkhmm
+
+
+
+Function
+
+   Finds genes in prokaryotic genomes using GeneMarkhmm
+
+Description
+
+   kgenemarkhmm find genes in prokaryotic genomes utilizing
+   GeneMark.hmm.
+   GeneMark.hmm identify the maximum likely parse of the whole
+   DNA sequence into protein coding genes (with possible introns)
+   and intergenic regions. 
+
+   kgenemarkhmm utilizes GeneMark.hmm web service provided by Georgia
+   Institute of Technology. Therefore, users can use kgenemarkhmm
+   without preparing their own training data set. Original web-service
+   is located at the following URL:
+
+   http://exon.gatech.edu/genemark/gmhmm2_prok.cgi
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kgenemark is thus an interface of "runGenemarkhmm"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kgenemarkhmm
+
+% kgenemarkhmm
+Finds genes in prokaryotic genomes using GeneMarkhmm
+Input (gapped) sequence(s): refseq:NC_000908
+Output file [nc_000908.kgenemarkhmm]: 
+Jobid: 11620578
+****
+
+
+Gene Predictions in Text Format
+Information on input sequence
+Sequence title: Tue Dec 29 00:40:05 EST 2009
+Length:         580076 bp
+G+C Content: 31.69 %
+
+
+Parse predicted by GeneMark.hmm 2.4
+ 
+
+GeneMark.hmm PROKARYOTIC (Version 2.6r)
+Model organism: Escherichia_coli_K12
+Tue Dec 29 00:40:05 2009
+
+Predicted genes
+   Gene    Strand    LeftEnd    RightEnd       Gene     Class
+    #                                         Length
+    1        +         686        1828         1143        2
+    2        +        2605        2760          156        1
+    3        +        3077        3310          234        2
+    4        +        3529        4557         1029        2
+    5        +        4645        4797          153        2
+    6        +        4923        7322         2400        2
+    7        +        7294        7857          564        2
+    8        +        8012        8134          123        2
+    9        +        8279        8371           93        2
+   10        +        8368        8547          180        2
+   11        +        8551        9183          633        2
+   12        +        9923       11059         1137        2
+   13        +       11251       11892          642        2
+   14        -       13256       13564          309        2
+   15        -       13569       14057          489        2
+   16        -       14217       14432          216        2
+   17        -       14503       15138          636        2
+   18        +       15555       16310          756        2
+   19        +       16536       16967          432        2
+   20        +       17001       17426          426        2
+   21        +       17800       18414          615        2
+   22        +       18667       18744           78        1
+   23        +       18836       18964          129        2
+   24        +       19075       19242          168        1
+   25        +       19252       19623          372        1
+   26        +       19825       20736          912        2
+   27        +       20743       21177          435        2
+   28        +       21452       21577          126        1
+   29        +       21577       22128          552        2
+   30        +       22121       22297          177        2
+   31        +       22389       23558         1170        2
+   32        +       23576       23686          111        2
+   33        +       23968       24135          168        1
+   34        +       24546       24710          165        1
+   35        +       25371       25766          396        1
+   36        +       26261       26473          213        2
+   37        +       26479       27030          552        2
+   38        +       27049       27345          297        2
+   39        +       27346       28233          888        2
+   40        +       28730       29305          576        2
+   41        +       29552       30124          573        1
+   42        +       30983       31153          171        2
+   43        -       31143       31703          561        2
+   44        -       31705       32325          621        2
+   45        -       32359       32820          462        1
+   46        -       32851       33054          204        2
+   47        -       33130       33384          255        2
+   48        -       33579       33872          294        2
+   49        +       33871       33972          102        2
+   50        -       34435       35100          666        2
+   51        -       35113       35580          468        1
+   52        -       35902       36195          294        1
+   53        -       36514       36714          201        2
+   54        +       36977       37957          981        2
+   55        +       40542       41069          528        2
+   56        +       41340       41567          228        1
+   57        +       42352       42888          537        1
+   58        +       43180       43404          225        2
+   59        +       43401       43565          165        2
+   60        +       43593       44258          666        2
+   61        -       45188       45442          255        2
+   62        -       45613       45732          120        2
+   63        -       46297       46629          333        2
+   64        -       47203       47421          219        2
+   65        +       48333       48929          597        2
+   66        +       49376       49642          267        2
+   67        +       49840       50163          324        2
+   68        +       50572       50724          153        2
+   69        +       50839       51168          330        2
+   70        +       51980       52357          378        1
+
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kgenemarkhmm] GeneMark.hmm output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+   -title              string     itle of your job
+   -org                string     species of prediction models.
+                                  available list can be shown
+                                  to use -list option
+   -list               boolean    [N] show list of species of
+                                  prediction model for -org option
+				  ( Under construction )
+   -rbs                boolean    [Y] use RBS model, if available
+
+Input file format
+
+  kgenemarkhmm can use any genome sequence data that seqret can read.
+
+Output file format
+
+   The output from kgenemarkhmm is general output format of GeneMark.hmm.
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Lukashin, A., and Borodovsky, M.,(1998) GeneMark.hmm: new solutions for
+      gene finding, Nucleic Acids Research, 26, 1107-1115.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.
+

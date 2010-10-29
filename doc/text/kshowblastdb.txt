@@ -1,0 +1,147 @@
+
+                                 kshowblastdb
+
+
+
+Function
+
+   Displays information on databases for kblast
+
+Description
+
+   kshowblastdb displays information of kblast databases just as showdb.
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kblast is thus an interface of "showBlastDB"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://www.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kshowblastdb
+
+% kshowblastdb
+Displays information on databases for kblast
+# Name               Type       Server  Comment
+# ================== ========== ======= =======
+DDBJ                 Nucleotide DDBJ    DDBJ Release and New data includes all division
+DDBJ_EXEST           Nucleotide DDBJ    DDBJ Release and New data except EST division
+DDBJNEW              Nucleotide DDBJ    DDBJ New data includes all division
+DDBJNEW_EXEST        Nucleotide DDBJ    DDBJ New data except EST division
+ddbjbct              Nucleotide DDBJ    DDBJ Bacteria division
+ddbjenv              Nucleotide DDBJ    DDBJ Env division
+ddbjest              Nucleotide DDBJ    DDBJ EST division
+ddbjgss              Nucleotide DDBJ    DDBJ Genome Survey Sequences division
+ddbjhtc              Nucleotide DDBJ    DDBJ High Throughput cDNAs division
+ddbjhtg              Nucleotide DDBJ    DDBJ High Throughput Genomic sequencing division
+ddbjhum              Nucleotide DDBJ    DDBJ human division
+ddbjinv              Nucleotide DDBJ    DDBJ invertebrates division
+ddbjmam              Nucleotide DDBJ    DDBJ other mammals division
+ddbjpat              Nucleotide DDBJ    DDBJ patens division
+ddbjphg              Nucleotide DDBJ    DDBJ phages division
+ddbjpln              Nucleotide DDBJ    DDBJ plants, fugi and algae division
+ddbjpri              Nucleotide DDBJ    DDBJ primates division
+
+( omitting... )
+
+repeat/repeat_7719   Nucleotide NCBI    repeat_7719
+repeat/repeat_7955   Nucleotide NCBI    repeat_7955
+repeat/repeat_9606   Nucleotide NCBI    repeat_9606
+repeat/repeat_9989   Nucleotide NCBI    repeat_9989
+DAD                  Protein    DDBJ    DAD data
+PDB                  Protein    DDBJ    PDB data
+PDBSH                Protein    DDBJ    PDB data (identical to 'PDB')
+PRF                  Protein    DDBJ    PRF data
+PROTEIN              Protein    DDBJ    PROTEIN data
+SWISS                Protein    DDBJ    SWISSPROT data
+WORMPEP              Protein    DDBJ    WORM PEPTIDE data
+UNIPROT              Protein    DDBJ    UNIPROT data
+TREMBL               Protein    DDBJ    TREMBL data
+uniprot              Protein    EBI     UniProt
+swissprot            Protein    EBI     UniProtKB/Swiss-Prot
+uniref100            Protein    EBI     UniProt
+uniref90             Protein    EBI     UniProt
+uniref50             Protein    EBI     UniProt
+uniparc              Protein    EBI     UniProt
+ipi                  Protein    EBI     International
+pdb                  Protein    EBI     Protein
+sgt                  Protein    EBI     Structural
+intact               Protein    EBI     IntAct
+imgthlap             Protein    EBI     IMGT/HLA
+epop                 Protein    EBI     EPO
+jpop                 Protein    EBI     JPO
+kpop                 Protein    EBI     KIPO
+uspop                Protein    EBI     USPTO
+nr                   Protein    NCBI    (nr, protein)
+refseq_protein       Protein    NCBI    (refseq protein)
+swissprot            Protein    NCBI    (swissprot protein)
+pataa                Protein    NCBI    (pat protein)
+pdbaa                Protein    NCBI    (pdb protein)
+month.pataa          Protein    NCBI    (month pat protein)
+monthaa              Protein    NCBI    (month protein)
+alu                  Protein    NCBI    (alu repeat protein)
+env_nr               Protein    NCBI    (env protein)
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-outfile]           outfile    [.] Database list for kblast
+                                  
+   Additional (Optional) qualifiers: (none)
+
+   Advanced (Unprompted) qualifiers:
+   -nucleotide         boolean    [Y] displays information on
+                                      nucleotide databases
+   -protein            boolean    [Y] not displays information on
+                                      protein databases
+
+Data files
+
+  None.
+
+Notes
+
+  None.
+
+References
+
+  None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   showdb           Displays information on configured databases
+   kblast           Search similar sequences in public repositories using BLAST
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2010 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

@@ -1,0 +1,47 @@
+application: kglimmer [
+  documentation: "Finds genes in prokaryotic genomes using Glimmer"
+  groups: "Nucleic:Gene finding"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  seqall: seqall [
+    parameter: "Y"
+    type: "gapany"
+  ]
+
+endsection: input
+
+section: advanced [
+  information: "Advanced section"
+  type: "page"
+]
+
+  string: topology [
+    additional: "Y"
+    default: ""
+    information: "liner or circular"
+  ]
+  integer: gencode [
+    additional: "Y"
+    default: ""
+    information: "11"
+  ]
+
+endsection: advanced
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "glimmer output"
+  ]
+
+endsection: output

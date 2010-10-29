@@ -1,0 +1,29 @@
+application: kprotdist [
+  documentation: "Protein distance algorithm using protdist"
+  groups: "PHYLOGENY MOLECULAR SEQUENCE"
+  embassy: "kbws"
+]
+
+section: input [
+	       information: "Input section"
+	       type: "page"
+]
+
+  seqall: seqall [
+	       parameter: "Y"
+	       type: "gapany"
+  ]
+
+endsection: input
+
+section: output [
+		information: "Output section"
+		type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "kprotdist output"
+  ]
+
+endsection: output

@@ -1,0 +1,60 @@
+application: ktcoffee [
+  documentation: "Multiple sequence alignment using T-COFFEE"
+  groups: "Alignment:Multiple"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  seqall: sequence [
+    parameter: "Y"
+    type: "gapany"
+  ]
+
+endsection: input
+
+section: additional [
+  information: "Additional section"
+  type: "page"
+]
+
+  string: matrix [
+    additional: "Y"
+    information: "Scoring matrix to use (blosum or pam)"
+  ]
+
+  string: outorder [
+    additional: "Y"
+    information: "Sequence order in output alignment (aligned or input)"
+  ]
+endsection: additional
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    extension: "ktcoffee"
+    knowntype: "T-Coffee output"
+  ]
+
+  outfile: dndoutfile [
+    parameter: "Y"
+    extension: "dnd"
+    information: "Dendrogram (tree file) from T-Coffee output
+                  file"
+    knowntype: "dendrogram"
+  ]
+
+  outfile: alnoutfile [
+    parameter: "Y"
+    extension: "aln"
+    information: "(aligned) output sequence set"
+  ]
+
+endsection: output

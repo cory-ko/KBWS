@@ -1,0 +1,158 @@
+
+                                  kdnacomp
+
+
+Function
+
+   
+   DNA compatibility algorithm using dnacomp
+
+
+Description
+
+   kdnacomp is dNA compatibility algorithm
+   utilizing "dnacomp" methods provided in PHYLIP web service.
+
+   Following block is a quotation from fdnacomp included in PHYLIPNEW
+   package.
+     
+     Estimates phylogenies from nucleic acid sequence data using the
+     compatibility criterion, which searches for the largest number of
+     sites which could have all states (nucleotides) uniquely evolved on
+     the same tree. Compatibility is particularly appropriate when sites
+     vary greatly in their rates of evolution, but we do not know in
+     advance which are the less reliable ones.
+  
+   PHYLIP web service is provided by National University of Singapore.
+   Original web-service is located at the following URL:
+
+   http://bioportal.bic.nus.edu.sg/phylip/dnacomp.html
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kdnacompis thus an interface of "runDnacomp"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kdnacomp
+
+% kdnacomp
+DNA compatibility algorithm using dnacomp
+Input (gapped) sequence(s): test.fasta
+Output file [55-110.kdnacomp]:
+Jobid: 12547145
+***********
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kdnacomp] output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+Input file format
+
+  Input files for usage example
+
+  File: sample.dat
+
+     4   13
+Beta      AAGGUCGCCAAAC
+Gamma     CAUUUCGUCACAA
+Delta     GGUAUUUCGGCCU
+Epsilon   GGGAUCUCGGCCC
+
+
+Output file format
+
+  Output files for usage example
+
+  File: sample.kdnacomp
+
+  
+
+DNA compatibility algorithm, version 3.57c
+
+
+One most parsimonious tree found:
+
+
+
+
+        +--Beta      
+     +--3  
+  +--2  +--Gamma     
+  !  !  
+--1  +-----Epsilon   
+  !  
+  +--------Delta     
+
+  remember: this is an unrooted tree!
+
+
+total number of compatible sites is       15.0
+
+
+
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Felsenstein, J.,(1995) PHYLIP(Phylogeny Interface Package), version3.57c,
+      Department of Genetics, University of Washington, Seattle.
+
+   Swofford, D., et al.,(1996) Phylogenetic interface. In Hillis, D.M.,
+      Moritz, C., and Mble, B.K.(eds), Molecular Systematics 2nd Edition,
+      Sinauer Associates, Mss.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

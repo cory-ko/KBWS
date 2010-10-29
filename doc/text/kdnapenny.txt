@@ -1,0 +1,156 @@
+
+                                  kdnapenny
+
+
+Function
+
+   
+   Penny algorithm for DNA using dnapenny
+
+
+Description
+
+   kdnapenny is penny algorithm for DNA
+   utilizing "dnapenny" methods provided in PHYLIP web service.
+
+   Following block is a quotation from fdnapenny included in PHYLIPNEW
+   package.
+     
+     Finds all most parsimonious phylogenies for nucleic acid sequences by
+     branch-and-bound search. This may not be practical (depending on the
+     data) for more than 10-11 species or so.
+  
+   PHYLIP web service is provided by National University of Singapore.
+   Original web-service is located at the following URL:
+
+   http://bioportal.bic.nus.edu.sg/phylip/dnapenny.html
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kdnapennyis thus an interface of "runDnapenny"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kdnapenny
+
+% kdnapenny
+Penny algorithm for DNA using dnapenny
+Input (gapped) sequence(s): test.fasta
+Output file [55-110.kdnapenny]:
+Jobid: 12547145
+***********
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kdnapenny] output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+Input file format
+
+  Input files for usage example
+
+  File: sample.dat
+
+     4   13
+Beta      AAGGUCGCCAAAC
+Gamma     CAUUUCGUCACAA
+Delta     GGUAUUUCGGCCU
+Epsilon   GGGAUCUCGGCCC
+
+
+Output file format
+
+  Output files for usage example
+
+  File: sample.kdnapenny
+
+  
+Penny algorithm for DNA, version 3.57c
+ branch-and-bound to find all most parsimonious trees
+
+
+
+requires a total of             16.000
+
+One most parsimonious tree found:
+
+
+
+
+  +--------Delta     
+  !  
+--1     +--Beta      
+  !  +--2  
+  +--3  +--Gamma     
+     !  
+     +-----Epsilon   
+
+  remember: this is an unrooted tree!
+
+
+
+
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Felsenstein, J.,(1995) PHYLIP(Phylogeny Interface Package), version3.57c,
+      Department of Genetics, University of Washington, Seattle.
+
+   Swofford, D., et al.,(1996) Phylogenetic interface. In Hillis, D.M.,
+      Moritz, C., and Mble, B.K.(eds), Molecular Systematics 2nd Edition,
+      Sinauer Associates, Mss.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

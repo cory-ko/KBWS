@@ -1,0 +1,195 @@
+
+                                 kmafft
+
+
+
+Function
+
+   Multiple sequence alignment using MAFFT
+
+Description
+
+   kmafft calculates the multiple sequence alignment utilizing MAFFT.
+   MAFFT has various multiple sequence alignment. They are classified
+   to three types, the progressive method, the iterative refinement
+   method with the WSP score, and the iterative refinement method using
+   both the WSP and consistency score.
+
+   kmafft utilizes MAFFT version 6 Online version provided by Kyushu Univ.
+   Original web-service is located at the following URL:
+
+   http://align.bmr.kyushu-u.ac.jp/mafft/online/server/index.html
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kmafft is thus an interface of "runMafft" method
+   included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kmafft
+
+% kmafft
+Multiple sequence alignment using MAFFT
+Input (gapped) sequence(s): swissprot:FOXP2_*
+Output file [foxp2_gorgo.kmafft]: 
+Jobid: 3935052
+**
+
+CLUSTAL format alignment by MAFFT (v6.713b)
+
+
+FOXP2_GORGO     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_MACMU     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_PANPA     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_PANTR     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_HYLLA     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_PONPY     MMQESVTETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_MOUSE     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_HUMAN     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_XENLA     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSSDTSSEVSTVELLHLQQQQALQA
+                *****.*******************************.**********************
+
+FOXP2_GORGO     ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_MACMU     ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_PANPA     ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_PANTR     ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_HYLLA     ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_PONPY     ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_MOUSE     ARQLLLQQQTSGLKSPKSSEKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_HUMAN     ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_XENLA     ARQLLLQQQTSGLKSPKNNEKQRPLQVPVSMAMMTPQVITPQQMQQILQQQVLSPQQLQA
+                *****************..:**********:*****************************
+
+FOXP2_GORGO     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLL---QQQQQQQQQQQQQQQQQQQQQQQQQQ
+FOXP2_MACMU     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLL--QQQQQQQQQQQQQQQQQQQQQQQQQQQ
+FOXP2_PANPA     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+FOXP2_PANTR     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+FOXP2_HYLLA     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLL--QQQQQQQQQQQQQQQQQQQQQQQQQQQ
+FOXP2_PONPY     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLL--QQQQQQQQQQQQQQQQQQQQQQQQQQQ
+FOXP2_MOUSE     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLL-QQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+FOXP2_HUMAN     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLL-QQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kmafft] MAFFT output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+   -strategy          string      [auto] select strategy from below.
+                                   Strategy (automatic)
+                                    "FFT-NS-2": Moderately fast
+                                    "auto"    : Moderately accurate (FFT-NS-2, FFT-NS-i
+                                                 or L-INS-i; depends on data size)
+                                   Strategy (manual)
+                                    "FFT-NS-1": Very fast; recommended for >2,000 sequences;
+                                                 progressive method
+                                    "FFT-NS-2": Fast; progressive method
+                                    "Medium"  : Medium; iterative refinement method,
+                                                 two cycles only
+                                    "FFT-NS-i": Slow; iterative refinement method
+                                    "E-INS-i" : Very slow; recommended for <200 sequences
+                                                 with multiple conserved domains and long gaps
+                                    "L-INS-i" : Very slow; recommended for <200 sequences with
+                                                 one conserved domain and long gaps
+                                    "G-INS-i" : Very slow; recommended for <200 sequences with
+                                                 global homology
+                                    "Q-INS-i" : Extremely slow; secondary structure of RNA is
+                                                 considered; recommended for a global alignment
+                                                 of highly diverged ncRNAs with
+                                                 <200 sequences × <1,000 nucleotide
+   -outorder          string      [aligned] output order.
+                                   "input"   : same as input
+                                   "aligned" : aligned
+   -op                float       [1.53] gap opening penalty (1.0 - 3.0)
+   -ep                float       [0.0]  offset value (0.0 - 1.0)
+   -scorematrix       string      Scoring matrix.  if you don't not specify this option, kmafft judges
+                                  whether your sequence is amino acid or nucleotide automatically, and
+                                  uses appropriate default value.
+                                   For amino acid is "BLOSUM30", "BLOSUM45", "BLOSUM62"(default),
+                                   "BLOSUM80", "JTT100" and "JTT200".
+                                   For nucleotide is "1PAM", "20PAM", "200PAM"(default).
+   -homologs          boolean     [N] Collects homologs from SwissProt by BLAST and performs
+                                  profile-based alignments. This option is protein only.
+   -showhomologs      boolean     [N] show homologs (if any). This option is protein only.
+   -numhomologs       integer     [50] number of homologs. This option is available when -showhomologs
+                                  is "on".
+   -threshold         float       [1e-10] threshold of homologs. This option is available when
+                                  -showhomologs is "on".
+
+Input file format
+
+  kmafft can use any genome sequence data that seqret can read.
+
+Output file format
+
+   The output from kmafft is general MAFFT output format (CLUSTAL format alignment).
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Katoh, K.,(2009) Multiple Alignment of DNA Sequences with MAFFT,
+      Methods in Molecular Biology, 537, 39-64.
+
+   Katoh, K., and Toh, H.,(2008) Recent developments in the MAFFT multiple
+      sequence alignment program, Briefings in Bioinformatics, 9, 286-298.
+
+   Katoh, K., et al.,(2005) MAFFT version 5: improvement in accuracy of multiple
+      sequence alignment, Nucleic Acids Res, 33, 511-518.
+
+   Katoh, K., et al.,(2002) MAFFT: a novel method for rapid multiple sequence
+      alignment based on fast, Nucleic Acids Res, 30, 3059-3066.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.
+

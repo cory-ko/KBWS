@@ -1,0 +1,175 @@
+application: kclustalw [
+  documentation: "Multiple sequence alignment using ClustalW 2"
+  groups: "ALIGNMENT MULTIPLE"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  seqall: seqall [
+    parameter: "Y"
+    type: "gapany"
+  ]
+
+endsection: input
+
+section: advanced [
+  information: "Advanced section"
+  type: "page"
+]
+  string: alignment [
+    additional: "Y"
+    default: "full"
+    information: "method used for pairwise alignment stage"
+  ]
+
+  string: output [
+    additional: "Y"
+    default: "aln1"
+    information: "Alignment output format. Values: 'aln1', 'aln2', 'gcg', 'phylip', 'pir' or 'gde'"
+  ]
+
+  string: matrix [
+    additional: "Y"
+    default: ""
+    information: "protein scoring matrix"
+  ]
+
+  string: outorder [
+    additional: "Y"
+    default: "aligned"
+    information: "order of sequences in the alignment"
+  ]
+
+  integer: ktup [
+    additional: "Y"
+    default: ""
+    information: "word size"
+  ]
+
+  integer: window [
+    additional: "Y"
+    default: ""
+    information: "window size around best diagonals"
+  ]
+
+  integer: gapopen [
+    additional: "Y"
+    default: ""
+    information: "gap creation penalty"
+  ]
+
+  float: gapext [
+    additional: "Y"
+    default: ""
+    information: "gap extension penalty"
+  ]
+
+  integer: gapdist [
+    additional: "Y"
+    default: ""
+    information: "gap separation penalty"
+  ]
+
+  boolean: endgaps [
+    additional: "Y"
+    default: "N"
+    information: "Do not score end gaps"
+  ]
+
+  integer: pairgap [
+    additional: "Y"
+    default: ""
+    information: "Gap penalty"
+  ]
+
+  integer: topdiags [
+    additional: "Y"
+    default: ""
+    information: "Top diagonals to consider"
+  ]
+
+  string: score [
+    additional: "Y"
+    default: ""
+    information: "score type"
+  ]
+
+  boolean: tossgaps [
+    additional: "Y"
+    default: "N"
+    information: "Discard gap regions when calculating tree"
+  ]
+
+  boolean: kimura [
+    additional: "Y"
+    default: ""
+    information: "Use Kimura's correction"
+  ]
+
+  string: outputtree [
+    additional: "Y"
+    default: "none"
+    information: "Tree format. Values: 'none', 'nj', 'phylip' or 'dist'"
+  ]
+
+  boolean: tree [
+    additional: "Y"
+    default: "N"
+    information: "Generate phylogenetic tree"
+  ]
+
+  boolean: quicktree [
+    additional: "Y"
+    default: "N"
+    information: "Perform 'fast' alignment"
+  ]
+
+  boolean: align [
+    additional: "Y"
+    default: "N"
+    information: "Perform alignment"
+  ]
+
+  string: clustering [
+    additional: "Y"
+    default: ""
+    information: "Tree type. Values: 'nj' or 'upgmp'"
+  ]
+
+  integer: numiter [
+    additional: "Y"
+    default: ""
+    information: "Number of iterations"
+  ]
+
+  string: iteration [
+    additional: "Y"
+    default: "none"
+    information: "Iteration type. Values: 'none', 'alignment' or 'tree'"
+  ]
+
+endsection: advanced
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    extension: "aln"
+  ]
+
+  outfile: dndoutfile [
+    parameter: "Y"
+    extension: "dnd"
+    information: "Dendrogram (tree file) from clustalw output
+                  file"
+    knowntype: "dendrogram"
+  ]
+
+endsection: output

@@ -1,0 +1,243 @@
+
+                                  kdnainvar
+
+
+Function
+
+   
+   Nucleic acid sequence Invariants method using dnainvar
+
+
+Description
+
+   kdnainvar is nucleic acid sequence Invariants method
+   utilizing "dnainvar" methods provided in PHYLIP web service.
+
+   Following block is a quotation from fdnainvar included in PHYLIPNEW
+   package.
+     
+     For nucleic acid sequence data on four species, computes Lake's and
+     Cavender's phylogenetic invariants, which test alternative tree
+     topologies. The program also tabulates the frequencies of occurrence
+     of the different nucleotide patterns. Lake's invariants are the method
+     which he calls "evolutionary parsimony".
+  
+   PHYLIP web service is provided by National University of Singapore.
+   Original web-service is located at the following URL:
+
+   http://bioportal.bic.nus.edu.sg/phylip/dnainvar.html
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kdnainvar is thus an interface of "runDnainvar"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kdnainvar
+
+% kdnainvar
+Nucleic acid sequence Invariants method using dnainvar
+Input (gapped) sequence(s): test.fasta
+Output file [55-110.kdnainvar]:
+Jobid: 12547145
+***********
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kdnainvar] output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+Input file format
+
+  Input files for usage example
+
+  File: sample.dat
+
+     4   13
+Beta      AAGGUCGCCAAAC
+Gamma     CAUUUCGUCACAA
+Delta     GGUAUUUCGGCCU
+Epsilon   GGGAUCUCGGCCC
+
+
+Output file format
+
+  Output files for usage example
+
+  File: sample.kdnainvar
+
+  
+Nucleic acid sequence Invariants method, version 3.57c
+
+
+
+   Pattern   Number of times
+
+     --AA         1
+     --AC         1
+     AAAA         1
+     CCAA         1
+     CCCC         2
+     GG--         2
+     GGGG         1
+     GGUC         1
+     UCCA         1
+     UCUG         1
+     UGCA         1
+     UUUG         1
+     UUUU         1
+
+
+Symmetrized patterns (1, 2 = the two purines  and  3, 4 = the two pyrimidines
+                  or  1, 2 = the two pyrimidines  and  3, 4 = the two purines)
+
+     1111         5
+     1113         1
+     1133         1
+     1134         1
+     1213         1
+     1223         1
+     1324         1
+
+Tree topologies (unrooted): 
+
+    I:  ((Delta,Epsilon),(Gamma,Beta))
+   II:  ((Delta,Gamma),(Epsilon,Beta))
+  III:  ((Delta,Beta),(Epsilon,Gamma))
+
+
+Lake's linear invariants
+ (these are expected to be zero for the two incorrect tree topologies.
+  This is tested by testing the equality of the two parts
+  of each expression using a one-sided exact binomial test.
+  The null hypothesis is that the first part is no larger than the second.)
+
+ Tree                             Exact test P value    Significant?
+
+   I      1    -     1   =     0       0.7500               no
+   II     1    -     0   =     1       0.5000               no
+   III    0    -     0   =     0       1.0000               no
+
+
+Cavender's quadratic invariants (type L) using purines vs. pyrimidines
+ (these are expected to be zero, and thus have a nonsignificant
+  chi-square, for the correct tree topology)
+They will be misled if there are substantially
+different evolutionary rate between sites, or
+different purine:pyrimidine ratios from 1:1.
+
+  Tree I:
+
+   Contingency Table
+
+      6     2
+      0     3
+
+   Quadratic invariant =           -18.0
+
+   Chi-square =    4.95000 (P < 0.05)
+
+
+  Tree II:
+
+   Contingency Table
+
+      5     2
+      0     4
+
+   Quadratic invariant =           -20.0
+
+   Chi-square =    5.23810 (P < 0.05)
+
+
+  Tree III:
+
+   Contingency Table
+
+      5     0
+      2     4
+
+   Quadratic invariant =           -20.0
+
+   Chi-square =    5.23810 (P < 0.05)
+
+
+
+
+Cavender's quadratic invariants (type K) using purines vs. pyrimidines
+ (these are expected to be zero for the correct tree topology)
+They will be misled if there are substantially
+different evolutionary rate between sites, or
+different purine:pyrimidine ratios from 1:1.
+No statistical test is done on them here.
+
+  Tree I:               0.0
+  Tree II:             -2.0
+  Tree III:             2.0
+
+
+
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Felsenstein, J.,(1995) PHYLIP(Phylogeny Interface Package), version3.57c,
+      Department of Genetics, University of Washington, Seattle.
+
+   Swofford, D., et al.,(1996) Phylogenetic interface. In Hillis, D.M.,
+      Moritz, C., and Mble, B.K.(eds), Molecular Systematics 2nd Edition,
+      Sinauer Associates, Mss.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

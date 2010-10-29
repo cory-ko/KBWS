@@ -1,0 +1,132 @@
+application: kssearch [
+  documentation: "Search similar sequences in public repositories using SSEARCH"
+  groups: "Alignment:Local"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  seqall: seqall [
+    parameter: "Y"
+    type: "gapany"
+  ]
+
+  string: d [
+    parameter: "Y"
+    default: ""
+    information: "database for search"
+  ]
+
+endsection: input
+
+section: advanced [
+  information: "Advanced section"
+  type: "page"
+]
+
+  string: moltype [
+    additional: "Y"
+    default: ""
+    information: "molecular type"
+  ]
+
+  boolean: histogram [
+    additional: "Y"
+    default: ""
+    information: "Display histogram"
+  ]
+
+  boolean: nucleotide [
+    additional: "Y"
+    default: ""
+    information: "your query is nucleotide or not(protein)"
+  ]
+
+  boolean: topstrand [
+    additional: "Y"
+    default: ""
+    information: "Nucleotide sequence strand to use for seqrch (top)"
+  ]
+
+  boolean: bottomstrand [
+    additional: "Y"
+    default: ""
+    information: "Nucleotide sequence strand to use for seqrch (bottom)"
+  ]
+
+  integer: gapopen [
+    additional: "Y"
+    default: ""
+    information: "Score for the initiation of a gap"
+  ]
+
+  integer: gapext [
+    additional: "Y"
+    default: ""
+    information: "Score for each base/residue in a gap"
+  ]
+
+  integer: scores [
+    additional: "Y"
+    default: ""
+    information: "Maximum number of scores displayed in the output"
+  ]
+
+  integer: alignments [
+    additional: "Y"
+    default: ""
+    information: "Maximum number of alignments displayed in the output"
+  ]
+
+  integer: ktup [
+    additional: "Y"
+    default: ""
+    information: "Word size to use for sequence comparisons"
+  ]
+
+  string: matrix [
+    additional: "Y"
+    default: ""
+    information: "Scoring matrix to be used in the search"
+  ]
+
+  float: eupper [
+    additional: "Y"
+    default: ""
+    information: "Upper E-value threshold"
+  ]
+
+  float: elower [
+    additional: "Y"
+    default: ""
+    information: "Lower E-value threshold"
+  ]
+
+  string: dbrange [
+    additional: "Y"
+    default: ""
+    information: "Range of sequence lengths in search database to include in search"
+  ]
+
+  string: seqrange [
+    additional: "Y"
+    default: ""
+    information: "Region of the query sequence to use for the search"
+  ]
+
+endsection: advanced
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "SSEARCH output"
+  ]
+
+endsection: output

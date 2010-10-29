@@ -1,0 +1,196 @@
+
+                                  kprotpars
+
+
+Function
+
+   
+   Protein parsimony algorithm using protpars
+
+
+Description
+
+   kprotpars is protein parsimony algorithm
+   utilizing "protpars" methods provided in PHYLIP web service.
+
+   Following block is a quotation from fprotpars included in PHYLIPNEW
+   package.
+     
+     Estimates phylogenies from protein sequences (input using the standard
+     one-letter code for amino acids) using the parsimony method, in a
+     variant which counts only those nucleotide changes that change the
+     amino acid, on the assumption that silent changes are more easily
+     accomplished.
+  
+   PHYLIP web service is provided by National University of Singapore.
+   Original web-service is located at the following URL:
+
+   http://bioportal.bic.nus.edu.sg/phylip/protpars.html
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kprotpars is thus an interface of "runProtpars"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kprotpars
+
+% kprotpars
+Protein parsimony algorithm using protpars
+Input (gapped) sequence(s): test.fasta
+Output file [55-110.kprotpars]:
+Jobid: 12547145
+***********
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+  [-outseq]            outfile    [.kprotpars] output filename
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+Input file format
+
+  Input files for usage example
+
+  File: sample.dat
+
+       5    10
+Alpha     ABCDEFGHIK
+Beta      AB--EFGHIK
+Gamma     ?BCDSFG.??
+Delta     CIKDEFGHIK
+Epsilon   DIKDEFGHIK
+
+
+Output file format
+
+  Output files for usage example
+
+  File: sample.kprotpars
+
+  
+Protein parsimony algorithm, version 3.57c
+
+
+
+     3 trees in all found
+
+
+
+
+           +--Epsilon   
+     +-----3  
+     !     +--Delta     
+  +--2  
+  !  !     +--Gamma     
+--1  +-----4  
+  !        +--Beta      
+  !  
+  +-----------Alpha     
+
+  remember: this is an unrooted tree!
+
+
+requires a total of     17.000
+
+
+
+
+     +--------Gamma     
+     !  
+  +--4     +--Epsilon   
+  !  !  +--3  
+  !  +--2  +--Delta     
+--1     !  
+  !     +-----Beta      
+  !  
+  +-----------Alpha     
+
+  remember: this is an unrooted tree!
+
+
+requires a total of     17.000
+
+
+
+
+        +-----Gamma     
+     +--4  
+     !  !  +--Epsilon   
+  +--2  +--3  
+  !  !     +--Delta     
+--1  !  
+  !  +--------Beta      
+  !  
+  +-----------Alpha     
+
+  remember: this is an unrooted tree!
+
+
+requires a total of     17.000
+
+
+
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Felsenstein, J.,(1995) PHYLIP(Phylogeny Interface Package), version3.57c,
+      Department of Genetics, University of Washington, Seattle.
+
+   Swofford, D., et al.,(1996) Phylogenetic interface. In Hillis, D.M.,
+      Moritz, C., and Mble, B.K.(eds), Molecular Systematics 2nd Edition,
+      Sinauer Associates, Mss.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

@@ -1,0 +1,29 @@
+application: kpsort2 [
+  documentation: "Predicts protein localization for PSORT2"
+  groups: "Protein:Localization"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  seqall: seqall [
+    parameter: "Y"
+    type: "protein"
+  ]
+
+endsection: input
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+  outfile: outfile [
+    parameter: "Y"
+    knowntype: "psort output"
+  ]
+
+endsection: output

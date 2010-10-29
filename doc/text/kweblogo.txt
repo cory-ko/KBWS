@@ -1,0 +1,119 @@
+
+                                  kglimmer 
+
+
+
+Function
+
+   Generation of sequence logos using WebLogo
+
+Description
+
+   kweblogo is a sequence logo generator utilizing  WebLogo.
+   WebLogo is a web based application designed to make the
+   generation of sequence logos as easy and painless as possible.
+   Sequence Logos are a graphical representation of an amino acid
+   or nucleic acid multiple sequence alignment developed
+   by Tom Schneider and Mike Stephens.
+
+   kweblogo utilizing WebLogo web service provided by University of
+   California, Berkeley. Original web-service is located at the following
+   URL:
+
+   http://weblogo.berkeley.edu/logo.cgi
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kweblogo is thus an interface of "runWeblogo"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kweblogo
+
+% kweblogo
+Generation of sequence logos using WebLogo
+Input (gapped) sequence(s): test.fasta
+Jobid: 7350341
+****
+
+http://soap.g-language.org/alis/result/7350341.png
+
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+                                  format, or reference (input USA)
+
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers:
+   -format             string     [png] specify file format. Value: 'png', 'gif',
+                                  'eps', 'pdf'
+
+Input file format
+
+  kweblogo can use any genome sequence data that seqret can read.
+
+Output file format
+
+   The output from kweblogo is URL to download result image file.
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Schneider, TD., and Stephens, RM.,(1990) Sequence Logos: A New Way to Display
+      Consensus Sequences, Nucleic Acids Res, 18, 6097-6100.
+
+   Crooks, GE., et al.,(2004) WebLogo: A sequence logo generator, Genome Research,
+      14, 1188-1190.
+
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+See also
+
+   seqret           Reads and writes (returns) sequences
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+   
+History
+
+   2009 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

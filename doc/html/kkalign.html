@@ -1,0 +1,338 @@
+<!--START OF HEADER - DON'T ALTER -->
+
+<HTML>
+<HEAD>
+  <TITLE>
+  EMBOSS: kkalign
+  </TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" text="#000000">
+
+
+
+<table align=center border=0 cellspacing=0 cellpadding=0>
+<tr><td valign=top>
+<A HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
+</td>
+<td align=left valign=middle>
+<b><font size="+6">
+kkalign
+</font></b>
+</td></tr>
+</table>
+<br>&nbsp;
+<p>
+
+
+<!--END OF HEADER-->
+
+
+
+
+
+
+<H2>
+    Function
+</H2>
+Multiple sequence alignment using Kalign
+<!--
+DON'T WRITE ANYTHING HERE.
+IT IS DONE FOR YOU.
+-->
+
+
+
+
+<h2>Description</h2>
+
+
+   kkalign calculates multiple sequence alignment utilizing Kalign.
+   Kalign is a fast and accurate multiple sequence alignment algorithm,
+   which handles large sequence.
+</p>
+
+<p>   kkalign utilizes Kalign SOAP service provided by EBI (European
+   Bioinformatics Institute). Original web-service is located at the
+   following URL:
+</p>
+
+<p>   http://www.ebi.ac.uk/Tools/webservices/services/msa/kalign_soap
+</p>
+
+<p>   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kkalign is thus an interface of "runKalign"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+</p>
+
+<p>
+
+<h2>Usage</h2>
+
+<table width="90%"><tr><td bgcolor="#CCFFFF"><pre>
+
+   Here is a sample session with kkalign
+
+% kkalign
+Multiple sequence alignment using Kalign
+Input (gapped) sequence(s): swissprot:FOXP2_*
+Output file [foxp2_gorgo.kkalign]: 
+Jobid: 10938917
+**********
+
+Kalign (2.0) alignment in ClustalW format
+
+
+FOXP2_GORGO     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_HUMAN     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_HYLLA     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_MACMU     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_MOUSE     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_PANPA     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_PANTR     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_PONPY     MMQESVTETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA
+FOXP2_XENLA     MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSSDTSSEVSTVELLHLQQQQALQA
+
+
+FOXP2_GORGO     ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_HUMAN     ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_HYLLA     ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_MACMU     ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_MOUSE     ARQLLLQQQTSGLKSPKSSEKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_PANPA     ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_PANTR     ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_PONPY     ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA
+FOXP2_XENLA     ARQLLLQQQTSGLKSPKNNEKQRPLQVPVSMAMMTPQVITPQQMQQILQQQVLSPQQLQA
+
+
+FOXP2_GORGO     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLL-QQQQQQQQQQQQQQQ-QQQQQQQQQQQQ
+FOXP2_HUMAN     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+FOXP2_HYLLA     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQ-QQQQQQQQQQQQ
+FOXP2_MACMU     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQ-QQQQQQQQQQQQ
+FOXP2_MOUSE     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+FOXP2_PANPA     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+FOXP2_PANTR     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+FOXP2_PONPY     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQ-QQQQQQQQQQQQ
+FOXP2_XENLA     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLL--QQQQQQQQ-QQQQQ-QQQQQQQQQQQQ
+
+
+
+</pre></td></tr></table>
+
+
+<h2>Command line arguments</h2>
+
+<table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+<tr bgcolor="#FFFFCC">
+<th align="left">Qualifier</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Allowed values</th>
+<th align="left">Default</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-seqall]<br>(Parameter 1)</td>
+<td>seqall</td>
+<td>(Gapped) sequence(s) filename and optional format, or reference (input USA)</td>
+<td>Readable sequence(s)</td>
+<td>2</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-outfile]<br>(Parameter 2)</td>
+<td>outfile</td>
+<td>Output file name</td>
+<td>Output file</td>
+<td><i>&lt;*&gt;</i>.kkalign</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Additional (Optional) qualifiers</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-moltype</td>
+<td>string</td>
+<td>[N/P] molecular type</td>
+<td>Any string</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-gpo</td>
+<td>float</td>
+<td>gap creation penalty</td>
+<td>Any numeric value</td>
+<td>0.000</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-gpe</td>
+<td>float</td>
+<td>gap extension penalty</td>
+<td>Any numeric value</td>
+<td>0.000</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-tgpe</td>
+<td>float</td>
+<td>terminal gap penalty</td>
+<td>Any numeric value</td>
+<td>0.000</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>-bonus</td>
+<td>float</td>
+<td>bonus score</td>
+<td>Any numeric value</td>
+<td>0.000</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
+</tr>
+
+<tr>
+<td colspan=5>(none)</td>
+</tr>
+
+</table>
+
+
+<h2>Input file format</h2>
+
+
+  kkalign can use any genome sequence data that seqret can read.
+
+
+
+<h2>Output file format</h2>
+
+
+   The output from kkalign is ClustalW output format.
+
+
+
+<h2>Data files</h2>
+
+
+   None.
+
+
+
+<h2>Notes</h2>
+
+
+   None.
+
+
+
+<h2>References</h2>
+
+
+<pre>
+
+   Lassmann, T., and Erik, S.,(2005) Automatic assessment of alignment quality,
+      Nucleic Acids Research, 33(22), 7120-7128.
+   Lassmann, T., and Erik, S.,(2005) Kalign - an accurate and fast multiple
+      sequence alignment algorithm, BMC Bioinformatics, 6, 298.
+   Lassmann, T., and Erik, S.,(2006) Kalign, Kalignvu and Mumsa: web servers
+      for multiple sequence alignment, Nucleic Acids Research, 34, W596-W599.
+
+
+
+</pre>
+
+
+<h2>Warnings</h2>
+
+
+   None.
+
+
+
+<h2>Diagnostic Error Messages</h2>
+
+
+   None.
+
+
+
+<h2>Exit status</h2>
+
+
+   It always exits with a status of 0.
+
+
+
+<h2>Known bugs</h2>
+
+
+   None.
+
+
+
+<h2>See also</h2>
+
+<table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
+<th>Description</th></tr>
+<tr>
+<td><a href="seqret.html">seqret</a></td>
+<td>Reads and writes (returns) sequences</td>
+</tr>
+
+</table>
+
+
+<h2>Author(s)</h2>
+
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+
+
+<h2>History</h2>
+
+
+   2009 - Written by Kazuki Oshita
+
+
+
+<h2>Target users</h2>
+
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+
+
+<h2>Comments</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</BODY>
+</HTML>
+

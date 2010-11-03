@@ -39,7 +39,7 @@ section: advanced [
     information: "specify web server for your search. 'NCBI', 'EBI' or 'DDBJ'"
   ]
 
-  integer: format [
+  string: format [
     additional: "Y"
     default: "0"
     information: "blast report format"

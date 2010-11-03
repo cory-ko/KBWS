@@ -11,7 +11,7 @@
 
 int main(int argc, char **argv) {
 
-    embInitPV("kblast", argc, argv, "KBWS", "1.0.2");
+    embInitPV("kblast", argc, argv, "KBWS", "1.0.3");
 
     struct soap soap;
     struct ns1__blastInputParams params;
@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
     AjPStr     p;
     AjPStr     d;
     AjPStr     server;
-    ajint      m;
+    AjPStr     m;
     float      e;
     AjPStr     F;
     ajint      G;
@@ -46,7 +46,7 @@ int main(int argc, char **argv) {
     p      =      ajAcdGetString("p");
     d      =      ajAcdGetString("d");
     server =      ajAcdGetString("server");
-    m      =      ajAcdGetInt("format");
+    m      =      ajAcdGetString("format");
     e      =      ajAcdGetFloat("eval");
     F      =      ajAcdGetString("qfilter");
     G      =      ajAcdGetInt("op");
@@ -69,7 +69,7 @@ int main(int argc, char **argv) {
     params.p      = ajCharNewS(p);
     params.d      = ajCharNewS(d);
     params.server = ajCharNewS(server);
-    params.m      = m;
+    params.m      = ajCharNewS(m);
     params.e      = e;
     params.F      = ajCharNewS(F);
     params.G      = G;

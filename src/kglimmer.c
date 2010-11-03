@@ -13,7 +13,7 @@
 
 int main(int argc, char **argv) {
 
-    embInitPV("kglimmer", argc, argv, "KBWS", "1.0.2");
+    embInitPV("kglimmer", argc, argv, "KBWS", "1.0.3");
 
     AjPSeqall  seqall;
     AjPSeq     seq;

@@ -14,7 +14,7 @@
 extern "C" {
 #endif
 
-SOAP_SOURCE_STAMP("@(#) soapClient.c ver 2.7.13 2010-10-26 09:03:35 GMT")
+SOAP_SOURCE_STAMP("@(#) soapClient.c ver 2.7.13 2010-11-03 18:00:03 GMT")
 
 
 SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runBlast(struct soap *soap, const char *soap_endpoint, const char *soap_action, char *_in0, struct ns1__blastInputParams *_params, char **_jobid)
@@ -1625,63 +1625,6 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runContml(struct soap *soap, const char
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runGendis(struct soap *soap, const char *soap_endpoint, const char *soap_action, char *_in0, char **_jobid)
-{	struct ns1__runGendis soap_tmp_ns1__runGendis;
-	struct ns1__runGendisResponse *soap_tmp_ns1__runGendisResponse;
-	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
-	if (!soap_action)
-		soap_action = "http://soap.g-language.org/KBWS#runGendis";
-	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
-	soap_tmp_ns1__runGendis._in0 = _in0;
-	soap_begin(soap);
-	soap_serializeheader(soap);
-	soap_serialize_ns1__runGendis(soap, &soap_tmp_ns1__runGendis);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put_ns1__runGendis(soap, &soap_tmp_ns1__runGendis, "ns1:runGendis", "")
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	}
-	if (soap_end_count(soap))
-		return soap->error;
-	if (soap_connect(soap, soap_endpoint, soap_action)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put_ns1__runGendis(soap, &soap_tmp_ns1__runGendis, "ns1:runGendis", "")
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap_closesock(soap);
-	if (!_jobid)
-		return soap_closesock(soap);
-	*_jobid = NULL;
-	if (soap_begin_recv(soap)
-	 || soap_envelope_begin_in(soap)
-	 || soap_recv_header(soap)
-	 || soap_body_begin_in(soap))
-		return soap_closesock(soap);
-	soap_tmp_ns1__runGendisResponse = soap_get_ns1__runGendisResponse(soap, NULL, "ns1:runGendisResponse", "");
-	if (soap->error)
-	{	if (soap->error == SOAP_TAG_MISMATCH && soap->level == 2)
-			return soap_recv_fault(soap);
-		return soap_closesock(soap);
-	}
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap_closesock(soap);
-	if (_jobid && soap_tmp_ns1__runGendisResponse->_jobid)
-		*_jobid = *soap_tmp_ns1__runGendisResponse->_jobid;
-	return soap_closesock(soap);
-}
-
 SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runMix(struct soap *soap, const char *soap_endpoint, const char *soap_action, char *_in0, char **_jobid)
 {	struct ns1__runMix soap_tmp_ns1__runMix;
 	struct ns1__runMixResponse *soap_tmp_ns1__runMixResponse;
@@ -2485,6 +2428,63 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__showBlastDB(struct soap *soap, const ch
 		return soap_closesock(soap);
 	if (_dblist && soap_tmp_ns1__showBlastDBResponse->_dblist)
 		*_dblist = *soap_tmp_ns1__showBlastDBResponse->_dblist;
+	return soap_closesock(soap);
+}
+
+SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__map2PathwayProjector(struct soap *soap, const char *soap_endpoint, const char *soap_action, char *_in0, char **_jobid)
+{	struct ns1__map2PathwayProjector soap_tmp_ns1__map2PathwayProjector;
+	struct ns1__map2PathwayProjectorResponse *soap_tmp_ns1__map2PathwayProjectorResponse;
+	if (!soap_endpoint)
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+	if (!soap_action)
+		soap_action = "http://soap.g-language.org/KBWS#map2PathwayProjector";
+	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
+	soap_tmp_ns1__map2PathwayProjector._in0 = _in0;
+	soap_begin(soap);
+	soap_serializeheader(soap);
+	soap_serialize_ns1__map2PathwayProjector(soap, &soap_tmp_ns1__map2PathwayProjector);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put_ns1__map2PathwayProjector(soap, &soap_tmp_ns1__map2PathwayProjector, "ns1:map2PathwayProjector", "")
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	}
+	if (soap_end_count(soap))
+		return soap->error;
+	if (soap_connect(soap, soap_endpoint, soap_action)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put_ns1__map2PathwayProjector(soap, &soap_tmp_ns1__map2PathwayProjector, "ns1:map2PathwayProjector", "")
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap_closesock(soap);
+	if (!_jobid)
+		return soap_closesock(soap);
+	*_jobid = NULL;
+	if (soap_begin_recv(soap)
+	 || soap_envelope_begin_in(soap)
+	 || soap_recv_header(soap)
+	 || soap_body_begin_in(soap))
+		return soap_closesock(soap);
+	soap_tmp_ns1__map2PathwayProjectorResponse = soap_get_ns1__map2PathwayProjectorResponse(soap, NULL, "ns1:map2PathwayProjectorResponse", "");
+	if (soap->error)
+	{	if (soap->error == SOAP_TAG_MISMATCH && soap->level == 2)
+			return soap_recv_fault(soap);
+		return soap_closesock(soap);
+	}
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap_closesock(soap);
+	if (_jobid && soap_tmp_ns1__map2PathwayProjectorResponse->_jobid)
+		*_jobid = *soap_tmp_ns1__map2PathwayProjectorResponse->_jobid;
 	return soap_closesock(soap);
 }
 

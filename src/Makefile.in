@@ -49,7 +49,8 @@ bin_PROGRAMS = kblast$(EXEEXT) kcentroidfold$(EXEEXT) kclique$(EXEEXT) \
 	kpsort$(EXEEXT) kpsort2$(EXEEXT) kpsortb$(EXEEXT) \
 	krestml$(EXEEXT) kseqboot$(EXEEXT) kssearch$(EXEEXT) \
 	ktcoffee$(EXEEXT) ktrnascan_se$(EXEEXT) kweblogo$(EXEEXT) \
-	kwolfpsort$(EXEEXT) krnafold$(EXEEXT) kshowblastdb$(EXEEXT)
+	kwolfpsort$(EXEEXT) krnafold$(EXEEXT) kshowblastdb$(EXEEXT) \
+	kpathwayprojector$(EXEEXT)
 subdir = src
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -469,6 +470,23 @@ kneighbor_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
 @LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+am_kpathwayprojector_OBJECTS = kpathwayprojector.$(OBJEXT)
+kpathwayprojector_OBJECTS = $(am_kpathwayprojector_OBJECTS)
+kpathwayprojector_LDADD = $(LDADD)
+@LOCALLINK_FALSE@kpathwayprojector_DEPENDENCIES =  \
+@LOCALLINK_FALSE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@kpathwayprojector_DEPENDENCIES =  \
+@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
+@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
+@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
+@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
+@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
+@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
+@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
+@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
+@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
+@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
+@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
 am_kpenny_OBJECTS = kpenny.$(OBJEXT)
 kpenny_OBJECTS = $(am_kpenny_OBJECTS)
 kpenny_LDADD = $(LDADD)
@@ -740,13 +758,14 @@ SOURCES = $(kblast_SOURCES) $(kcentroidfold_SOURCES) \
 	$(kgendist_SOURCES) $(kgenemarkhmm_SOURCES) \
 	$(kglimmer_SOURCES) $(kkalign_SOURCES) $(kkitsch_SOURCES) \
 	$(kmafft_SOURCES) $(kmix_SOURCES) $(kmuscle_SOURCES) \
-	$(kneighbor_SOURCES) $(kpenny_SOURCES) $(kphobius_SOURCES) \
-	$(kprotdist_SOURCES) $(kprotpars_SOURCES) $(kpsort_SOURCES) \
-	$(kpsort2_SOURCES) $(kpsortb_SOURCES) $(krestml_SOURCES) \
-	$(krnafold_SOURCES) $(kseqboot_SOURCES) \
-	$(kshowblastdb_SOURCES) $(kssearch_SOURCES) \
-	$(ktcoffee_SOURCES) $(ktrnascan_se_SOURCES) \
-	$(kweblogo_SOURCES) $(kwolfpsort_SOURCES)
+	$(kneighbor_SOURCES) $(kpathwayprojector_SOURCES) \
+	$(kpenny_SOURCES) $(kphobius_SOURCES) $(kprotdist_SOURCES) \
+	$(kprotpars_SOURCES) $(kpsort_SOURCES) $(kpsort2_SOURCES) \
+	$(kpsortb_SOURCES) $(krestml_SOURCES) $(krnafold_SOURCES) \
+	$(kseqboot_SOURCES) $(kshowblastdb_SOURCES) \
+	$(kssearch_SOURCES) $(ktcoffee_SOURCES) \
+	$(ktrnascan_se_SOURCES) $(kweblogo_SOURCES) \
+	$(kwolfpsort_SOURCES)
 DIST_SOURCES = $(kblast_SOURCES) $(kcentroidfold_SOURCES) \
 	$(kclique_SOURCES) $(kclustalw_SOURCES) $(kcontml_SOURCES) \
 	$(kdnacomp_SOURCES) $(kdnadist_SOURCES) $(kdnainvar_SOURCES) \
@@ -756,13 +775,14 @@ DIST_SOURCES = $(kblast_SOURCES) $(kcentroidfold_SOURCES) \
 	$(kgendist_SOURCES) $(kgenemarkhmm_SOURCES) \
 	$(kglimmer_SOURCES) $(kkalign_SOURCES) $(kkitsch_SOURCES) \
 	$(kmafft_SOURCES) $(kmix_SOURCES) $(kmuscle_SOURCES) \
-	$(kneighbor_SOURCES) $(kpenny_SOURCES) $(kphobius_SOURCES) \
-	$(kprotdist_SOURCES) $(kprotpars_SOURCES) $(kpsort_SOURCES) \
-	$(kpsort2_SOURCES) $(kpsortb_SOURCES) $(krestml_SOURCES) \
-	$(krnafold_SOURCES) $(kseqboot_SOURCES) \
-	$(kshowblastdb_SOURCES) $(kssearch_SOURCES) \
-	$(ktcoffee_SOURCES) $(ktrnascan_se_SOURCES) \
-	$(kweblogo_SOURCES) $(kwolfpsort_SOURCES)
+	$(kneighbor_SOURCES) $(kpathwayprojector_SOURCES) \
+	$(kpenny_SOURCES) $(kphobius_SOURCES) $(kprotdist_SOURCES) \
+	$(kprotpars_SOURCES) $(kpsort_SOURCES) $(kpsort2_SOURCES) \
+	$(kpsortb_SOURCES) $(krestml_SOURCES) $(krnafold_SOURCES) \
+	$(kseqboot_SOURCES) $(kshowblastdb_SOURCES) \
+	$(kssearch_SOURCES) $(ktcoffee_SOURCES) \
+	$(ktrnascan_se_SOURCES) $(kweblogo_SOURCES) \
+	$(kwolfpsort_SOURCES)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
@@ -961,6 +981,7 @@ kweblogo_SOURCES = kweblogo.c
 kwolfpsort_SOURCES = kwolfpsort.c
 krnafold_SOURCES = krnafold.c
 kshowblastdb_SOURCES = kshowblastdb.c
+kpathwayprojector_SOURCES = kpathwayprojector.c
 @LOCALLINK_FALSE@LDADD = -L${embprefix}/lib -lnucleus -lacd -lajaxdb -lensembl -lajaxg \
 @LOCALLINK_FALSE@        -lajax -leexpat -lepcre -lezlib -leplplot $(XLIB)
 
@@ -1113,6 +1134,9 @@ kmuscle$(EXEEXT): $(kmuscle_OBJECTS) $(kmuscle_DEPENDENCIES)
 kneighbor$(EXEEXT): $(kneighbor_OBJECTS) $(kneighbor_DEPENDENCIES) 
 	@rm -f kneighbor$(EXEEXT)
 	$(LINK) $(kneighbor_LDFLAGS) $(kneighbor_OBJECTS) $(kneighbor_LDADD) $(LIBS)
+kpathwayprojector$(EXEEXT): $(kpathwayprojector_OBJECTS) $(kpathwayprojector_DEPENDENCIES) 
+	@rm -f kpathwayprojector$(EXEEXT)
+	$(LINK) $(kpathwayprojector_LDFLAGS) $(kpathwayprojector_OBJECTS) $(kpathwayprojector_LDADD) $(LIBS)
 kpenny$(EXEEXT): $(kpenny_OBJECTS) $(kpenny_DEPENDENCIES) 
 	@rm -f kpenny$(EXEEXT)
 	$(LINK) $(kpenny_LDFLAGS) $(kpenny_OBJECTS) $(kpenny_LDADD) $(LIBS)
@@ -1194,6 +1218,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/kmix.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/kmuscle.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/kneighbor.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/kpathwayprojector.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/kpenny.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/kphobius.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/kprotdist.Po@am__quote@

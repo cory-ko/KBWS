@@ -1,3 +1,9 @@
+version 1.0.3 04-Nov-2010
+        Change -format option included in kblast
+	 - Add k1 and k2;
+	  - "-format k1": ID list
+	  - "-format k2": ID list separated by comma
+	Added "kpathwayprojector" (mapping to PathwayProjector)
 Version 1.0.2 26-Oct-2010
         Added "krnafold" (RNAfold)
         Added "kshowblastdb" (show database list for kblast)

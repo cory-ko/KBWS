@@ -14,7 +14,7 @@ static AjPStr getUniqueFileName(void);
 
 int main(int argc, char **argv) {
 
-    embInitPV("ktcoffee", argc, argv, "KBWS", "1.0.2");
+    embInitPV("ktcoffee", argc, argv, "KBWS", "1.0.3");
 
     AjPSeqall  seqall;
     AjPSeq     seq;

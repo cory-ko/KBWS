@@ -347,8 +347,8 @@ S2: 73 (32.7 bits)
 <tr bgcolor="#FFFFCC">
 <td>-format</td>
 <td>integer</td>
-<td>blast report format</td>
-<td>Any integer value</td>
+<td>blast report format <br />0 : normal BLAST report <br />8 : tabular <br /> k1: ID list <br />k2: ID list separated by conmma</td>
+<td>Any string</td>
 <td>0</td>
 </tr>
 
@@ -564,13 +564,11 @@ S2: 73 (32.7 bits)
 
 <h2>See also</h2>
 
-<table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
-<th>Description</th></tr>
-<tr>
-<td><a href="seqret.html">seqret</a></td>
-<td>Reads and writes (returns) sequences</td>
-</tr>
-
+<table border cellpadding=4 bgcolor="#FFFFF0">
+  <tr> <th> Program name                                   </th> <th> Description                                                  </th> </tr>
+  <tr> <td> <a href="kshowblastdb.html"> kshowblastdb </a> </td> <td> Displays information on databases for kblast                  </td> </tr>
+  <tr> <td> <a href="kssearch.html"> kssearch </a>         </td> <td> Search similar sequences in public repositories using SSEARCH </td> </tr>
+  <tr> <td> <a href="seqret.html"> seqret </a>             </td> <td> Reads and writes (returns) sequences                          </td> </tr>
 </table>
 
 
@@ -586,8 +584,11 @@ S2: 73 (32.7 bits)
 <h2>History</h2>
 
 
-   2009 - Written by Kazuki Oshita
-
+   2010 - Written by Kazuki Oshita
+<br />
+   Sep 2010 - Added "-format 20" option
+<br />
+   Nov 2010 - Revised "-format" option
 
 
 <h2>Target users</h2>

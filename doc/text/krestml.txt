@@ -49,12 +49,12 @@ Jobid: 12547145
 Command line arguments
 
    Standard (Mandatory) qualifiers:
-  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
-                                  format, or reference (input USA)
+  [-infile]            infile     Data file for RESTML
   [-outseq]            outfile    [.krestml] output filename
 
    Additional (Optional) qualifiers: (none)
-   Advanced (Unprompted) qualifiers:
+   Advanced (Unprompted) qualifiers: (none)
+
 Input file format
 
   Input files for usage example
@@ -82,8 +82,6 @@ Restriction site Maximum Likelihood method, version 3.57c
   Recognition sequences all 6 bases long
 
 Sites absent from all species are assumed to have been omitted
-
-
 
 
 Data files
@@ -132,6 +130,7 @@ Author(s)
 History
 
    2009 - Written by Kazuki Oshita
+   Nov 2010 - little revision of this document
 
 Target users
 
@@ -141,3 +140,4 @@ Target users
 Comments
 
    None.
+

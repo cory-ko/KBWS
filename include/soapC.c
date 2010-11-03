@@ -16,7 +16,7 @@
 extern "C" {
 #endif
 
-SOAP_SOURCE_STAMP("@(#) soapC.c ver 2.7.13 2010-10-26 09:03:35 GMT")
+SOAP_SOURCE_STAMP("@(#) soapC.c ver 2.7.13 2010-11-03 18:00:03 GMT")
 
 
 #ifndef WITH_NOGLOBAL
@@ -185,6 +185,10 @@ SOAP_FMAC3 void * SOAP_FMAC4 soap_getelement(struct soap *soap, int *type)
 		return soap_in_ns1__checkStatus(soap, NULL, NULL, "ns1:checkStatus");
 	case SOAP_TYPE_ns1__checkStatusResponse:
 		return soap_in_ns1__checkStatusResponse(soap, NULL, NULL, "ns1:checkStatusResponse");
+	case SOAP_TYPE_ns1__map2PathwayProjector:
+		return soap_in_ns1__map2PathwayProjector(soap, NULL, NULL, "ns1:map2PathwayProjector");
+	case SOAP_TYPE_ns1__map2PathwayProjectorResponse:
+		return soap_in_ns1__map2PathwayProjectorResponse(soap, NULL, NULL, "ns1:map2PathwayProjectorResponse");
 	case SOAP_TYPE_ns1__showBlastDB:
 		return soap_in_ns1__showBlastDB(soap, NULL, NULL, "ns1:showBlastDB");
 	case SOAP_TYPE_ns1__showBlastDBResponse:
@@ -241,10 +245,6 @@ SOAP_FMAC3 void * SOAP_FMAC4 soap_getelement(struct soap *soap, int *type)
 		return soap_in_ns1__runMix(soap, NULL, NULL, "ns1:runMix");
 	case SOAP_TYPE_ns1__runMixResponse:
 		return soap_in_ns1__runMixResponse(soap, NULL, NULL, "ns1:runMixResponse");
-	case SOAP_TYPE_ns1__runGendis:
-		return soap_in_ns1__runGendis(soap, NULL, NULL, "ns1:runGendis");
-	case SOAP_TYPE_ns1__runGendisResponse:
-		return soap_in_ns1__runGendisResponse(soap, NULL, NULL, "ns1:runGendisResponse");
 	case SOAP_TYPE_ns1__runContml:
 		return soap_in_ns1__runContml(soap, NULL, NULL, "ns1:runContml");
 	case SOAP_TYPE_ns1__runContmlResponse:
@@ -503,6 +503,14 @@ SOAP_FMAC3 void * SOAP_FMAC4 soap_getelement(struct soap *soap, int *type)
 		{	*type = SOAP_TYPE_ns1__checkStatusResponse;
 			return soap_in_ns1__checkStatusResponse(soap, NULL, NULL, NULL);
 		}
+		if (!soap_match_tag(soap, t, "ns1:map2PathwayProjector"))
+		{	*type = SOAP_TYPE_ns1__map2PathwayProjector;
+			return soap_in_ns1__map2PathwayProjector(soap, NULL, NULL, NULL);
+		}
+		if (!soap_match_tag(soap, t, "ns1:map2PathwayProjectorResponse"))
+		{	*type = SOAP_TYPE_ns1__map2PathwayProjectorResponse;
+			return soap_in_ns1__map2PathwayProjectorResponse(soap, NULL, NULL, NULL);
+		}
 		if (!soap_match_tag(soap, t, "ns1:showBlastDB"))
 		{	*type = SOAP_TYPE_ns1__showBlastDB;
 			return soap_in_ns1__showBlastDB(soap, NULL, NULL, NULL);
@@ -614,14 +622,6 @@ SOAP_FMAC3 void * SOAP_FMAC4 soap_getelement(struct soap *soap, int *type)
 		if (!soap_match_tag(soap, t, "ns1:runMixResponse"))
 		{	*type = SOAP_TYPE_ns1__runMixResponse;
 			return soap_in_ns1__runMixResponse(soap, NULL, NULL, NULL);
-		}
-		if (!soap_match_tag(soap, t, "ns1:runGendis"))
-		{	*type = SOAP_TYPE_ns1__runGendis;
-			return soap_in_ns1__runGendis(soap, NULL, NULL, NULL);
-		}
-		if (!soap_match_tag(soap, t, "ns1:runGendisResponse"))
-		{	*type = SOAP_TYPE_ns1__runGendisResponse;
-			return soap_in_ns1__runGendisResponse(soap, NULL, NULL, NULL);
 		}
 		if (!soap_match_tag(soap, t, "ns1:runContml"))
 		{	*type = SOAP_TYPE_ns1__runContml;
@@ -1021,6 +1021,10 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_putelement(struct soap *soap, const void *ptr, co
 		return soap_out_ns1__checkStatus(soap, tag, id, (const struct ns1__checkStatus *)ptr, "ns1:checkStatus");
 	case SOAP_TYPE_ns1__checkStatusResponse:
 		return soap_out_ns1__checkStatusResponse(soap, tag, id, (const struct ns1__checkStatusResponse *)ptr, "ns1:checkStatusResponse");
+	case SOAP_TYPE_ns1__map2PathwayProjector:
+		return soap_out_ns1__map2PathwayProjector(soap, tag, id, (const struct ns1__map2PathwayProjector *)ptr, "ns1:map2PathwayProjector");
+	case SOAP_TYPE_ns1__map2PathwayProjectorResponse:
+		return soap_out_ns1__map2PathwayProjectorResponse(soap, tag, id, (const struct ns1__map2PathwayProjectorResponse *)ptr, "ns1:map2PathwayProjectorResponse");
 	case SOAP_TYPE_ns1__showBlastDB:
 		return soap_out_ns1__showBlastDB(soap, tag, id, (const struct ns1__showBlastDB *)ptr, "ns1:showBlastDB");
 	case SOAP_TYPE_ns1__showBlastDBResponse:
@@ -1077,10 +1081,6 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_putelement(struct soap *soap, const void *ptr, co
 		return soap_out_ns1__runMix(soap, tag, id, (const struct ns1__runMix *)ptr, "ns1:runMix");
 	case SOAP_TYPE_ns1__runMixResponse:
 		return soap_out_ns1__runMixResponse(soap, tag, id, (const struct ns1__runMixResponse *)ptr, "ns1:runMixResponse");
-	case SOAP_TYPE_ns1__runGendis:
-		return soap_out_ns1__runGendis(soap, tag, id, (const struct ns1__runGendis *)ptr, "ns1:runGendis");
-	case SOAP_TYPE_ns1__runGendisResponse:
-		return soap_out_ns1__runGendisResponse(soap, tag, id, (const struct ns1__runGendisResponse *)ptr, "ns1:runGendisResponse");
 	case SOAP_TYPE_ns1__runContml:
 		return soap_out_ns1__runContml(soap, tag, id, (const struct ns1__runContml *)ptr, "ns1:runContml");
 	case SOAP_TYPE_ns1__runContmlResponse:
@@ -1316,6 +1316,12 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_markelement(struct soap *soap, const void *ptr, 
 	case SOAP_TYPE_ns1__checkStatusResponse:
 		soap_serialize_ns1__checkStatusResponse(soap, (const struct ns1__checkStatusResponse *)ptr);
 		break;
+	case SOAP_TYPE_ns1__map2PathwayProjector:
+		soap_serialize_ns1__map2PathwayProjector(soap, (const struct ns1__map2PathwayProjector *)ptr);
+		break;
+	case SOAP_TYPE_ns1__map2PathwayProjectorResponse:
+		soap_serialize_ns1__map2PathwayProjectorResponse(soap, (const struct ns1__map2PathwayProjectorResponse *)ptr);
+		break;
 	case SOAP_TYPE_ns1__showBlastDB:
 		soap_serialize_ns1__showBlastDB(soap, (const struct ns1__showBlastDB *)ptr);
 		break;
@@ -1399,12 +1405,6 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_markelement(struct soap *soap, const void *ptr, 
 		break;
 	case SOAP_TYPE_ns1__runMixResponse:
 		soap_serialize_ns1__runMixResponse(soap, (const struct ns1__runMixResponse *)ptr);
-		break;
-	case SOAP_TYPE_ns1__runGendis:
-		soap_serialize_ns1__runGendis(soap, (const struct ns1__runGendis *)ptr);
-		break;
-	case SOAP_TYPE_ns1__runGendisResponse:
-		soap_serialize_ns1__runGendisResponse(soap, (const struct ns1__runGendisResponse *)ptr);
 		break;
 	case SOAP_TYPE_ns1__runContml:
 		soap_serialize_ns1__runContml(soap, (const struct ns1__runContml *)ptr);
@@ -2965,6 +2965,152 @@ SOAP_FMAC3 struct ns1__checkStatusResponse * SOAP_FMAC4 soap_in_ns1__checkStatus
 	}
 	else
 	{	a = (struct ns1__checkStatusResponse *)soap_id_forward(soap, soap->href, (void*)a, 0, SOAP_TYPE_ns1__checkStatusResponse, 0, sizeof(struct ns1__checkStatusResponse), 0, NULL);
+		if (soap->body && soap_element_end_in(soap, tag))
+			return NULL;
+	}
+	return a;
+}
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ns1__map2PathwayProjector(struct soap *soap, struct ns1__map2PathwayProjector *a)
+{
+	(void)soap; (void)a; /* appease -Wall -Werror */
+	soap_default_string(soap, &a->_in0);
+}
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ns1__map2PathwayProjector(struct soap *soap, const struct ns1__map2PathwayProjector *a)
+{
+	(void)soap; (void)a; /* appease -Wall -Werror */
+	soap_serialize_string(soap, &a->_in0);
+}
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ns1__map2PathwayProjector(struct soap *soap, const struct ns1__map2PathwayProjector *a, const char *tag, const char *type)
+{
+	register int id = soap_embed(soap, (void*)a, NULL, 0, tag, SOAP_TYPE_ns1__map2PathwayProjector);
+	if (soap_out_ns1__map2PathwayProjector(soap, tag, id, a, type))
+		return soap->error;
+	return soap_putindependent(soap);
+}
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__map2PathwayProjector(struct soap *soap, const char *tag, int id, const struct ns1__map2PathwayProjector *a, const char *type)
+{
+	if (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_ns1__map2PathwayProjector), type))
+		return soap->error;
+	if (soap_out_string(soap, "in0", -1, &a->_in0, ""))
+		return soap->error;
+	return soap_element_end_out(soap, tag);
+}
+
+SOAP_FMAC3 struct ns1__map2PathwayProjector * SOAP_FMAC4 soap_get_ns1__map2PathwayProjector(struct soap *soap, struct ns1__map2PathwayProjector *p, const char *tag, const char *type)
+{
+	if ((p = soap_in_ns1__map2PathwayProjector(soap, tag, p, type)))
+		if (soap_getindependent(soap))
+			return NULL;
+	return p;
+}
+
+SOAP_FMAC3 struct ns1__map2PathwayProjector * SOAP_FMAC4 soap_in_ns1__map2PathwayProjector(struct soap *soap, const char *tag, struct ns1__map2PathwayProjector *a, const char *type)
+{
+	size_t soap_flag__in0 = 1;
+	if (soap_element_begin_in(soap, tag, 0, type))
+		return NULL;
+	a = (struct ns1__map2PathwayProjector *)soap_id_enter(soap, soap->id, a, SOAP_TYPE_ns1__map2PathwayProjector, sizeof(struct ns1__map2PathwayProjector), 0, NULL, NULL, NULL);
+	if (!a)
+		return NULL;
+	soap_default_ns1__map2PathwayProjector(soap, a);
+	if (soap->body && !*soap->href)
+	{
+		for (;;)
+		{	soap->error = SOAP_TAG_MISMATCH;
+			if (soap_flag__in0 && (soap->error == SOAP_TAG_MISMATCH || soap->error == SOAP_NO_TAG))
+				if (soap_in_string(soap, NULL, &a->_in0, "xsd:string"))
+				{	soap_flag__in0--;
+					continue;
+				}
+			if (soap->error == SOAP_TAG_MISMATCH)
+				soap->error = soap_ignore_element(soap);
+			if (soap->error == SOAP_NO_TAG)
+				break;
+			if (soap->error)
+				return NULL;
+		}
+		if (soap_element_end_in(soap, tag))
+			return NULL;
+	}
+	else
+	{	a = (struct ns1__map2PathwayProjector *)soap_id_forward(soap, soap->href, (void*)a, 0, SOAP_TYPE_ns1__map2PathwayProjector, 0, sizeof(struct ns1__map2PathwayProjector), 0, NULL);
+		if (soap->body && soap_element_end_in(soap, tag))
+			return NULL;
+	}
+	return a;
+}
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ns1__map2PathwayProjectorResponse(struct soap *soap, struct ns1__map2PathwayProjectorResponse *a)
+{
+	(void)soap; (void)a; /* appease -Wall -Werror */
+	a->_jobid = NULL;
+}
+
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ns1__map2PathwayProjectorResponse(struct soap *soap, const struct ns1__map2PathwayProjectorResponse *a)
+{
+	(void)soap; (void)a; /* appease -Wall -Werror */
+	soap_serialize_PointerTostring(soap, &a->_jobid);
+}
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ns1__map2PathwayProjectorResponse(struct soap *soap, const struct ns1__map2PathwayProjectorResponse *a, const char *tag, const char *type)
+{
+	register int id = soap_embed(soap, (void*)a, NULL, 0, tag, SOAP_TYPE_ns1__map2PathwayProjectorResponse);
+	if (soap_out_ns1__map2PathwayProjectorResponse(soap, tag, id, a, type))
+		return soap->error;
+	return soap_putindependent(soap);
+}
+
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__map2PathwayProjectorResponse(struct soap *soap, const char *tag, int id, const struct ns1__map2PathwayProjectorResponse *a, const char *type)
+{
+	if (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_ns1__map2PathwayProjectorResponse), type))
+		return soap->error;
+	if (soap_out_PointerTostring(soap, "jobid", -1, &a->_jobid, ""))
+		return soap->error;
+	return soap_element_end_out(soap, tag);
+}
+
+SOAP_FMAC3 struct ns1__map2PathwayProjectorResponse * SOAP_FMAC4 soap_get_ns1__map2PathwayProjectorResponse(struct soap *soap, struct ns1__map2PathwayProjectorResponse *p, const char *tag, const char *type)
+{
+	if ((p = soap_in_ns1__map2PathwayProjectorResponse(soap, tag, p, type)))
+		if (soap_getindependent(soap))
+			return NULL;
+	return p;
+}
+
+SOAP_FMAC3 struct ns1__map2PathwayProjectorResponse * SOAP_FMAC4 soap_in_ns1__map2PathwayProjectorResponse(struct soap *soap, const char *tag, struct ns1__map2PathwayProjectorResponse *a, const char *type)
+{
+	size_t soap_flag__jobid = 1;
+	if (soap_element_begin_in(soap, tag, 0, type))
+		return NULL;
+	a = (struct ns1__map2PathwayProjectorResponse *)soap_id_enter(soap, soap->id, a, SOAP_TYPE_ns1__map2PathwayProjectorResponse, sizeof(struct ns1__map2PathwayProjectorResponse), 0, NULL, NULL, NULL);
+	if (!a)
+		return NULL;
+	soap_default_ns1__map2PathwayProjectorResponse(soap, a);
+	if (soap->body && !*soap->href)
+	{
+		for (;;)
+		{	soap->error = SOAP_TAG_MISMATCH;
+			if (soap_flag__jobid && soap->error == SOAP_TAG_MISMATCH)
+				if (soap_in_PointerTostring(soap, NULL, &a->_jobid, "xsd:string"))
+				{	soap_flag__jobid--;
+					continue;
+				}
+			if (soap->error == SOAP_TAG_MISMATCH)
+				soap->error = soap_ignore_element(soap);
+			if (soap->error == SOAP_NO_TAG)
+				break;
+			if (soap->error)
+				return NULL;
+		}
+		if (soap_element_end_in(soap, tag))
+			return NULL;
+	}
+	else
+	{	a = (struct ns1__map2PathwayProjectorResponse *)soap_id_forward(soap, soap->href, (void*)a, 0, SOAP_TYPE_ns1__map2PathwayProjectorResponse, 0, sizeof(struct ns1__map2PathwayProjectorResponse), 0, NULL);
 		if (soap->body && soap_element_end_in(soap, tag))
 			return NULL;
 	}
@@ -5089,152 +5235,6 @@ SOAP_FMAC3 struct ns1__runMixResponse * SOAP_FMAC4 soap_in_ns1__runMixResponse(s
 	}
 	else
 	{	a = (struct ns1__runMixResponse *)soap_id_forward(soap, soap->href, (void*)a, 0, SOAP_TYPE_ns1__runMixResponse, 0, sizeof(struct ns1__runMixResponse), 0, NULL);
-		if (soap->body && soap_element_end_in(soap, tag))
-			return NULL;
-	}
-	return a;
-}
-
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_ns1__runGendis(struct soap *soap, struct ns1__runGendis *a)
-{
-	(void)soap; (void)a; /* appease -Wall -Werror */
-	soap_default_string(soap, &a->_in0);
-}
-
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ns1__runGendis(struct soap *soap, const struct ns1__runGendis *a)
-{
-	(void)soap; (void)a; /* appease -Wall -Werror */
-	soap_serialize_string(soap, &a->_in0);
-}
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_ns1__runGendis(struct soap *soap, const struct ns1__runGendis *a, const char *tag, const char *type)
-{
-	register int id = soap_embed(soap, (void*)a, NULL, 0, tag, SOAP_TYPE_ns1__runGendis);
-	if (soap_out_ns1__runGendis(soap, tag, id, a, type))
-		return soap->error;
-	return soap_putindependent(soap);
-}
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__runGendis(struct soap *soap, const char *tag, int id, const struct ns1__runGendis *a, const char *type)
-{
-	if (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_ns1__runGendis), type))
-		return soap->error;
-	if (soap_out_string(soap, "in0", -1, &a->_in0, ""))
-		return soap->error;
-	return soap_element_end_out(soap, tag);
-}
-
-SOAP_FMAC3 struct ns1__runGendis * SOAP_FMAC4 soap_get_ns1__runGendis(struct soap *soap, struct ns1__runGendis *p, const char *tag, const char *type)
-{
-	if ((p = soap_in_ns1__runGendis(soap, tag, p, type)))
-		if (soap_getindependent(soap))
-			return NULL;
-	return p;
-}
-
-SOAP_FMAC3 struct ns1__runGendis * SOAP_FMAC4 soap_in_ns1__runGendis(struct soap *soap, const char *tag, struct ns1__runGendis *a, const char *type)
-{
-	size_t soap_flag__in0 = 1;
-	if (soap_element_begin_in(soap, tag, 0, type))
-		return NULL;
-	a = (struct ns1__runGendis *)soap_id_enter(soap, soap->id, a, SOAP_TYPE_ns1__runGendis, sizeof(struct ns1__runGendis), 0, NULL, NULL, NULL);
-	if (!a)
-		return NULL;
-	soap_default_ns1__runGendis(soap, a);
-	if (soap->body && !*soap->href)
-	{
-		for (;;)
-		{	soap->error = SOAP_TAG_MISMATCH;
-			if (soap_flag__in0 && (soap->error == SOAP_TAG_MISMATCH || soap->error == SOAP_NO_TAG))
-				if (soap_in_string(soap, NULL, &a->_in0, "xsd:string"))
-				{	soap_flag__in0--;
-					continue;
-				}
-			if (soap->error == SOAP_TAG_MISMATCH)
-				soap->error = soap_ignore_element(soap);
-			if (soap->error == SOAP_NO_TAG)
-				break;
-			if (soap->error)
-				return NULL;
-		}
-		if (soap_element_end_in(soap, tag))
-			return NULL;
-	}
-	else
-	{	a = (struct ns1__runGendis *)soap_id_forward(soap, soap->href, (void*)a, 0, SOAP_TYPE_ns1__runGendis, 0, sizeof(struct ns1__runGendis), 0, NULL);
-		if (soap->body && soap_element_end_in(soap, tag))
-			return NULL;
-	}
-	return a;
-}
-
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_ns1__runGendisResponse(struct soap *soap, struct ns1__runGendisResponse *a)
-{
-	(void)soap; (void)a; /* appease -Wall -Werror */
-	a->_jobid = NULL;
-}
-
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ns1__runGendisResponse(struct soap *soap, const struct ns1__runGendisResponse *a)
-{
-	(void)soap; (void)a; /* appease -Wall -Werror */
-	soap_serialize_PointerTostring(soap, &a->_jobid);
-}
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_ns1__runGendisResponse(struct soap *soap, const struct ns1__runGendisResponse *a, const char *tag, const char *type)
-{
-	register int id = soap_embed(soap, (void*)a, NULL, 0, tag, SOAP_TYPE_ns1__runGendisResponse);
-	if (soap_out_ns1__runGendisResponse(soap, tag, id, a, type))
-		return soap->error;
-	return soap_putindependent(soap);
-}
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__runGendisResponse(struct soap *soap, const char *tag, int id, const struct ns1__runGendisResponse *a, const char *type)
-{
-	if (soap_element_begin_out(soap, tag, soap_embedded_id(soap, id, a, SOAP_TYPE_ns1__runGendisResponse), type))
-		return soap->error;
-	if (soap_out_PointerTostring(soap, "jobid", -1, &a->_jobid, ""))
-		return soap->error;
-	return soap_element_end_out(soap, tag);
-}
-
-SOAP_FMAC3 struct ns1__runGendisResponse * SOAP_FMAC4 soap_get_ns1__runGendisResponse(struct soap *soap, struct ns1__runGendisResponse *p, const char *tag, const char *type)
-{
-	if ((p = soap_in_ns1__runGendisResponse(soap, tag, p, type)))
-		if (soap_getindependent(soap))
-			return NULL;
-	return p;
-}
-
-SOAP_FMAC3 struct ns1__runGendisResponse * SOAP_FMAC4 soap_in_ns1__runGendisResponse(struct soap *soap, const char *tag, struct ns1__runGendisResponse *a, const char *type)
-{
-	size_t soap_flag__jobid = 1;
-	if (soap_element_begin_in(soap, tag, 0, type))
-		return NULL;
-	a = (struct ns1__runGendisResponse *)soap_id_enter(soap, soap->id, a, SOAP_TYPE_ns1__runGendisResponse, sizeof(struct ns1__runGendisResponse), 0, NULL, NULL, NULL);
-	if (!a)
-		return NULL;
-	soap_default_ns1__runGendisResponse(soap, a);
-	if (soap->body && !*soap->href)
-	{
-		for (;;)
-		{	soap->error = SOAP_TAG_MISMATCH;
-			if (soap_flag__jobid && soap->error == SOAP_TAG_MISMATCH)
-				if (soap_in_PointerTostring(soap, NULL, &a->_jobid, "xsd:string"))
-				{	soap_flag__jobid--;
-					continue;
-				}
-			if (soap->error == SOAP_TAG_MISMATCH)
-				soap->error = soap_ignore_element(soap);
-			if (soap->error == SOAP_NO_TAG)
-				break;
-			if (soap->error)
-				return NULL;
-		}
-		if (soap_element_end_in(soap, tag))
-			return NULL;
-	}
-	else
-	{	a = (struct ns1__runGendisResponse *)soap_id_forward(soap, soap->href, (void*)a, 0, SOAP_TYPE_ns1__runGendisResponse, 0, sizeof(struct ns1__runGendisResponse), 0, NULL);
 		if (soap->body && soap_element_end_in(soap, tag))
 			return NULL;
 	}
@@ -11703,7 +11703,7 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_default_ns1__blastInputParams(struct soap *soap,
 	soap_default_string(soap, &a->d);
 	soap_default_string(soap, &a->server);
 	soap_default_float(soap, &a->e);
-	soap_default_int(soap, &a->m);
+	soap_default_string(soap, &a->m);
 	soap_default_string(soap, &a->F);
 	soap_default_int(soap, &a->G);
 	soap_default_int(soap, &a->E);
@@ -11727,7 +11727,7 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ns1__blastInputParams(struct soap *soa
 	soap_serialize_string(soap, &a->p);
 	soap_serialize_string(soap, &a->d);
 	soap_serialize_string(soap, &a->server);
-	soap_embedded(soap, &a->m, SOAP_TYPE_int);
+	soap_serialize_string(soap, &a->m);
 	soap_serialize_string(soap, &a->F);
 	soap_embedded(soap, &a->G, SOAP_TYPE_int);
 	soap_embedded(soap, &a->E, SOAP_TYPE_int);
@@ -11762,7 +11762,7 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__blastInputParams(struct soap *soap, cons
 		return soap->error;
 	if (soap_out_float(soap, "e", -1, &a->e, ""))
 		return soap->error;
-	if (soap_out_int(soap, "m", -1, &a->m, ""))
+	if (soap_out_string(soap, "m", -1, &a->m, ""))
 		return soap->error;
 	if (soap_out_string(soap, "F", -1, &a->F, ""))
 		return soap->error;
@@ -11857,8 +11857,8 @@ SOAP_FMAC3 struct ns1__blastInputParams * SOAP_FMAC4 soap_in_ns1__blastInputPara
 				{	soap_flag_e--;
 					continue;
 				}
-			if (soap_flag_m && soap->error == SOAP_TAG_MISMATCH)
-				if (soap_in_int(soap, "m", &a->m, "xsd:int"))
+			if (soap_flag_m && (soap->error == SOAP_TAG_MISMATCH || soap->error == SOAP_NO_TAG))
+				if (soap_in_string(soap, "m", &a->m, "xsd:string"))
 				{	soap_flag_m--;
 					continue;
 				}

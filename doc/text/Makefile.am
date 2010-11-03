@@ -3,7 +3,7 @@ pkgdata_DATA = kblast.txt kcentroidfold.txt kclique.txt kclustalw.txt kcontml.tx
 	       kfetchdata.txt kfitch.txt kgendist.txt kgenemarkhmm.txt kglimmer.txt kkalign.txt kkitsch.txt kmafft.txt \
 	       kmix.txt kmuscle.txt kneighbor.txt kpenny.txt kphobius.txt kprotdist.txt kprotpars.txt kpsort.txt \
 	       kpsort2.txt kpsortb.txt krestml.txt kseqboot.txt kssearch.txt ktcoffee.txt ktrnascan_se.txt kweblogo.txt \
-	       kwolfpsort.txt krnafold.txt kshowblastdb.txt
+	       kwolfpsort.txt krnafold.txt kshowblastdb.txt kpathwayprojector.txt
 
 pkgdatadir=$(prefix)/share/EMBOSS/doc/programs/text
 

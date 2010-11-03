@@ -14,7 +14,7 @@
 extern "C" {
 #endif
 
-SOAP_SOURCE_STAMP("@(#) soapServer.c ver 2.7.13 2010-10-26 09:03:35 GMT")
+SOAP_SOURCE_STAMP("@(#) soapServer.c ver 2.7.13 2010-11-03 18:00:03 GMT")
 
 
 SOAP_FMAC5 int SOAP_FMAC6 soap_serve(struct soap *soap)
@@ -137,8 +137,6 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve_request(struct soap *soap)
 		return soap_serve_ns1__runNeighbor(soap);
 	if (!soap_match_tag(soap, soap->tag, "ns1:runContml"))
 		return soap_serve_ns1__runContml(soap);
-	if (!soap_match_tag(soap, soap->tag, "ns1:runGendis"))
-		return soap_serve_ns1__runGendis(soap);
 	if (!soap_match_tag(soap, soap->tag, "ns1:runMix"))
 		return soap_serve_ns1__runMix(soap);
 	if (!soap_match_tag(soap, soap->tag, "ns1:runPenny"))
@@ -167,6 +165,8 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve_request(struct soap *soap)
 		return soap_serve_ns1__runRNAfold(soap);
 	if (!soap_match_tag(soap, soap->tag, "ns1:showBlastDB"))
 		return soap_serve_ns1__showBlastDB(soap);
+	if (!soap_match_tag(soap, soap->tag, "ns1:map2PathwayProjector"))
+		return soap_serve_ns1__map2PathwayProjector(soap);
 	if (!soap_match_tag(soap, soap->tag, "ns1:checkStatus"))
 		return soap_serve_ns1__checkStatus(soap);
 	if (!soap_match_tag(soap, soap->tag, "ns1:checkStatus_retJobid"))
@@ -1411,50 +1411,6 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve_ns1__runContml(struct soap *soap)
 	return soap_closesock(soap);
 }
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve_ns1__runGendis(struct soap *soap)
-{	struct ns1__runGendis soap_tmp_ns1__runGendis;
-	struct ns1__runGendisResponse soap_tmp_ns1__runGendisResponse;
-	char * soap_tmp_string;
-	soap_default_ns1__runGendisResponse(soap, &soap_tmp_ns1__runGendisResponse);
-	soap_tmp_string = NULL;
-	soap_tmp_ns1__runGendisResponse._jobid = &soap_tmp_string;
-	soap_default_ns1__runGendis(soap, &soap_tmp_ns1__runGendis);
-	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
-	if (!soap_get_ns1__runGendis(soap, &soap_tmp_ns1__runGendis, "ns1:runGendis", NULL))
-		return soap->error;
-	if (soap_body_end_in(soap)
-	 || soap_envelope_end_in(soap)
-	 || soap_end_recv(soap))
-		return soap->error;
-	soap->error = ns1__runGendis(soap, soap_tmp_ns1__runGendis._in0, &soap_tmp_string);
-	if (soap->error)
-		return soap->error;
-	soap_serializeheader(soap);
-	soap_serialize_ns1__runGendisResponse(soap, &soap_tmp_ns1__runGendisResponse);
-	if (soap_begin_count(soap))
-		return soap->error;
-	if (soap->mode & SOAP_IO_LENGTH)
-	{	if (soap_envelope_begin_out(soap)
-		 || soap_putheader(soap)
-		 || soap_body_begin_out(soap)
-		 || soap_put_ns1__runGendisResponse(soap, &soap_tmp_ns1__runGendisResponse, "ns1:runGendisResponse", "")
-		 || soap_body_end_out(soap)
-		 || soap_envelope_end_out(soap))
-			 return soap->error;
-	};
-	if (soap_end_count(soap)
-	 || soap_response(soap, SOAP_OK)
-	 || soap_envelope_begin_out(soap)
-	 || soap_putheader(soap)
-	 || soap_body_begin_out(soap)
-	 || soap_put_ns1__runGendisResponse(soap, &soap_tmp_ns1__runGendisResponse, "ns1:runGendisResponse", "")
-	 || soap_body_end_out(soap)
-	 || soap_envelope_end_out(soap)
-	 || soap_end_send(soap))
-		return soap->error;
-	return soap_closesock(soap);
-}
-
 SOAP_FMAC5 int SOAP_FMAC6 soap_serve_ns1__runMix(struct soap *soap)
 {	struct ns1__runMix soap_tmp_ns1__runMix;
 	struct ns1__runMixResponse soap_tmp_ns1__runMixResponse;
@@ -2064,6 +2020,50 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve_ns1__showBlastDB(struct soap *soap)
 	 || soap_putheader(soap)
 	 || soap_body_begin_out(soap)
 	 || soap_put_ns1__showBlastDBResponse(soap, &soap_tmp_ns1__showBlastDBResponse, "ns1:showBlastDBResponse", "")
+	 || soap_body_end_out(soap)
+	 || soap_envelope_end_out(soap)
+	 || soap_end_send(soap))
+		return soap->error;
+	return soap_closesock(soap);
+}
+
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve_ns1__map2PathwayProjector(struct soap *soap)
+{	struct ns1__map2PathwayProjector soap_tmp_ns1__map2PathwayProjector;
+	struct ns1__map2PathwayProjectorResponse soap_tmp_ns1__map2PathwayProjectorResponse;
+	char * soap_tmp_string;
+	soap_default_ns1__map2PathwayProjectorResponse(soap, &soap_tmp_ns1__map2PathwayProjectorResponse);
+	soap_tmp_string = NULL;
+	soap_tmp_ns1__map2PathwayProjectorResponse._jobid = &soap_tmp_string;
+	soap_default_ns1__map2PathwayProjector(soap, &soap_tmp_ns1__map2PathwayProjector);
+	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
+	if (!soap_get_ns1__map2PathwayProjector(soap, &soap_tmp_ns1__map2PathwayProjector, "ns1:map2PathwayProjector", NULL))
+		return soap->error;
+	if (soap_body_end_in(soap)
+	 || soap_envelope_end_in(soap)
+	 || soap_end_recv(soap))
+		return soap->error;
+	soap->error = ns1__map2PathwayProjector(soap, soap_tmp_ns1__map2PathwayProjector._in0, &soap_tmp_string);
+	if (soap->error)
+		return soap->error;
+	soap_serializeheader(soap);
+	soap_serialize_ns1__map2PathwayProjectorResponse(soap, &soap_tmp_ns1__map2PathwayProjectorResponse);
+	if (soap_begin_count(soap))
+		return soap->error;
+	if (soap->mode & SOAP_IO_LENGTH)
+	{	if (soap_envelope_begin_out(soap)
+		 || soap_putheader(soap)
+		 || soap_body_begin_out(soap)
+		 || soap_put_ns1__map2PathwayProjectorResponse(soap, &soap_tmp_ns1__map2PathwayProjectorResponse, "ns1:map2PathwayProjectorResponse", "")
+		 || soap_body_end_out(soap)
+		 || soap_envelope_end_out(soap))
+			 return soap->error;
+	};
+	if (soap_end_count(soap)
+	 || soap_response(soap, SOAP_OK)
+	 || soap_envelope_begin_out(soap)
+	 || soap_putheader(soap)
+	 || soap_body_begin_out(soap)
+	 || soap_put_ns1__map2PathwayProjectorResponse(soap, &soap_tmp_ns1__map2PathwayProjectorResponse, "ns1:map2PathwayProjectorResponse", "")
 	 || soap_body_end_out(soap)
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))

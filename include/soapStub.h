@@ -52,7 +52,7 @@ struct ns1__blastInputParams
 	char *d;	/* required element of type xsd:string */
 	char *server;	/* required element of type xsd:string */
 	float e;	/* required element of type xsd:float */
-	int m;	/* required element of type xsd:int */
+	char *m;	/* required element of type xsd:string */
 	char *F;	/* required element of type xsd:string */
 	int G;	/* required element of type xsd:int */
 	int E;	/* required element of type xsd:int */
@@ -840,26 +840,8 @@ struct ns1__runContml
 };
 #endif
 
-#ifndef SOAP_TYPE_ns1__runGendisResponse
-#define SOAP_TYPE_ns1__runGendisResponse (126)
-/* ns1:runGendisResponse */
-struct ns1__runGendisResponse
-{
-	char **_jobid;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
-};
-#endif
-
-#ifndef SOAP_TYPE_ns1__runGendis
-#define SOAP_TYPE_ns1__runGendis (127)
-/* ns1:runGendis */
-struct ns1__runGendis
-{
-	char *_in0;	/* optional element of type xsd:string */
-};
-#endif
-
 #ifndef SOAP_TYPE_ns1__runMixResponse
-#define SOAP_TYPE_ns1__runMixResponse (129)
+#define SOAP_TYPE_ns1__runMixResponse (126)
 /* ns1:runMixResponse */
 struct ns1__runMixResponse
 {
@@ -868,7 +850,7 @@ struct ns1__runMixResponse
 #endif
 
 #ifndef SOAP_TYPE_ns1__runMix
-#define SOAP_TYPE_ns1__runMix (130)
+#define SOAP_TYPE_ns1__runMix (127)
 /* ns1:runMix */
 struct ns1__runMix
 {
@@ -877,7 +859,7 @@ struct ns1__runMix
 #endif
 
 #ifndef SOAP_TYPE_ns1__runPennyResponse
-#define SOAP_TYPE_ns1__runPennyResponse (132)
+#define SOAP_TYPE_ns1__runPennyResponse (129)
 /* ns1:runPennyResponse */
 struct ns1__runPennyResponse
 {
@@ -886,7 +868,7 @@ struct ns1__runPennyResponse
 #endif
 
 #ifndef SOAP_TYPE_ns1__runPenny
-#define SOAP_TYPE_ns1__runPenny (133)
+#define SOAP_TYPE_ns1__runPenny (130)
 /* ns1:runPenny */
 struct ns1__runPenny
 {
@@ -895,7 +877,7 @@ struct ns1__runPenny
 #endif
 
 #ifndef SOAP_TYPE_ns1__runDollopResponse
-#define SOAP_TYPE_ns1__runDollopResponse (135)
+#define SOAP_TYPE_ns1__runDollopResponse (132)
 /* ns1:runDollopResponse */
 struct ns1__runDollopResponse
 {
@@ -904,7 +886,7 @@ struct ns1__runDollopResponse
 #endif
 
 #ifndef SOAP_TYPE_ns1__runDollop
-#define SOAP_TYPE_ns1__runDollop (136)
+#define SOAP_TYPE_ns1__runDollop (133)
 /* ns1:runDollop */
 struct ns1__runDollop
 {
@@ -913,7 +895,7 @@ struct ns1__runDollop
 #endif
 
 #ifndef SOAP_TYPE_ns1__runDolpennyResponse
-#define SOAP_TYPE_ns1__runDolpennyResponse (138)
+#define SOAP_TYPE_ns1__runDolpennyResponse (135)
 /* ns1:runDolpennyResponse */
 struct ns1__runDolpennyResponse
 {
@@ -922,7 +904,7 @@ struct ns1__runDolpennyResponse
 #endif
 
 #ifndef SOAP_TYPE_ns1__runDolpenny
-#define SOAP_TYPE_ns1__runDolpenny (139)
+#define SOAP_TYPE_ns1__runDolpenny (136)
 /* ns1:runDolpenny */
 struct ns1__runDolpenny
 {
@@ -931,7 +913,7 @@ struct ns1__runDolpenny
 #endif
 
 #ifndef SOAP_TYPE_ns1__runPsortResponse
-#define SOAP_TYPE_ns1__runPsortResponse (142)
+#define SOAP_TYPE_ns1__runPsortResponse (139)
 /* ns1:runPsortResponse */
 struct ns1__runPsortResponse
 {
@@ -940,7 +922,7 @@ struct ns1__runPsortResponse
 #endif
 
 #ifndef SOAP_TYPE_ns1__runPsort
-#define SOAP_TYPE_ns1__runPsort (143)
+#define SOAP_TYPE_ns1__runPsort (140)
 /* ns1:runPsort */
 struct ns1__runPsort
 {
@@ -950,7 +932,7 @@ struct ns1__runPsort
 #endif
 
 #ifndef SOAP_TYPE_ns1__runPsort2Response
-#define SOAP_TYPE_ns1__runPsort2Response (145)
+#define SOAP_TYPE_ns1__runPsort2Response (142)
 /* ns1:runPsort2Response */
 struct ns1__runPsort2Response
 {
@@ -959,7 +941,7 @@ struct ns1__runPsort2Response
 #endif
 
 #ifndef SOAP_TYPE_ns1__runPsort2
-#define SOAP_TYPE_ns1__runPsort2 (146)
+#define SOAP_TYPE_ns1__runPsort2 (143)
 /* ns1:runPsort2 */
 struct ns1__runPsort2
 {
@@ -968,7 +950,7 @@ struct ns1__runPsort2
 #endif
 
 #ifndef SOAP_TYPE_ns1__runPsortbResponse
-#define SOAP_TYPE_ns1__runPsortbResponse (149)
+#define SOAP_TYPE_ns1__runPsortbResponse (146)
 /* ns1:runPsortbResponse */
 struct ns1__runPsortbResponse
 {
@@ -977,7 +959,7 @@ struct ns1__runPsortbResponse
 #endif
 
 #ifndef SOAP_TYPE_ns1__runPsortb
-#define SOAP_TYPE_ns1__runPsortb (150)
+#define SOAP_TYPE_ns1__runPsortb (147)
 /* ns1:runPsortb */
 struct ns1__runPsortb
 {
@@ -987,7 +969,7 @@ struct ns1__runPsortb
 #endif
 
 #ifndef SOAP_TYPE_ns1__runSsearchResponse
-#define SOAP_TYPE_ns1__runSsearchResponse (153)
+#define SOAP_TYPE_ns1__runSsearchResponse (150)
 /* ns1:runSsearchResponse */
 struct ns1__runSsearchResponse
 {
@@ -996,7 +978,7 @@ struct ns1__runSsearchResponse
 #endif
 
 #ifndef SOAP_TYPE_ns1__runSsearch
-#define SOAP_TYPE_ns1__runSsearch (154)
+#define SOAP_TYPE_ns1__runSsearch (151)
 /* ns1:runSsearch */
 struct ns1__runSsearch
 {
@@ -1006,7 +988,7 @@ struct ns1__runSsearch
 #endif
 
 #ifndef SOAP_TYPE_ns1__runTcoffeeResponse
-#define SOAP_TYPE_ns1__runTcoffeeResponse (157)
+#define SOAP_TYPE_ns1__runTcoffeeResponse (154)
 /* ns1:runTcoffeeResponse */
 struct ns1__runTcoffeeResponse
 {
@@ -1015,7 +997,7 @@ struct ns1__runTcoffeeResponse
 #endif
 
 #ifndef SOAP_TYPE_ns1__runTcoffee
-#define SOAP_TYPE_ns1__runTcoffee (158)
+#define SOAP_TYPE_ns1__runTcoffee (155)
 /* ns1:runTcoffee */
 struct ns1__runTcoffee
 {
@@ -1025,7 +1007,7 @@ struct ns1__runTcoffee
 #endif
 
 #ifndef SOAP_TYPE_ns1__runtRNAscanResponse
-#define SOAP_TYPE_ns1__runtRNAscanResponse (161)
+#define SOAP_TYPE_ns1__runtRNAscanResponse (158)
 /* ns1:runtRNAscanResponse */
 struct ns1__runtRNAscanResponse
 {
@@ -1034,7 +1016,7 @@ struct ns1__runtRNAscanResponse
 #endif
 
 #ifndef SOAP_TYPE_ns1__runtRNAscan
-#define SOAP_TYPE_ns1__runtRNAscan (162)
+#define SOAP_TYPE_ns1__runtRNAscan (159)
 /* ns1:runtRNAscan */
 struct ns1__runtRNAscan
 {
@@ -1044,7 +1026,7 @@ struct ns1__runtRNAscan
 #endif
 
 #ifndef SOAP_TYPE_ns1__runWeblogoResponse
-#define SOAP_TYPE_ns1__runWeblogoResponse (165)
+#define SOAP_TYPE_ns1__runWeblogoResponse (162)
 /* ns1:runWeblogoResponse */
 struct ns1__runWeblogoResponse
 {
@@ -1053,7 +1035,7 @@ struct ns1__runWeblogoResponse
 #endif
 
 #ifndef SOAP_TYPE_ns1__runWeblogo
-#define SOAP_TYPE_ns1__runWeblogo (166)
+#define SOAP_TYPE_ns1__runWeblogo (163)
 /* ns1:runWeblogo */
 struct ns1__runWeblogo
 {
@@ -1063,7 +1045,7 @@ struct ns1__runWeblogo
 #endif
 
 #ifndef SOAP_TYPE_ns1__runWolfPsortResponse
-#define SOAP_TYPE_ns1__runWolfPsortResponse (169)
+#define SOAP_TYPE_ns1__runWolfPsortResponse (166)
 /* ns1:runWolfPsortResponse */
 struct ns1__runWolfPsortResponse
 {
@@ -1072,7 +1054,7 @@ struct ns1__runWolfPsortResponse
 #endif
 
 #ifndef SOAP_TYPE_ns1__runWolfPsort
-#define SOAP_TYPE_ns1__runWolfPsort (170)
+#define SOAP_TYPE_ns1__runWolfPsort (167)
 /* ns1:runWolfPsort */
 struct ns1__runWolfPsort
 {
@@ -1082,7 +1064,7 @@ struct ns1__runWolfPsort
 #endif
 
 #ifndef SOAP_TYPE_ns1__runRNAfoldResponse
-#define SOAP_TYPE_ns1__runRNAfoldResponse (173)
+#define SOAP_TYPE_ns1__runRNAfoldResponse (170)
 /* ns1:runRNAfoldResponse */
 struct ns1__runRNAfoldResponse
 {
@@ -1091,7 +1073,7 @@ struct ns1__runRNAfoldResponse
 #endif
 
 #ifndef SOAP_TYPE_ns1__runRNAfold
-#define SOAP_TYPE_ns1__runRNAfold (174)
+#define SOAP_TYPE_ns1__runRNAfold (171)
 /* ns1:runRNAfold */
 struct ns1__runRNAfold
 {
@@ -1101,7 +1083,7 @@ struct ns1__runRNAfold
 #endif
 
 #ifndef SOAP_TYPE_ns1__showBlastDBResponse
-#define SOAP_TYPE_ns1__showBlastDBResponse (177)
+#define SOAP_TYPE_ns1__showBlastDBResponse (174)
 /* ns1:showBlastDBResponse */
 struct ns1__showBlastDBResponse
 {
@@ -1110,11 +1092,29 @@ struct ns1__showBlastDBResponse
 #endif
 
 #ifndef SOAP_TYPE_ns1__showBlastDB
-#define SOAP_TYPE_ns1__showBlastDB (178)
+#define SOAP_TYPE_ns1__showBlastDB (175)
 /* ns1:showBlastDB */
 struct ns1__showBlastDB
 {
 	struct ns1__showBlastDBInputParams *_params;	/* optional element of type ns1:showBlastDBInputParams */
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__map2PathwayProjectorResponse
+#define SOAP_TYPE_ns1__map2PathwayProjectorResponse (177)
+/* ns1:map2PathwayProjectorResponse */
+struct ns1__map2PathwayProjectorResponse
+{
+	char **_jobid;	/* SOAP 1.2 RPC return element (when namespace qualified) */	/* optional element of type xsd:string */
+};
+#endif
+
+#ifndef SOAP_TYPE_ns1__map2PathwayProjector
+#define SOAP_TYPE_ns1__map2PathwayProjector (178)
+/* ns1:map2PathwayProjector */
+struct ns1__map2PathwayProjector
+{
+	char *_in0;	/* optional element of type xsd:string */
 };
 #endif
 
@@ -1336,8 +1336,6 @@ SOAP_FMAC5 int SOAP_FMAC6 ns1__runNeighbor(struct soap*, char *_in0, char **_job
 
 SOAP_FMAC5 int SOAP_FMAC6 ns1__runContml(struct soap*, char *_in0, char **_jobid);
 
-SOAP_FMAC5 int SOAP_FMAC6 ns1__runGendis(struct soap*, char *_in0, char **_jobid);
-
 SOAP_FMAC5 int SOAP_FMAC6 ns1__runMix(struct soap*, char *_in0, char **_jobid);
 
 SOAP_FMAC5 int SOAP_FMAC6 ns1__runPenny(struct soap*, char *_in0, char **_jobid);
@@ -1365,6 +1363,8 @@ SOAP_FMAC5 int SOAP_FMAC6 ns1__runWolfPsort(struct soap*, char *_in0, struct ns1
 SOAP_FMAC5 int SOAP_FMAC6 ns1__runRNAfold(struct soap*, char *_in0, struct ns1__RNAfoldInputParams *_params, char **_jobid);
 
 SOAP_FMAC5 int SOAP_FMAC6 ns1__showBlastDB(struct soap*, struct ns1__showBlastDBInputParams *_params, char **_dblist);
+
+SOAP_FMAC5 int SOAP_FMAC6 ns1__map2PathwayProjector(struct soap*, char *_in0, char **_jobid);
 
 SOAP_FMAC5 int SOAP_FMAC6 ns1__checkStatus(struct soap*, char *_jobid, int *_status);
 
@@ -1437,8 +1437,6 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runNeighbor(struct soap *soap, const ch
 
 SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runContml(struct soap *soap, const char *soap_endpoint, const char *soap_action, char *_in0, char **_jobid);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runGendis(struct soap *soap, const char *soap_endpoint, const char *soap_action, char *_in0, char **_jobid);
-
 SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runMix(struct soap *soap, const char *soap_endpoint, const char *soap_action, char *_in0, char **_jobid);
 
 SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runPenny(struct soap *soap, const char *soap_endpoint, const char *soap_action, char *_in0, char **_jobid);
@@ -1466,6 +1464,8 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runWolfPsort(struct soap *soap, const c
 SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runRNAfold(struct soap *soap, const char *soap_endpoint, const char *soap_action, char *_in0, struct ns1__RNAfoldInputParams *_params, char **_jobid);
 
 SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__showBlastDB(struct soap *soap, const char *soap_endpoint, const char *soap_action, struct ns1__showBlastDBInputParams *_params, char **_dblist);
+
+SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__map2PathwayProjector(struct soap *soap, const char *soap_endpoint, const char *soap_action, char *_in0, char **_jobid);
 
 SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__checkStatus(struct soap *soap, const char *soap_endpoint, const char *soap_action, char *_jobid, int *_status);
 
@@ -1541,8 +1541,6 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve_ns1__runNeighbor(struct soap*);
 
 SOAP_FMAC5 int SOAP_FMAC6 soap_serve_ns1__runContml(struct soap*);
 
-SOAP_FMAC5 int SOAP_FMAC6 soap_serve_ns1__runGendis(struct soap*);
-
 SOAP_FMAC5 int SOAP_FMAC6 soap_serve_ns1__runMix(struct soap*);
 
 SOAP_FMAC5 int SOAP_FMAC6 soap_serve_ns1__runPenny(struct soap*);
@@ -1570,6 +1568,8 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_serve_ns1__runWolfPsort(struct soap*);
 SOAP_FMAC5 int SOAP_FMAC6 soap_serve_ns1__runRNAfold(struct soap*);
 
 SOAP_FMAC5 int SOAP_FMAC6 soap_serve_ns1__showBlastDB(struct soap*);
+
+SOAP_FMAC5 int SOAP_FMAC6 soap_serve_ns1__map2PathwayProjector(struct soap*);
 
 SOAP_FMAC5 int SOAP_FMAC6 soap_serve_ns1__checkStatus(struct soap*);
 

@@ -256,10 +256,11 @@ Command line arguments
                                   selected by information of your job.
 
    Advanced (Unprompted) qualifiers:
-   -format             integer    [0] blast report format.
+   -format             string     [0] blast report format.
                                   0 : normal BLAST report
                                   8 : tabular
-                                  20: ID list separated by conmma
+				  k1: ID list
+                                  k2: ID list separated by conmma
    -eval               float      [10.0] expectation value
    -qfilter            string     [T] filter query sequence
    -op                 integer    [-1] cost to open a gap
@@ -325,8 +326,9 @@ Known bugs
 
 See also
 
-   seqret           Reads and writes (returns) sequences
+   kshowblastdb     Displays information on databases for kblast
    kssearch         Search similar sequences in public repositories using SSEARCH
+   seqret           Reads and writes (returns) sequences
 
 Author(s)
 
@@ -337,6 +339,8 @@ Author(s)
 History
 
    2009 - Written by Kazuki Oshita
+   Sep 2010 - Added "-format 20" option
+   Nov 2010 - Revised "-format" option
 
 Target users
 

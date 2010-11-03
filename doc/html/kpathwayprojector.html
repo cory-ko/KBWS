@@ -1,0 +1,223 @@
+<!--START OF HEADER - DON'T ALTER -->
+
+<HTML>
+<HEAD>
+  <TITLE>
+  EMBOSS: kpathwayprojector
+  </TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" text="#000000">
+
+
+
+<table align=center border=0 cellspacing=0 cellpadding=0>
+<tr><td valign=top>
+<A HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
+</td>
+<td align=left valign=middle>
+<b><font size="+6">
+kpathwayprojector
+</font></b>
+</td></tr>
+</table>
+<br>&nbsp;
+<p>
+
+
+<!--END OF HEADER-->
+
+
+
+
+
+
+<H2>
+    Function
+</H2>
+Mapping experimental data on PathwayProjector
+<!--
+DON'T WRITE ANYTHING HERE.
+IT IS DONE FOR YOU.
+-->
+
+
+
+
+<h2>Description</h2>
+
+
+   kpathwayprojector maps experimental data, such as transcriptomics,
+   proteomics or metabolomics on Pathway Projector.
+</p>
+
+<p>   Pathway Projector provides integrated pathway maps that are based upon
+   the KEGG Atlas, with the addition of nodes for genes and enzymes, and
+   is implemented as a scalable, zoomable map. Users can search pathway-related
+   data using keywords, molecular weights, nucleotide sequences, and amino
+   acid sequences, or as possible routes between compounds. In addition,
+   experimental data from transcriptomic, proteomic, and metabolomic analyses
+   can be readily mapped.
+</p>
+
+<p>   Pathway Projector is provided by Institute for Advanced Biosciences.
+   Original web service is located at the following URL:
+</p>
+
+<p>   http://www.g-language.org/PathwayProjector/
+</p>
+
+<p>   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kprotpars is thus an interface of "map2PathwayProjector"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+</p>
+
+<p>
+
+<h2>Usage</h2>
+
+<table width="90%"><tr><td bgcolor="#CCFFFF"><pre>
+
+   Here is a sample session with kprotpars
+
+% kpathwayprojector
+Mapping experimental data on PathwayProjector
+Input (gapped) sequence(s): infile.dat
+Jobid: 12547145
+***********
+
+Pathway Projector's URL : http://ws.g-language.org/g4/main.cgi?diaAtabareaname=1&flag=6831094
+Image File : http://soap.g-language.org/12547145.png
+
+
+
+</pre></td></tr></table>
+
+
+<h2>Command line arguments</h2>
+
+<table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+<tr bgcolor="#FFFFCC">
+<th align="left">Qualifier</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Allowed values</th>
+<th align="left">Default</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-infile]<br>(Parameter 1)</td>
+<td>infile</td>
+<td>(no help text) infile value</td>
+<td>Input file</td>
+<td>2</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Additional (Optional) qualifiers</th>
+</tr>
+
+<tr>
+<td colspan=5>(none)</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
+</tr>
+
+<tr>
+<td colspan=5>(none)</td>
+</tr>
+
+</table>
+
+
+<h2>Input file format</h2>
+
+<h3>Input files for usage example</h3>
+<p><h3>File: sample.dat</h3>
+<table width="90%"><tr><td bgcolor="#FFCCFF">
+<pre>Organism:eco
+pgk,red</pre>
+</td></tr></table><p>
+
+<h2>Output file format</h2>
+
+
+
+<h2>Data files</h2>
+
+
+
+<h2>Notes</h2>
+
+
+
+<h2>References</h2>
+
+
+<pre>
+
+</pre>
+
+
+<h2>Warnings</h2>
+
+
+
+<h2>Diagnostic Error Messages</h2>
+
+
+
+<h2>Exit status</h2>
+
+
+
+<h2>Known bugs</h2>
+
+
+
+<h2>See also</h2>
+
+<table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
+<th>Description</th></tr>
+</table>
+
+
+<h2>Author(s)</h2>
+
+
+
+<h2>History</h2>
+
+
+
+<h2>Target users</h2>
+
+
+
+<h2>Comments</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</BODY>
+</HTML>
+

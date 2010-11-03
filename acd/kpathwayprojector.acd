@@ -1,0 +1,23 @@
+application: kpathwayprojector [
+  documentation: "Mapping experimental data on PathwayProjector"
+  groups: "MAPPING TO PATHWAY MAP"
+  embassy: "kbws"
+]
+
+section: input [
+  information: "Input section"
+  type: "page"
+]
+
+  infile: infile [
+    parameter: "Y"
+  ]
+
+endsection: input
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+endsection: output

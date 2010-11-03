@@ -1,0 +1,119 @@
+
+                                  kpathwayprojector
+
+
+Function
+
+   
+   Mapping experimental data on PathwayProjector
+
+
+Description
+
+   kpathwayprojector maps experimental data, such as transcriptomics,
+   proteomics or metabolomics on Pathway Projector.
+
+   Pathway Projector provides integrated pathway maps that are based upon
+   the KEGG Atlas, with the addition of nodes for genes and enzymes, and
+   is implemented as a scalable, zoomable map. Users can search pathway-related
+   data using keywords, molecular weights, nucleotide sequences, and amino
+   acid sequences, or as possible routes between compounds. In addition,
+   experimental data from transcriptomic, proteomic, and metabolomic analyses
+   can be readily mapped.
+
+   Pathway Projector is provided by Institute for Advanced Biosciences.
+   Original web service is located at the following URL:
+
+   http://www.g-language.org/PathwayProjector/
+
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+   which contains interfaces to bioinformatics web services through a proxy
+   server at Keio University. kprotpars is thus an interface of "map2PathwayProjector"
+   method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming languages
+   as SOAP web service. Please refer to the KBWS online documentations
+   http://soap.g-language.org/kbws/ for more information.
+
+Usage
+
+   Here is a sample session with kprotpars
+
+% kpathwayprojector
+Mapping experimental data on PathwayProjector
+Input (gapped) sequence(s): infile.dat
+Jobid: 12547145
+***********
+
+Pathway Projector's URL : http://ws.g-language.org/g4/main.cgi?diaAtabareaname=1&flag=6831094
+Image File : http://soap.g-language.org/12547145.png
+
+
+Command line arguments
+
+   Standard (Mandatory) qualifiers:
+  [-infile]            infile     I
+   Additional (Optional) qualifiers: (none)
+   Advanced (Unprompted) qualifiers: (none)
+
+Input file format
+
+  Input files for usage example
+
+  File: sample.dat
+Organism:eco
+pgk,red
+
+
+Output format
+   kpathwayprojector outputs two URLs.
+
+   - Pathway Projector's URL : Direct link to Pathway Projector mapped your data.
+   - Image File : Image of Pathway Map mapped on your data. This file is png format.
+
+Data files
+
+   None.
+
+Notes
+
+   None.
+
+References
+
+   Kono, N., et al.,(2009) Pathway Projector: Web-Based Zoomable Pathway Browser
+      Using KEGG Atlas and Google Maps API, PLoS One, 4(11), e7710.
+
+Warnings
+
+   None.
+
+Diagnostic Error Messages
+
+   None.
+
+Exit status
+
+   It always exits with a status of 0.
+
+Known bugs
+
+   None.
+
+Author(s)
+
+   Kazuki Oshita (cory @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
+
+History
+
+   Nov 2010 - Written by Kazuki Oshita
+
+Target users
+
+   This program is intended to be used by everyone and everything, from
+   naive users to embedded scripts.
+
+Comments
+
+   None.

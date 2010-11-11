@@ -37,7 +37,7 @@ Usage
 % kweblogo
 Generation of sequence logos using WebLogo
 Input (gapped) sequence(s): test.fasta
-Jobid: 7350341
+Jobid: kbws_7350341
 ****
 
 http://soap.g-language.org/alis/result/7350341.png

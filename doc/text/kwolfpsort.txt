@@ -37,7 +37,7 @@ Predicts protein localization for WoLF PSORT
 Input protein sequence(s): swissprot:ARFB_ARATH
 organism type (animal/plant/fungi): animal
 Output file [arfb_arath.kwolfpsort]: 
-Jobid: 8205204
+Jobid: kbws_8205204
 ****
 
 32 Nearest Neighbors

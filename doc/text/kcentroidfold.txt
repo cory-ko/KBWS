@@ -35,7 +35,7 @@ Usage
 Predicts RNA 2D structure using CentroidFold
 Input (gapped) sequence(s): test.fasta
 Output file [55-110.centroidfold]: 
-Jobid: 12547145
+Jobid: kbws_12547145
 ***********
 
 http://soap.g-language.org/alis/result/12547145.png

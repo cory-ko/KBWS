@@ -41,7 +41,7 @@ Usage
 Penny algorithm for DNA using dnapenny
 Input (gapped) sequence(s): test.fasta
 Output file [55-110.kdnapenny]:
-Jobid: 12547145
+Jobid: kbws_12547145
 ***********
 
 Command line arguments

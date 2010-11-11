@@ -37,7 +37,7 @@ Usage
 prediction protein localization sets for bacterial/plant sequences
 Input protein sequence(s): swissprot:FOXP2_HUMAN
 Output file [foxp2_human.kpsort]:
-Jobid: 1284690
+Jobid: kbws_1284690
 ***
 
  Nakai server 

@@ -1,6 +1,6 @@
 
 -------------------------------------------------------------------------
- KBWS - KEIO Bioinformatics Web Service - EMBASSY package ver. 1.0.3
+ KBWS - KEIO Bioinformatics Web Service - EMBASSY package ver. 1.0.4
 
                               Web home: http://soap.g-language.org/kbws/
 
@@ -54,14 +54,14 @@
     % cd embassy
 
   4) place KBWS file in current directory
-   % wget http://soap.g-language.org/kbws/source/KBWS-1.0.3.tar.gz
+   % wget http://soap.g-language.org/kbws/source/KBWS-1.0.4.tar.gz
       or 
-     curl -O http://soap.g-language.org/kbws/source/KBWS-1.0.3.tar.gz
+     curl -O http://soap.g-language.org/kbws/source/KBWS-1.0.4.tar.gz
 
   5) uncompress the KBWS tarball package, and go into the new KBWS directory
-     tar xzf KBWS-1.0.3.tar
-   % cd KBWS-1.0.3
-    ( EMBOSS-6.2.0/embassy/KBWS-1.0.3 )
+     tar xzf KBWS-1.0.4.tar
+   % cd KBWS-1.0.4
+    ( EMBOSS-6.2.0/embassy/KBWS-1.0.4 )
 
   6) configure and compile
    % ./configure (use same options as you used to compile emboss)

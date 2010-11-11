@@ -12,7 +12,7 @@
 
 int main(int argc, char **argv) {
 
-    embInitPV("kfetchbatch", argc, argv, "KBWS", "1.0.3");
+    embInitPV("kfetchbatch", argc, argv, "KBWS", "1.0.4");
 
     struct soap soap;
     struct ns1__fetchBatchInputParams params;

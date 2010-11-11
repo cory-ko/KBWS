@@ -44,7 +44,7 @@ Usage
 DNA compatibility algorithm using dnacomp
 Input (gapped) sequence(s): test.fasta
 Output file [55-110.kdnacomp]:
-Jobid: 12547145
+Jobid: kbws_12547145
 ***********
 
 Command line arguments

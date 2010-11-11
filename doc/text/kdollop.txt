@@ -44,7 +44,7 @@ Usage
 Dollo and polymorphism parsimony algorithm using dollop
 Input (gapped) sequence(s): test.fasta
 Output file [55-110.kdollop]:
-Jobid: 12547145
+Jobid: kbws_12547145
 ***********
 
 Command line arguments

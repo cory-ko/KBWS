@@ -1,3 +1,7 @@
+version 1.0.4 11-Nov-2010
+        Change "jobid" style
+	 - i.e. "1267966" => "kbws_1267966"
+	Bug fix
 version 1.0.3 04-Nov-2010
         Change -format option included in kblast
 	 - Add k1 and k2;

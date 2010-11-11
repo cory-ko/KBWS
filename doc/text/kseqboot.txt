@@ -48,7 +48,7 @@ Usage
 Bootstrapped sequences algorithm using seqboot
 Input (gapped) sequence(s): test.fasta
 Output file [55-110.kseqboot]:
-Jobid: 12547145
+Jobid: kbws_12547145
 ***********
 
 Command line arguments

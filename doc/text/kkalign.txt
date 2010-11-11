@@ -35,7 +35,7 @@ Usage
 Multiple sequence alignment using Kalign
 Input (gapped) sequence(s): swissprot:FOXP2_*
 Output file [foxp2_gorgo.kkalign]: 
-Jobid: 10938917
+Jobid: kbws_10938917
 **********
 
 Kalign (2.0) alignment in ClustalW format

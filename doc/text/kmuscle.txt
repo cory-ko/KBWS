@@ -38,7 +38,7 @@ Multiple sequence alignment using MUSCLE
 Input (gapped) sequence(s): multiNuc.fasta
 Output alignment format [fasta]: 
 Output file [test0.kmuscle]: 
-Jobid: 5626576
+Jobid: kbws_5626576
 **************
 
 >testD

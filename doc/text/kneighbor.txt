@@ -45,7 +45,7 @@ Usage
 Phylogenies from distance matrix by N-J or UPGMA method using neighbor
 Input (gapped) sequence(s): test.fasta
 Output file [55-110.kneighbor]:
-Jobid: 12547145
+Jobid: kbws_12547145
 ***********
 
 Command line arguments

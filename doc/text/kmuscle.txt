@@ -11,23 +11,22 @@ Description
 
    kmuscle calculates domain multiple alignment utilizing MUSCLE
    (MUltiple Sequence Comparison by Log-Expectation).
-   MUSCLE is claimed to achieve both better average accuracy and
-   better speed than ClustalW or T-Coffee, depending on the chosen
-   options.
+   MUSCLE is claimed to achieve both better average accuracy and better
+   speed than ClustalW or T-Coffee, depending on the chosen options.
 
-   kmuscle utilizes MUSCLE SOAP service provided by WUR ( Wageningen UR
-   (University & Research centre) ). Original web-service is located at the
-   following URL:
+   kmuscle utilizes MUSCLE SOAP service provided by WUR (Wageningen UR
+   (University & Research centre)). Original web-service is located
+   at the following URL:
 
    http://www.bioinformatics.nl/tools/muscle.html
 
-   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
-   which contains interfaces to bioinformatics web services through a proxy
-   server at Keio University. kmuscle is thus an interface of "runMuscle"
-   method included in KBWS SOAP service.
-   This method can be alternatively accessed directly from programming languages
-   as SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS)
+   package, which contains interfaces to bioinformatics web services
+   through a proxy server at Keio University. kmuscle is thus an
+   interface of "runMuscle" method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming
+   languages as SOAP web service. Please refer to the KBWS online
+   documentations http://soap.g-language.org/kbws/ for more information.
 
 Usage
 

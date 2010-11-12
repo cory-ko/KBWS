@@ -191,9 +191,9 @@ struct ns1__mafftInputParams
 struct ns1__muscleInputParams
 {
 	char *output;	/* required element of type xsd:string */
-	char *outputtree;	/* required element of type xsd:string */
-	int maxiters;	/* required element of type xsd:int */
-	enum xsd__boolean diags;	/* required element of type xsd:boolean */
+	char *outorder;	/* required element of type xsd:string */
+	float gapopen;	/* required element of type xsd:float */
+	float gapextend;	/* required element of type xsd:float */
 };
 #endif
 

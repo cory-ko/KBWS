@@ -14,34 +14,42 @@ section: input [
     type: "gapany"
   ]
 
+endsection: input
+
+section: additional [
+  information: "Additional section"
+  type: "page"
+]
+
   string: output [
-    parameter: "Y"
+    additional: "Y"
     default: "fasta"
-    information: "File type of output alignment"
+    information: "File type of output alignment (clw, fasta, msf, html)"
   ]
 
-endsection: input
+endsection: additional
 
 section: advanced [
   information: "Advanced section"
   type: "page"
 ]
 
-  string: outputtree [
+  string: outorder [
     additional: "Y"
-    default: ""
-    information: "where first iteration from? (first or second)"
+    default: "aligned"
+    information: "output order (aligned or input)"
   ]
 
-  integer: maxiters [
+  float: gapopen [
     additional: "Y"
-    default: ""
-    information: "Maximum number of iterations to perform"
+    default: "-3.00"
+    information: "Gap Open Penalty"
   ]
 
-  boolean: diags [
+  float: gapextend [
     additional: "Y"
-    information: "Find diagonals (faster for similar sequences)"
+    default: "-0.275"
+    information: "Gap Extension Penalty"
   ]
 
 endsection: advanced
@@ -57,4 +65,3 @@ section: output [
   ]
 
 endsection: output
-

@@ -16,7 +16,7 @@
 extern "C" {
 #endif
 
-SOAP_SOURCE_STAMP("@(#) soapC.c ver 2.7.13 2010-11-03 18:00:03 GMT")
+SOAP_SOURCE_STAMP("@(#) soapC.c ver 2.7.13 2010-11-12 06:32:22 GMT")
 
 
 #ifndef WITH_NOGLOBAL
@@ -10576,17 +10576,16 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_default_ns1__muscleInputParams(struct soap *soap
 {
 	(void)soap; (void)a; /* appease -Wall -Werror */
 	soap_default_string(soap, &a->output);
-	soap_default_string(soap, &a->outputtree);
-	soap_default_int(soap, &a->maxiters);
-	soap_default_xsd__boolean(soap, &a->diags);
+	soap_default_string(soap, &a->outorder);
+	soap_default_float(soap, &a->gapopen);
+	soap_default_float(soap, &a->gapextend);
 }
 
 SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ns1__muscleInputParams(struct soap *soap, const struct ns1__muscleInputParams *a)
 {
 	(void)soap; (void)a; /* appease -Wall -Werror */
 	soap_serialize_string(soap, &a->output);
-	soap_serialize_string(soap, &a->outputtree);
-	soap_embedded(soap, &a->maxiters, SOAP_TYPE_int);
+	soap_serialize_string(soap, &a->outorder);
 }
 
 SOAP_FMAC3 int SOAP_FMAC4 soap_put_ns1__muscleInputParams(struct soap *soap, const struct ns1__muscleInputParams *a, const char *tag, const char *type)
@@ -10603,11 +10602,11 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__muscleInputParams(struct soap *soap, con
 		return soap->error;
 	if (soap_out_string(soap, "output", -1, &a->output, ""))
 		return soap->error;
-	if (soap_out_string(soap, "outputtree", -1, &a->outputtree, ""))
+	if (soap_out_string(soap, "outorder", -1, &a->outorder, ""))
 		return soap->error;
-	if (soap_out_int(soap, "maxiters", -1, &a->maxiters, ""))
+	if (soap_out_float(soap, "gapopen", -1, &a->gapopen, ""))
 		return soap->error;
-	if (soap_out_xsd__boolean(soap, "diags", -1, &a->diags, ""))
+	if (soap_out_float(soap, "gapextend", -1, &a->gapextend, ""))
 		return soap->error;
 	return soap_element_end_out(soap, tag);
 }
@@ -10623,9 +10622,9 @@ SOAP_FMAC3 struct ns1__muscleInputParams * SOAP_FMAC4 soap_get_ns1__muscleInputP
 SOAP_FMAC3 struct ns1__muscleInputParams * SOAP_FMAC4 soap_in_ns1__muscleInputParams(struct soap *soap, const char *tag, struct ns1__muscleInputParams *a, const char *type)
 {
 	size_t soap_flag_output = 1;
-	size_t soap_flag_outputtree = 1;
-	size_t soap_flag_maxiters = 1;
-	size_t soap_flag_diags = 1;
+	size_t soap_flag_outorder = 1;
+	size_t soap_flag_gapopen = 1;
+	size_t soap_flag_gapextend = 1;
 	if (soap_element_begin_in(soap, tag, 0, type))
 		return NULL;
 	a = (struct ns1__muscleInputParams *)soap_id_enter(soap, soap->id, a, SOAP_TYPE_ns1__muscleInputParams, sizeof(struct ns1__muscleInputParams), 0, NULL, NULL, NULL);
@@ -10641,19 +10640,19 @@ SOAP_FMAC3 struct ns1__muscleInputParams * SOAP_FMAC4 soap_in_ns1__muscleInputPa
 				{	soap_flag_output--;
 					continue;
 				}
-			if (soap_flag_outputtree && (soap->error == SOAP_TAG_MISMATCH || soap->error == SOAP_NO_TAG))
-				if (soap_in_string(soap, "outputtree", &a->outputtree, "xsd:string"))
-				{	soap_flag_outputtree--;
+			if (soap_flag_outorder && (soap->error == SOAP_TAG_MISMATCH || soap->error == SOAP_NO_TAG))
+				if (soap_in_string(soap, "outorder", &a->outorder, "xsd:string"))
+				{	soap_flag_outorder--;
 					continue;
 				}
-			if (soap_flag_maxiters && soap->error == SOAP_TAG_MISMATCH)
-				if (soap_in_int(soap, "maxiters", &a->maxiters, "xsd:int"))
-				{	soap_flag_maxiters--;
+			if (soap_flag_gapopen && soap->error == SOAP_TAG_MISMATCH)
+				if (soap_in_float(soap, "gapopen", &a->gapopen, "xsd:float"))
+				{	soap_flag_gapopen--;
 					continue;
 				}
-			if (soap_flag_diags && soap->error == SOAP_TAG_MISMATCH)
-				if (soap_in_xsd__boolean(soap, "diags", &a->diags, "xsd:boolean"))
-				{	soap_flag_diags--;
+			if (soap_flag_gapextend && soap->error == SOAP_TAG_MISMATCH)
+				if (soap_in_float(soap, "gapextend", &a->gapextend, "xsd:float"))
+				{	soap_flag_gapextend--;
 					continue;
 				}
 			if (soap->error == SOAP_TAG_MISMATCH)
@@ -10671,7 +10670,7 @@ SOAP_FMAC3 struct ns1__muscleInputParams * SOAP_FMAC4 soap_in_ns1__muscleInputPa
 		if (soap->body && soap_element_end_in(soap, tag))
 			return NULL;
 	}
-	if ((soap->mode & SOAP_XML_STRICT) && (soap_flag_output > 0 || soap_flag_outputtree > 0 || soap_flag_maxiters > 0 || soap_flag_diags > 0))
+	if ((soap->mode & SOAP_XML_STRICT) && (soap_flag_output > 0 || soap_flag_outorder > 0 || soap_flag_gapopen > 0 || soap_flag_gapextend > 0))
 	{	soap->error = SOAP_OCCURS;
 		return NULL;
 	}

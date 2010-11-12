@@ -21,30 +21,27 @@ int main(int argc, char **argv) {
     char* 				jobid;
     char* 				result;
 
-    AjPSeqall  	seqall;
-    AjPSeq     	seq;
-    AjPFile    	outf;
-    AjPStr     	substr;
-    AjPStr     	inseq = NULL;
-    AjPStr     	output;
-    AjPStr     	outputtree;
-    ajint      	maxiters;
-    AjBool     	diags;
-    output     	      = ajAcdGetString("output");
-    outputtree 	      = ajAcdGetString("outputtree");
-    maxiters   	      = ajAcdGetInt("maxiters");
-    diags      	      = ajAcdGetBoolean("diags");
+    AjPSeqall seqall;
+    AjPSeq    seq;
+    AjPFile   outf;
+    AjPStr    substr;
+    AjPStr    inseq = NULL;
+    AjPStr    output;
+    AjPStr    outorder;
+    float     gapopen;
+    float     gapextend;
+    
+    output    = ajAcdGetString("output");
+    outorder  = ajAcdGetString("outorder");
+    gapopen   = ajAcdGetFloat("gapopen");
+    gapextend = ajAcdGetFloat("gapextend");
 
-    seqall            = ajAcdGetSeqall("seqall");
-    outf   	      = ajAcdGetOutfile("outfile");
-    params.output     = ajCharNewS(output);
-    params.outputtree = ajCharNewS(outputtree);
-    params.maxiters   = maxiters;
-    if (diags) {
-      params.diags    = xsd__boolean__true_;
-    } else {
-      params.diags    = xsd__boolean__false_;
-    }
+    seqall           = ajAcdGetSeqall("seqall");
+    outf   	     = ajAcdGetOutfile("outfile");
+    params.output    = ajCharNewS(output);
+    params.outorder  = ajCharNewS(outorder);
+    params.gapopen   = gapopen;
+    params.gapextend = gapextend;
 
     AjPStr     	tmp 	    = NULL;
     AjPStr     	tmpFileName = NULL;

@@ -15,11 +15,11 @@ Description
    better speed than ClustalW or T-Coffee, depending on the chosen
    options.
 
-   kmuscle utilizes MUSCLE SOAP service provided by EBI (European
-   Bioinformatics Institute). Original web-service is located at the
+   kmuscle utilizes MUSCLE SOAP service provided by WUR ( Wageningen UR
+   (University & Research centre) ). Original web-service is located at the
    following URL:
 
-   http://www.ebi.ac.uk/Tools/webservices/services/msa/muscle_soap
+   http://www.bioinformatics.nl/tools/muscle.html
 
    This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
    which contains interfaces to bioinformatics web services through a proxy
@@ -98,22 +98,20 @@ Command line arguments
    Standard (Mandatory) qualifiers:
   [-sequence]          seqall     (Gapped) sequence(s) filename and optional
                                   format, or reference (input USA)
-  [-output]            string     [fasta] output alignment format
-                                     'fasta'     (FASTA)
-                                     'clw'       (ClustalW)
-                                     'clwstrict' (ClustalW Strict)
-                                     'html'      (HTML)
-                                     'msf'       (MSF)
-                                     'phyi'      (Phylip interleaved),
-                                     'phys'      (Phylip sequential)
   [-outseq]            outfile    [.kmuscle] output filename
 
    Additional (Optional) qualifiers: (none)
+  [-output]            string     [fasta] output alignment format
+                                     'fasta'     (FASTA)
+                                     'clw'       (ClustalW)
+                                     'html'      (HTML)
+                                     'msf'       (MSF)
+
    Advanced (Unprompted) qualifiers:
-   -outputtree         string     'tree1' (From first iteration) or 
-                                  'tree2' (From second iteration)
-   -maxiters           integer    Maximum number of iterations to perform
-   -diags              boolean    Find diagonals (faster for similar sequences)
+   -outorder           string     [aligned] Sequence Order
+                                    'aligned' or 'input' (input order)
+   -gapopen            float      [-3.00] Gap Open Penalty
+   -gapextend          float      [-0.275] Gap Extension Penalty
 
 Input file format
 

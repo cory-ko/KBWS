@@ -10,9 +10,9 @@
    <in0></in0>
    <params>
     <output></output>
-    <outputtree></outputtree>
-    <maxiters>0</maxiters>
-    <diags>false</diags>
+    <outorder></outorder>
+    <gapopen>0.0</gapopen>
+    <gapextend>0.0</gapextend>
    </params>
   </ns1:runMuscle>
  </SOAP-ENV:Body>

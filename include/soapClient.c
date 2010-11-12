@@ -14,14 +14,14 @@
 extern "C" {
 #endif
 
-SOAP_SOURCE_STAMP("@(#) soapClient.c ver 2.7.13 2010-11-03 18:00:03 GMT")
+SOAP_SOURCE_STAMP("@(#) soapClient.c ver 2.7.13 2010-11-12 06:32:22 GMT")
 
 
 SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runBlast(struct soap *soap, const char *soap_endpoint, const char *soap_action, char *_in0, struct ns1__blastInputParams *_params, char **_jobid)
 {	struct ns1__runBlast soap_tmp_ns1__runBlast;
 	struct ns1__runBlastResponse *soap_tmp_ns1__runBlastResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runBlast";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -79,7 +79,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runCentroidfold(struct soap *soap, cons
 {	struct ns1__runCentroidfold soap_tmp_ns1__runCentroidfold;
 	struct ns1__runCentroidfoldResponse *soap_tmp_ns1__runCentroidfoldResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runCentroidfold";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -137,7 +137,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runClustalw(struct soap *soap, const ch
 {	struct ns1__runClustalw soap_tmp_ns1__runClustalw;
 	struct ns1__runClustalwResponse *soap_tmp_ns1__runClustalwResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runClustalw";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -195,7 +195,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runFetchData(struct soap *soap, const c
 {	struct ns1__runFetchData soap_tmp_ns1__runFetchData;
 	struct ns1__runFetchDataResponse *soap_tmp_ns1__runFetchDataResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runFetchData";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -253,7 +253,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runFetchBatch(struct soap *soap, const 
 {	struct ns1__runFetchBatch soap_tmp_ns1__runFetchBatch;
 	struct ns1__runFetchBatchResponse *soap_tmp_ns1__runFetchBatchResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runFetchBatch";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -312,7 +312,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runGenemarkhmm(struct soap *soap, const
 {	struct ns1__runGenemarkhmm soap_tmp_ns1__runGenemarkhmm;
 	struct ns1__runGenemarkhmmResponse *soap_tmp_ns1__runGenemarkhmmResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runGenemarkhmm";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -370,7 +370,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runGlimmer(struct soap *soap, const cha
 {	struct ns1__runGlimmer soap_tmp_ns1__runGlimmer;
 	struct ns1__runGlimmerResponse *soap_tmp_ns1__runGlimmerResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runGlimmer";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -428,7 +428,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runKalign(struct soap *soap, const char
 {	struct ns1__runKalign soap_tmp_ns1__runKalign;
 	struct ns1__runKalignResponse *soap_tmp_ns1__runKalignResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runKalign";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -486,7 +486,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runMafft(struct soap *soap, const char 
 {	struct ns1__runMafft soap_tmp_ns1__runMafft;
 	struct ns1__runMafftResponse *soap_tmp_ns1__runMafftResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runMafft";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -544,7 +544,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runMuscle(struct soap *soap, const char
 {	struct ns1__runMuscle soap_tmp_ns1__runMuscle;
 	struct ns1__runMuscleResponse *soap_tmp_ns1__runMuscleResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runMuscle";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -602,7 +602,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runPhobius(struct soap *soap, const cha
 {	struct ns1__runPhobius soap_tmp_ns1__runPhobius;
 	struct ns1__runPhobiusResponse *soap_tmp_ns1__runPhobiusResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runPhobius";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -660,7 +660,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runProtpars(struct soap *soap, const ch
 {	struct ns1__runProtpars soap_tmp_ns1__runProtpars;
 	struct ns1__runProtparsResponse *soap_tmp_ns1__runProtparsResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runProtpars";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -717,7 +717,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runProtdist(struct soap *soap, const ch
 {	struct ns1__runProtdist soap_tmp_ns1__runProtdist;
 	struct ns1__runProtdistResponse *soap_tmp_ns1__runProtdistResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runProtdist";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -774,7 +774,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runDnapars(struct soap *soap, const cha
 {	struct ns1__runDnapars soap_tmp_ns1__runDnapars;
 	struct ns1__runDnaparsResponse *soap_tmp_ns1__runDnaparsResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runDnapars";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -831,7 +831,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runDnapenny(struct soap *soap, const ch
 {	struct ns1__runDnapenny soap_tmp_ns1__runDnapenny;
 	struct ns1__runDnapennyResponse *soap_tmp_ns1__runDnapennyResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runDnapenny";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -888,7 +888,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runDnacomp(struct soap *soap, const cha
 {	struct ns1__runDnacomp soap_tmp_ns1__runDnacomp;
 	struct ns1__runDnacompResponse *soap_tmp_ns1__runDnacompResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runDnacomp";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -945,7 +945,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runDnainvar(struct soap *soap, const ch
 {	struct ns1__runDnainvar soap_tmp_ns1__runDnainvar;
 	struct ns1__runDnainvarResponse *soap_tmp_ns1__runDnainvarResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runDnainvar";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1002,7 +1002,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runDnaml(struct soap *soap, const char 
 {	struct ns1__runDnaml soap_tmp_ns1__runDnaml;
 	struct ns1__runDnamlResponse *soap_tmp_ns1__runDnamlResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runDnaml";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1059,7 +1059,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runDnamlk(struct soap *soap, const char
 {	struct ns1__runDnamlk soap_tmp_ns1__runDnamlk;
 	struct ns1__runDnamlkResponse *soap_tmp_ns1__runDnamlkResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runDnamlk";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1116,7 +1116,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runDnadist(struct soap *soap, const cha
 {	struct ns1__runDnadist soap_tmp_ns1__runDnadist;
 	struct ns1__runDnadistResponse *soap_tmp_ns1__runDnadistResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runDnadist";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1173,7 +1173,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runGendist(struct soap *soap, const cha
 {	struct ns1__runGendist soap_tmp_ns1__runGendist;
 	struct ns1__runGendistResponse *soap_tmp_ns1__runGendistResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runGendist";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1230,7 +1230,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runSeqboot(struct soap *soap, const cha
 {	struct ns1__runSeqboot soap_tmp_ns1__runSeqboot;
 	struct ns1__runSeqbootResponse *soap_tmp_ns1__runSeqbootResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runSeqboot";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1287,7 +1287,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runRestml(struct soap *soap, const char
 {	struct ns1__runRestml soap_tmp_ns1__runRestml;
 	struct ns1__runRestmlResponse *soap_tmp_ns1__runRestmlResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runRestml";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1344,7 +1344,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runClique(struct soap *soap, const char
 {	struct ns1__runClique soap_tmp_ns1__runClique;
 	struct ns1__runCliqueResponse *soap_tmp_ns1__runCliqueResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runClique";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1401,7 +1401,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runFitch(struct soap *soap, const char 
 {	struct ns1__runFitch soap_tmp_ns1__runFitch;
 	struct ns1__runFitchResponse *soap_tmp_ns1__runFitchResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runFitch";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1458,7 +1458,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runKitsch(struct soap *soap, const char
 {	struct ns1__runKitsch soap_tmp_ns1__runKitsch;
 	struct ns1__runKitschResponse *soap_tmp_ns1__runKitschResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runKitsch";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1515,7 +1515,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runNeighbor(struct soap *soap, const ch
 {	struct ns1__runNeighbor soap_tmp_ns1__runNeighbor;
 	struct ns1__runNeighborResponse *soap_tmp_ns1__runNeighborResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runNeighbor";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1572,7 +1572,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runContml(struct soap *soap, const char
 {	struct ns1__runContml soap_tmp_ns1__runContml;
 	struct ns1__runContmlResponse *soap_tmp_ns1__runContmlResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runContml";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1629,7 +1629,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runMix(struct soap *soap, const char *s
 {	struct ns1__runMix soap_tmp_ns1__runMix;
 	struct ns1__runMixResponse *soap_tmp_ns1__runMixResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runMix";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1686,7 +1686,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runPenny(struct soap *soap, const char 
 {	struct ns1__runPenny soap_tmp_ns1__runPenny;
 	struct ns1__runPennyResponse *soap_tmp_ns1__runPennyResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runPenny";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1743,7 +1743,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runDollop(struct soap *soap, const char
 {	struct ns1__runDollop soap_tmp_ns1__runDollop;
 	struct ns1__runDollopResponse *soap_tmp_ns1__runDollopResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runDollop";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1800,7 +1800,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runDolpenny(struct soap *soap, const ch
 {	struct ns1__runDolpenny soap_tmp_ns1__runDolpenny;
 	struct ns1__runDolpennyResponse *soap_tmp_ns1__runDolpennyResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runDolpenny";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1857,7 +1857,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runPsort(struct soap *soap, const char 
 {	struct ns1__runPsort soap_tmp_ns1__runPsort;
 	struct ns1__runPsortResponse *soap_tmp_ns1__runPsortResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runPsort";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1915,7 +1915,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runPsort2(struct soap *soap, const char
 {	struct ns1__runPsort2 soap_tmp_ns1__runPsort2;
 	struct ns1__runPsort2Response *soap_tmp_ns1__runPsort2Response;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runPsort2";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -1972,7 +1972,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runPsortb(struct soap *soap, const char
 {	struct ns1__runPsortb soap_tmp_ns1__runPsortb;
 	struct ns1__runPsortbResponse *soap_tmp_ns1__runPsortbResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runPsortb";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -2030,7 +2030,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runSsearch(struct soap *soap, const cha
 {	struct ns1__runSsearch soap_tmp_ns1__runSsearch;
 	struct ns1__runSsearchResponse *soap_tmp_ns1__runSsearchResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runSsearch";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -2088,7 +2088,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runTcoffee(struct soap *soap, const cha
 {	struct ns1__runTcoffee soap_tmp_ns1__runTcoffee;
 	struct ns1__runTcoffeeResponse *soap_tmp_ns1__runTcoffeeResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runTcoffee";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -2146,7 +2146,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runtRNAscan(struct soap *soap, const ch
 {	struct ns1__runtRNAscan soap_tmp_ns1__runtRNAscan;
 	struct ns1__runtRNAscanResponse *soap_tmp_ns1__runtRNAscanResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runtRNAscan";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -2204,7 +2204,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runWeblogo(struct soap *soap, const cha
 {	struct ns1__runWeblogo soap_tmp_ns1__runWeblogo;
 	struct ns1__runWeblogoResponse *soap_tmp_ns1__runWeblogoResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runWeblogo";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -2262,7 +2262,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runWolfPsort(struct soap *soap, const c
 {	struct ns1__runWolfPsort soap_tmp_ns1__runWolfPsort;
 	struct ns1__runWolfPsortResponse *soap_tmp_ns1__runWolfPsortResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runWolfPsort";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -2320,7 +2320,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runRNAfold(struct soap *soap, const cha
 {	struct ns1__runRNAfold soap_tmp_ns1__runRNAfold;
 	struct ns1__runRNAfoldResponse *soap_tmp_ns1__runRNAfoldResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#runRNAfold";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -2378,7 +2378,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__showBlastDB(struct soap *soap, const ch
 {	struct ns1__showBlastDB soap_tmp_ns1__showBlastDB;
 	struct ns1__showBlastDBResponse *soap_tmp_ns1__showBlastDBResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#showBlastDB";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -2435,7 +2435,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__map2PathwayProjector(struct soap *soap,
 {	struct ns1__map2PathwayProjector soap_tmp_ns1__map2PathwayProjector;
 	struct ns1__map2PathwayProjectorResponse *soap_tmp_ns1__map2PathwayProjectorResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#map2PathwayProjector";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -2492,7 +2492,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__checkStatus(struct soap *soap, const ch
 {	struct ns1__checkStatus soap_tmp_ns1__checkStatus;
 	struct ns1__checkStatusResponse *soap_tmp_ns1__checkStatusResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#checkStatus";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -2549,7 +2549,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__checkStatus_USCOREretJobid(struct soap 
 {	struct ns1__checkStatus_USCOREretJobid soap_tmp_ns1__checkStatus_USCOREretJobid;
 	struct ns1__checkStatus_USCOREretJobidResponse *soap_tmp_ns1__checkStatus_USCOREretJobidResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#checkStatus_retJobid";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -2606,7 +2606,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__getResult(struct soap *soap, const char
 {	struct ns1__getResult soap_tmp_ns1__getResult;
 	struct ns1__getResultResponse *soap_tmp_ns1__getResultResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#getResult";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";
@@ -2663,7 +2663,7 @@ SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__getMultiResult(struct soap *soap, const
 {	struct ns1__getMultiResult soap_tmp_ns1__getMultiResult;
 	struct ns1__getMultiResultResponse *soap_tmp_ns1__getMultiResultResponse;
 	if (!soap_endpoint)
-		soap_endpoint = "http://soap.g-language.org/kbws/kbws_Ver1.0.0.cgi";
+		soap_endpoint = "http://soap.g-language.org/kbws/kbws.cgi";
 	if (!soap_action)
 		soap_action = "http://soap.g-language.org/KBWS#getMultiResult";
 	soap->encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/";

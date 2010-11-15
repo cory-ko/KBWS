@@ -2,7 +2,7 @@
 -------------------------------------------------------------------------
  KBWS - KEIO Bioinformatics Web Service - EMBASSY package ver. 1.0.4
 
-                              Web home: http://soap.g-language.org/kbws/
+                              Web home: http://www.g-language.org/kbws/
 
     All rights reserved. Copyright (C) 2010 by OSHITA Kazuki.
 
@@ -54,9 +54,9 @@
     % cd embassy
 
   4) place KBWS file in current directory
-   % wget http://soap.g-language.org/kbws/source/KBWS-1.0.4.tar.gz
+   % wget http://www.g-language.org/kbws/source/KBWS-1.0.4.tar.gz
       or 
-     curl -O http://soap.g-language.org/kbws/source/KBWS-1.0.4.tar.gz
+     curl -O http://www.g-language.org/kbws/source/KBWS-1.0.4.tar.gz
 
   5) uncompress the KBWS tarball package, and go into the new KBWS directory
      tar xzf KBWS-1.0.4.tar

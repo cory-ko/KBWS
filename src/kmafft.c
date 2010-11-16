@@ -13,7 +13,7 @@
 static AjPStr getUniqueFileName(void);
     int main(int argc, char **argv) {
 
-    embInitPV("kmafft", argc, argv, "KBWS", "1.0.4");
+    embInitPV("kmafft", argc, argv, "KBWS", "1.0.5");
 
     struct soap soap;
     struct ns1__mafftInputParams params;

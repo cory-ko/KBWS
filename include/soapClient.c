@@ -14,7 +14,7 @@
 extern "C" {
 #endif
 
-SOAP_SOURCE_STAMP("@(#) soapClient.c ver 2.7.13 2010-11-12 06:32:22 GMT")
+SOAP_SOURCE_STAMP("@(#) soapClient.c ver 2.7.13 2010-11-16 12:53:02 GMT")
 
 
 SOAP_FMAC5 int SOAP_FMAC6 soap_call_ns1__runBlast(struct soap *soap, const char *soap_endpoint, const char *soap_action, char *_in0, struct ns1__blastInputParams *_params, char **_jobid)

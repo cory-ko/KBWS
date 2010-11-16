@@ -51,7 +51,7 @@ struct ns1__blastInputParams
 	char *p;	/* required element of type xsd:string */
 	char *d;	/* required element of type xsd:string */
 	char *server;	/* required element of type xsd:string */
-	float e;	/* required element of type xsd:float */
+	char *e;	/* required element of type xsd:string */
 	char *m;	/* required element of type xsd:string */
 	char *F;	/* required element of type xsd:string */
 	int G;	/* required element of type xsd:int */

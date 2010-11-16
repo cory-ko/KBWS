@@ -261,7 +261,7 @@ Command line arguments
                                   8 : tabular
 				  k1: ID list
                                   k2: ID list separated by conmma
-   -eval               float      [10.0] expectation value
+   -eval               string     [10.0] expectation value
    -qfilter            string     [T] filter query sequence
    -op                 integer    [-1] cost to open a gap
    -ep                 integer    [-1] cost to extend a gap

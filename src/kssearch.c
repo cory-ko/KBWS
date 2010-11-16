@@ -12,7 +12,7 @@
 
 int main(int argc, char **argv) {
 
-    embInitPV("kssearch", argc, argv, "KBWS", "1.0.4");
+    embInitPV("kssearch", argc, argv, "KBWS", "1.0.5");
 
     struct soap soap;
     struct ns1__ssearchInputParams params;

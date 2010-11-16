@@ -12,7 +12,7 @@
 
 int main(int argc, char **argv) {
 
-    embInitPV("kcentroidfold", argc, argv, "KBWS", "1.0.4");
+    embInitPV("kcentroidfold", argc, argv, "KBWS", "1.0.5");
 
     struct soap soap;
     struct ns1__centroidfoldInputParams params;

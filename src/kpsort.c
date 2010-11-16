@@ -13,7 +13,7 @@
 
 int main(int argc, char **argv) {
 
-    embInitPV("kpsort", argc, argv, "KBWS", "1.0.4");
+    embInitPV("kpsort", argc, argv, "KBWS", "1.0.5");
 
     AjPSeqall  seqall;
     AjPSeq     seq;

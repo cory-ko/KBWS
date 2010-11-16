@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
     AjPFile    outf;
     AjPStr     substr;
 
-    embInitPV("kpsort2", argc, argv, "KBWS", "1.0.4");
+    embInitPV("kpsort2", argc, argv, "KBWS", "1.0.5");
 
     struct soap soap;
 

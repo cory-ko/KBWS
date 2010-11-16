@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
     AjPStr     gram;
     AjPStr     format;
 
-    embInitPV("kpsortb", argc, argv, "KBWS", "1.0.4");
+    embInitPV("kpsortb", argc, argv, "KBWS", "1.0.5");
 
     struct soap soap;
     struct ns1__psortbInputParams params;

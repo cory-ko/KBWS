@@ -16,7 +16,7 @@
 extern "C" {
 #endif
 
-SOAP_SOURCE_STAMP("@(#) soapC.c ver 2.7.13 2010-11-12 06:32:22 GMT")
+SOAP_SOURCE_STAMP("@(#) soapC.c ver 2.7.13 2010-11-16 12:53:02 GMT")
 
 
 #ifndef WITH_NOGLOBAL
@@ -11701,7 +11701,7 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_default_ns1__blastInputParams(struct soap *soap,
 	soap_default_string(soap, &a->p);
 	soap_default_string(soap, &a->d);
 	soap_default_string(soap, &a->server);
-	soap_default_float(soap, &a->e);
+	soap_default_string(soap, &a->e);
 	soap_default_string(soap, &a->m);
 	soap_default_string(soap, &a->F);
 	soap_default_int(soap, &a->G);
@@ -11726,6 +11726,7 @@ SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ns1__blastInputParams(struct soap *soa
 	soap_serialize_string(soap, &a->p);
 	soap_serialize_string(soap, &a->d);
 	soap_serialize_string(soap, &a->server);
+	soap_serialize_string(soap, &a->e);
 	soap_serialize_string(soap, &a->m);
 	soap_serialize_string(soap, &a->F);
 	soap_embedded(soap, &a->G, SOAP_TYPE_int);
@@ -11759,7 +11760,7 @@ SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns1__blastInputParams(struct soap *soap, cons
 		return soap->error;
 	if (soap_out_string(soap, "server", -1, &a->server, ""))
 		return soap->error;
-	if (soap_out_float(soap, "e", -1, &a->e, ""))
+	if (soap_out_string(soap, "e", -1, &a->e, ""))
 		return soap->error;
 	if (soap_out_string(soap, "m", -1, &a->m, ""))
 		return soap->error;
@@ -11851,8 +11852,8 @@ SOAP_FMAC3 struct ns1__blastInputParams * SOAP_FMAC4 soap_in_ns1__blastInputPara
 				{	soap_flag_server--;
 					continue;
 				}
-			if (soap_flag_e && soap->error == SOAP_TAG_MISMATCH)
-				if (soap_in_float(soap, "e", &a->e, "xsd:float"))
+			if (soap_flag_e && (soap->error == SOAP_TAG_MISMATCH || soap->error == SOAP_NO_TAG))
+				if (soap_in_string(soap, "e", &a->e, "xsd:string"))
 				{	soap_flag_e--;
 					continue;
 				}

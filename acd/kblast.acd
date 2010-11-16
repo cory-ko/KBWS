@@ -45,7 +45,7 @@ section: advanced [
     information: "blast report format"
   ]
 
-  float: eval [
+  string: eval [
     additional: "Y"
     default: "10.0"
     information: "Expectation value"

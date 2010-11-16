@@ -37,7 +37,7 @@
  b) Installation
   In the following examples, we assume downloaded EMBOSS filename is EMBOSS-6.2.0.tar.gz.
 
-  1) download and compile EMBOSS source code.
+  1) Download and compile EMBOSS source code.
     % wget ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.2.0.tar.gz
        or
     % curl -O ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.2.0.tar.gz 
@@ -47,23 +47,23 @@
     % make
     % sudo make install
 
-  2) make new directory "embassy" (in EMBOSS-6.2.0/ directory) if it does not exist already
+  2) Make new directory "embassy" (in EMBOSS-6.2.0/ directory) if it does not exist already
     % mkdir embassy
 
-  3) go into that directory.
+  3) Go into that directory.
     % cd embassy
 
-  4) place KBWS file in current directory
+  4) Place KBWS file in current directory
    % wget http://www.g-language.org/kbws/source/KBWS-1.0.4.tar.gz
       or 
      curl -O http://www.g-language.org/kbws/source/KBWS-1.0.4.tar.gz
 
-  5) uncompress the KBWS tarball package, and go into the new KBWS directory
-     tar xzf KBWS-1.0.4.tar
+  5) Uncompress the KBWS tarball package, and go into the new KBWS directory
+     tar xzf KBWS-1.0.4.tar.gz
    % cd KBWS-1.0.4
     ( EMBOSS-6.2.0/embassy/KBWS-1.0.4 )
 
-  6) configure and compile
+  6) Configure and compile
    % ./configure (use same options as you used to compile emboss)
    % make
    % sudo make install
@@ -86,27 +86,31 @@
 
    and then retry make.
 
-   2) When you are upgrading EMBOSS, please be sure to uninstall old version of
+   2) When users are upgrading EMBOSS, please be sure to uninstall old version of
    EMBOSS and KBWS. If you override them, some older version of files may cause errors.
+
+   3) If you use "./configure" command with "--prefix" option, please rewrite
+   "emboss_acdroot" and "emboss_data" value in ~/.embossrc file.
+   Please check "~/.embossrc" file for further informations.
 
 -------------------------------------------------------------------------
 
 
 [QuickStart]-------------------------------------------------------------
-  A) information of KBWS tools
-   1) list of all tools
+  A) Information of KBWS tools
+   1) List of all tools
      If you want to get list of all tools included in KBWS, you can try
      the below command.
 
       % wossname -showembassy KBWS
 
-   2) documentation
+   2) Documentation
      You can view available documentations with "tfm" utility included in EMBOSS.
 
       % tfm kblast # example for "kblast"
 
   B) Usage example
-    * Sample files used in this section are available from EMBOSS package.
+    Sample files used in this section are available from EMBOSS package.
       ( EMBOSS-6.2.0/test/data/* )
 
    1) kcentroidfold (Centroid Fold)

@@ -370,10 +370,10 @@ Server Name           : Short explanation
        TREMBL         : TREMBL data
  [EBI] uniprot        : UniProt
        swissprot      : UniProtKB/Swiss-Prot
-       uniref100      : UniProt
-       uniref90       : UniProt
-       uniref50       : UniProt
-       uniparc        : UniProt
+       uniref100      : UniRef 100
+       uniref90       : UniRef 90
+       uniref50       : UniRef 50
+       uniparc        : UniParc
        ipi            : International
        pdb            : Protein
        sgt            : Structural
@@ -443,129 +443,139 @@ Server Name                 : Short explanation
        est_xtro             : X.tropicalis
        est_zmay             : Z.mays
        est_rest             : Others
-[EBI]  em_rel               : EMBL
-       emnew                : EMBL new
-       emcds                : EMBL CDS
-       em_rel_env           : EMBL
-       em_rel_est_env       : EMBL
-       em_rel_gss_env       : EMBL
-       em_rel_htg_env       : EMBL
-       em_rel_pat_env       : EMBL
-       em_rel_std_env       : EMBL
-       em_rel_fun           : EMBL
-       em_rel_est_fun       : EMBL
-       em_rel_gss_fun       : EMBL
-       em_rel_htc_fun       : EMBL
-       em_rel_htg_fun       : EMBL
-       em_rel_pat_fun       : EMBL
-       em_rel_std_fun       : EMBL
-       em_rel_sts_fun       : EMBL
-       em_rel_tpa_fun       : EMBL
-       em_rel_hum           : EMBL
-       em_rel_est_hum       : EMBL
-       em_rel_gss_hum       : EMBL
-       em_rel_htc_hum       : EMBL
-       em_rel_htg_hum       : EMBL
-       em_rel_pat_hum       : EMBL
-       em_rel_std_hum       : EMBL
-       em_rel_sts_hum       : EMBL
-       em_rel_tpa_hum       : EMBL
-       em_rel_inv           : EMBL
-       em_rel_est_inv       : EMBL
-       em_rel_gss_inv       : EMBL
-       em_rel_htc_inv       : EMBL
-       em_rel_htg_inv       : EMBL
-       em_rel_pat_inv       : EMBL
-       em_rel_std_inv       : EMBL
-       em_rel_sts_inv       : EMBL
-       em_rel_tpa_inv       : EMBL
-       em_rel_mam           : EMBL
-       em_rel_est_mam       : EMBL
-       em_rel_gss_mam       : EMBL
-       em_rel_htc_mam       : EMBL
-       em_rel_htg_mam       : EMBL
-       em_rel_pat_mam       : EMBL
-       em_rel_std_mam       : EMBL
-       em_rel_sts_mam       : EMBL
-       em_rel_tpa_mam       : EMBL
-       em_rel_mus           : EMBL
-       em_rel_est_mus       : EMBL
-       em_rel_gss_mus       : EMBL
-       em_rel_htc_mus       : EMBL
-       em_rel_htg_mus       : EMBL
-       em_rel_pat_mus       : EMBL
-       em_rel_std_mus       : EMBL
-       em_rel_sts_mus       : EMBL
-       em_rel_tpa_mus       : EMBL
-       em_rel_phg           : EMBL
-       em_rel_gss_phg       : EMBL
-       em_rel_htg_phg       : EMBL
-       em_rel_pat_phg       : EMBL
-       em_rel_std_phg       : EMBL
-       em_rel_tpa_phg       : EMBL
-       em_rel_pln           : EMBL
-       em_rel_est_pln       : EMBL
-       em_rel_gss_pln       : EMBL
-       em_rel_htc_pln       : EMBL
-       em_rel_htg_pln       : EMBL
-       em_rel_pat_pln       : EMBL
-       em_rel_std_pln       : EMBL
-       em_rel_sts_pln       : EMBL
-       em_rel_tpa_pln       : EMBL
-       em_rel_pro           : EMBL
-       em_rel_est_pro       : EMBL
-       em_rel_gss_pro       : EMBL
-       em_rel_htc_pro       : EMBL
-       em_rel_htg_pro       : EMBL
-       em_rel_pat_pro       : EMBL
-       em_rel_std_pro       : EMBL
-       em_rel_sts_pro       : EMBL
-       em_rel_tpa_pro       : EMBL
-       em_rel_rod           : EMBL
-       em_rel_est_rod       : EMBL
-       em_rel_gss_rod       : EMBL
-       em_rel_htc_rod       : EMBL
-       em_rel_htg_rod       : EMBL
-       em_rel_pat_rod       : EMBL
-       em_rel_std_rod       : EMBL
-       em_rel_sts_rod       : EMBL
-       em_rel_tpa_rod       : EMBL
-       em_rel_syn           : EMBL
-       em_rel_pat_syn       : EMBL
-       em_rel_std_syn       : EMBL
-       em_rel_tpa_syn       : EMBL
-       em_rel_tgn           : EMBL
-       em_rel_std_tgn       : EMBL
-       em_rel_unc           : EMBL
-       em_rel_pat_unc       : EMBL
-       em_rel_std_unc       : EMBL
-       em_rel_vrl           : EMBL
-       em_rel_gss_vrl       : EMBL
-       em_rel_htg_vrl       : EMBL
-       em_rel_pat_vrl       : EMBL
-       em_rel_std_vrl       : EMBL
-       em_rel_tpa_vrl       : EMBL
-       em_rel_vrt           : EMBL
-       em_rel_est_vrt       : EMBL
-       em_rel_gss_vrt       : EMBL
-       em_rel_htc_vrt       : EMBL
-       em_rel_htg_vrt       : EMBL
-       em_rel_pat_vrt       : EMBL
-       em_rel_std_vrt       : EMBL
-       em_rel_sts_vrt       : EMBL
-       em_rel_tpa_vrt       : EMBL
-       em_rel_est           : EMBL
-       em_rel_gss           : EMBL
-       em_rel_htc           : EMBL
-       em_rel_htg           : EMBL
-       em_rel_pat           : EMBL
-       em_rel_std           : EMBL
-       em_rel_sts           : EMBL
-       em_rel_tpa           : EMBL
-       emall                : EMBL
-       evec                 : EMBL
+[EBI]  em_rel               : EMBL Release
+       emnew                : EMBL Updates
+       emcds                : EMBL Coding Sequence
+       em_rel_env           : All EMBL Environmental
+       em_rel_est_env       : EMBL EST Environmental
+       em_rel_gss_env       : EMBL GSS Environmental
+       em_rel_htc_env       : EMBL HTC Environmental
+       em_rel_htg_env       : EMBL HTG Environmental
+       em_rel_pat_env       : EMBL Patent Environmental
+       em_rel_std_env       : EMBL Standard Environmental
+       em_rel_fun           : All EMBL Fungi	  
+       em_rel_est_fun       : EMBL EST Fungi	    
+       em_rel_gss_fun       : EMBL GSS Fungi	  
+       em_rel_htc_fun       : EMBL HTC Fungi	  
+       em_rel_htg_fun       : EMBL HTG Fungi	  
+       em_rel_pat_fun       : EMBL Patent Fungi	  
+       em_rel_std_fun       : EMBL Standard Fungi 
+       em_rel_sts_fun       : EMBL STS Fungi	  
+       em_rel_tpa_fun       : EMBL TPA Fungi
+       em_rel_tsa_fun       : EMBL TSA Fungi
+       em_rel_hum           : All EMBL Human	  
+       em_rel_est_hum       : EMBL EST Human	  
+       em_rel_gss_hum       : EMBL GSS Human	  
+       em_rel_htc_hum       : EMBL HTC Human	  
+       em_rel_htg_hum       : EMBL HTG Human	  
+       em_rel_pat_hum       : EMBL Patent Human	  
+       em_rel_std_hum       : EMBL Standard Human 
+       em_rel_sts_hum       : EMBL STS Human	  
+       em_rel_tpa_hum       : EMBL TPA Human
+       em_rel_inv           : All EMBL Invertebrate	   
+       em_rel_est_inv       : EMBL EST Invertebrate	   
+       em_rel_gss_inv       : EMBL GSS Invertebrate	   
+       em_rel_htc_inv       : EMBL HTC Invertebrate	   
+       em_rel_htg_inv       : EMBL HTG Invertebrate	   
+       em_rel_pat_inv       : EMBL Patent Invertebrate   
+       em_rel_std_inv       : EMBL Standard Invertebrate 
+       em_rel_sts_inv       : EMBL STS Invertebrate	   
+       em_rel_tpa_inv       : EMBL TPA Invertebrate	   
+       em_rel_tsa_inv       : EMBL TSA Invertebrate
+       em_rel_mam           : All EMBL Mammal	      
+       em_rel_est_mam       : EMBL EST Mammal	      
+       em_rel_gss_mam       : EMBL GSS Mammal	      
+       em_rel_htc_mam       : EMBL HTC Mammal	      
+       em_rel_htg_mam       : EMBL HTG Mammal	      
+       em_rel_pat_mam       : EMBL Patent Mammal    
+       em_rel_std_mam       : EMBL Standard Mammal  
+       em_rel_sts_mam       : EMBL STS Mammal	      
+       em_rel_tpa_mam       : EMBL TPA Mammal	      
+       em_rel_tsa_mam       : EMBL TSA Mammal
+       em_rel_mus           : All EMBL Mouse	     
+       em_rel_est_mus       : EMBL EST Mouse	     
+       em_rel_gss_mus       : EMBL GSS Mouse	     
+       em_rel_htc_mus       : EMBL HTC Mouse	     
+       em_rel_htg_mus       : EMBL HTG Mouse	     
+       em_rel_pat_mus       : EMBL Patent Mouse    
+       em_rel_std_mus       : EMBL Standard Mouse  
+       em_rel_sts_mus       : EMBL STS Mouse	     
+       em_rel_tpa_mus       : EMBL TPA Mouse
+       em_rel_phg           : All EMBL Phage
+       em_rel_gss_phg       : EMBL GSS Phage
+       em_rel_htg_phg       : EMBL HTG Phage
+       em_rel_pat_phg       : EMBL Patent Phage
+       em_rel_std_phg       : EMBL Standard Phage
+       em_rel_tpa_phg       : EMBL TPA Phage
+       em_rel_pln           : All EMBL Plant
+       em_rel_est_pln       : EMBL EST Plant
+       em_rel_gss_pln       : EMBL GSS Plant
+       em_rel_htc_pln       : EMBL HTC Plant
+       em_rel_htg_pln       : EMBL HTG Plant
+       em_rel_pat_pln       : EMBL Patent Plant
+       em_rel_std_pln       : EMBL Standard Plant
+       em_rel_sts_pln       : EMBL STS Plant
+       em_rel_tpa_pln       : EMBL TPA Plant
+       em_rel_tsa_pln       : EMBL TSA Plant
+       em_rel_pro           : All EMBL Prokaryote
+       em_rel_est_pro       : EMBL EST Prokaryote
+       em_rel_gss_pro       : EMBL GSS Prokaryote
+       em_rel_htc_pro       : EMBL HTC Prokaryote
+       em_rel_htg_pro       : EMBL HTG Prokaryote
+       em_rel_pat_pro       : EMBL Patent Prokaryote
+       em_rel_std_pro       : EMBL Standard Prokaryote
+       em_rel_sts_pro       : EMBL STS Prokaryote
+       em_rel_tpa_pro       : EMBL TPA Prokaryote
+       em_rel_rod           : All EMBL Rodent	     
+       em_rel_est_rod       : EMBL EST Rodent	     
+       em_rel_gss_rod       : EMBL GSS Rodent	     
+       em_rel_htc_rod       : EMBL HTC Rodent	     
+       em_rel_htg_rod       : EMBL HTG Rodent	     
+       em_rel_pat_rod       : EMBL Patent Rodent   
+       em_rel_std_rod       : EMBL Standard Rodent 
+       em_rel_sts_rod       : EMBL STS Rodent	     
+       em_rel_tpa_rod       : EMBL TPA Rodent
+       em_rel_syn           : All EMBL Synthetic	  
+       em_rel_pat_syn       : EMBL Patent Synthetic	  
+       em_rel_std_syn       : EMBL Standard Synthetic	  
+       em_rel_tpa_syn       : EMBL TPA Synthetic	  
+       em_rel_tgn           : All EMBL Transgenic	  
+       em_rel_std_tgn       : EMBL Standard Transgenic  
+       em_rel_gss_tgn       : EMBL GSS Transgenic	  
+       em_rel_unc           : All EMBL Unclassified	  
+       em_rel_est_unc       : EMBL EST Unclassified	  
+       em_rel_pat_unc       : EMBL Patent Unclassified  
+       em_rel_std_unc       : EMBL Standard Unclassified
+       em_rel_tpa_unc       : EMBL TPA Unclassified
+       em_rel_vrl           : All EMBL Viral	   
+       em_rel_gss_vrl       : EMBL GSS Viral	   
+       em_rel_htg_vrl       : EMBL HTG Viral	   
+       em_rel_pat_vrl       : EMBL Patent Viral  
+       em_rel_std_vrl       : EMBL Standard Viral
+       em_rel_tpa_vrl       : EMBL TPA Viral
+       em_rel_vrt           : All EMBL Vertebrate	
+       em_rel_est_vrt       : EMBL EST Vertebrate	
+       em_rel_gss_vrt       : EMBL GSS Vertebrate	
+       em_rel_htc_vrt       : EMBL HTC Vertebrate	
+       em_rel_htg_vrt       : EMBL HTG Vertebrate	
+       em_rel_pat_vrt       : EMBL Patent Vertebrate	
+       em_rel_std_vrt       : EMBL Standard Vertebrate
+       em_rel_sts_vrt       : EMBL STS Vertebrate	
+       em_rel_tpa_vrt       : EMBL TPA Vertebrate	
+       em_rel_tsa_vrt       : EMBL TSA Vertebrate
+       em_rel_est           : EMBL Expressed Sequence Tag
+       em_rel_gss           : EMBL Genome Survey Sequence
+       em_rel_htc           : EMBL High Throughput cDNA
+       em_rel_htg           : EMBL High Throughput Genome
+       em_rel_pat           : EMBL Patent
+       em_rel_std           : EMBL Standard
+       em_rel_sts           : EMBL Sequence Tagged Site
+       em_rel_tpa           : EMBL Third Party Annotation 
+       emall                : EMBL Release and Updates
+       evec                 : EMBL Vectors
        imgtligm             : IMGT/LIGM-DB
        imgthla              : IMGT/HLA
+       hgvbase              : HGVBASE
 [NCBI] 10090_genomic        : mouse genomic
        10116_genomic        : rat genomic
        180454_genomic       : anopheles gambiae genomic
@@ -614,19 +624,18 @@ Server Name                 : Short explanation
        cdsearch/oasis_kog   : kog
        cdsearch/oasis_pfam  : pfam
        cdsearch/oasis_smart : smart
-       repeat/repeat_3055   : repeat_3055
-       repeat/repeat_31032  : repeat_31032
-       repeat/repeat_35128  : repeat_35128
-       repeat/repeat_3702   : repeat_3702
-       repeat/repeat_40674  : repeat_40674
-       repeat/repeat_4530   : repeat_4530
-       repeat/repeat_4751   : repeat_4751
-       repeat/repeat_6238   : repeat_6238
-       repeat/repeat_6239   : repeat_6239
-       repeat/repeat_7165   : repeat_7165
-       repeat/repeat_7227   : repeat_7227
-       repeat/repeat_7719   : repeat_7719
-       repeat/repeat_7955   : repeat_7955
-       repeat/repeat_9606   : repeat_9606
-       repeat/repeat_9989   : repeat_9989
-
+       repeat/repeat_3055   : Chlamydomonas reinhardtii
+       repeat/repeat_31032  : Fugu
+       repeat/repeat_35128  : Thalassiosira pseudonana
+       repeat/repeat_3702   : Arabidopsis thaliana    
+       repeat/repeat_40674  : Mammalia		      
+       repeat/repeat_4530   : Oryza sativa	      
+       repeat/repeat_4751   : Fungi		      
+       repeat/repeat_6238   : Caenorhabditis briggsae 
+       repeat/repeat_6239   : Caenorhabditis elegans  
+       repeat/repeat_7165   : Anopheles gambiae	      
+       repeat/repeat_7227   : Drosophila melanogaster 
+       repeat/repeat_7719   : Ciona intestinalis      
+       repeat/repeat_7955   : Danio rerio	      
+       repeat/repeat_9606   : Human		      
+       repeat/repeat_9989   : Rodentia

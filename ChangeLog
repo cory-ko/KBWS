@@ -1,5 +1,6 @@
-version 1.0.5 16-Nov-2010
+version 1.0.5 18-Nov-2010
         Change value type of -eval option in kblast (float => string)
+	Update database information of kblast (See "tfm kblast")
 version 1.0.4 12-Nov-2010
         Change "jobid" style
          - i.e. "1267966" => "kbws_1267966"

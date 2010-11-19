@@ -30,89 +30,91 @@
 
 
 [ Installation ]---------------------------------------------------------
- A) Requirement
-  1) EMBOSS (> 6.2.0)
-     This EMBASSY package requires EMBOSS version 6.2.0 or above.
 
- B) Installation
+REQUIREMENT
+  EMBOSS (> 6.2.0) - This EMBASSY package requires EMBOSS version 6.2.0 or above.
+
+INSTALLATION
   In the following examples, we assume downloaded EMBOSS filename is EMBOSS-6.2.0.tar.gz
 
-  1) Download and compile EMBOSS source code.
-    % wget ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.2.0.tar.gz
-       or
-    % curl -O ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.2.0.tar.gz 
-    % tar -xzf EMBOSS-6.2.0.tar.gz
-    % cd EMBOSS-6.2.0
-    % ./configure
+  1. Download and compile EMBOSS source code.
+     % wget ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.2.0.tar.gz
+      (or "curl -O ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.2.0.tar.gz")
+     % tar -xzf EMBOSS-6.2.0.tar.gz
+     % cd EMBOSS-6.2.0
+     % ./configure
+     % make
+     % sudo make install
+
+  2. Make new directory "embassy" (in EMBOSS-6.2.0/ directory) if it does not exist already
+     % mkdir embassy
+
+  3. Go into that directory
+     % cd embassy
+
+  4. Place KBWS file in current directory
+     % wget http://www.g-language.org/kbws/source/KBWS-1.0.5.tar.gz
+      (or "curl -O http://www.g-language.org/kbws/source/KBWS-1.0.5.tar.gz")
+
+  5. Uncompress the KBWS tarball package, and go into the new KBWS directory
+     % tar xzf KBWS-1.0.5.tar.gz
+     % cd KBWS-1.0.5
+     ( EMBOSS-6.2.0/embassy/KBWS-1.0.5 )
+
+  6. Configure and compile
+    % ./configure (use same options as you used to compile emboss)
     % make
     % sudo make install
 
-  2) Make new directory "embassy" (in EMBOSS-6.2.0/ directory) if it does not exist already
-    % mkdir embassy
-
-  3) Go into that directory
-    % cd embassy
-
-  4) Place KBWS file in current directory
-   % wget http://www.g-language.org/kbws/source/KBWS-1.0.5.tar.gz
-      or 
-     curl -O http://www.g-language.org/kbws/source/KBWS-1.0.5.tar.gz
-
-  5) Uncompress the KBWS tarball package, and go into the new KBWS directory
-     tar xzf KBWS-1.0.5.tar.gz
-   % cd KBWS-1.0.5
-    ( EMBOSS-6.2.0/embassy/KBWS-1.0.5 )
-
-  6) Configure and compile
-   % ./configure (use same options as you used to compile emboss)
-   % make
-   % sudo make install
-
- C) Note
-   1) On some systems there may be compatibility problems with different
-   automake, autoconf or libtool versions. If a libtool problem
-   arises you can try deleting the following files:
+NOTE
+  Trouble of libtool problem
+    On some systems there may be compatibility problems with different
+    automake, autoconf or libtool versions. If a libtool problem
+    arises you can try deleting the following files:
 
       config.cache
       ltmain.sh
       ltconfig
       libtool
 
-   and then type
+    and then type
 
       % aclocal -I m4
       % autoconf
       % automake -a
 
-   and then retry make.
+    and then retry make.
 
-   2) When users are upgrading EMBOSS, please be sure to uninstall old version of
-   EMBOSS and KBWS. If you override them, some older version of files may cause errors.
+  Update of EMBOSS
+    When users are upgrading EMBOSS, please be sure to uninstall old version of
+    EMBOSS and KBWS. If you override them, some older version of files may cause errors.
 
-   3) If you use "./configure" command with "--prefix" option, please rewrite
-   "emboss_acdroot" and "emboss_data" value in ~/.embossrc file. Please check
-   "~/.embossrc" file for further informations.
+  Non-root users
+    If you use "./configure" command with "--prefix" option, please rewrite
+    "emboss_acdroot" and "emboss_data" value in ~/.embossrc file. Please check
+    "~/.embossrc" file for further informations.
 -------------------------------------------------------------------------
 
 
 [QuickStart]-------------------------------------------------------------
-  A) Information of KBWS tools
-   1) List of all tools
-     If you want to get list of all tools included in KBWS, you can try
-     the below command.
+
+INFORMATION OF KBWS TOOLS
+  List of all tools
+    If you want to get list of all tools included in KBWS, you can try
+    the below command.
 
       % wossname -showembassy KBWS
 
-   2) Documentation
-     You can view available documentations with "tfm" utility included in EMBOSS.
+  Documentation
+    You can view available documentations with "tfm" utility included in EMBOSS.
 
       % tfm kblast # example for "kblast"
 
-  B) Usage example
-    Sample files used in this section are available from EMBOSS package.
-      ( EMBOSS-6.2.0/test/data/* )
+USAGE EXAMPLE
+   Sample files used in this section are available from EMBOSS package.
+     ( EMBOSS-6.2.0/test/data/* )
 
-   1) kblast (BLAST)
+  1. kblast (BLAST)
       % kblast swissprot:FOXP2_HUMAN -d swissprot -format 8 -eval 1e-100
       Search similar sequences in public repositories using BLAST
       Output file [foxp2_human.kblast]:
@@ -139,7 +141,7 @@
       query	sp|Q9DBY0.1|FOXP4_MOUSE	60	332	118	17	240	686	207	642	2e-126	1166
       query	sp|Q4VYR7.1|FOXP4_XENLA	58	336	120	20	241	696	187	622	6e-126	1161
 
-   2) kcentroidfold (Centroid Fold)
+  2. kcentroidfold (Centroid Fold)
       % kcentroidfold
       RNA 2D structure prediction from an RNA sequence using CentroidFold
       Input (gapped) sequence(s): dna.fasta
@@ -156,14 +158,14 @@
 
       % wget http://soap.g-language.org/result/13401346.png
 
-   3) kweblogo (WebLogo)
+  3. kweblogo (WebLogo)
       % kweblogo dna.m-fasta
       make the generation of sequence logos using WebLogo
       Jobid: 3203930
       **
       http://soap.g-language.org/result/3203930.png
 
-  C) Sample data
+SAMPLE DATA
     You can use sample data included in EMBOSS.
     Please check test/ directory in EMBOSS package.
 -------------------------------------------------------------------------
@@ -178,4 +180,3 @@
   Kazuki Oshita < cory@g-language.org >
     Institute for Advanced Biosciences, Keio University.
 -------------------------------------------------------------------------
-

@@ -37,9 +37,9 @@ REQUIREMENT
 INSTALLATION
   In the following examples, we assume downloaded EMBOSS filename is EMBOSS-6.2.0.tar.gz
 
-  1. Download and compile EMBOSS source code.
-     % wget ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.2.0.tar.gz
-      (or "curl -O ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.2.0.tar.gz")
+  1. Download and compile EMBOSS source code
+     % wget ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-latest.tar.gz
+      (or "curl -O ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-latest.tar.gz")
      % tar -xzf EMBOSS-6.2.0.tar.gz
      % cd EMBOSS-6.2.0
      % ./configure

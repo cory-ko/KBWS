@@ -35,18 +35,18 @@ REQUIREMENT
   EMBOSS (> 6.2.0) - This EMBASSY package requires EMBOSS version 6.2.0 or above.
 
 INSTALLATION
-  In the following examples, we assume downloaded EMBOSS filename is EMBOSS-6.2.0.tar.gz
+  In the following examples, we assume downloaded EMBOSS filename is EMBOSS-6.3.1.tar.gz
 
   1. Download and compile EMBOSS source code
      % wget ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-latest.tar.gz
       (or "curl -O ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-latest.tar.gz")
-     % tar -xzf EMBOSS-6.2.0.tar.gz
-     % cd EMBOSS-6.2.0
+     % tar -xzf EMBOSS-6.3.1.tar.gz
+     % cd EMBOSS-6.3.1
      % ./configure
      % make
      % sudo make install
 
-  2. Make new directory "embassy" (in EMBOSS-6.2.0/ directory) if it does not exist already
+  2. Make new directory "embassy" (in EMBOSS-6.3.1/ directory) if it does not exist already
      % mkdir embassy
 
   3. Go into that directory
@@ -59,7 +59,7 @@ INSTALLATION
   5. Uncompress the KBWS tarball package, and go into the new KBWS directory
      % tar xzf KBWS-1.0.5.tar.gz
      % cd KBWS-1.0.5
-     ( EMBOSS-6.2.0/embassy/KBWS-1.0.5 )
+     ( EMBOSS-6.3.1/embassy/KBWS-1.0.5 )
 
   6. Configure and compile
     % ./configure (use same options as you used to compile emboss)
@@ -112,7 +112,7 @@ INFORMATION OF KBWS TOOLS
 
 USAGE EXAMPLE
    Sample files used in this section are available from EMBOSS package.
-     ( EMBOSS-6.2.0/test/data/* )
+     ( EMBOSS-6.3.1/test/data/* )
 
   1. kblast (BLAST)
       % kblast swissprot:FOXP2_HUMAN -d swissprot -format 8 -eval 1e-100

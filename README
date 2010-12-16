@@ -67,7 +67,7 @@ INSTALLATION
     % sudo make install
 
 NOTE
-  Trouble of libtool problem
+  libtool problem
     On some systems there may be compatibility problems with different
     automake, autoconf or libtool versions. If a libtool problem
     arises you can try deleting the following files:
@@ -89,10 +89,14 @@ NOTE
     When users are upgrading EMBOSS, please be sure to uninstall old version of
     EMBOSS and KBWS. If you override them, some older version of files may cause errors.
 
-  Non-root users
-    If you use "./configure" command with "--prefix" option, please rewrite
-    "emboss_acdroot" and "emboss_data" value in ~/.embossrc file. Please check
-    "~/.embossrc" file for further informations.
+  EMBOSS is already installed
+    When EMBOSS is already installed in your system, please install KBWS at the same PATH
+    as existed EMBOSS by '--prefix' option.
+
+  Non-root users (using '--prefix' option)
+    If you use './configure' command with '--prefix' option, please rewrite
+    'emboss_acdroot' and 'emboss_data' value in ~/.embossrc file. Please check
+    '~/.embossrc' file for further informations.
 -------------------------------------------------------------------------
 
 
@@ -101,7 +105,9 @@ NOTE
 INFORMATION OF KBWS TOOLS
   List of all tools
     If you want to get list of all tools included in KBWS, you can try
-    the below command.
+    the below command. When this command dose not return list of tools, please check
+    "Non-root users (using '--prefix' option)" section in this file.
+
 
       % wossname -showembassy KBWS
 

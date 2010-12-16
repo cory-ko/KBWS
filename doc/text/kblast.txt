@@ -357,41 +357,61 @@ Appendix
 
 [blastp]
 ###########################################
-Server Name           : Short explanation
+Server Name                    : Short explanation
 ###########################################
-[DDBJ] DAD            : DAD data
-       PDB            : PDB data
-       PDBSH          : PDBSH data
-       PRF            : PRF data
-       PROTEIN        : PROTEIN data
-       SWISS          : SWISSPROT data
-       WORMPEP        : WORM PEPTIDE data
-       UNIPROT        : UNIPROT data
-       TREMBL         : TREMBL data
- [EBI] uniprot        : UniProt
-       swissprot      : UniProtKB/Swiss-Prot
-       uniref100      : UniRef 100
-       uniref90       : UniRef 90
-       uniref50       : UniRef 50
-       uniparc        : UniParc
-       ipi            : International
-       pdb            : Protein
-       sgt            : Structural
-       intact         : IntAct
-       imgthlap       : IMGT/HLA
-       epop           : EPO
-       jpop           : JPO
-       kpop           : KIPO
-       uspop          : USPTO
-[NCBI] nr             : nr, protein
-       refseq_protein : refseq protein
-       swissprot      : swissprot protein
-       pataa          : pat protein
-       pdbaa          : pdb protein
-       month.pataa    : month pat protein
-       monthaa        : month protein
-       alu            : alu repeat protein
-       env_nr         : env protein
+[DDBJ] DAD                     : DAD data
+       PDB                     : PDB data
+       PDBSH                   : PDBSH data
+       PRF                     : PRF data
+       PROTEIN                 : PROTEIN data
+       SWISS                   : SWISSPROT data
+       WORMPEP                 : WORM PEPTIDE data
+       UNIPROT                 : UNIPROT data
+       TREMBL                  : TREMBL data
+[EBI]  uniprotkb               : UniProt Knowledgebase
+       uniprotkb_swissprot     : UniProtKB/Swiss-Prot
+       uniprotkb_swissprotsv   : UniProtKB/Swiss-Prot isoforms
+       uniprotkb_trembl        : UniProtKB/TrEMBL
+       uniprotkb_archaea       : UniProtKB Archaea
+       uniprotkb_arthropoda    : UniProtKB Arthropoda
+       uniprotkb_bacteria      : UniProtKB Bacteria
+       uniprotkb_complete_microbial_proteomes : UniProtKB Complete Microbial Proteomes
+       uniprotkb_eukaryota     : UniProtKB Eukaryota
+       uniprotkb_fungi         : UniProtKB Fungi
+       uniprotkb_human         : UniProtKB Human
+       uniprotkb_mammals       : UniProtKB Mammals
+       uniprotkb_nematoda      : UniProtKB Nematoda
+       uniprotkb_pdb           : UniProtKB PDB
+       uniprotkb_rodents       : UniProtKB Rodents
+       uniprotkb_vertebrates   : UniProtKB Vertebrates
+       uniprotkb_viridiplantae : UniProtKB Viridiplantae
+       uniprotkb_viruses       : UniProtKB Viruses
+       uniref100               : UniProt Clusters 100%
+       uniref100_seg           : UniProt Clusters 100% (SEG filtered)
+       uniref90                : UniProt Clusters 90%
+       uniref50                : UniProt Clusters 50%
+       epop                    : EPO Patent Protein Sequences
+       jpop                    : JPO Patent Protein Sequences
+       kpop                    : KIPO Patent Protein Sequences
+       uspop                   : USPTO Patent Protein Sequences
+       nrpl1                   : NR Patent Proteins Level-1
+       nrpl2                   : NR Patent Proteins Level-2
+       pdb                     : Protein Structure Sequences
+       sgt                     : Structural Genomics Targets
+       uniparc                 : UniProt Archive
+       ipi                     : International Protein Index
+       intact                  : IntAct
+       imgthlap                : IMGT/HLA
+       ipdkirp                 : IPD-KIR
+[NCBI] nr                      : nr, protein
+       refseq_protein          : refseq protein
+       swissprot               : swissprot protein
+       pataa                   : pat protein
+       pdbaa                   : pdb protein
+       month.pataa             : month pat protein
+       monthaa                 : month protein
+       alu                     : alu repeat protein
+       env_nr                  : env protein
 
 [blastn]
 ###########################################
@@ -445,7 +465,7 @@ Server Name                 : Short explanation
        est_rest             : Others
 [EBI]  em_rel               : EMBL Release
        emnew                : EMBL Updates
-       emcds                : EMBL Coding Sequence
+       emblcds              : EMBL Coding Sequence
        em_rel_env           : All EMBL Environmental
        em_rel_est_env       : EMBL EST Environmental
        em_rel_gss_env       : EMBL GSS Environmental
@@ -453,60 +473,54 @@ Server Name                 : Short explanation
        em_rel_htg_env       : EMBL HTG Environmental
        em_rel_pat_env       : EMBL Patent Environmental
        em_rel_std_env       : EMBL Standard Environmental
-       em_rel_fun           : All EMBL Fungi	  
-       em_rel_est_fun       : EMBL EST Fungi	    
-       em_rel_gss_fun       : EMBL GSS Fungi	  
-       em_rel_htc_fun       : EMBL HTC Fungi	  
-       em_rel_htg_fun       : EMBL HTG Fungi	  
-       em_rel_pat_fun       : EMBL Patent Fungi	  
-       em_rel_std_fun       : EMBL Standard Fungi 
-       em_rel_sts_fun       : EMBL STS Fungi	  
-       em_rel_tpa_fun       : EMBL TPA Fungi
+       em_rel_fun           : All EMBL Fungi
+       em_rel_est_fun       : EMBL EST Fungi
+       em_rel_gss_fun       : EMBL GSS Fungi
+       em_rel_htc_fun       : EMBL HTC Fungi
+       em_rel_htg_fun       : EMBL HTG Fungi
+       em_rel_pat_fun       : EMBL Patent Fungi
+       em_rel_std_fun       : EMBL Standard Fungi
+       em_rel_sts_fun       : EMBL STS Fungi
        em_rel_tsa_fun       : EMBL TSA Fungi
-       em_rel_hum           : All EMBL Human	  
-       em_rel_est_hum       : EMBL EST Human	  
-       em_rel_gss_hum       : EMBL GSS Human	  
-       em_rel_htc_hum       : EMBL HTC Human	  
-       em_rel_htg_hum       : EMBL HTG Human	  
-       em_rel_pat_hum       : EMBL Patent Human	  
-       em_rel_std_hum       : EMBL Standard Human 
-       em_rel_sts_hum       : EMBL STS Human	  
-       em_rel_tpa_hum       : EMBL TPA Human
-       em_rel_inv           : All EMBL Invertebrate	   
-       em_rel_est_inv       : EMBL EST Invertebrate	   
-       em_rel_gss_inv       : EMBL GSS Invertebrate	   
-       em_rel_htc_inv       : EMBL HTC Invertebrate	   
-       em_rel_htg_inv       : EMBL HTG Invertebrate	   
-       em_rel_pat_inv       : EMBL Patent Invertebrate   
-       em_rel_std_inv       : EMBL Standard Invertebrate 
-       em_rel_sts_inv       : EMBL STS Invertebrate	   
-       em_rel_tpa_inv       : EMBL TPA Invertebrate	   
+       em_rel_hum           : All EMBL Human
+       em_rel_est_hum       : EMBL EST Human
+       em_rel_gss_hum       : EMBL GSS Human
+       em_rel_htc_hum       : EMBL HTC Human
+       em_rel_htg_hum       : EMBL HTG Human
+       em_rel_pat_hum       : EMBL Patent Human
+       em_rel_std_hum       : EMBL Standard Human
+       em_rel_sts_hum       : EMBL STS Human
+       em_rel_inv           : All EMBL Invertebrate
+       em_rel_est_inv       : EMBL EST Invertebrate
+       em_rel_gss_inv       : EMBL GSS Invertebrate
+       em_rel_htc_inv       : EMBL HTC Invertebrate
+       em_rel_htg_inv       : EMBL HTG Invertebrate
+       em_rel_pat_inv       : EMBL Patent Invertebrate
+       em_rel_std_inv       : EMBL Standard Invertebrate
+       em_rel_sts_inv       : EMBL STS Invertebrate
        em_rel_tsa_inv       : EMBL TSA Invertebrate
-       em_rel_mam           : All EMBL Mammal	      
-       em_rel_est_mam       : EMBL EST Mammal	      
-       em_rel_gss_mam       : EMBL GSS Mammal	      
-       em_rel_htc_mam       : EMBL HTC Mammal	      
-       em_rel_htg_mam       : EMBL HTG Mammal	      
-       em_rel_pat_mam       : EMBL Patent Mammal    
-       em_rel_std_mam       : EMBL Standard Mammal  
-       em_rel_sts_mam       : EMBL STS Mammal	      
-       em_rel_tpa_mam       : EMBL TPA Mammal	      
+       em_rel_mam           : All EMBL Mammal
+       em_rel_est_mam       : EMBL EST Mammal
+       em_rel_gss_mam       : EMBL GSS Mammal
+       em_rel_htc_mam       : EMBL HTC Mammal
+       em_rel_htg_mam       : EMBL HTG Mammal
+       em_rel_pat_mam       : EMBL Patent Mammal
+       em_rel_std_mam       : EMBL Standard Mammal
+       em_rel_sts_mam       : EMBL STS Mammal
        em_rel_tsa_mam       : EMBL TSA Mammal
-       em_rel_mus           : All EMBL Mouse	     
-       em_rel_est_mus       : EMBL EST Mouse	     
-       em_rel_gss_mus       : EMBL GSS Mouse	     
-       em_rel_htc_mus       : EMBL HTC Mouse	     
-       em_rel_htg_mus       : EMBL HTG Mouse	     
-       em_rel_pat_mus       : EMBL Patent Mouse    
-       em_rel_std_mus       : EMBL Standard Mouse  
-       em_rel_sts_mus       : EMBL STS Mouse	     
-       em_rel_tpa_mus       : EMBL TPA Mouse
+       em_rel_mus           : All EMBL Mouse
+       em_rel_est_mus       : EMBL EST Mouse
+       em_rel_gss_mus       : EMBL GSS Mouse
+       em_rel_htc_mus       : EMBL HTC Mouse
+       em_rel_htg_mus       : EMBL HTG Mouse
+       em_rel_pat_mus       : EMBL Patent Mouse
+       em_rel_std_mus       : EMBL Standard Mouse
+       em_rel_sts_mus       : EMBL STS Mouse
        em_rel_phg           : All EMBL Phage
        em_rel_gss_phg       : EMBL GSS Phage
        em_rel_htg_phg       : EMBL HTG Phage
        em_rel_pat_phg       : EMBL Patent Phage
        em_rel_std_phg       : EMBL Standard Phage
-       em_rel_tpa_phg       : EMBL TPA Phage
        em_rel_pln           : All EMBL Plant
        em_rel_est_pln       : EMBL EST Plant
        em_rel_gss_pln       : EMBL GSS Plant
@@ -515,7 +529,6 @@ Server Name                 : Short explanation
        em_rel_pat_pln       : EMBL Patent Plant
        em_rel_std_pln       : EMBL Standard Plant
        em_rel_sts_pln       : EMBL STS Plant
-       em_rel_tpa_pln       : EMBL TPA Plant
        em_rel_tsa_pln       : EMBL TSA Plant
        em_rel_pro           : All EMBL Prokaryote
        em_rel_est_pro       : EMBL EST Prokaryote
@@ -525,43 +538,37 @@ Server Name                 : Short explanation
        em_rel_pat_pro       : EMBL Patent Prokaryote
        em_rel_std_pro       : EMBL Standard Prokaryote
        em_rel_sts_pro       : EMBL STS Prokaryote
-       em_rel_tpa_pro       : EMBL TPA Prokaryote
-       em_rel_rod           : All EMBL Rodent	     
-       em_rel_est_rod       : EMBL EST Rodent	     
-       em_rel_gss_rod       : EMBL GSS Rodent	     
-       em_rel_htc_rod       : EMBL HTC Rodent	     
-       em_rel_htg_rod       : EMBL HTG Rodent	     
-       em_rel_pat_rod       : EMBL Patent Rodent   
-       em_rel_std_rod       : EMBL Standard Rodent 
-       em_rel_sts_rod       : EMBL STS Rodent	     
-       em_rel_tpa_rod       : EMBL TPA Rodent
-       em_rel_syn           : All EMBL Synthetic	  
-       em_rel_pat_syn       : EMBL Patent Synthetic	  
-       em_rel_std_syn       : EMBL Standard Synthetic	  
-       em_rel_tpa_syn       : EMBL TPA Synthetic	  
-       em_rel_tgn           : All EMBL Transgenic	  
-       em_rel_std_tgn       : EMBL Standard Transgenic  
-       em_rel_gss_tgn       : EMBL GSS Transgenic	  
-       em_rel_unc           : All EMBL Unclassified	  
-       em_rel_est_unc       : EMBL EST Unclassified	  
-       em_rel_pat_unc       : EMBL Patent Unclassified  
+       em_rel_rod           : All EMBL Rodent
+       em_rel_est_rod       : EMBL EST Rodent
+       em_rel_gss_rod       : EMBL GSS Rodent
+       em_rel_htc_rod       : EMBL HTC Rodent
+       em_rel_htg_rod       : EMBL HTG Rodent
+       em_rel_pat_rod       : EMBL Patent Rodent
+       em_rel_std_rod       : EMBL Standard Rodent
+       em_rel_sts_rod       : EMBL STS Rodent
+       em_rel_syn           : All EMBL Synthetic
+       em_rel_pat_syn       : EMBL Patent Synthetic
+       em_rel_std_syn       : EMBL Standard Synthetic
+       em_rel_tgn           : All EMBL Transgenic
+       em_rel_std_tgn       : EMBL Standard Transgenic
+       em_rel_gss_tgn       : EMBL GSS Transgenic
+       em_rel_unc           : All EMBL Unclassified
+       em_rel_est_unc       : EMBL EST Unclassified
+       em_rel_pat_unc       : EMBL Patent Unclassified
        em_rel_std_unc       : EMBL Standard Unclassified
-       em_rel_tpa_unc       : EMBL TPA Unclassified
-       em_rel_vrl           : All EMBL Viral	   
-       em_rel_gss_vrl       : EMBL GSS Viral	   
-       em_rel_htg_vrl       : EMBL HTG Viral	   
-       em_rel_pat_vrl       : EMBL Patent Viral  
+       em_rel_vrl           : All EMBL Viral
+       em_rel_gss_vrl       : EMBL GSS Viral
+       em_rel_htg_vrl       : EMBL HTG Viral
+       em_rel_pat_vrl       : EMBL Patent Viral
        em_rel_std_vrl       : EMBL Standard Viral
-       em_rel_tpa_vrl       : EMBL TPA Viral
-       em_rel_vrt           : All EMBL Vertebrate	
-       em_rel_est_vrt       : EMBL EST Vertebrate	
-       em_rel_gss_vrt       : EMBL GSS Vertebrate	
-       em_rel_htc_vrt       : EMBL HTC Vertebrate	
-       em_rel_htg_vrt       : EMBL HTG Vertebrate	
-       em_rel_pat_vrt       : EMBL Patent Vertebrate	
+       em_rel_vrt           : All EMBL Vertebrate
+       em_rel_est_vrt       : EMBL EST Vertebrate
+       em_rel_gss_vrt       : EMBL GSS Vertebrate
+       em_rel_htc_vrt       : EMBL HTC Vertebrate
+       em_rel_htg_vrt       : EMBL HTG Vertebrate
+       em_rel_pat_vrt       : EMBL Patent Vertebrate
        em_rel_std_vrt       : EMBL Standard Vertebrate
-       em_rel_sts_vrt       : EMBL STS Vertebrate	
-       em_rel_tpa_vrt       : EMBL TPA Vertebrate	
+       em_rel_sts_vrt       : EMBL STS Vertebrate
        em_rel_tsa_vrt       : EMBL TSA Vertebrate
        em_rel_est           : EMBL Expressed Sequence Tag
        em_rel_gss           : EMBL Genome Survey Sequence
@@ -570,12 +577,13 @@ Server Name                 : Short explanation
        em_rel_pat           : EMBL Patent
        em_rel_std           : EMBL Standard
        em_rel_sts           : EMBL Sequence Tagged Site
-       em_rel_tpa           : EMBL Third Party Annotation 
        emall                : EMBL Release and Updates
-       evec                 : EMBL Vectors
+       emvec                : EMBL Vectors
        imgtligm             : IMGT/LIGM-DB
        imgthla              : IMGT/HLA
        hgvbase              : HGVBASE
+       ipdkir               : IPD-KIR
+       emvec                : emvec
 [NCBI] 10090_genomic        : mouse genomic
        10116_genomic        : rat genomic
        180454_genomic       : anopheles gambiae genomic

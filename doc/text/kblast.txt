@@ -9,32 +9,28 @@ Function
 
 Description
 
-   kblast finds regions of local similarity between sequences usinb BLAST
+   kblast finds regions of local similarity between sequences used BLAST
    (Basic Local Alignment Search Tool). kblast is supported "blastn" and
    "blastp" methods.
    BLAST compares nucleotide or protein sequences to sequence databases
-   and calculates the statistical significance of matches.
+    and calculates the statistical significance of matches.
 
-   kblast utilizing three BLAST web services produced by NCBI(National Center
-   for Biotechnology Information), EBI (European Bioinformatics Institute) and
-   DDBJ (DNA Data Bank of Japan). original web-services is located at the
-   following URL:
+   kblast utilizing three BLAST web services produced by NCBI(National Center   for Biotechnology Information), EBI (European Bioinformatics Institute) and   DDBJ (DNA Data Bank of Japan). Original web-services are at the   following URL:
 
    NCBI: http://blast.ncbi.nlm.nih.gov/Blast.cgi
-   EBI : http://www.ebi.ac.uk/Tools/webservices/services/sss/ncbi_blast_soap
+   EBI : http://www.ebi.ac.uk/Tools/webservices/services/sss/ncbi_blast_rest
    DDBJ: http://www.xml.nig.ac.jp/wabi/Method?serviceName=DDBJ&mode=methodList&lang=en
 
-   kblast is able to search against all databases produced by those service providers.
-   This program selects automatically and access a provider which support the database
-   you specified. Available databases are listed in the Notes section.
+   kblast is able to search against all databases produced by those service providers.   This program selects automatically and accesses a provider which supports the database   you specified. Available databases are listed in the Notes section.
 
    This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
    which contains interfaces to bioinformatics web services through a proxy
-   server at Keio University. kblast is thus an interface of "runBlast"
-   method included in KBWS SOAP service.
+   server at Keio University. kblast is an interface of "runBlast" method
+   included in KBWS SOAP service.
+    
    This method can be alternatively accessed directly from programming languages
-   as SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
+   as SOAP web service. Please refer to the KBWS online documentations 
+    http://soap.g-language.org/kbws/ for more information.
 
 Usage
 
@@ -300,6 +296,9 @@ Notes
   None.
 
 References
+
+   Altschul, S.F., Gish, W., Miller, W., Myers, E.W. and Lipman, D.J. (1990) Basic 
+      local alignment search tool, J Mol Biol, 215, 403-410.
 
    Altschul S.F., et al.,(1997) Gapped BLAST and PSI-BLAST: a new generation
       of protein database search programs, Nucleic Acids Research, 25(17), 3389-3402.

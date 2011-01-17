@@ -41,37 +41,28 @@ IT IS DONE FOR YOU.
 
 <h2>Description</h2>
 
-
-   kblast finds regions of local similarity between sequences usinb BLAST
-   (Basic Local Alignment Search Tool). kblast is supported "blastn" and
-   "blastp" methods.
-   BLAST compares nucleotide or protein sequences to sequence databases
-   and calculates the statistical significance of matches.
+<p>
+<b>kblast</b> finds regions of local similarity between sequences used BLAST (Basic Local Alignment Search Tool). kblast is supported "blastn" and "blastp" methods.<br />
+   BLAST compares nucleotide or protein sequences to sequence databases and calculates the statistical significance of matches.
 </p>
 
-<p>   kblast utilizing three BLAST web services produced by NCBI(National Center
-   for Biotechnology Information), EBI (European Bioinformatics Institute) and<br />
-   DDBJ (DNA Data Bank of Japan). original web-services is located at the
-   following URL:
+<p>
+kblast utilizing three BLAST web services produced by NCBI(National Center for Biotechnology Information), EBI (European Bioinformatics Institute) and DDBJ (DNA Data Bank of Japan). original web-services is located at the following URL:
 </p>
 
-<p>   NCBI: http://blast.ncbi.nlm.nih.gov/Blast.cgi<br />
-   EBI : http://www.ebi.ac.uk/Tools/webservices/services/sss/ncbi_blast_soap<br />
-   DDBJ: http://www.xml.nig.ac.jp/wabi/Method?serviceName=DDBJ&mode=methodList&lang=en
+<p>
+   NCBI: http://blast.ncbi.nlm.nih.gov/Blast.cgi<br />
+   EBI : http://www.ebi.ac.uk/Tools/webservices/services/sss/ncbi_blast_rest<br />
+   DDBJ: http://www.xml.nig.ac.jp/wabi/Method?serviceName=DDBJ&mode=methodList&lang=en<br />
 </p>
 
-<p>   kblast is able to search against all databases produced by those service providers.
-   This program selects automatically and access a provider which support the database
-   you specified. Available databases are listed in the Notes section.
+<p>
+kblast is able to search against all databases produced by those service providers. This program selects automatically and accesses a provider which supports the database you specified. Available databases are listed in the Notes section.
 </p>
 
-<p>   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
-   which contains interfaces to bioinformatics web services through a proxy
-   server at Keio University. kblast is thus an interface of "runBlast"
-   method included in KBWS SOAP service.
-   This method can be alternatively accessed directly from programming languages
-   as SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
+<p>
+This tools is a subset of Keio Bioinformatics Web Service (KBWS) package, which contains interfaces to bioinformatics web services through a proxy server at Keio University. kblast is an interface of "runBlast" method included in KBWS SOAP service. <br />
+This method can be alternatively accessed directly from programming languages as SOAP web service. Please refer to the KBWS online documentations http://soap.g-language.org/kbws/ for more information. <br />
 </p>
 
 <p>
@@ -523,6 +514,9 @@ S2: 73 (32.7 bits)
 
 
 <pre>
+
+   Altschul, S.F., Gish, W., Miller, W., Myers, E.W. and Lipman, D.J. (1990) Basic 
+         local alignment search tool, J Mol Biol, 215, 403-410.
 
    Altschul S.F., et al.,(1997) Gapped BLAST and PSI-BLAST: a new generation
       of protein database search programs, Nucleic Acids Research, 25(17), 3389-3402.

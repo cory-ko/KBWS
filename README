@@ -18,11 +18,12 @@
 
 
 [ About ]----------------------------------------------------------------
-   This is an EMBASSY package for the utilization of bioinformatics web servcie.
+   This is an EMBASSY package for the utilization of bioinformatics web
+   servcie.
 
-   All of the tools included in this package are wrapper programs to utilize
-   KBWS SOAP services, which are web APIs to access numerous bioinformatics
-   web services under unified interface with SOAP 1.1.
+   All of the tools included in this package are wrapper programs to
+   utilize KBWS SOAP services, which are web APIs to access numerous
+   bioinformatics web services under unified interface with SOAP 1.1.
 
    Detailed documentation about KBWS SOAP services are available at
    http://www.g-language.org/kbws/.
@@ -32,10 +33,12 @@
 [ Installation ]---------------------------------------------------------
 
 REQUIREMENT
-  EMBOSS (> 6.2.0) - This EMBASSY package requires EMBOSS version 6.2.0 or above.
+  EMBOSS (> 6.2.0) - This EMBASSY package requires EMBOSS version 6.2.0 or
+  above.
 
 INSTALLATION
-  In the following examples, we assume downloaded EMBOSS filename is EMBOSS-6.3.1.tar.gz
+  In the following examples, we assume downloaded EMBOSS filename is
+  EMBOSS-6.3.1.tar.gz
 
   1. Download and compile EMBOSS source code
      % wget ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-latest.tar.gz
@@ -46,7 +49,8 @@ INSTALLATION
      % make
      % sudo make install
 
-  2. Make new directory "embassy" (in EMBOSS-6.3.1/ directory) if it does not exist already
+  2. Make new directory "embassy" (in EMBOSS-6.3.1/ directory) if it does
+     not exist already
      % mkdir embassy
 
   3. Go into that directory
@@ -86,12 +90,13 @@ NOTE
     and then retry make.
 
   Update of EMBOSS
-    When users are upgrading EMBOSS, please be sure to uninstall old version of
-    EMBOSS and KBWS. If you override them, some older version of files may cause errors.
+    When users are upgrading EMBOSS, please be sure to uninstall old version
+    of EMBOSS and KBWS. If you override them, some older version of files
+    may cause errors.
 
   EMBOSS is already installed
-    When EMBOSS is already installed in your system, please install KBWS at the same PATH
-    as existed EMBOSS by '--prefix' option.
+    When EMBOSS is already installed in your system, please install KBWS at
+    the same PATH as existed EMBOSS by '--prefix' option.
 
   Non-root users (using '--prefix' option)
     If you use './configure' command with '--prefix' option, please rewrite
@@ -102,17 +107,25 @@ NOTE
 
 [QuickStart]-------------------------------------------------------------
 
+DATABASE DEFINITION
+   The database definitions for following commands are available at
+   "KBWS-1.0.5/data/embossrc-template". 
+
+   The latest version is available at following URL:
+   http://soap.g-language.org/kbws/embossrc
+
 INFORMATION OF KBWS TOOLS
   List of all tools
     If you want to get list of all tools included in KBWS, you can try
-    the below command. When this command dose not return list of tools, please check
-    "Non-root users (using '--prefix' option)" section in this file.
-
+    the below command. When this command dose not return list of tools,
+    please check "Non-root users (using '--prefix' option)" section in
+    this file.
 
       % wossname -showembassy KBWS
 
   Documentation
-    You can view available documentations with "tfm" utility included in EMBOSS.
+    You can view available documentations with "tfm" utility included in
+    EMBOSS.
 
       % tfm kblast # example for "kblast"
 
@@ -179,7 +192,8 @@ SAMPLE DATA
 [ Content ]--------------------------------------------------------------
  gSOAP Toolkit
    This EMBASSY package is depended on gSOAP Toolkit to use SOAP
-   transfer, which is included in gsoap/ directory and automatically used during compilation.
+   transfer, which is included in gsoap/ directory and automatically used
+   during compilation.
 -------------------------------------------------------------------------
 
 [Contact]----------------------------------------------------------------

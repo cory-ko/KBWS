@@ -1,3 +1,5 @@
+version 1.0.6 17-Jan-2011
+        Add "embossrc" file to KBWS-x.x.x/data/embossrc-template
 version 1.0.5 18-Nov-2010
         Change value type of -eval option in kblast (float => string)
 	Update database information of kblast (See "tfm kblast")

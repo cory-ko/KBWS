@@ -120,6 +120,8 @@ int main(int argc, char **argv) {
          sleep(3);
       }
 
+       sleep(3);
+
       fprintf(stderr,"\n");
 
       if ( soap_call_ns1__getResult( &soap, NULL, NULL, jobid,  &result ) == SOAP_OK ) {

@@ -13,8 +13,8 @@ Description
 
    This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
    which contains interfaces to bioinformatics web services through a proxy
-   server at Keio University. kblast is thus an interface of "showBlastDB"
-   method included in KBWS SOAP service.
+   server at Keio University. kblast is an interface of "showBlastDB" method
+   included in KBWS SOAP service.
    This method can be alternatively accessed directly from programming languages
    as SOAP web service. Please refer to the KBWS online documentations
    http://www.g-language.org/kbws/ for more information.

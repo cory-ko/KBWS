@@ -1,0 +1,131 @@
+# embossrc (without SRS database)
+# Author: Kazuki Oshita
+# Contact: cory@g-language.org
+
+SET emboss_acdroot /usr/local/share/EMBOSS/acd
+SET emboss_data /usr/local/share/EMBOSS/data
+
+DB embl [ 
+  type: N 
+  format: embl 
+  method: url
+  dbalias: EMBL
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[EMBL:'%s']+-ascii+1"
+]
+
+DB refseq [
+  type: N 
+  format: genbank
+  method: url
+  dbalias: REFSEQ 
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[REFSEQGENREL:'%s']+-ascii+1"
+]
+
+DB fantom2 [
+  type: N
+  format: fasta
+  method: url
+  fields: "des"
+  url: "http://fantom2.gsc.riken.jp/db/annotate/seqview.cgi?type=cdnaseq&masterid=%s"
+  comment: "FANTOM2 IDs"
+]
+
+DB fantom3 [
+  type: N
+  format: fasta
+  method: url
+  fields: "des"
+  url: "http://fantom3.gsc.riken.jp/db/reference/content.cgi?category=dnaseq&masterid=%s"
+  comment: "FANTOM3 IDs"
+]
+
+DB genbankn [
+  type: N 
+  format: genbank
+  method: url
+  url: "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&rettype=gb&retmode=text&id=%s"
+  dbalias: GENBANKN
+  comment: "NCBI Nucleotide IDs"
+]
+
+DB swissprot [
+  type: P 
+  format: swiss
+  method: url
+  dbalias: SWISSPROT
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[SWISSPROT-all:'%s']+-vn+2+-ascii"
+  comment: "A combined database of Swiss-Prot, SPTREMBL and TREMBLNEW. Does not contain REMTREMBL. "
+]
+
+DB swall [
+  type: P 
+  format: swiss
+  method: url
+  dbalias: SWALL
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[SWALLi-all:'%s']+-vn+2+-ascii"
+ comment: "Database of protein sequences produced collaboratively by the Swiss Institute for Bioinformatics (SIB) and the European Bioinformatics Institute (EBI). "
+]
+
+DB uniprotkb [
+  type: P 
+  format: swiss
+  method: url
+  dbalias: UNIPROTKB
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[UNIPROT-all:'%s']+-vn+2+-ascii"
+]
+
+DB uniparc [
+  type: P
+  format: swiss
+  method: url
+  dbalias: UNIPARC
+  dbalias: UniParc
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[UNIPARC:'%s']+-ascii+-view+UniParc2Flat"
+  comment: "Contains the translations of all coding sequences present in the EMBL sequence database not yet integrated in SWISS-PROT "
+]
+
+DB pir [ 
+  type: P 
+  format: pir
+  method: url
+  dbalias: PIR
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[PIR:'%s']+-ascii"
+  comment: "Protein Identification Resource."
+]
+
+DB refseqp [ 
+  type: P 
+  format: genbank
+  method: url
+  dbalias: REFSEQP
+  fields: "sv des org key"
+  url: "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[REFSEQP:'%s']+-ascii"
+  comment: "Database of protein information from REFSEQ "
+]
+
+DB ddbj [
+  type: N
+  format: genbank
+  method: url
+  dbalias: DDBJ
+  fields: "sv des org key"
+  url: "http://xml.nig.ac.jp/rest/Invoke?service=GetEntry&method=getDDBJEntry&accession=%s"
+]
+
+DB genbankp [
+  type: P 
+  format: genbank
+  method: url
+  url: "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=protein&rettype=gb&retmode=text&id=%s"
+  dbalias: GENBANKP
+  comment: "NCBI Protein IDs"
+]
+
+# SET emboss_proxy "10.3.1.1:8080"

@@ -1,6 +1,6 @@
 
 -------------------------------------------------------------------------
- KBWS - KEIO Bioinformatics Web Service - EMBASSY package ver. 1.0.5
+ KBWS - KEIO Bioinformatics Web Service - EMBASSY package ver. 1.0.6
 
                               Web home: http://www.g-language.org/kbws/
 
@@ -57,13 +57,13 @@ INSTALLATION
      % cd embassy
 
   4. Place KBWS file in current directory
-     % wget http://www.g-language.org/kbws/source/KBWS-1.0.5.tar.gz
-      (or "curl -O http://www.g-language.org/kbws/source/KBWS-1.0.5.tar.gz")
+     % wget http://www.g-language.org/kbws/source/KBWS-1.0.6.tar.gz
+      (or "curl -O http://www.g-language.org/kbws/source/KBWS-1.0.6.tar.gz")
 
   5. Uncompress the KBWS tarball package, and go into the new KBWS directory
-     % tar xzf KBWS-1.0.5.tar.gz
-     % cd KBWS-1.0.5
-     ( EMBOSS-6.3.1/embassy/KBWS-1.0.5 )
+     % tar xzf KBWS-1.0.6.tar.gz
+     % cd KBWS-1.0.6
+     ( EMBOSS-6.3.1/embassy/KBWS-1.0.6 )
 
   6. Configure and compile
     % ./configure (use same options as you used to compile emboss)
@@ -109,7 +109,7 @@ NOTE
 
 DATABASE DEFINITION
    The database definitions for following commands are available at
-   "KBWS-1.0.5/data/embossrc-template". 
+   "KBWS-1.0.6/data/embossrc-template". 
 
    The latest version is available at following URL:
    http://soap.g-language.org/kbws/embossrc

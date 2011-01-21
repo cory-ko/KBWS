@@ -69,675 +69,631 @@ am_kblast_OBJECTS = kblast.$(OBJEXT)
 kblast_OBJECTS = $(am_kblast_OBJECTS)
 kblast_LDADD = $(LDADD)
 am__DEPENDENCIES_1 =
-@LOCALLINK_FALSE@kblast_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kblast_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kblast_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kcentroidfold_OBJECTS = kcentroidfold.$(OBJEXT)
 kcentroidfold_OBJECTS = $(am_kcentroidfold_OBJECTS)
 kcentroidfold_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kcentroidfold_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kcentroidfold_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kcentroidfold_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kclique_OBJECTS = kclique.$(OBJEXT)
 kclique_OBJECTS = $(am_kclique_OBJECTS)
 kclique_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kclique_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kclique_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kclique_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kclustalw_OBJECTS = kclustalw.$(OBJEXT)
 kclustalw_OBJECTS = $(am_kclustalw_OBJECTS)
 kclustalw_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kclustalw_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kclustalw_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kclustalw_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kcontml_OBJECTS = kcontml.$(OBJEXT)
 kcontml_OBJECTS = $(am_kcontml_OBJECTS)
 kcontml_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kcontml_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kcontml_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kcontml_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kdnacomp_OBJECTS = kdnacomp.$(OBJEXT)
 kdnacomp_OBJECTS = $(am_kdnacomp_OBJECTS)
 kdnacomp_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kdnacomp_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kdnacomp_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kdnacomp_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kdnadist_OBJECTS = kdnadist.$(OBJEXT)
 kdnadist_OBJECTS = $(am_kdnadist_OBJECTS)
 kdnadist_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kdnadist_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kdnadist_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kdnadist_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kdnainvar_OBJECTS = kdnainvar.$(OBJEXT)
 kdnainvar_OBJECTS = $(am_kdnainvar_OBJECTS)
 kdnainvar_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kdnainvar_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kdnainvar_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kdnainvar_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kdnaml_OBJECTS = kdnaml.$(OBJEXT)
 kdnaml_OBJECTS = $(am_kdnaml_OBJECTS)
 kdnaml_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kdnaml_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kdnaml_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kdnaml_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kdnamlk_OBJECTS = kdnamlk.$(OBJEXT)
 kdnamlk_OBJECTS = $(am_kdnamlk_OBJECTS)
 kdnamlk_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kdnamlk_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kdnamlk_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kdnamlk_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kdnapars_OBJECTS = kdnapars.$(OBJEXT)
 kdnapars_OBJECTS = $(am_kdnapars_OBJECTS)
 kdnapars_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kdnapars_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kdnapars_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kdnapars_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kdnapenny_OBJECTS = kdnapenny.$(OBJEXT)
 kdnapenny_OBJECTS = $(am_kdnapenny_OBJECTS)
 kdnapenny_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kdnapenny_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kdnapenny_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kdnapenny_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kdollop_OBJECTS = kdollop.$(OBJEXT)
 kdollop_OBJECTS = $(am_kdollop_OBJECTS)
 kdollop_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kdollop_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kdollop_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kdollop_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kdolpenny_OBJECTS = kdolpenny.$(OBJEXT)
 kdolpenny_OBJECTS = $(am_kdolpenny_OBJECTS)
 kdolpenny_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kdolpenny_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kdolpenny_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kdolpenny_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kfetchbatch_OBJECTS = kfetchbatch.$(OBJEXT)
 kfetchbatch_OBJECTS = $(am_kfetchbatch_OBJECTS)
 kfetchbatch_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kfetchbatch_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kfetchbatch_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kfetchbatch_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kfetchdata_OBJECTS = kfetchdata.$(OBJEXT)
 kfetchdata_OBJECTS = $(am_kfetchdata_OBJECTS)
 kfetchdata_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kfetchdata_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kfetchdata_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kfetchdata_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kfitch_OBJECTS = kfitch.$(OBJEXT)
 kfitch_OBJECTS = $(am_kfitch_OBJECTS)
 kfitch_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kfitch_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kfitch_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kfitch_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kgendist_OBJECTS = kgendist.$(OBJEXT)
 kgendist_OBJECTS = $(am_kgendist_OBJECTS)
 kgendist_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kgendist_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kgendist_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kgendist_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kgenemarkhmm_OBJECTS = kgenemarkhmm.$(OBJEXT)
 kgenemarkhmm_OBJECTS = $(am_kgenemarkhmm_OBJECTS)
 kgenemarkhmm_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kgenemarkhmm_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kgenemarkhmm_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kgenemarkhmm_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kglimmer_OBJECTS = kglimmer.$(OBJEXT)
 kglimmer_OBJECTS = $(am_kglimmer_OBJECTS)
 kglimmer_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kglimmer_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kglimmer_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kglimmer_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kkalign_OBJECTS = kkalign.$(OBJEXT)
 kkalign_OBJECTS = $(am_kkalign_OBJECTS)
 kkalign_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kkalign_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kkalign_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kkalign_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kkitsch_OBJECTS = kkitsch.$(OBJEXT)
 kkitsch_OBJECTS = $(am_kkitsch_OBJECTS)
 kkitsch_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kkitsch_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kkitsch_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kkitsch_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kmafft_OBJECTS = kmafft.$(OBJEXT)
 kmafft_OBJECTS = $(am_kmafft_OBJECTS)
 kmafft_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kmafft_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kmafft_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kmafft_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kmix_OBJECTS = kmix.$(OBJEXT)
 kmix_OBJECTS = $(am_kmix_OBJECTS)
 kmix_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kmix_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kmix_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kmix_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kmuscle_OBJECTS = kmuscle.$(OBJEXT)
 kmuscle_OBJECTS = $(am_kmuscle_OBJECTS)
 kmuscle_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kmuscle_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kmuscle_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kmuscle_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kneighbor_OBJECTS = kneighbor.$(OBJEXT)
 kneighbor_OBJECTS = $(am_kneighbor_OBJECTS)
 kneighbor_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kneighbor_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kneighbor_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kneighbor_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kpathwayprojector_OBJECTS = kpathwayprojector.$(OBJEXT)
 kpathwayprojector_OBJECTS = $(am_kpathwayprojector_OBJECTS)
 kpathwayprojector_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kpathwayprojector_DEPENDENCIES =  \
-@LOCALLINK_FALSE@	$(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kpathwayprojector_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kpathwayprojector_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kpenny_OBJECTS = kpenny.$(OBJEXT)
 kpenny_OBJECTS = $(am_kpenny_OBJECTS)
 kpenny_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kpenny_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kpenny_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kpenny_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kphobius_OBJECTS = kphobius.$(OBJEXT)
 kphobius_OBJECTS = $(am_kphobius_OBJECTS)
 kphobius_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kphobius_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kphobius_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kphobius_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kprotdist_OBJECTS = kprotdist.$(OBJEXT)
 kprotdist_OBJECTS = $(am_kprotdist_OBJECTS)
 kprotdist_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kprotdist_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kprotdist_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kprotdist_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kprotpars_OBJECTS = kprotpars.$(OBJEXT)
 kprotpars_OBJECTS = $(am_kprotpars_OBJECTS)
 kprotpars_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kprotpars_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kprotpars_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kprotpars_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kpsort_OBJECTS = kpsort.$(OBJEXT)
 kpsort_OBJECTS = $(am_kpsort_OBJECTS)
 kpsort_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kpsort_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kpsort_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kpsort_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kpsort2_OBJECTS = kpsort2.$(OBJEXT)
 kpsort2_OBJECTS = $(am_kpsort2_OBJECTS)
 kpsort2_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kpsort2_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kpsort2_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kpsort2_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kpsortb_OBJECTS = kpsortb.$(OBJEXT)
 kpsortb_OBJECTS = $(am_kpsortb_OBJECTS)
 kpsortb_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kpsortb_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kpsortb_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kpsortb_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_krestml_OBJECTS = krestml.$(OBJEXT)
 krestml_OBJECTS = $(am_krestml_OBJECTS)
 krestml_LDADD = $(LDADD)
-@LOCALLINK_FALSE@krestml_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@krestml_DEPENDENCIES = ../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+krestml_DEPENDENCIES = ../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_krnafold_OBJECTS = krnafold.$(OBJEXT)
 krnafold_OBJECTS = $(am_krnafold_OBJECTS)
 krnafold_LDADD = $(LDADD)
-@LOCALLINK_FALSE@krnafold_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@krnafold_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+krnafold_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kseqboot_OBJECTS = kseqboot.$(OBJEXT)
 kseqboot_OBJECTS = $(am_kseqboot_OBJECTS)
 kseqboot_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kseqboot_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kseqboot_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kseqboot_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kshowblastdb_OBJECTS = kshowblastdb.$(OBJEXT)
 kshowblastdb_OBJECTS = $(am_kshowblastdb_OBJECTS)
 kshowblastdb_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kshowblastdb_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kshowblastdb_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kshowblastdb_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kssearch_OBJECTS = kssearch.$(OBJEXT)
 kssearch_OBJECTS = $(am_kssearch_OBJECTS)
 kssearch_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kssearch_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kssearch_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kssearch_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_ktcoffee_OBJECTS = ktcoffee.$(OBJEXT)
 ktcoffee_OBJECTS = $(am_ktcoffee_OBJECTS)
 ktcoffee_LDADD = $(LDADD)
-@LOCALLINK_FALSE@ktcoffee_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@ktcoffee_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+ktcoffee_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_ktrnascan_se_OBJECTS = ktrnascan_se.$(OBJEXT)
 ktrnascan_se_OBJECTS = $(am_ktrnascan_se_OBJECTS)
 ktrnascan_se_LDADD = $(LDADD)
-@LOCALLINK_FALSE@ktrnascan_se_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@ktrnascan_se_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+ktrnascan_se_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kweblogo_OBJECTS = kweblogo.$(OBJEXT)
 kweblogo_OBJECTS = $(am_kweblogo_OBJECTS)
 kweblogo_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kweblogo_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kweblogo_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kweblogo_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 am_kwolfpsort_OBJECTS = kwolfpsort.$(OBJEXT)
 kwolfpsort_OBJECTS = $(am_kwolfpsort_OBJECTS)
 kwolfpsort_LDADD = $(LDADD)
-@LOCALLINK_FALSE@kwolfpsort_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@LOCALLINK_TRUE@kwolfpsort_DEPENDENCIES =  \
-@LOCALLINK_TRUE@	../../../nucleus/libnucleus.la \
-@LOCALLINK_TRUE@	../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+kwolfpsort_DEPENDENCIES =  \
+	../../../nucleus/libnucleus.la \
+	../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la \
+	$(am__DEPENDENCIES_1)
 DEFAULT_INCLUDES = -I. -I$(srcdir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -839,8 +795,6 @@ LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
 LN_S = @LN_S@
-LOCALLINK_FALSE = @LOCALLINK_FALSE@
-LOCALLINK_TRUE = @LOCALLINK_TRUE@
 LTLIBOBJS = @LTLIBOBJS@
 MAKEINFO = @MAKEINFO@
 NEEDAJAX = @NEEDAJAX@
@@ -919,24 +873,23 @@ sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 sysconfdir = @sysconfdir@
 target_alias = @target_alias@
-@LOCALLINK_FALSE@INCLUDES = -I../include -I${embprefix}/include -I${embprefix}/include/eplplot -I../gsoap
-@LOCALLINK_TRUE@INCLUDES = -I../include -I../../../nucleus -I../../../ajax/pcre \
-@LOCALLINK_TRUE@	-I../../../ajax/expat -I../../../ajax/zlib \
-@LOCALLINK_TRUE@	-I../../../ajax/core -I../../../ajax/graphics \
-@LOCALLINK_TRUE@	-I../../../ajax/ensembl -I../../../ajax/ajaxdb \
-@LOCALLINK_TRUE@	-I../../../ajax/acd -I../../../plplot -I../gsoap
+INCLUDES = -I../include -I../../../nucleus -I../../../ajax/pcre \
+	-I../../../ajax/expat -I../../../ajax/zlib \
+	-I../../../ajax/core -I../../../ajax/graphics \
+	-I../../../ajax/ensembl -I../../../ajax/ajaxdb \
+	-I../../../ajax/acd -I../../../plplot -I../gsoap
 
-@ISAIXIA64_TRUE@@ISSHARED_TRUE@@LOCALLINK_FALSE@AIX_CFLAGS = -Wl,-bdynamic -Wl,-brtl -L${embprefix}/lib -lnucleus -lacd \
-@ISAIXIA64_TRUE@@ISSHARED_TRUE@@LOCALLINK_FALSE@-lajaxdb -lensembl -lajaxg -lajax -leexpat -lepcre -lezlib -leplplot
+@ISAIXIA64_TRUE@@ISSHARED_TRUE@@AIX_CFLAGS = -Wl,-bdynamic -Wl,-brtl -L${embprefix}/lib -lnucleus -lacd \
+@ISAIXIA64_TRUE@@ISSHARED_TRUE@@-lajaxdb -lensembl -lajaxg -lajax -leexpat -lepcre -lezlib -leplplot
 
-@ISAIXIA64_TRUE@@ISSHARED_TRUE@@LOCALLINK_TRUE@AIX_CFLAGS = -Wl,-bdynamic -Wl,-brtl -L../../../plplot/.libs \
-@ISAIXIA64_TRUE@@ISSHARED_TRUE@@LOCALLINK_TRUE@-L../../../ajax/pcre/.libs -L../../../ajax/expat/.libs \
-@ISAIXIA64_TRUE@@ISSHARED_TRUE@@LOCALLINK_TRUE@-L../../../ajax/zlib/.libs -L../../../ajax/core/.libs \
-@ISAIXIA64_TRUE@@ISSHARED_TRUE@@LOCALLINK_TRUE@-L../../../ajax/graphics/.libs -L../../../ajax/ensembl/.libs \
-@ISAIXIA64_TRUE@@ISSHARED_TRUE@@LOCALLINK_TRUE@-L../../../ajax/ajaxdb/.libs -L../../../ajax/acd/.libs \
-@ISAIXIA64_TRUE@@ISSHARED_TRUE@@LOCALLINK_TRUE@-L../../../nucleus/.libs \
-@ISAIXIA64_TRUE@@ISSHARED_TRUE@@LOCALLINK_TRUE@-lnucleus -lacd -lajaxdb -lensembl -lajaxg -lajax -leexpat -lepcre \
-@ISAIXIA64_TRUE@@ISSHARED_TRUE@@LOCALLINK_TRUE@-lezlib -leplplot
+@ISAIXIA64_TRUE@@ISSHARED_TRUE@AIX_CFLAGS = -Wl,-bdynamic -Wl,-brtl -L../../../plplot/.libs \
+@ISAIXIA64_TRUE@@ISSHARED_TRUE@-L../../../ajax/pcre/.libs -L../../../ajax/expat/.libs \
+@ISAIXIA64_TRUE@@ISSHARED_TRUE@-L../../../ajax/zlib/.libs -L../../../ajax/core/.libs \
+@ISAIXIA64_TRUE@@ISSHARED_TRUE@-L../../../ajax/graphics/.libs -L../../../ajax/ensembl/.libs \
+@ISAIXIA64_TRUE@@ISSHARED_TRUE@-L../../../ajax/ajaxdb/.libs -L../../../ajax/acd/.libs \
+@ISAIXIA64_TRUE@@ISSHARED_TRUE@-L../../../nucleus/.libs \
+@ISAIXIA64_TRUE@@ISSHARED_TRUE@-lnucleus -lacd -lajaxdb -lensembl -lajaxg -lajax -leexpat -lepcre \
+@ISAIXIA64_TRUE@@ISSHARED_TRUE@-lezlib -leplplot
 
 AM_CFLAGS = $(AIX_CFLAGS) $(WARN_CFLAGS) $(DEVWARN_CFLAGS)
 kblast_SOURCES = kblast.c
@@ -982,18 +935,16 @@ kwolfpsort_SOURCES = kwolfpsort.c
 krnafold_SOURCES = krnafold.c
 kshowblastdb_SOURCES = kshowblastdb.c
 kpathwayprojector_SOURCES = kpathwayprojector.c
-@LOCALLINK_FALSE@LDADD = -L${embprefix}/lib -lnucleus -lacd -lajaxdb -lensembl -lajaxg \
-@LOCALLINK_FALSE@        -lajax -leexpat -lepcre -lezlib -leplplot $(XLIB)
 
-@LOCALLINK_TRUE@LDADD = ../../../nucleus/libnucleus.la ../../../ajax/acd/libacd.la \
-@LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
-@LOCALLINK_TRUE@	../../../ajax/ensembl/libensembl.la \
-@LOCALLINK_TRUE@	../../../ajax/graphics/libajaxg.la \
-@LOCALLINK_TRUE@	../../../ajax/core/libajax.la \
-@LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
-@LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
-@LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la $(XLIB)
+LDADD = ../../../nucleus/libnucleus.la ../../../ajax/acd/libacd.la \
+	../../../ajax/ajaxdb/libajaxdb.la \
+	../../../ajax/ensembl/libensembl.la \
+	../../../ajax/graphics/libajaxg.la \
+	../../../ajax/core/libajax.la \
+	../../../ajax/zlib/libezlib.la \
+	../../../ajax/expat/libeexpat.la \
+	../../../ajax/pcre/libepcre.la \
+	../../../plplot/libeplplot.la $(XLIB)
 
 all: all-am
 

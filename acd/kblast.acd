@@ -1,5 +1,7 @@
 application: kblast [
-  documentation: "Search similar sequences in public repositories using BLAST"
+  documentation: "Search similar sequences in
+                  public repositories using
+                  BLAST"
   groups: "Alignment:Local"
   embassy: "kbws"
 ]
@@ -14,12 +16,6 @@ section: input [
     type: "gapany"
   ]
 
-  string: d [
-    parameter: "Y"
-    default: ""
-    information: "database name about target for your search"
-  ]
-
 endsection: input
 
 section: advanced [
@@ -27,16 +23,28 @@ section: advanced [
   type: "page"
 ]
 
+  string: d [
+    additional: "Y"
+    default: "swissprot"
+    information: "database name about target for
+                  your search"
+  ]
+
   string: p [
     additional: "Y"
     default: "auto"
-    information: "program name. 'blastn' or 'blastp'"
+    information: "blast program name. 'auto'
+                  (infer suitable program from
+                  your sequence), 'blastn',
+                  'blastp' or 'blastx'"
   ]
 
   string: server [
     additional: "Y"
     default: ""
-    information: "specify web server for your search. 'NCBI', 'EBI' or 'DDBJ'"
+    information: "specify web server for your
+                  search. 'NCBI', 'EBI' or
+                  'DDBJ'"
   ]
 
   string: format [
@@ -72,37 +80,45 @@ section: advanced [
   string: dropoff [
     additional: "Y"
     default: "0"
-    information: "X dropoff value for gapped alignment (in bits)"
+    information: "X dropoff value for gapped
+                  alignment (in bits)"
   ]
 
   integer: q [
     additional: "Y"
     default: "-3"
-    information: "penalty for a nucleotide mismatch (blastn only)"
+    information: "penalty for a nucleotide
+                  mismatch (blastn only)"
   ]
 
   integer: r [
     additional: "Y"
     default: "1"
-    information: "reward for a nucleotide match (blastn only)"
+    information: "reward for a nucleotide match
+                  (blastn only)"
   ]
 
   integer: v [
     additional: "Y"
     default: "500"
-    information: "number of database sequences to show one-line descriptions for (V)"
+    information: "number of database sequences
+                  to show one-line descriptions
+                  for (V)"
   ]
 
   integer: b [
     additional: "Y"
     default: "250"
-    information: "number of database sequence to show alignments for (B)"
+    information: "number of database sequence to
+                  show alignments for (B)"
   ]
 
   integer: threshold [
     additional: "Y"
     default: "0"
-    information: "threshold for extending hits, default if zero for each program"
+    information: "threshold for extending hits,
+                  default if zero for each
+                  program"
   ]
 
   boolean: g [
@@ -120,25 +136,29 @@ section: advanced [
   integer: wordsize [
     additional: "Y"
     default: "0"
-    information: "word size, default if zero for each program"
+    information: "word size, default if zero for
+                  each program"
   ]
 
   float: z [
     additional: "Y"
     default: "0"
-    information: "effective length of the database"
+    information: "effective length of the
+                  database"
   ]
 
   integer: k [
     additional: "Y"
     default: "0"
-    information: "number of best hits from a region to keep"
+    information: "number of best hits from a
+                  region to keep"
   ]
 
   float: y [
     additional: "Y"
     default: "0"
-    information: "effective length of the search space"
+    information: "effective length of the search
+                  space"
   ]
 
 endsection: advanced

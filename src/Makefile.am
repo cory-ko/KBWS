@@ -1,18 +1,13 @@
 ## Process this file with automake to produce Makefile.in
 
-if LOCALLINK
 INCLUDES = -I../include -I../../../nucleus -I../../../ajax/pcre \
 	-I../../../ajax/expat -I../../../ajax/zlib \
 	-I../../../ajax/core -I../../../ajax/graphics \
 	-I../../../ajax/ensembl -I../../../ajax/ajaxdb \
 	-I../../../ajax/acd -I../../../plplot -I../gsoap
-else
-INCLUDES = -I../include -I${embprefix}/include -I${embprefix}/include/eplplot -I../gsoap
-endif
 
 if ISSHARED
 if ISAIXIA64
-if LOCALLINK
 AIX_CFLAGS = -Wl,-bdynamic -Wl,-brtl -L../../../plplot/.libs \
 -L../../../ajax/pcre/.libs -L../../../ajax/expat/.libs \
 -L../../../ajax/zlib/.libs -L../../../ajax/core/.libs \
@@ -24,7 +19,6 @@ AIX_CFLAGS = -Wl,-bdynamic -Wl,-brtl -L../../../plplot/.libs \
 else
 AIX_CFLAGS = -Wl,-bdynamic -Wl,-brtl -L${embprefix}/lib -lnucleus -lacd \
 -lajaxdb -lensembl -lajaxg -lajax -leexpat -lepcre -lezlib -leplplot
-endif
 endif
 endif
 
@@ -89,7 +83,6 @@ krnafold_SOURCES          = krnafold.c
 kshowblastdb_SOURCES      = kshowblastdb.c
 kpathwayprojector_SOURCES = kpathwayprojector.c
 
-if LOCALLINK
 LDADD = ../../../nucleus/libnucleus.la ../../../ajax/acd/libacd.la \
 	../../../ajax/ajaxdb/libajaxdb.la \
 	../../../ajax/ensembl/libensembl.la \
@@ -99,8 +92,4 @@ LDADD = ../../../nucleus/libnucleus.la ../../../ajax/acd/libacd.la \
 	../../../ajax/expat/libeexpat.la \
 	../../../ajax/pcre/libepcre.la \
 	../../../plplot/libeplplot.la $(XLIB)
-else
-LDADD = -L${embprefix}/lib -lnucleus -lacd -lajaxdb -lensembl -lajaxg \
-        -lajax -leexpat -lepcre -lezlib -leplplot $(XLIB)
-endif
 

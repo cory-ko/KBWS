@@ -42,7 +42,7 @@ IT IS DONE FOR YOU.
 <h2>Description</h2>
 
 <p>
-<b>kblast</b> finds regions of local similarity between sequences used BLAST (Basic Local Alignment Search Tool). kblast is supported "blastn" and "blastp" methods.<br />
+<b>kblast</b> finds regions of local similarity between sequences used BLAST (Basic Local Alignment Search Tool). kblast is supported "blastn", "blastp" and "blastx" methods.<br />
    BLAST compares nucleotide or protein sequences to sequence databases and calculates the statistical significance of matches.
 </p>
 
@@ -300,14 +300,6 @@ S2: 73 (32.7 bits)
 </tr>
 
 <tr bgcolor="#FFFFCC">
-<td>[-d]<br>(Parameter 2)</td>
-<td>string</td>
-<td>database name about target for your search</td>
-<td>Any string</td>
-<td>&nbsp;</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
 <td>[-outfile]<br>(Parameter 3)</td>
 <td>outfile</td>
 <td>Output file name</td>
@@ -320,9 +312,17 @@ S2: 73 (32.7 bits)
 </tr>
 
 <tr bgcolor="#FFFFCC">
+<td>-d<br>(Parameter 2)</td>
+<td>string</td>
+<td>database name about target for your search</td>
+<td>Any string</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
 <td>-p</td>
 <td>string</td>
-<td>program name. 'blastn' or 'blastp'</td>
+<td>blast program name. 'auto' (infer suitable program from your sequence), 'blastn', 'blastp' or 'blastx'</td>
 <td>Any string</td>
 <td>auto</td>
 </tr>

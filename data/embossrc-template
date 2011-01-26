@@ -1,5 +1,14 @@
 # embossrc (without SRS database)
 
+# For setting up following databases, please download this file
+# and save as "~/.embossrc" on your home directory.
+
+# By default EMBOSS is installed at /usr/local but the directory can
+# be changed with --prefix when you configure EMBOSS.
+
+# SET emboss_acdroot $YOUR_PREFIX/share/EMBOSS/acd
+# SET embossdata     $YOUR_PREFIX/share/EMBOS/data
+
 SET emboss_acdroot /usr/local/share/EMBOSS/acd
 SET emboss_data /usr/local/share/EMBOSS/data
 

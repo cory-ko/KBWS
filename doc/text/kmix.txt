@@ -41,7 +41,7 @@ Usage
 
 % kmix
 Mixed parsimony algorithm using mix
-Input (gapped) sequence(s): test.fasta
+Input file: sample.dat
 Output file [55-110.kmix]:
 Jobid: kbws_12547145
 ***********
@@ -49,8 +49,7 @@ Jobid: kbws_12547145
 Command line arguments
 
    Standard (Mandatory) qualifiers:
-  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
-                                  format, or reference (input USA)
+  [-infile]            infile     data file for mix
   [-outseq]            outfile    [.kmix] output filename
 
    Additional (Optional) qualifiers: (none)

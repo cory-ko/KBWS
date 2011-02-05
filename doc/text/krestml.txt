@@ -41,7 +41,7 @@ Usage
 
 % krestml
 Restriction site maximum Likelihood method using restml
-Input (gapped) sequence(s): test.fasta
+Input file: sample.dat
 Output file [55-110.krestml]:
 Jobid: kbws_12547145
 ***********

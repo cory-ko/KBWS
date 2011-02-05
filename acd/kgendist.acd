@@ -11,6 +11,7 @@ section: input [
 
   infile: infile [
     parameter: "Y"
+    information: "data file for gendist"
   ]
 
 endsection: input

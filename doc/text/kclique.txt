@@ -53,8 +53,8 @@ Jobid: kbws_12547145
 Command line arguments
 
    Standard (Mandatory) qualifiers:
-  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
-                                  format, or reference (input USA)
+  [-infile]            infile     standard input for discrete characters
+                                  programs
   [-outseq]            outfile    [.kclique] output filename
 
    Additional (Optional) qualifiers: (none)

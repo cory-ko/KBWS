@@ -60,6 +60,7 @@ Command line arguments
 
    Additional (Optional) qualifiers: (none)
    Advanced (Unprompted) qualifiers:
+
 Input file format
 
   Input files for usage example

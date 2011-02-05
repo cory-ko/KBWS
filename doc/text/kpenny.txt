@@ -30,8 +30,8 @@ Description
    which contains interfaces to bioinformatics web services through a proxy
    server at Keio University. kpennyis thus an interface of "runPenny"
    method included in KBWS SOAP service.
-   This method can be alternatively accessed directly from programming languages
-   as SOAP web service. Please refer to the KBWS online documentations
+   This method can be alternatively accessed directly from programming
+   languages as SOAP web service. Please refer to the KBWS online documentations
    http://soap.g-language.org/kbws/ for more information.
 
 Usage
@@ -40,7 +40,7 @@ Usage
 
 % kpenny
 Penny algorithm, branch-and-bound using penny
-Input (gapped) sequence(s): test.fasta
+Input file: sample.dat
 Output file [55-110.kpenny]:
 Jobid: kbws_12547145
 ***********
@@ -48,12 +48,12 @@ Jobid: kbws_12547145
 Command line arguments
 
    Standard (Mandatory) qualifiers:
-  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
-                                  format, or reference (input USA)
+  [-infile]            infile     data file for penny
   [-outseq]            outfile    [.kpenny] output filename
 
    Additional (Optional) qualifiers: (none)
    Advanced (Unprompted) qualifiers:
+
 Input file format
 
   Input files for usage example

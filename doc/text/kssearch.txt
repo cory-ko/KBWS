@@ -36,6 +36,7 @@ Usage
 % kssearch
 compares query sequences to databases using SSEARCH
 Input (gapped) sequence(s): test.fasta
+database for search: uniprotkb
 output sequence(s) [nc_000908.kssearch]:
 Jobid: kbws_5626576
 
@@ -136,4 +137,9 @@ Target users
 Comments
 
    None.
+
+Appendix
+
+   Ths list for databases about kssearch is available at following URL:
+   http://soap.g-language.org/kbws/data/db_ssearch
 

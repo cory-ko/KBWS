@@ -70,6 +70,23 @@ INSTALLATION
     % make
     % sudo make install
 
+INSTALLATION (without EMBOSS source code file)
+  When EMBOSS is already installed in your system, you are able to compile and install
+  KBWS package without EMBOSS source code file.
+
+  1. Download and uncompress the KBWS tarball package, and go into the new KBWS directory
+    % wget http://www.g-language.org/kbws/source/KBWS-1.0.7.tar.gz
+     (or "curl -O http://www.g-language.org/kbws/source/KBWS-1.0.7.tar.gz")
+    % tar xzf KBWS-1.0.7.tar.gz
+    % cd KBWS-1.0.7
+
+  2. Configure (use same options as you used to compile EMBOSS)
+    % ./configure [--prefix /PATH/to/installed/EMBOSS/prefix]
+
+  3. Compile and install
+    % make
+    % sudo make instal
+
 NOTE
   libtool problem
     On some systems there may be compatibility problems with different

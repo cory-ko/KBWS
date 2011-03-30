@@ -11,7 +11,7 @@
 
 int main(int argc, char **argv) {
 
-    embInitPV("kshowblastdb", argc, argv, "KBWS", "1.0.6");
+    embInitPV("kshowblastdb", argc, argv, "KBWS", "1.0.7");
 
     struct soap soap;
     struct ns1__showBlastDBInputParams params;

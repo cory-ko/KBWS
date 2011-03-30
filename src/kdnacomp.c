@@ -14,7 +14,7 @@ static AjPStr getUniqueFileName(void);
 
 int main(int argc, char **argv) {
 
-  embInitPV("kdnacomp", argc, argv, "KBWS", "1.0.6");
+  embInitPV("kdnacomp", argc, argv, "KBWS", "1.0.7");
 
   struct soap soap;
   char* jobid;

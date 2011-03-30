@@ -1,6 +1,8 @@
+version 1.0.7 30-Mar-2011
+        Supporting to other EMBOSS distributions except an source code distribution
 version 1.0.6 24-Jan-2011
         Add "embossrc" file to KBWS-x.x.x/data/embossrc-template
-	Fix serious bug about Installer
+	Fix serious bug about installer
 	Update "kssearch" method (bug fix)
 	Update "kblast" method ('blastx' program is available)
 version 1.0.5 18-Nov-2010

@@ -12,7 +12,7 @@
 
 int main(int argc, char **argv) {
 
-   embInitPV("kwolfpsort", argc, argv, "KBWS", "1.0.6");
+   embInitPV("kwolfpsort", argc, argv, "KBWS", "1.0.7");
 
    struct soap soap;
    struct ns1__wolfPsortInputParams params;

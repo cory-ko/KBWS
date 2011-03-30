@@ -14,7 +14,7 @@ static AjPStr getUniqueFileName(void);
 
 int main(int argc, char **argv) {
 
-    embInitPV("kweblogo", argc, argv, "KBWS", "1.0.6");
+    embInitPV("kweblogo", argc, argv, "KBWS", "1.0.7");
 
     struct soap soap;
     struct ns1__weblogoInputParams params;

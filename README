@@ -1,6 +1,6 @@
 
 -------------------------------------------------------------------------
- KBWS - KEIO Bioinformatics Web Service - EMBASSY package ver. 1.0.7
+ KBWS - KEIO Bioinformatics Web Service - EMBASSY package ver. 1.0.8
 
                               Web home: http://www.g-language.org/kbws/
 
@@ -33,23 +33,23 @@
 [ Installation ]---------------------------------------------------------
 
 REQUIREMENT
-  EMBOSS (> 6.2.0) - This EMBASSY package requires EMBOSS version 6.2.0 or
+  EMBOSS (> 6.4.0) - This EMBASSY package requires EMBOSS version 6.4.0 or
   above.
 
 INSTALLATION
   In the following examples, we assume downloaded EMBOSS filename is
-  EMBOSS-latest.tar.gz (EMBOSS-6.3.1)
+  EMBOSS-latest.tar.gz (EMBOSS-6.4.0)
 
   1. Download and compile EMBOSS source code
      % wget ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-latest.tar.gz
       (or "curl -O ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-latest.tar.gz")
      % tar xzf EMBOSS-latest.tar.gz
-     % cd EMBOSS-6.3.1
+     % cd EMBOSS-6.4.0
      % ./configure
      % make
      % sudo make install
 
-  2. Make new directory "embassy" (in EMBOSS-6.3.1/ directory) if it does
+  2. Make new directory "embassy" (in EMBOSS-6.4.0/ directory) if it does
      not exist already
      % mkdir embassy
 
@@ -57,13 +57,13 @@ INSTALLATION
      % cd embassy
 
   4. Place KBWS file in current directory
-     % wget http://www.g-language.org/kbws/source/KBWS-1.0.7.tar.gz
-      (or "curl -O http://www.g-language.org/kbws/source/KBWS-1.0.7.tar.gz")
+     % wget http://www.g-language.org/kbws/source/KBWS-1.0.8.tar.gz
+      (or "curl -O http://www.g-language.org/kbws/source/KBWS-1.0.8.tar.gz")
 
   5. Uncompress the KBWS tarball package, and go into the new KBWS directory
-     % tar xzf KBWS-1.0.7.tar.gz
-     % cd KBWS-1.0.7
-     ( EMBOSS-6.3.1/embassy/KBWS-1.0.7 )
+     % tar xzf KBWS-1.0.8.tar.gz
+     % cd KBWS-1.0.8
+     ( EMBOSS-6.3.1/embassy/KBWS-1.0.8 )
 
   6. Configure and compile
     % ./configure (use same options as you used to compile emboss)
@@ -109,7 +109,7 @@ NOTE
 
 DATABASE DEFINITION
    The database definitions for following commands are available at
-   "KBWS-1.0.7/data/embossrc-template". 
+   "KBWS-1.0.8/data/embossrc-template". 
 
    The latest version is available at following URL:
    http://soap.g-language.org/kbws/embossrc
@@ -129,7 +129,7 @@ INFORMATION OF KBWS TOOLS
 
 USAGE EXAMPLE
    Sample files used in this section are available from EMBOSS package.
-     ( EMBOSS-6.3.1/test/data/* )
+     ( EMBOSS-6.4.0/test/data/* )
 
   1. kblast (BLAST)
       % kblast swissprot:FOXP2_HUMAN -d swissprot -format 8 -eval 1e-100

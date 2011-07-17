@@ -12,7 +12,7 @@
 
 int main(int argc, char **argv) {
 
-   embInitPV("kphobius", argc, argv, "KBWS", "1.0.7");
+   embInitPV("kphobius", argc, argv, "KBWS", "1.0.8");
 
    struct soap soap;
    struct ns1__phobiusInputParams params;

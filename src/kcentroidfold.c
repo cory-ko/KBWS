@@ -12,7 +12,7 @@
 
 int main(int argc, char **argv) {
 
-    embInitPV("kcentroidfold", argc, argv, "KBWS", "1.0.7");
+    embInitPV("kcentroidfold", argc, argv, "KBWS", "1.0.8");
 
     struct soap soap;
     struct ns1__centroidfoldInputParams params;
@@ -86,9 +86,9 @@ int main(int argc, char **argv) {
       }
       */
 
-      fprintf(stdout,"http://soap.g-language.org/result/");
-      fprintf(stdout,jobid);
-      fprintf(stdout,".png\n");
+      fprintf(stdout, "http://soap.g-language.org/result/");
+      fprintf(stdout, "%s", jobid);
+      fprintf(stdout, ".png\n");
 
       soap_destroy(&soap);
       soap_end(&soap);

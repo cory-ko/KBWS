@@ -14,7 +14,7 @@ static AjPStr getUniqueFileName(void);
 
 int main(int argc, char **argv) {
 
-    embInitPV("ktcoffee", argc, argv, "KBWS", "1.0.7");
+    embInitPV("ktcoffee", argc, argv, "KBWS", "1.0.8");
 
     AjPSeqall  seqall;
     AjPSeq     seq;
@@ -139,7 +139,7 @@ int main(int argc, char **argv) {
     soap_end(&soap); 
     soap_done(&soap); 
     
-    ajSysFileUnlink(tmpFileName);
+    ajSysFileUnlinkS(tmpFileName);
 
     ajFileClose(&outf);
     ajFileClose(&outf_aln);

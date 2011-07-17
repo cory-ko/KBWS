@@ -1,5 +1,7 @@
+version 1.0.8 17-Jul-2011
+	Keeping up with EMBOSS 6.4.0.
 version 1.0.7 30-Mar-2011
-        Supporting to other EMBOSS distributions except an source code distribution
+        Supporting other EMBOSS distributions except an source code distribution
 version 1.0.6 24-Jan-2011
         Add "embossrc" file to KBWS-x.x.x/data/embossrc-template
 	Fix serious bug about installer

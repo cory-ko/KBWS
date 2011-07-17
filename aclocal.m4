@@ -8758,3 +8758,9 @@ AC_SUBST([am__tar])
 AC_SUBST([am__untar])
 ]) # _AM_PROG_TAR
 
+m4_include([m4/amd64.m4])
+m4_include([m4/general.m4])
+m4_include([m4/java.m4])
+m4_include([m4/lf_x11.m4])
+m4_include([m4/pngdriver.m4])
+m4_include([m4/sgi.m4])

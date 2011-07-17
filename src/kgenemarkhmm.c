@@ -13,7 +13,7 @@
 
 int main(int argc, char **argv) {
 
-  embInitPV("kgenemarkhmm", argc, argv, "KBWS", "1.0.7");
+  embInitPV("kgenemarkhmm", argc, argv, "KBWS", "1.0.8");
 
   AjPSeqall  seqall;
   AjPSeq     seq;

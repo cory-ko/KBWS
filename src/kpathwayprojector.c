@@ -11,7 +11,7 @@
 
 int main(int argc, char **argv) {
 
-    embInitPV("kpathwayprojector", argc, argv, "KBWS", "1.0.7");
+    embInitPV("kpathwayprojector", argc, argv, "KBWS", "1.0.8");
 
     struct soap soap;
     char*  jobid;

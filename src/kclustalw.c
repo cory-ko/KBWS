@@ -14,7 +14,7 @@ static AjPStr getUniqueFileName(void);
 
 int main(int argc, char **argv) {
 
-  embInitPV("kclustalw", argc, argv, "KBWS", "1.0.7");
+  embInitPV("kclustalw", argc, argv, "KBWS", "1.0.8");
 
   struct soap soap;
   struct ns1__clustalwInputParams params;
@@ -215,7 +215,7 @@ int main(int argc, char **argv) {
   }
 
 
-  ajSysFileUnlink(tmpFileName);
+  ajSysFileUnlinkS(tmpFileName);
 
   soap_destroy(&soap);
   soap_end(&soap);

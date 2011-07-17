@@ -14,7 +14,7 @@ static AjPStr 	getUniqueFileName(void);
 
 int main(int argc, char **argv) {
 
-    embInitPV("kmuscle", argc, argv, "KBWS", "1.0.7");
+    embInitPV("kmuscle", argc, argv, "KBWS", "1.0.8");
 
     struct soap 			soap;
     struct ns1__muscleInputParams 	params;
@@ -116,7 +116,7 @@ int main(int argc, char **argv) {
       soap_print_fault(&soap, stderr);
    }
 
-   ajSysFileUnlink(tmpFileName);
+   ajSysFileUnlinkS(tmpFileName);
 
    soap_destroy(&soap);
    soap_end(&soap);

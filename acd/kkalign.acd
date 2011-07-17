@@ -22,8 +22,8 @@ section: advanced [
 ]
   string: moltype [
     additional: "Y"
-    default: ""
-    information: "[N/P] molecular type"
+    default: "auto"
+    information: "[auto/N/P] molecular (sequence) type"
   ]
 
   float: gpo [

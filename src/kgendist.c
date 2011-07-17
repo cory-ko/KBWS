@@ -14,7 +14,7 @@ static AjPStr getUniqueFileName(void);
 
 int main(int argc, char **argv) {
 
-  embInitPV("kgendist", argc, argv, "KBWS", "1.0.7");
+  embInitPV("kgendist", argc, argv, "KBWS", "1.0.8");
 
   struct soap soap;
   char*  jobid;

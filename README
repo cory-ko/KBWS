@@ -63,7 +63,7 @@ INSTALLATION
   5. Uncompress the KBWS tarball package, and go into the new KBWS directory
      % tar xzf KBWS-1.0.8.tar.gz
      % cd KBWS-1.0.8
-     ( EMBOSS-6.3.1/embassy/KBWS-1.0.8 )
+     ( EMBOSS-6.4.0/embassy/KBWS-1.0.8 )
 
   6. Configure and compile
     % ./configure (use same options as you used to compile emboss)

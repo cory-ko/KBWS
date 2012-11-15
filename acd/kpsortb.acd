@@ -30,7 +30,7 @@ section: advanced [
   string: format [
     additional: "Y"
     default: "normal"
-    information: "output format"
+    information: "Psortb output format ('normal', 'long' and 'short')"
   ]
 
 endsection: advanced

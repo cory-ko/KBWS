@@ -22,7 +22,7 @@ section: advanced [
 ]
   string: outputformat [
     additional: "Y"
-    default: "long"
+    default: "grp"
     information: "The output format: long, short, raw or grp"
   ]
 

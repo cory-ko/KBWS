@@ -86,7 +86,7 @@ int main(int argc, char **argv) {
       }
       */
 
-      fprintf(stdout, "http://soap.g-language.org/result/");
+      fprintf(stdout, "http://soap.g-language.org/kbws/result/");
       fprintf(stdout, "%s", jobid);
       fprintf(stdout, ".png\n");
 

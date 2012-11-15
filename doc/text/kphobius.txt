@@ -72,7 +72,7 @@ Command line arguments
 
    Additional (Optional) qualifiers: (none)
    Advanced (Unprompted) qualifiers:
-   -outputformat       string     [long] The output format: long, short or raw 
+   -outputformat       string     [grp] The output format: long, short or raw 
 
 Input file format
 

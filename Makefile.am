@@ -2,7 +2,7 @@
 
 SUBDIRS = src acd doc
 
-EXTRA_DIST = gsoap depcomp ltmain.sh install-sh config.sub config.guess
+EXTRA_DIST = gsoap depcomp ltmain.sh install-sh config.sub config.guess m4 data
 
 # tar to pick up the other directories
 # then remove any CVS subdirectories

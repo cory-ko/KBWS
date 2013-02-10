@@ -26,4 +26,10 @@ section: advanced [
     information: "output file format"
   ]
 
+  string: filename [
+    parameter: "Y"
+    default: "kweblogo.$(format)"
+    information: "Output file name"
+  ]
+
 endsection: advanced

@@ -1,6 +1,6 @@
 #
 
-SUBDIRS = src acd doc
+SUBDIRS = include src acd doc
 
 EXTRA_DIST = gsoap depcomp ltmain.sh install-sh config.sub config.guess m4 data
 

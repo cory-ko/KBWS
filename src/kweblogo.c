@@ -43,6 +43,11 @@ int main(int argc, char **argv) {
     ajint      size = 0;
     AjPFile    infile;
 
+    AjPFile outfile;
+    AjPStr filename;
+
+    filename = ajAcdGetString("filename");
+
     tmp = ajStrNewC("fasta");
 
     fil_file = ajSeqoutNew();
@@ -98,8 +103,19 @@ int main(int argc, char **argv) {
     fprintf(stderr,"\n");
 
     if ( soap_call_ns1__getResult( &soap, NULL, NULL, jobid,  &result ) == SOAP_OK ) {
-      substr = ajStrNewC(result);
-      fprintf(stdout, "%s\n", ajStrGetPtr(substr));
+      outfile = ajFileNewOutNameS(filename);
+
+      if(!outfile)
+        {
+          ajFmtError("File open error\n");
+          embExitBad();
+        }
+
+      if(!gHttpGetBinC(result, &outfile))
+        {
+          ajFmtError("File downloading error\n");
+          embExitBad();
+        }
     } else {
       soap_print_fault(&soap, stderr);
     }

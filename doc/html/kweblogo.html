@@ -82,12 +82,9 @@ IT IS DONE FOR YOU.
 % kweblogo
 Generation of sequence logos using WebLogo
 Input (gapped) sequence(s): test.fasta
+Output file name [kweblogo.png]:
 Jobid: kbws_7350341
 ****
-
-http://soap.g-language.org/kbws/result/kbws_7350341.png
-
-
 
 </pre></td></tr></table>
 
@@ -112,7 +109,15 @@ http://soap.g-language.org/kbws/result/kbws_7350341.png
 <td>seqall</td>
 <td>(Gapped) sequence(s) filename and optional format, or reference (input USA)</td>
 <td>Readable sequence(s)</td>
-<td>2</td>
+<td><b>Required</b></td>
+</tr>
+
+<tr bgcolor="#FFFFCC">
+<td>[-filename]<br>(Parameter 2)</td>
+<td>string</td>
+<td>[kweblogo.$(format)] Output image file name</td>
+<td>Anly string</td>
+<td>kweblogo</td>
 </tr>
 
 <tr bgcolor="#FFFFCC">
@@ -122,8 +127,8 @@ http://soap.g-language.org/kbws/result/kbws_7350341.png
 <tr bgcolor="#FFFFCC">
 <td>-format</td>
 <td>string</td>
-<td>output file format</td>
-<td>Any string</td>
+<td>[png] Output file format</td>
+<td>'png', 'jpeg', 'gif', 'eps', 'pdf' or 'svg'</td>
 <td>png</td>
 </tr>
 
@@ -225,17 +230,18 @@ http://soap.g-language.org/kbws/result/kbws_7350341.png
 <h2>Author(s)</h2>
 
 
-   Kazuki Oshita (cory @ g-language.org)
-   Institute for Advanced Biosciences, Keio University
-   252-8520 Japan
-   
+   Kazuki Oshita (cory @ g-language.org)<br />
+   Institute for Advanced Biosciences, Keio University<br />
+   252-8520 Japan<br />
+   <br />
+   Hidetoshi Itaya (celery @ g-language.org)<br />
+   Institute for Advanced Biosciences, Keio University<br />
+   252-8520 Japan<br />
 
 
 <h2>History</h2>
-
-
-   2009 - Written by Kazuki Oshita
-
+   2009 - Written by Kazuki Oshita<br />
+   Feb 2013 - Function for downloading image file added by Hidetoshi Itaya
 
 
 <h2>Target users</h2>

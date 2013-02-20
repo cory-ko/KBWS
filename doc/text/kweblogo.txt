@@ -37,22 +37,21 @@ Usage
 % kweblogo
 Generation of sequence logos using WebLogo
 Input (gapped) sequence(s): test.fasta
+Output file name [kweblogo.png]:
 Jobid: kbws_7350341
 ****
-
-http://soap.g-language.org/kbws/result/kbws_7350341.png
-
 
 Command line arguments
 
    Standard (Mandatory) qualifiers:
   [-sequence]          seqall     (Gapped) sequence(s) filename and optional
                                   format, or reference (input USA)
-
+  [-filename]          string     [kweblogo.$(format)] Output file name (Any
+                                  string)
    Additional (Optional) qualifiers: (none)
    Advanced (Unprompted) qualifiers:
-   -format             string     [png] specify file format. Value: 'png', 'gif',
-                                  'eps', 'pdf'
+   -format             string     [png] Output file format. 'png', 'jpeg',
+                                  'gif', 'eps', 'pdf', 'svg'
 
 Input file format
 
@@ -104,10 +103,16 @@ Author(s)
    Kazuki Oshita (cory @ g-language.org)
    Institute for Advanced Biosciences, Keio University
    252-8520 Japan
+
+   Hidetoshi Itaya (celery @ g-language.org)
+   Institute for Advanced Biosciences, Keio University
+   252-8520 Japan
    
 History
 
    2009 - Written by Kazuki Oshita
+   Feb 2013 - Function for downloading image file added by
+              Hidetoshi Itaya
 
 Target users
 

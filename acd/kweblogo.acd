@@ -23,7 +23,7 @@ section: advanced [
   string: format [
     additional: "Y"
     default: "png"
-    information: "output file format"
+    information: "Output file format. 'png', 'jpeg', 'gif', 'eps', 'pdf', 'svg'"
   ]
 
   string: filename [

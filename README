@@ -175,11 +175,13 @@ USAGE EXAMPLE
       % wget http://soap.g-language.org/result/13401346.png
 
   3. kweblogo (WebLogo)
-      % kweblogo dna.m-fasta
+      % kweblogo dna.m-fasta -filename kweblogo.png
       make the generation of sequence logos using WebLogo
       Jobid: 3203930
       **
-      http://soap.g-language.org/result/3203930.png
+
+      % ls kweblogo.png
+      kweblogo.png
 
 SAMPLE DATA
     You can use sample data included in EMBOSS.

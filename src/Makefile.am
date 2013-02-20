@@ -98,9 +98,9 @@ LDADD = ../../../nucleus/libnucleus.la ../../../ajax/acd/libacd.la \
 	../../../ajax/zlib/libezlib.la \
 	../../../ajax/expat/libeexpat.la \
 	../../../ajax/pcre/libepcre.la \
-	../../../plplot/libeplplot.la $(XLIB)
+	../../../plplot/libeplplot.la \
+	../include/libghttp.a $(XLIB)
 else
 LDADD = -L${embprefix}/lib -lnucleus -lacd -lajaxdb -lensembl -lajaxg \
-        -lajax -leexpat -lepcre -lezlib -leplplot $(XLIB)
+        -lajax -leexpat -lepcre -lezlib -leplplot -L../include -lghttp $(XLIB)
 endif
-

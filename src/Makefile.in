@@ -75,7 +75,7 @@ am__DEPENDENCIES_1 =
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kcentroidfold_OBJECTS = kcentroidfold.$(OBJEXT)
 kcentroidfold_OBJECTS = $(am_kcentroidfold_OBJECTS)
 kcentroidfold_LDADD = $(LDADD)
@@ -91,7 +91,7 @@ kcentroidfold_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kclique_OBJECTS = kclique.$(OBJEXT)
 kclique_OBJECTS = $(am_kclique_OBJECTS)
 kclique_LDADD = $(LDADD)
@@ -106,7 +106,7 @@ kclique_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kclustalw_OBJECTS = kclustalw.$(OBJEXT)
 kclustalw_OBJECTS = $(am_kclustalw_OBJECTS)
 kclustalw_LDADD = $(LDADD)
@@ -122,7 +122,7 @@ kclustalw_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kcontml_OBJECTS = kcontml.$(OBJEXT)
 kcontml_OBJECTS = $(am_kcontml_OBJECTS)
 kcontml_LDADD = $(LDADD)
@@ -137,7 +137,7 @@ kcontml_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kdnacomp_OBJECTS = kdnacomp.$(OBJEXT)
 kdnacomp_OBJECTS = $(am_kdnacomp_OBJECTS)
 kdnacomp_LDADD = $(LDADD)
@@ -153,7 +153,7 @@ kdnacomp_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kdnadist_OBJECTS = kdnadist.$(OBJEXT)
 kdnadist_OBJECTS = $(am_kdnadist_OBJECTS)
 kdnadist_LDADD = $(LDADD)
@@ -169,7 +169,7 @@ kdnadist_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kdnainvar_OBJECTS = kdnainvar.$(OBJEXT)
 kdnainvar_OBJECTS = $(am_kdnainvar_OBJECTS)
 kdnainvar_LDADD = $(LDADD)
@@ -185,7 +185,7 @@ kdnainvar_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kdnaml_OBJECTS = kdnaml.$(OBJEXT)
 kdnaml_OBJECTS = $(am_kdnaml_OBJECTS)
 kdnaml_LDADD = $(LDADD)
@@ -200,7 +200,7 @@ kdnaml_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kdnamlk_OBJECTS = kdnamlk.$(OBJEXT)
 kdnamlk_OBJECTS = $(am_kdnamlk_OBJECTS)
 kdnamlk_LDADD = $(LDADD)
@@ -215,7 +215,7 @@ kdnamlk_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kdnapars_OBJECTS = kdnapars.$(OBJEXT)
 kdnapars_OBJECTS = $(am_kdnapars_OBJECTS)
 kdnapars_LDADD = $(LDADD)
@@ -231,7 +231,7 @@ kdnapars_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kdnapenny_OBJECTS = kdnapenny.$(OBJEXT)
 kdnapenny_OBJECTS = $(am_kdnapenny_OBJECTS)
 kdnapenny_LDADD = $(LDADD)
@@ -247,7 +247,7 @@ kdnapenny_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kdollop_OBJECTS = kdollop.$(OBJEXT)
 kdollop_OBJECTS = $(am_kdollop_OBJECTS)
 kdollop_LDADD = $(LDADD)
@@ -262,7 +262,7 @@ kdollop_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kdolpenny_OBJECTS = kdolpenny.$(OBJEXT)
 kdolpenny_OBJECTS = $(am_kdolpenny_OBJECTS)
 kdolpenny_LDADD = $(LDADD)
@@ -278,7 +278,7 @@ kdolpenny_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kfetchbatch_OBJECTS = kfetchbatch.$(OBJEXT)
 kfetchbatch_OBJECTS = $(am_kfetchbatch_OBJECTS)
 kfetchbatch_LDADD = $(LDADD)
@@ -294,7 +294,7 @@ kfetchbatch_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kfetchdata_OBJECTS = kfetchdata.$(OBJEXT)
 kfetchdata_OBJECTS = $(am_kfetchdata_OBJECTS)
 kfetchdata_LDADD = $(LDADD)
@@ -310,7 +310,7 @@ kfetchdata_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kfitch_OBJECTS = kfitch.$(OBJEXT)
 kfitch_OBJECTS = $(am_kfitch_OBJECTS)
 kfitch_LDADD = $(LDADD)
@@ -325,7 +325,7 @@ kfitch_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kgendist_OBJECTS = kgendist.$(OBJEXT)
 kgendist_OBJECTS = $(am_kgendist_OBJECTS)
 kgendist_LDADD = $(LDADD)
@@ -341,7 +341,7 @@ kgendist_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kgenemarkhmm_OBJECTS = kgenemarkhmm.$(OBJEXT)
 kgenemarkhmm_OBJECTS = $(am_kgenemarkhmm_OBJECTS)
 kgenemarkhmm_LDADD = $(LDADD)
@@ -357,7 +357,7 @@ kgenemarkhmm_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kglimmer_OBJECTS = kglimmer.$(OBJEXT)
 kglimmer_OBJECTS = $(am_kglimmer_OBJECTS)
 kglimmer_LDADD = $(LDADD)
@@ -373,7 +373,7 @@ kglimmer_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kkalign_OBJECTS = kkalign.$(OBJEXT)
 kkalign_OBJECTS = $(am_kkalign_OBJECTS)
 kkalign_LDADD = $(LDADD)
@@ -388,7 +388,7 @@ kkalign_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kkitsch_OBJECTS = kkitsch.$(OBJEXT)
 kkitsch_OBJECTS = $(am_kkitsch_OBJECTS)
 kkitsch_LDADD = $(LDADD)
@@ -403,7 +403,7 @@ kkitsch_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kmafft_OBJECTS = kmafft.$(OBJEXT)
 kmafft_OBJECTS = $(am_kmafft_OBJECTS)
 kmafft_LDADD = $(LDADD)
@@ -418,7 +418,7 @@ kmafft_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kmix_OBJECTS = kmix.$(OBJEXT)
 kmix_OBJECTS = $(am_kmix_OBJECTS)
 kmix_LDADD = $(LDADD)
@@ -433,7 +433,7 @@ kmix_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kmuscle_OBJECTS = kmuscle.$(OBJEXT)
 kmuscle_OBJECTS = $(am_kmuscle_OBJECTS)
 kmuscle_LDADD = $(LDADD)
@@ -448,7 +448,7 @@ kmuscle_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kneighbor_OBJECTS = kneighbor.$(OBJEXT)
 kneighbor_OBJECTS = $(am_kneighbor_OBJECTS)
 kneighbor_LDADD = $(LDADD)
@@ -464,7 +464,7 @@ kneighbor_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kpathwayprojector_OBJECTS = kpathwayprojector.$(OBJEXT)
 kpathwayprojector_OBJECTS = $(am_kpathwayprojector_OBJECTS)
 kpathwayprojector_LDADD = $(LDADD)
@@ -481,7 +481,7 @@ kpathwayprojector_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kpenny_OBJECTS = kpenny.$(OBJEXT)
 kpenny_OBJECTS = $(am_kpenny_OBJECTS)
 kpenny_LDADD = $(LDADD)
@@ -496,7 +496,7 @@ kpenny_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kphobius_OBJECTS = kphobius.$(OBJEXT)
 kphobius_OBJECTS = $(am_kphobius_OBJECTS)
 kphobius_LDADD = $(LDADD)
@@ -512,7 +512,7 @@ kphobius_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kprotdist_OBJECTS = kprotdist.$(OBJEXT)
 kprotdist_OBJECTS = $(am_kprotdist_OBJECTS)
 kprotdist_LDADD = $(LDADD)
@@ -528,7 +528,7 @@ kprotdist_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kprotpars_OBJECTS = kprotpars.$(OBJEXT)
 kprotpars_OBJECTS = $(am_kprotpars_OBJECTS)
 kprotpars_LDADD = $(LDADD)
@@ -544,7 +544,7 @@ kprotpars_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kpsort_OBJECTS = kpsort.$(OBJEXT)
 kpsort_OBJECTS = $(am_kpsort_OBJECTS)
 kpsort_LDADD = $(LDADD)
@@ -559,7 +559,7 @@ kpsort_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kpsort2_OBJECTS = kpsort2.$(OBJEXT)
 kpsort2_OBJECTS = $(am_kpsort2_OBJECTS)
 kpsort2_LDADD = $(LDADD)
@@ -574,7 +574,7 @@ kpsort2_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kpsortb_OBJECTS = kpsortb.$(OBJEXT)
 kpsortb_OBJECTS = $(am_kpsortb_OBJECTS)
 kpsortb_LDADD = $(LDADD)
@@ -589,7 +589,7 @@ kpsortb_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_krestml_OBJECTS = krestml.$(OBJEXT)
 krestml_OBJECTS = $(am_krestml_OBJECTS)
 krestml_LDADD = $(LDADD)
@@ -604,7 +604,7 @@ krestml_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_krnafold_OBJECTS = krnafold.$(OBJEXT)
 krnafold_OBJECTS = $(am_krnafold_OBJECTS)
 krnafold_LDADD = $(LDADD)
@@ -620,7 +620,7 @@ krnafold_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kseqboot_OBJECTS = kseqboot.$(OBJEXT)
 kseqboot_OBJECTS = $(am_kseqboot_OBJECTS)
 kseqboot_LDADD = $(LDADD)
@@ -636,7 +636,7 @@ kseqboot_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kshowblastdb_OBJECTS = kshowblastdb.$(OBJEXT)
 kshowblastdb_OBJECTS = $(am_kshowblastdb_OBJECTS)
 kshowblastdb_LDADD = $(LDADD)
@@ -652,7 +652,7 @@ kshowblastdb_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kssearch_OBJECTS = kssearch.$(OBJEXT)
 kssearch_OBJECTS = $(am_kssearch_OBJECTS)
 kssearch_LDADD = $(LDADD)
@@ -668,7 +668,7 @@ kssearch_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_ktcoffee_OBJECTS = ktcoffee.$(OBJEXT)
 ktcoffee_OBJECTS = $(am_ktcoffee_OBJECTS)
 ktcoffee_LDADD = $(LDADD)
@@ -684,7 +684,7 @@ ktcoffee_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_ktrnascan_se_OBJECTS = ktrnascan_se.$(OBJEXT)
 ktrnascan_se_OBJECTS = $(am_ktrnascan_se_OBJECTS)
 ktrnascan_se_LDADD = $(LDADD)
@@ -700,7 +700,7 @@ ktrnascan_se_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kweblogo_OBJECTS = kweblogo.$(OBJEXT)
 kweblogo_OBJECTS = $(am_kweblogo_OBJECTS)
 kweblogo_LDADD = $(LDADD)
@@ -716,7 +716,7 @@ kweblogo_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 am_kwolfpsort_OBJECTS = kwolfpsort.$(OBJEXT)
 kwolfpsort_OBJECTS = $(am_kwolfpsort_OBJECTS)
 kwolfpsort_LDADD = $(LDADD)
@@ -732,7 +732,7 @@ kwolfpsort_LDADD = $(LDADD)
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
 @LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
-@LOCALLINK_TRUE@	$(am__DEPENDENCIES_1)
+@LOCALLINK_TRUE@	../include/libghttp.a $(am__DEPENDENCIES_1)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -974,7 +974,7 @@ krnafold_SOURCES = krnafold.c
 kshowblastdb_SOURCES = kshowblastdb.c
 kpathwayprojector_SOURCES = kpathwayprojector.c
 @LOCALLINK_FALSE@LDADD = -L${embprefix}/lib -lnucleus -lacd -lajaxdb -lensembl -lajaxg \
-@LOCALLINK_FALSE@        -lajax -leexpat -lepcre -lezlib -leplplot $(XLIB)
+@LOCALLINK_FALSE@        -lajax -leexpat -lepcre -lezlib -leplplot -L../include -lghttp $(XLIB)
 
 @LOCALLINK_TRUE@LDADD = ../../../nucleus/libnucleus.la ../../../ajax/acd/libacd.la \
 @LOCALLINK_TRUE@	../../../ajax/ajaxdb/libajaxdb.la \
@@ -984,7 +984,8 @@ kpathwayprojector_SOURCES = kpathwayprojector.c
 @LOCALLINK_TRUE@	../../../ajax/zlib/libezlib.la \
 @LOCALLINK_TRUE@	../../../ajax/expat/libeexpat.la \
 @LOCALLINK_TRUE@	../../../ajax/pcre/libepcre.la \
-@LOCALLINK_TRUE@	../../../plplot/libeplplot.la $(XLIB)
+@LOCALLINK_TRUE@	../../../plplot/libeplplot.la \
+@LOCALLINK_TRUE@	../include/libghttp.a $(XLIB)
 
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am

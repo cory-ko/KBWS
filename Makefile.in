@@ -200,7 +200,7 @@ sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = src acd doc
+SUBDIRS = include src acd doc
 EXTRA_DIST = gsoap depcomp ltmain.sh install-sh config.sub config.guess m4 data
 all: all-recursive
 

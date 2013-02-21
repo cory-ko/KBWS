@@ -11,98 +11,128 @@
 #include "../gsoap/stdsoap2.c"
 
 int main(int argc, char **argv) {
+  // initialize EMBASSY info
+  embInitPV("kcentroidfold", argc, argv, "KBWS", "1.0.8");
 
-    embInitPV("kcentroidfold", argc, argv, "KBWS", "1.0.8");
+  // soap driver and parameter object
+  struct soap soap;
+  struct ns1__centroidfoldInputParams params;
 
-    struct soap soap;
-    struct ns1__centroidfoldInputParams params;
-    char* jobid;
-    char* result;
+  char* jobid;
 
-    AjPSeqall  seqall;
-    AjPSeq     seq;
-    AjPFile    outf;
-    AjPStr     substr;
-    AjPStr     inseq = NULL;
-    AjPStr     model;
-    ajint      gamma;
-    model =      ajAcdGetString("model");
-    gamma =      ajAcdGetInt("gamma");
+  AjPSeqall seqall; // input sequence
+  AjPFile   outf; // outfile
+  AjPStr    goutfile; // graph file name
+  AjPFile   goutf; // graph file handle
 
-    seqall       = ajAcdGetSeqall("seqall");
-    outf         = ajAcdGetOutfile("outfile");
-    params.model = ajCharNewS(model);
-    params.gamma = gamma;
+  AjPSeq     seq;
+  AjPStr     inseq= NULL;
 
-    while (ajSeqallNext(seqall, &seq)) {
+  AjPStr     substr;
 
-      soap_init(&soap);
+  AjPStr     engine; // CONTRAfold, McCaskill, pfold or AUX
+  ajint      gamma;
 
-      inseq = NULL;
-      ajStrAppendC(&inseq,">");
-      ajStrAppendS(&inseq,ajSeqGetNameS(seq));
-      ajStrAppendC(&inseq,"\n");
-      ajStrAppendS(&inseq,ajSeqGetSeqS(seq));
+  // get input/output info
+  seqall= ajAcdGetSeqall("seqall");
+  outf= ajAcdGetOutfile("outfile");
+  goutfile= ajAcdGetString("goutfile");
 
-      soap_init(&soap);
+  // get parameters
+  engine= ajAcdGetString("engine");
+  gamma=  ajAcdGetInt("gamma");
 
-      char* in0;
-      in0 = ajCharNewS(inseq);
-      if ( soap_call_ns1__runCentroidfold( &soap, NULL, NULL, in0, &params, &jobid ) == SOAP_OK ) {
-          fprintf(stderr,"Jobid: %s\n",jobid);
-      } else {
-          soap_print_fault(&soap, stderr);
-      }
+  // set parameters
+  params.model= ajCharNewS(engine);
+  params.gamma= gamma;
 
-      int check = 0;
-      while ( check == 0 ) {
-          if ( soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check ) == SOAP_OK ) {
-              fprintf(stderr,"*");
-          } else {
-              soap_print_fault(&soap, stderr);
-          }
-          sleep(3);
-      }
+  while (ajSeqallNext(seqall, &seq)) {
+    // initialize
+    soap_init(&soap);
+    inseq= NULL;
 
-      fprintf(stderr,"\n");
+    // convert sequence data to EMBOSS string as fasta format
+    ajStrAppendC(&inseq, ">");
+    ajStrAppendS(&inseq, ajSeqGetNameS(seq));
+    ajStrAppendC(&inseq, "\n");
+    ajStrAppendS(&inseq, ajSeqGetSeqS(seq));
 
-      char* type;
-      type = "out";
-      if(soap_call_ns1__getMultiResult( &soap, NULL, NULL, jobid, type, &result )== SOAP_OK) {
-	substr = ajStrNewC(result);
-	ajFmtPrintF(outf,"%S\n",substr);
-      } else {
-	soap_print_fault(&soap, stderr); 
-      }
+    // convert EMBOSS string to char* in C
+    char* in0;
+    in0= ajCharNewS(inseq);
 
-      /*
-      type = "png";
-      if(soap_call_ns1__getMultiResult( &soap, NULL, NULL, jobid, type, &result )== SOAP_OK) {
-	substr = ajStrNewC(result);
-	
-	ajFmtPrintF(outf_png,"%S\n",substr);
-      } else {
-	soap_print_fault(&soap, stderr); 
-      }
-      */
-
-      fprintf(stdout, "http://soap.g-language.org/kbws/result/");
-      fprintf(stdout, "%s", jobid);
-      fprintf(stdout, ".png\n");
-
-      soap_destroy(&soap);
-      soap_end(&soap);
-      soap_done(&soap);
-      
+    // submit query via SOAP and get job ID
+    if (soap_call_ns1__runCentroidfold(&soap, NULL, NULL, in0, &params, &jobid) == SOAP_OK) {
+      // warn user's job ID
+      fprintf(stderr, "Jobid: %s\n", jobid);
+    } else {
+      soap_print_fault(&soap, stderr);
     }
 
-    ajFileClose(&outf);
+    // polling
+    int check = 0;
+    while (check == 0) {
+      if (soap_call_ns1__checkStatus(&soap, NULL, NULL, jobid, &check) == SOAP_OK) {
+	// progress bar
+	fprintf(stderr, "*");
+      } else {
+	soap_print_fault(&soap, stderr);
+      }
+      sleep(3);
+    }
+
+    fprintf(stderr, "\n");
+
+    // get result (sequence alignment text data)
+    char* result;
+    if(soap_call_ns1__getMultiResult(&soap, NULL, NULL, jobid, "out", &result) == SOAP_OK) {
+      // convert result from C char* to EMBOSS string object
+      substr= ajStrNewC(result);
+
+      // output result (EMBOSS string) to file or STDOUT via EMBOSS
+      ajFmtPrintF(outf, "%S\n", substr);
+    } else {
+      soap_print_fault(&soap, stderr); 
+    }
+
+    // get result (image file)
+    char* image_url;
+    if(soap_call_ns1__getMultiResult(&soap, NULL, NULL, jobid, "png", &image_url) == SOAP_OK) {
+      goutf= ajFileNewOutNameS(goutfile);
+      
+      if (!goutf) {
+	// can not open image output file
+	ajFmtError("Problem writing out image file");
+	embExitBad();
+      }
+
+      if (!gHttpGetBinC(image_url, &goutf)) {
+	// can not download image file
+	ajFmtError("Problem downloading image file");
+	embExitBad();
+      }
+    } else {
+      soap_print_fault(&soap, stderr); 
+    }
+
+  }
+
+  // destruct SOAP driver
+  soap_destroy(&soap);
+  soap_end(&soap);
+  soap_done(&soap);
+
+  // write output file and destruct outfile object
+  ajFileClose(&outf);
+
+  // destruct EMBOSS object
+  ajSeqallDel(&seqall);
+  ajSeqDel(&seq);
+  ajStrDel(&substr);
+  ajStrDel(&engine);
+
+  // exit
+  embExit();
     
-    ajSeqallDel(&seqall);
-    ajSeqDel(&seq);
-    ajStrDel(&substr);
-    
-    embExit();
-    
-    return 0;
+  return 0;
 }

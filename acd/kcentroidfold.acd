@@ -14,22 +14,29 @@ section: input [
     type: "gapany"
   ]
 
+  string: goutfile [
+    parameter: "Y"
+    default: "kcentroidfold.png"
+    information: "Output image file name"
+  ]
+
 endsection: input
 
 section: advanced [
   information: "Advanced section"
   type: "page"
 ]
-  string: model [
+
+  string: engine [
     additional: "Y"
-    default: ""
-    information: "information about this parameter"
+    default: "CONTRAfold"
+    information: "specify the inference engine. 'CONTRAfold', 'McCaskill', 'pfold' or 'AUX'"
   ]
 
   integer: gamma [
     additional: "Y"
-    default: "1024"
-    information: "information about this parameter"
+    default: "4"
+    information: "weight of base pairs (2^-5 ~ 2^10)"
   ]
 
 endsection: advanced
@@ -42,6 +49,7 @@ section: output [
   outfile: outfile [
     parameter: "Y"
     extension: "centroidfold"
+    information: "CentroidFold Seq/Fold output filename"
   ]
 
 endsection: output

@@ -161,18 +161,18 @@ USAGE EXAMPLE
       % kcentroidfold
       RNA 2D structure prediction from an RNA sequence using CentroidFold
       Input (gapped) sequence(s): dna.fasta
+      Output image file name [kcentroidfold.png]:
       Output file [fasta.centroidfold]:
       Jobid: 13401346
-      ***********
-
-      http://soap.g-language.org/result/13401346.png
+      ***
 
       % cat fasta.centroidfold
       >FASTA
       ACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGT
       ((((((((((((((((((((((((((((((((((((((((((((((((....))))))))))))))))))))))))))))))))))))))))))))))))
 
-      % wget http://soap.g-language.org/result/13401346.png
+      % ls kcentroidfold.png
+      kcentroidfold.png
 
   3. kweblogo (WebLogo)
       % kweblogo dna.m-fasta -filename kweblogo.png

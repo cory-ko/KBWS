@@ -3,6 +3,8 @@ version 1.0.9
 	Add image download function to kweblogo.
 	(This patch is written by celery (github:@celery-kotone)).
 
+	21-Feb-2013
+	Add image download function to kweblogo.
 version 1.0.8 17-Jul-2011
 	Keeping up with EMBOSS 6.4.0.
 version 1.0.7 30-Mar-2011

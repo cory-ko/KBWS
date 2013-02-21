@@ -163,7 +163,7 @@ USAGE EXAMPLE
       Input (gapped) sequence(s): dna.fasta
       Output image file name [kcentroidfold.png]:
       Output file [fasta.centroidfold]:
-      Jobid: 13401346
+      Jobid: kbws_13401346
       ***
 
       % cat fasta.centroidfold
@@ -177,7 +177,7 @@ USAGE EXAMPLE
   3. kweblogo (WebLogo)
       % kweblogo dna.m-fasta -filename kweblogo.png
       make the generation of sequence logos using WebLogo
-      Jobid: 3203930
+      Jobid: kbws_3203930
       **
 
       % ls kweblogo.png

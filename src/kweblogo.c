@@ -13,136 +13,146 @@
 static AjPStr getUniqueFileName(void);
 
 int main(int argc, char **argv) {
+  // initialize EMBASSY info
+  embInitPV("kweblogo", argc, argv, "KBWS", "1.0.8");
 
-    embInitPV("kweblogo", argc, argv, "KBWS", "1.0.8");
+  // soap driver and parameter object
+  struct soap soap;
+  struct ns1__weblogoInputParams params;
 
-    struct soap soap;
-    struct ns1__weblogoInputParams params;
-    char* jobid;
-    char* result;
+  char* jobid;
 
-    AjPSeqall  seqall;
-    AjPSeq     seq;
-    AjPStr     substr;
-    AjPStr     inseq = NULL;
-    AjPStr     format;
+  AjPSeqall seqall;
+  AjPSeq    seq;
+  AjPStr    substr;
+  AjPStr    inseq = NULL;
+  AjPStr    format;
 
-    format =      ajAcdGetString("format");
-    seqall = ajAcdGetSeqall("seqall");
-    params.format = ajCharNewS(format);
+  // get input sequence
+  seqall= ajAcdGetSeqall("seqall");
 
-    AjPStr     tmp = NULL;
-    AjPStr     tmpFileName = NULL;
-    AjPSeqout  fil_file;
-    AjPStr     line = NULL; /* if "AjPStr line; -> ajReadline is not success!" */
-    AjPStr sizestr = NULL;
-    ajint thissize;
 
-    ajint      nb = 0;
-    AjBool     are_prot = ajFalse;
-    ajint      size = 0;
-    AjPFile    infile;
+  // get/set parameters
+  format= ajAcdGetString("format");
+  params.format = ajCharNewS(format);
 
-    AjPFile outfile;
-    AjPStr filename;
+  AjPStr     tmp= NULL;
+  AjPStr     tmpFileName= NULL;
+  AjPSeqout  fil_file;
+  AjPStr     line= NULL; /* if "AjPStr line; -> ajReadline is not success!" */
+  AjPStr sizestr= NULL;
+  ajint thissize;
 
-    filename = ajAcdGetString("filename");
+  ajint   nb= 0;
+  AjBool  are_prot= ajFalse;
+  ajint   size= 0;
+  AjPFile infile;
 
-    tmp = ajStrNewC("fasta");
+  AjPFile goutf;
+  AjPStr  goutfile;
 
-    fil_file = ajSeqoutNew();
-    tmpFileName = getUniqueFileName();
+  goutfile= ajAcdGetString("goutfile");
 
-    if( !ajSeqoutOpenFilename(fil_file, tmpFileName) ) {
-        embExitBad();
+  tmp= ajStrNewC("fasta");
+
+  fil_file= ajSeqoutNew();
+  tmpFileName= getUniqueFileName();
+
+  if(!ajSeqoutOpenFilename(fil_file, tmpFileName)) {
+    embExitBad();
+  }
+
+  ajSeqoutSetFormatS(fil_file, tmp);
+
+  while (ajSeqallNext(seqall, &seq)) {
+    if (!nb) {
+      are_prot  = ajSeqIsProt(seq);
     }
+    ajSeqoutWriteSeq(fil_file, seq);
+    ++nb;
+  }
+  ajSeqoutClose(fil_file);
+  ajSeqoutDel(&fil_file);
 
-    ajSeqoutSetFormatS(fil_file, tmp);
+  if (nb < 2) {
+    ajFatal("Multiple alignments need at least two sequences");
+  }
 
-    while (ajSeqallNext(seqall, &seq)) {
-       if (!nb) {
-          are_prot  = ajSeqIsProt(seq);
-       }
-       ajSeqoutWriteSeq(fil_file, seq);
-       ++nb;
-    }
-    ajSeqoutClose(fil_file);
-    ajSeqoutDel(&fil_file);
+  infile = ajFileNewInNameS(tmpFileName);
 
-    if (nb < 2) {
-       ajFatal("Multiple alignments need at least two sequences");
-    }
+  while (ajReadline(infile, &line)) {
+    ajStrAppendS(&inseq,line);
+    ajStrAppendC(&inseq,"\n");
+  }
 
-    infile = ajFileNewInNameS(tmpFileName);
+  soap_init(&soap);
 
-    while (ajReadline(infile, &line)) {
-       ajStrAppendS(&inseq,line);
-       ajStrAppendC(&inseq,"\n");
-    }
+  char* in0;
+  in0= ajCharNewS(inseq);
+  if (soap_call_ns1__runWeblogo( &soap, NULL, NULL, in0, &params, &jobid) == SOAP_OK) {
+    fprintf(stderr, "Jobid: %s\n", jobid);
+  } else {
+    soap_print_fault(&soap, stderr);
+  }
 
-    soap_init(&soap);
-
-    char* in0;
-    in0 = ajCharNewS(inseq);
-    if ( soap_call_ns1__runWeblogo( &soap, NULL, NULL, in0, &params, &jobid ) == SOAP_OK ) {
-      fprintf(stderr,"Jobid: %s\n",jobid);
+  int check= 0;
+  while (check == 0 ) {
+    if (soap_call_ns1__checkStatus(&soap, NULL, NULL, jobid,  &check) == SOAP_OK) {
+      fprintf(stderr, "*");
     } else {
       soap_print_fault(&soap, stderr);
     }
+    sleep(3);
+  }
 
-    int check = 0;
-    while ( check == 0 ) {
-      if ( soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check ) == SOAP_OK ) {
-	fprintf(stderr,"*");
-      } else {
-	soap_print_fault(&soap, stderr);
-      }
-      sleep(3);
+  fprintf(stderr,"\n");
+
+  char* image_url;
+  if (soap_call_ns1__getResult(&soap, NULL, NULL, jobid,  &image_url) == SOAP_OK) {
+    goutf= ajFileNewOutNameS(goutfile);
+
+    if (!goutf) {
+      // can not open image output file
+      ajFmtError("Problem writing out image file");
+      embExitBad();
     }
 
-    fprintf(stderr,"\n");
-
-    if ( soap_call_ns1__getResult( &soap, NULL, NULL, jobid,  &result ) == SOAP_OK ) {
-      outfile = ajFileNewOutNameS(filename);
-
-      if(!outfile)
-        {
-          ajFmtError("File open error\n");
-          embExitBad();
-        }
-
-      if(!gHttpGetBinC(result, &outfile))
-        {
-          ajFmtError("File downloading error\n");
-          embExitBad();
-        }
-    } else {
-      soap_print_fault(&soap, stderr);
+    if (!gHttpGetBinC(image_url, &goutf)) {
+      // can not download image file
+      ajFmtError("Problem downloading image file");
+      embExitBad();
     }
+  } else {
+    soap_print_fault(&soap, stderr);
+  }
 
-    ajSysFileUnlinkS(tmpFileName);
+  // delete temporary multi-fasta sequence file
+  ajSysFileUnlinkS(tmpFileName);
 
-    soap_destroy(&soap);
-    soap_end(&soap);
-    soap_done(&soap);
+  // destruct SOAP driver
+  soap_destroy(&soap);
+  soap_end(&soap);
+  soap_done(&soap);
 
-    ajSeqallDel(&seqall);
-    ajSeqDel(&seq);
-    ajStrDel(&substr);
+  // destruct EMBOSS object
+  ajSeqallDel(&seqall);
+  ajSeqDel(&seq);
+  ajStrDel(&substr);
 
-    embExit();
+  // exit
+  embExit();
 
-    return 0;
+  return 0;
 }
 
 static AjPStr getUniqueFileName(void) {
-  static char ext[2] = "A";
-  AjPStr filename    = NULL;
+  static char ext[2]= "A";
+  AjPStr filename= NULL;
 
-  ajFmtPrintS(&filename, "%08d%s",getpid(), ext);
+  ajFmtPrintS(&filename, "%08d%s", getpid(), ext);
 
-  if( ++ext[0] > 'Z' ) {
-    ext[0] = 'A';
+  if (++ext[0] > 'Z') {
+    ext[0]= 'A';
   }
 
   return filename;

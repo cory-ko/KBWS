@@ -14,22 +14,30 @@ section: input [
     type: "gapany"
   ]
 
+  string: format [
+    additional: "Y"
+    default: "png"
+    information: "Output file format. 'png', 'jpeg', 'gif', 'eps', 'pdf' or 'svg'"
+  ]
+
+  string: goutfile [
+    parameter: "Y"
+    default: "kweblogo.$(format)"
+    information: "Output file name"
+  ]
+
 endsection: input
 
 section: advanced [
   information: "Advanced section"
   type: "page"
 ]
-  string: format [
-    additional: "Y"
-    default: "png"
-    information: "Output file format. 'png', 'jpeg', 'gif', 'eps', 'pdf', 'svg'"
-  ]
-
-  string: filename [
-    parameter: "Y"
-    default: "kweblogo.$(format)"
-    information: "Output file name"
-  ]
 
 endsection: advanced
+
+section: output [
+  information: "Output section"
+  type: "page"
+]
+
+endsection: output

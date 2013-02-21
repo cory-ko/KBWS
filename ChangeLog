@@ -1,39 +1,60 @@
-version 1.0.9
+version 1.0.9 beta
 	20-Feb-2013
-	Add image download function to kweblogo.
-	(This patch is written by celery (github:@celery-kotone)).
+	Add image download function to "kweblogo".
+	(This patch is written by Hidetoshi Itaya (github:@celery-kotone)).
 
 	21-Feb-2013
-	Add image download function to kweblogo.
+	Add image download function to "kcentroidfold".
+
+	Change option name for output image file name (-filename => -goutfile)
+        about "weblogo".
+
 version 1.0.8 17-Jul-2011
 	Keeping up with EMBOSS 6.4.0.
+
 version 1.0.7 30-Mar-2011
         Supporting other EMBOSS distributions except an source code distribution
+
 version 1.0.6 24-Jan-2011
         Add "embossrc" file to KBWS-x.x.x/data/embossrc-template
+
 	Fix serious bug about installer
+
 	Update "kssearch" method (bug fix)
+
 	Update "kblast" method ('blastx' program is available)
+
 version 1.0.5 18-Nov-2010
         Change value type of -eval option in kblast (float => string)
+
 	Update database information of kblast (See "tfm kblast")
+
 version 1.0.4 12-Nov-2010
         Change "jobid" style
          - i.e. "1267966" => "kbws_1267966"
+
         Update "kmuscle" methods
+
 	Bug fix
+
 version 1.0.3 04-Nov-2010
         Change -format option included in kblast
 	 - Add k1 and k2;
 	  - "-format k1": ID list
 	  - "-format k2": ID list separated by comma
+
 	Added "kpathwayprojector" (mapping to PathwayProjector)
+
 Version 1.0.2 26-Oct-2010
         Added "krnafold" (RNAfold)
+
         Added "kshowblastdb" (show database list for kblast)
+
 Version 1.0.1 13-Aug-2010
-        Added "-format 20" option to kblast.
+	Added "-format 20" option to kblast.
+
         Comma-delimited ID list is returned if "-format 20" option
         is specified.
+
 Version 1.0.0 22-jun-2010
 	First version.

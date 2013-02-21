@@ -7,7 +7,9 @@ version 1.0.9 beta
 	Add image download function to "kcentroidfold".
 
 	Change option name for output image file name (-filename => -goutfile)
-        about "weblogo".
+        about "kweblogo".
+
+	Update (modify) "krnafold" document.
 
 version 1.0.8 17-Jul-2011
 	Keeping up with EMBOSS 6.4.0.

@@ -30,20 +30,23 @@ Description
 
 Usage
 
-   Here is a sample session with krnafold
+Here is a sample session with krnafold
 
 % krnafold
 Predicts secondary structure of single starnd RNA or DNA sequence using RNAfold
 Input (gapped) sequence(s): test_sequence.fasta
-Output file [test_sequence.krnafold]: stdout
-Jobid:12498948
+RNAfold output [test_sequence.krnafold]: stdout
+Minimum free energy (MFE) structure in Ct format [test_sequence.ct]: 
+Minimum free energy (MFE) structure in Vienna format [test_sequence.vienna]:
+Jobid: kbws_7512092
+******
 
 >test_sequenc
 GGGCUAUUAGCUCAGUUGGUUAGAGCGCACCCCUGAUAAGGGUGAGGUCGCUGAUUCGAAUUCAGCAUAGCCC
 (((((((..(((.((((.(....(((((.(((((....)))).)..).))))....).)))).)))))))))) (-28.20)
 (((((((..(((.((((.(....((((({(((((....))))})..,,))))....).)))).)))))))))) [-29.60]
 (((((((..(((.((((.(....((((.(..(((....))).).....))))....).)))).)))))))))) {-18.80 d=11.19}
- frequency of mfe structure in ensemble 0.103122; ensemble diversity 16.38 
+frequency of mfe structure in ensemble 0.103122; ensemble diversity 16.38 
 
 
 Command line arguments
@@ -51,9 +54,9 @@ Command line arguments
    Standard (Mandatory) qualifiers:
   [-sequence]          seqall     sequence filename and optional
                                   format, or reference (input USA)
-  [-outfile]           outfile    [.] RNAfold output format
-  [-ctfile]            outfile    [.] minimum free energy (MFE) structure in Ct format
-  [-viennafile]        outfile    [.] minimum free energy (MFE) structure in Vienna format
+  [-outfile]           outfile    [.krnafold] RNAfold output format
+  [-ctfile]            outfile    [.ct] Minimum free energy (MFE) structure in Ct format
+  [-viennafile]        outfile    [.vienna] Minimum free energy (MFE) structure in Vienna format
                                   
    Additional (Optional) qualifiers: (none)
    -method             string     [p] Fold algorithms.
@@ -231,6 +234,8 @@ Author(s)
 History
 
    2010 - Written by Kazuki Oshita
+   Feb 2013 - Update document by Kazuki Oshita
+
 
 Target users
 

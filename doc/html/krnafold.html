@@ -1,428 +1,364 @@
 <!--START OF HEADER - DON'T ALTER -->
 
 <HTML>
-<HEAD>
-  <TITLE>
-  EMBOSS: krnafold
-  </TITLE>
-</HEAD>
-<BODY BGCOLOR="#FFFFFF" text="#000000">
-
-
-
-<table align=center border=0 cellspacing=0 cellpadding=0>
-<tr><td valign=top>
-<A HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
-</td>
-<td align=left valign=middle>
-<b><font size="+6">
-krnafold
-</font></b>
-</td></tr>
-</table>
-<br>&nbsp;
-<p>
-
-
-<!--END OF HEADER-->
-
-
-
-
-
-
-<H2>
-    Function
-</H2>
-Predicts secondary structure of single starnd RNA or DNA using RNAfold
-<!--
-DON'T WRITE ANYTHING HERE.
-IT IS DONE FOR YOU.
--->
-
-
-
-
-<h2>Description</h2>
-
-
-   krnafold predicts on RNA 2D structure from given RNA or DNA sequences
-   utilizing RNAfold.
-   RNAfold reads RNA sequences, calculates their minimum free energy (mfe)
-   structure and predicts the mfe structure in bracket notation and its free
-   energy.
-</p>
-
-<p>   krnafold utilizing RNAfold web server produced by Institute for Theoretical
-   Chemistry. original web-services is located at the follwing URL:
-</p>
-
-<p>   http://rna.tbi.univie.ac.at/cgi-bin/RNAfold.cgi
-</p>
-
-<p>   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
-   which contains interfaces to bioinformatics web services through a proxy
-   server at Keio University. kblast is thus an interface of "runRNAfold"
-   method included in KBWS SOAP service.
-   This method can be alternatively accessed directly from programming languages
-   as SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
-</p>
-
-<p>
-
-<h2>Usage</h2>
-
-<table width="90%"><tr><td bgcolor="#CCFFFF"><pre>
-
-   Here is a sample session with krnafold
-
-% krnafold
-Predicts secondary structure of single starnd RNA or DNA sequence using RNAfold
-Input (gapped) sequence(s): test_sequence.fasta
-Output file [test_sequence.krnafold]: stdout
-Jobid:12498948
-
->test_sequenc
-GGGCUAUUAGCUCAGUUGGUUAGAGCGCACCCCUGAUAAGGGUGAGGUCGCUGAUUCGAAUUCAGCAUAGCCC
-(((((((..(((.((((.(....(((((.(((((....)))).)..).))))....).)))).)))))))))) (-28.20)
-(((((((..(((.((((.(....((((({(((((....))))})..,,))))....).)))).)))))))))) [-29.60]
-(((((((..(((.((((.(....((((.(..(((....))).).....))))....).)))).)))))))))) {-18.80 d=11.19}
- frequency of mfe structure in ensemble 0.103122; ensemble diversity 16.38 
-
-
-
-</pre></td></tr></table>
-
-
-<h2>Command line arguments</h2>
-
-<table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
-<tr bgcolor="#FFFFCC">
-<th align="left">Qualifier</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-<th align="left">Allowed values</th>
-<th align="left">Default</th>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<td>[-seqall]<br>(Parameter 1)</td>
-<td>seqall</td>
-<td>Nucleotide sequence(s) filename and optional format, or reference (input USA)</td>
-<td>Readable sequence(s)</td>
-<td>2</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<td>[-outfile]<br>(Parameter 2)</td>
-<td>outfile</td>
-<td>RNAfold output</td>
-<td>Output file</td>
-<td><i>&lt;*&gt;</i>.krnafold</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<td>[-ctfile]<br>(Parameter 3)</td>
-<td>outfile</td>
-<td>minimum free energy (MFE) structure in Ct format</td>
-<td>Output file</td>
-<td><i>&lt;*&gt;</i>.krnafold</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<td>[-viennafile]<br>(Parameter 4)</td>
-<td>outfile</td>
-<td>minimum free energy (MFE) structure in Vienna format</td>
-<td>Output file</td>
-<td><i>&lt;*&gt;</i>.krnafold</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Additional (Optional) qualifiers</th>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<td>-method</td>
-<td>string</td>
-<td>p: minimum free energy (MFE) and protein function mfe: minimum free energy (MFE) only</td>
-<td>Any string</td>
-<td>p</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<td>-noclosegu</td>
-<td>boolean</td>
-<td>no GU pairs at the end of helices</td>
-<td>Boolean value Yes/No</td>
-<td>No</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<td>-[no]nolp</td>
-<td>boolean</td>
-<td>avoid isolated base pairs</td>
-<td>Boolean value Yes/No</td>
-<td>Yes</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<td>-dangling</td>
-<td>string</td>
-<td>d1: no dangling end energies d2: unpaired bases can participate in at most one dangling end (MFE folding only) d3: dangling energies on both sides of a helix in any case d4: allow coaxial stacking of adjacent helices n multi-loops (MFE folding only)</td>
-<td>Any string</td>
-<td>d2</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<td>-param</td>
-<td>string</td>
-<td>rna: RNA parameters (Turner model) andronescu: RNA parameters (Andronescu model) dna: DNA parameters</td>
-<td>Any string</td>
-<td>rna</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<td>-tmp</td>
-<td>integer</td>
-<td>rescale energy parameters to given temperature (C)</td>
-<td>Any integer value</td>
-<td>37</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<td>-circ</td>
-<td>boolean</td>
-<td>assume RNA molecule to be circular</td>
-<td>Boolean value Yes/No</td>
-<td>No</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
-</tr>
-
-<tr>
-<td colspan=5>(none)</td>
-</tr>
-
-</table>
-
-
-<h2>Input file format</h2>
-
-
-  krnafold can use any genome sequence data that seqret can read.
-
-
-
-<h2>Output file format</h2>
-
-<h3>Output files for usage example</h3>
-<p><h3>File: test_sequence.ct</h3>
-<table width="90%"><tr><td bgcolor="#CCFFCC">
-<pre>73 ENERGY =   -28.2    1
-    1 G       0    2   73    1
-    2 G       1    3   72    2
-    3 G       2    4   71    3
-    4 C       3    5   70    4
-    5 U       4    6   69    5
-    6 A       5    7   68    6
-    7 U       6    8   67    7
-    8 U       7    9    0    8
-    9 A       8   10    0    9
-   10 G       9   11   66   10
-   11 C      10   12   65   11
-   12 U      11   13   64   12
-   13 C      12   14    0   13
-   14 A      13   15   62   14
-   15 G      14   16   61   15
-   16 U      15   17   60   16
-   17 U      16   18   59   17
-   18 G      17   19    0   18
-   19 G      18   20   57   19
-   20 U      19   21    0   20
-   21 U      20   22    0   21
-   22 A      21   23    0   22
-   23 G      22   24    0   23
-   24 A      23   25   52   24
-   25 G      24   26   51   25
-   26 C      25   27   50   26
-   27 G      26   28   49   27
-   28 C      27   29   47   28
-   29 A      28   30    0   29
-   30 C      29   31   44   30
-   31 C      30   32   42   31
-   32 C      31   33   41   32
-   33 C      32   34   40   33
-   34 U      33   35   39   34
-   35 G      34   36    0   35
-   36 A      35   37    0   36
-   37 U      36   38    0   37
-   38 A      37   39    0   38
-   39 A      38   40   34   39
-   40 G      39   41   33   40
-   41 G      40   42   32   41
-   42 G      41   43   31   42
-   43 U      42   44    0   43
-   44 G      43   45   30   44
-   45 A      44   46    0   45
-   46 G      45   47    0   46
-   47 G      46   48   28   47
-   48 U      47   49    0   48
-   49 C      48   50   27   49
-   50 G      49   51   26   50
-   51 C      50   52   25   51
-   52 U      51   53   24   52
-   53 G      52   54    0   53
-   54 A      53   55    0   54
-   55 U      54   56    0   55
-   56 U      55   57    0   56
-   57 C      56   58   19   57
-   58 G      57   59    0   58
-   59 A      58   60   17   59
-   60 A      59   61   16   60
-   61 U      60   62   15   61
-   62 U      61   63   14   62
-   63 C      62   64    0   63
-   64 A      63   65   12   64
-   65 G      64   66   11   65
-   66 C      65   67   10   66
-   67 A      66   68    7   67
-   68 U      67   69    6   68
-   69 A      68   70    5   69
-   70 G      69   71    4   70
-   71 C      70   72    3   71
-   72 C      71   73    2   72
-   73 C      72    0    1   73
-
-
-</pre>
-</td></tr></table><p>
-
-<h2>Data files</h2>
-
-
-   None.
-
-
-
-<h2>Notes</h2>
-
-
-   None.
-
-
-
-<h2>References</h2>
-
-
-<pre>
-
-   I.L. Hofacker., et al.,(1994) Fast Folding and Comparison of RNA Secondary
-      Structures, Monatshefte fur Chemie, 125, 167-188.
-
-   M, Zuker., and P, Stiegler.,(1981) Optimal computer folding of large RNA
-      sequences using thermodynamic and auxiliary information,
-      Nucleic Acids Research, 9, 133-148.
-
-   J.S, McCaskill(1990) The equilibrium partition function and base pair binding
-      probabilities for RNA secondary structures, Biopolymers, 29, 1105-1119.
-
-
-Diagnostic Error Messages
-
-   None.
-
-Exit status
-
-   It always exits with a status of 0.
-
-Known bugs
-
-   None.
-
-See also
-
-   seqret           Reads and writes (returns) sequences
-   kcentroidfold    Predicts RNA 2D structure using CentroidFold
-
-Author(s)
-
-   Kazuki Oshita (cory @ g-language.org)
-   Institute for Advanced Biosciences, Keio University
-   252-8520 Japan
-
-History
-
-   2010 - Written by Kazuki Oshita
-
-Target users
-
-   This program is intended to be used by everyone and everything, from
-   naive users to embedded scripts.
-
-Comments
-
-   None.
-
-</pre>
-
-
-<h2>Warnings</h2>
-
-
-
-<h2>Diagnostic Error Messages</h2>
-
-
-
-<h2>Exit status</h2>
-
-
-
-<h2>Known bugs</h2>
-
-
-
-<h2>See also</h2>
-
-<table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
-<th>Description</th></tr>
-</table>
-
-
-<h2>Author(s)</h2>
-
-
-
-<h2>History</h2>
-
-
-
-<h2>Target users</h2>
-
-
-
-<h2>Comments</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</BODY>
+  <HEAD>
+    <TITLE>EMBOSS: krnafold</TITLE>
+  </HEAD>
+
+  <BODY BGCOLOR="#FFFFFF" text="#000000">
+    <table align=center border=0 cellspacing=0 cellpadding=0>
+      <tr>
+	<td valign=top>
+	  <A HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
+	</td>
+	<td align=left valign=middle>
+	  <b><font size="+6">
+	      krnafold
+	  </font></b>
+      </td>
+      </tr>
+    </table>
+
+    <!--END OF HEADER-->
+
+    <H2>Function</H2>
+    Predicts secondary structure of single starnd RNA or DNA using RNAfold
+    <!--
+	DON'T WRITE ANYTHING HERE.
+	IT IS DONE FOR YOU.
+      -->
+
+    <h2>Description</h2>
+    <p>
+      krnafold predicts on RNA 2D structure from given RNA or DNA sequences
+      utilizing RNAfold.
+    </p>
+    <p>
+      RNAfold reads RNA sequences, calculates their minimum free energy (mfe)
+      structure and predicts the mfe structure in bracket notation and its free
+      energy.
+    </p>
+
+    <p>
+      krnafold utilizing RNAfold web server produced by Institute for Theoretical
+      Chemistry. original web-services is located at the follwing URL:
+    </p>
+
+    <p>
+      <a href="http://rna.tbi.univie.ac.at/cgi-bin/RNAfold.cgi">http://rna.tbi.univie.ac.at/cgi-bin/RNAfold.cgi</a>
+    </p>
+
+    <p>
+      This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
+      which contains interfaces to bioinformatics web services through a proxy
+      server at Keio University. kblast is thus an interface of "runRNAfold"
+      method included in KBWS SOAP service.
+      This method can be alternatively accessed directly from programming languages
+      as SOAP web service. Please refer to the KBWS online documentations
+      <a href="http://www.g-language.org/kbws/">http://www.g-language.org/kbws/</a> for more information.
+    </p>
+
+    <h2>Usage</h2>
+    <table width="90%"><tr><td bgcolor="#CCFFFF"><pre>
+
+    Here is a sample session with krnafold
+
+    % krnafold
+    Predicts secondary structure of single starnd RNA or DNA sequence using RNAfold
+    Input (gapped) sequence(s): test_sequence.fasta
+    RNAfold output [test_sequence.krnafold]: stdout
+    Minimum free energy (MFE) structure in Ct format [test_sequence.ct]: 
+    Minimum free energy (MFE) structure in Vienna format [test_sequence.vienna]:
+    Jobid: kbws_7512092
+    ******
+
+    >test_sequenc
+    GGGCUAUUAGCUCAGUUGGUUAGAGCGCACCCCUGAUAAGGGUGAGGUCGCUGAUUCGAAUUCAGCAUAGCCC
+    (((((((..(((.((((.(....(((((.(((((....)))).)..).))))....).)))).)))))))))) (-28.20)
+    (((((((..(((.((((.(....((((({(((((....))))})..,,))))....).)))).)))))))))) [-29.60]
+    (((((((..(((.((((.(....((((.(..(((....))).).....))))....).)))).)))))))))) {-18.80 d=11.19}
+    frequency of mfe structure in ensemble 0.103122; ensemble diversity 16.38 
+
+	  </pre>
+	</td>
+      </tr>
+    </table>
+
+
+      <h2>Command line arguments</h2>
+      <table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+	<tr bgcolor="#FFFFCC">
+	  <th align="left">Qualifier</th>
+	  <th align="left">Type</th>
+	  <th align="left">Description</th>
+	  <th align="left">Allowed values</th>
+	  <th align="left">Default</th>
+	</tr>
+
+	<tr bgcolor="#FFFFCC">
+	  <th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
+	</tr>
+
+	<tr bgcolor="#FFFFCC">
+	  <td>[-seqall]<br>(Parameter 1)</td>
+	  <td>seqall</td>
+	  <td>Nucleotide sequence(s) filename and optional format, or reference (input USA)</td>
+	  <td>Readable sequence(s)</td>
+	  <td><b>Required</b></td>
+	</tr>
+
+	<tr bgcolor="#FFFFCC">
+	  <td>[-outfile]<br>(Parameter 2)</td>
+	  <td>outfile</td>
+	  <td>RNAfold output</td>
+	  <td>Output file</td>
+	  <td><i>&lt;*&gt;</i>.krnafold</td>
+	</tr>
+
+	<tr bgcolor="#FFFFCC">
+	  <td>[-ctfile]<br>(Parameter 3)</td>
+	  <td>outfile</td>
+	  <td>minimum free energy (MFE) structure in Ct format</td>
+	  <td>Output file</td>
+	  <td><i>&lt;*&gt;</i>.ct</td>
+	</tr>
+
+	<tr bgcolor="#FFFFCC">
+	  <td>[-viennafile]<br>(Parameter 4)</td>
+	  <td>outfile</td>
+	  <td>minimum free energy (MFE) structure in Vienna format</td>
+	  <td>Output file</td>
+	  <td><i>&lt;*&gt;</i>.vienna</td>
+	</tr>
+
+	<tr bgcolor="#FFFFCC">
+	  <th align="left" colspan=5>Additional (Optional) qualifiers</th>
+	</tr>
+
+	<tr bgcolor="#FFFFCC">
+	  <td>-method</td>
+	  <td>string</td>
+	  <td>p: minimum free energy (MFE) and protein function mfe: minimum free energy (MFE) only</td>
+	  <td>Any string</td>
+	  <td>p</td>
+	</tr>
+
+	<tr bgcolor="#FFFFCC">
+	  <td>-noclosegu</td>
+	  <td>boolean</td>
+	  <td>no GU pairs at the end of helices</td>
+	  <td>Boolean value Yes/No</td>
+	  <td>No</td>
+	</tr>
+
+	<tr bgcolor="#FFFFCC">
+	  <td>-[no]nolp</td>
+	  <td>boolean</td>
+	  <td>avoid isolated base pairs</td>
+	  <td>Boolean value Yes/No</td>
+	  <td>Yes</td>
+	</tr>
+
+	<tr bgcolor="#FFFFCC">
+	  <td>-dangling</td>
+	  <td>string</td>
+	  <td>d1: no dangling end energies d2: unpaired bases can participate in at most one dangling end (MFE folding only) d3: dangling energies on both sides of a helix in any case d4: allow coaxial stacking of adjacent helices n multi-loops (MFE folding only)</td>
+	  <td>Any string</td>
+	  <td>d2</td>
+	</tr>
+
+	<tr bgcolor="#FFFFCC">
+	  <td>-param</td>
+	  <td>string</td>
+	  <td>rna: RNA parameters (Turner model) andronescu: RNA parameters (Andronescu model) dna: DNA parameters</td>
+	  <td>Any string</td>
+	  <td>rna</td>
+	</tr>
+
+	<tr bgcolor="#FFFFCC">
+	  <td>-tmp</td>
+	  <td>integer</td>
+	  <td>rescale energy parameters to given temperature (C)</td>
+	  <td>Any integer value</td>
+	  <td>37</td>
+	</tr>
+
+	<tr bgcolor="#FFFFCC">
+	  <td>-circ</td>
+	  <td>boolean</td>
+	  <td>assume RNA molecule to be circular</td>
+	  <td>Boolean value Yes/No</td>
+	  <td>No</td>
+	</tr>
+
+	<tr bgcolor="#FFFFCC">
+	  <th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
+	</tr>
+
+	<tr>
+	  <td colspan=5>(none)</td>
+	</tr>
+      </table>
+
+
+      <h2>Input file format</h2>
+      krnafold can use any genome sequence data that seqret can read.
+
+      <h2>Output file format</h2>
+
+      <h3>Output files for usage example</h3>
+    <p>
+      <h3>File: test_sequence.ct</h3>
+      <table width="90%">
+	<tr>
+	  <td bgcolor="#CCFFCC">
+	    <pre>73 ENERGY =   -28.2    1
+	      1 G       0    2   73    1
+	      2 G       1    3   72    2
+	      3 G       2    4   71    3
+	      4 C       3    5   70    4
+	      5 U       4    6   69    5
+	      6 A       5    7   68    6
+	      7 U       6    8   67    7
+	      8 U       7    9    0    8
+	      9 A       8   10    0    9
+	      10 G       9   11   66   10
+	      11 C      10   12   65   11
+	      12 U      11   13   64   12
+	      13 C      12   14    0   13
+	      14 A      13   15   62   14
+	      15 G      14   16   61   15
+	      16 U      15   17   60   16
+	      17 U      16   18   59   17
+	      18 G      17   19    0   18
+	      19 G      18   20   57   19
+	      20 U      19   21    0   20
+	      21 U      20   22    0   21
+	      22 A      21   23    0   22
+	      23 G      22   24    0   23
+	      24 A      23   25   52   24
+	      25 G      24   26   51   25
+	      26 C      25   27   50   26
+	      27 G      26   28   49   27
+	      28 C      27   29   47   28
+	      29 A      28   30    0   29
+	      30 C      29   31   44   30
+	      31 C      30   32   42   31
+	      32 C      31   33   41   32
+	      33 C      32   34   40   33
+	      34 U      33   35   39   34
+	      35 G      34   36    0   35
+	      36 A      35   37    0   36
+	      37 U      36   38    0   37
+	      38 A      37   39    0   38
+	      39 A      38   40   34   39
+	      40 G      39   41   33   40
+	      41 G      40   42   32   41
+	      42 G      41   43   31   42
+	      43 U      42   44    0   43
+	      44 G      43   45   30   44
+	      45 A      44   46    0   45
+	      46 G      45   47    0   46
+	      47 G      46   48   28   47
+	      48 U      47   49    0   48
+	      49 C      48   50   27   49
+	      50 G      49   51   26   50
+	      51 C      50   52   25   51
+	      52 U      51   53   24   52
+	      53 G      52   54    0   53
+	      54 A      53   55    0   54
+	      55 U      54   56    0   55
+	      56 U      55   57    0   56
+	      57 C      56   58   19   57
+	      58 G      57   59    0   58
+	      59 A      58   60   17   59
+	      60 A      59   61   16   60
+	      61 U      60   62   15   61
+	      62 U      61   63   14   62
+	      63 C      62   64    0   63
+	      64 A      63   65   12   64
+	      65 G      64   66   11   65
+	      66 C      65   67   10   66
+	      67 A      66   68    7   67
+	      68 U      67   69    6   68
+	      69 A      68   70    5   69
+	      70 G      69   71    4   70
+	      71 C      70   72    3   71
+	      72 C      71   73    2   72
+	      73 C      72    0    1   73
+
+	    </pre>
+	  </td>
+	</tr>
+      </table>
+    <p>
+
+      <h2>Data files</h2>
+      None.
+
+      <h2>Notes</h2>
+      None.
+
+      <h2>References</h2>
+      <pre>
+	I.L. Hofacker., et al.,(1994) Fast Folding and Comparison of RNA Secondary
+	Structures, Monatshefte fur Chemie, 125, 167-188.
+
+	M, Zuker., and P, Stiegler.,(1981) Optimal computer folding of large RNA
+	sequences using thermodynamic and auxiliary information,
+	Nucleic Acids Research, 9, 133-148.
+
+	J.S, McCaskill(1990) The equilibrium partition function and base pair binding
+	probabilities for RNA secondary structures, Biopolymers, 29, 1105-1119.
+      </pre>
+
+
+      <h2>Warnings</h2>
+      None.
+
+      <h2>Diagnostic Error Messages</h2>
+      None.
+
+      <h2>Exit status</h2>
+      It always exits with a status of 0.
+
+      <h2>Known bugs</h2>
+      None.
+
+      <h2>See also</h2>
+      <table border cellpadding=4 bgcolor="#FFFFF0">
+	<tr>
+	  <th>Program name</th>
+	  <th>Description</th>
+	</tr>
+
+        <tr>
+          <td><a href="seqret.html">seqret</a></td>
+          <td>Reads and writes (returns) sequences</td>
+        </tr>
+
+        <tr>
+          <td><a href="kcentroidfold.html">kcentroidfold</a></td>
+          <td>Predicts RNA 2D structure using CentroidFold</td>
+        </tr>
+      </table>
+
+
+      <h2>Author(s)</h2>
+	Kazuki Oshita (cory @ g-language.org)<br />
+	Institute for Advanced Biosciences, Keio University<br />
+	252-8520 Japan<br />
+
+      <h2>History</h2>
+      2010 - Written by Kazuki Oshita<br />
+      Feb 2013 - Update document by Kazuki Oshita
+
+      <h2>Target users</h2>
+	This program is intended to be used by everyone and everything, from naive users to embedded scripts.
+
+      <h2>Comments</h2>
+      None.
+
+  </BODY>
 </HTML>
 

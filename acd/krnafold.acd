@@ -96,14 +96,14 @@ section: output [
   outfile: ctfile [
     parameter: "Y"
     extension: "ct"
-    information: "minimum free energy (MFE) structure in Ct format"
+    information: "Minimum free energy (MFE) structure in Ct format"
     knowntype: "ct"
   ]
 
   outfile: viennafile [
     parameter: "Y"
     extension: "vienna"
-    information: "minimum free energy (MFE) structure in Vienna format"
+    information: "Minimum free energy (MFE) structure in Vienna format"
     knowntype: "vienna"
   ]
 

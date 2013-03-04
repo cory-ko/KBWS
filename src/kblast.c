@@ -10,139 +10,118 @@
 #include "../gsoap/stdsoap2.c"
 
 int main(int argc, char **argv) {
+  // initialize EMBASSY info
+  embInitPV("kblast", argc, argv, "KBWS", "1.0.8");
 
-    embInitPV("kblast", argc, argv, "KBWS", "1.0.8");
+  // soap driver and parameter object
+  struct soap soap;
+  struct ns1__blastInputParams params;
 
-    struct soap soap;
-    struct ns1__blastInputParams params;
-    char* jobid;
-    char* result;
+  char* jobid;
 
-    AjPSeqall  seqall;
-    AjPSeq     seq;
-    AjPFile    outf;
-    AjPStr     substr;
-    AjPStr     inseq = NULL;
-    AjPStr     p;
-    AjPStr     d;
-    AjPStr     server;
-    AjPStr     m;
-    AjPStr     e;
-    AjPStr     F;
-    ajint      G;
-    ajint      E;
-    AjPStr     X;
-    ajint      q;
-    ajint      r;
-    ajint      v;
-    ajint      b;
-    ajint      f;
-    AjBool     g;
-    AjPStr     M;
-    ajint      W;
-    float      z;
-    ajint      K;
-    float      Y;
-    p      =      ajAcdGetString("p");
-    d      =      ajAcdGetString("d");
-    server =      ajAcdGetString("server");
-    m      =      ajAcdGetString("format");
-    e      =      ajAcdGetString("eval");
-    F      =      ajAcdGetString("qfilter");
-    G      =      ajAcdGetInt("op");
-    E      =      ajAcdGetInt("ep");
-    X      =      ajAcdGetString("dropoff");
-    q      =      ajAcdGetInt("q");
-    r      =      ajAcdGetInt("r");
-    v      =      ajAcdGetInt("v");
-    b      =      ajAcdGetInt("b");
-    f      =      ajAcdGetInt("threshold");
-    g      =      ajAcdGetBoolean("g");
-    M      =      ajAcdGetString("matrix");
-    W      =      ajAcdGetInt("wordsize");
-    z      =      ajAcdGetFloat("z");
-    K      =      ajAcdGetInt("k");
-    Y      =      ajAcdGetFloat("y");
+  AjPSeqall seqall; // input sequence
+  AjPFile   outf; // outfile
 
-    seqall        = ajAcdGetSeqall("seqall");
-    outf          = ajAcdGetOutfile("outfile");
-    params.p      = ajCharNewS(p);
-    params.d      = ajCharNewS(d);
-    params.server = ajCharNewS(server);
-    params.m      = ajCharNewS(m);
-    params.e      = ajCharNewS(e);
-    params.F      = ajCharNewS(F);
-    params.G      = G;
-    params.E      = E;
-    params.X      = ajCharNewS(X);
-    params.q      = q;
-    params.r      = r;
-    params.v      = v;
-    params.b      = b;
-    params.f      = f;
-    if (g) {
-      params.g    = xsd__boolean__true_;
+  AjPSeq seq;
+  AjPStr inseq= NULL;
+
+  AjPStr substr;
+    
+  // get input/output info
+  seqall= ajAcdGetSeqall("seqall");
+  outf= ajAcdGetOutfile("outfile");
+
+  // set parameters
+  params.p= ajCharNewS(ajAcdGetString("program"));
+  params.d= ajCharNewS(ajAcdGetString("database"));
+  params.server= ajCharNewS(ajAcdGetString("server"));
+  params.m= ajCharNewS(ajAcdGetString("format"));
+  params.e= ajCharNewS(ajAcdGetString("eval"));
+  params.F= ajCharNewS(ajAcdGetString("qfilter"));
+  params.G= ajAcdGetInt("opengap");
+  params.E= ajAcdGetInt("extendgap");
+  params.X= ajCharNewS(ajAcdGetString("dropoff"));
+  params.q= ajAcdGetInt("penalty");
+  params.r= ajAcdGetInt("reward");
+  params.v= ajAcdGetInt("numdescriptions");
+  params.b= ajAcdGetInt("numalignments");
+  params.f= ajAcdGetInt("threshold");
+  params.M= ajCharNewS(ajAcdGetString("matrix"));
+  params.W= ajAcdGetInt("wordsize");
+  params.z= ajAcdGetFloat("dbsize");
+  params.K= ajAcdGetInt("k");
+  params.Y= ajAcdGetFloat("searchsp");
+  if (ajAcdGetBoolean("g")) {
+    params.g= xsd__boolean__true_;
+  } else {
+    params.g= xsd__boolean__false_;
+  }
+
+  while (ajSeqallNext(seqall, &seq)) {
+    // initialize
+    soap_init(&soap);
+    inseq= NULL;
+
+    // convert sequence data to EMBOSS string as fasta format
+    ajStrAppendC(&inseq, ">");
+    ajStrAppendS(&inseq, ajSeqGetNameS(seq));
+    ajStrAppendC(&inseq, "\n");
+    ajStrAppendS(&inseq, ajSeqGetSeqS(seq));
+
+    // convert EMBOSS string to char* in C
+    char* in0;
+    in0= ajCharNewS(inseq);
+
+    // submit query via SOAP and get job ID
+    if (soap_call_ns1__runBlast(&soap, NULL, NULL, in0, &params, &jobid) == SOAP_OK) {
+      // warn user's job ID
+      fprintf(stderr, "Jobid: %s\n", jobid);
     } else {
-      params.g    = xsd__boolean__false_;
-    }
-    params.M      = ajCharNewS(M);
-    params.W      = W;
-    params.z      = z;
-    params.K      = K;
-    params.Y      = Y;
-
-    while (ajSeqallNext(seqall, &seq)) {
-
-      soap_init(&soap);
-
-      inseq = NULL;
-      ajStrAppendC(&inseq,">");
-      ajStrAppendS(&inseq,ajSeqGetNameS(seq));
-      ajStrAppendC(&inseq,"\n");
-      ajStrAppendS(&inseq,ajSeqGetSeqS(seq));
-
-      soap_init(&soap);
-
-      char* in0;
-      in0 = ajCharNewS(inseq);
-      if ( soap_call_ns1__runBlast( &soap, NULL, NULL, in0, &params, &jobid ) == SOAP_OK ) {
-          fprintf(stderr,"Jobid: %s\n",jobid);
-      } else {
-          soap_print_fault(&soap, stderr);
-      }
-
-      int check = 0;
-      while ( check == 0 ) {
-          if ( soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check ) == SOAP_OK ) {
-              fprintf(stderr,"*");
-          } else {
-              soap_print_fault(&soap, stderr);
-          }
-          sleep(3);
-      }
-      fprintf(stderr,"\n");
-
-      if ( soap_call_ns1__getResult( &soap, NULL, NULL, jobid,  &result ) == SOAP_OK ) {
-	    substr = ajStrNewC(result);
-          ajFmtPrintF(outf,"%S\n",substr);
-      } else {
-          soap_print_fault(&soap, stderr);
-      }
-
-      soap_destroy(&soap);
-      soap_end(&soap);
-      soap_done(&soap);
-
+      soap_print_fault(&soap, stderr);
     }
 
-    ajFileClose(&outf);
+    // polling
+    int check= 0;
+    while (check == 0) {
+      if (soap_call_ns1__checkStatus(&soap, NULL, NULL, jobid,  &check) == SOAP_OK) {
+	// progress bar
+	fprintf(stderr, "*");
+      } else {
+	soap_print_fault(&soap, stderr);
+      }
+      sleep(3);
+    }
 
-    ajSeqallDel(&seqall);
-    ajSeqDel(&seq);
-    ajStrDel(&substr);
+    fprintf(stderr,"\n");
 
-    embExit();
+    // get result
+    char* result;
+    if (soap_call_ns1__getResult(&soap, NULL, NULL, jobid,  &result) == SOAP_OK) {
+      // convert result from C char* to EMBOSS string object
+      substr= ajStrNewC(result);
 
-    return 0;
+      // output result (EMBOSS string) to file or STDOUT via EMBOSS
+      ajFmtPrintF(outf, "%S\n", substr);
+    } else {
+      soap_print_fault(&soap, stderr);
+    }
+
+  }
+
+  // destruct SOAP driver
+  soap_destroy(&soap);
+  soap_end(&soap);
+  soap_done(&soap);
+
+  // write output file and destruct outfile object
+  ajFileClose(&outf);
+
+  // destruct EMBOSS objects
+  ajSeqallDel(&seqall);
+  ajSeqDel(&seq);
+  ajStrDel(&substr);
+
+  embExit();
+
+  return 0;
 }
-

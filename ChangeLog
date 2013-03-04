@@ -11,6 +11,9 @@ version 1.0.9 beta
 
 	Update (modify) "krnafold" document.
 
+	04-Mar-2013
+	Change option name for keeping up with EMBOSS-6.5.7 about "kblast".
+
 version 1.0.8 17-Jul-2011
 	Keeping up with EMBOSS 6.4.0.
 

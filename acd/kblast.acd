@@ -23,14 +23,14 @@ section: advanced [
   type: "page"
 ]
 
-  string: d [
+  string: database [
     additional: "Y"
     default: "swissprot"
     information: "database name about target for
                   your search"
   ]
 
-  string: p [
+  string: program [
     additional: "Y"
     default: "auto"
     information: "blast program name. 'auto'
@@ -50,7 +50,11 @@ section: advanced [
   string: format [
     additional: "Y"
     default: "0"
-    information: "blast report format"
+    information: "blast report format.
+                  0 : normal BLAST report
+                  8 : tabulark
+                  1: ID listk
+                  2: ID list separated by conmma"
   ]
 
   string: eval [
@@ -65,13 +69,13 @@ section: advanced [
     information: "[T/F] filter query sequence"
   ]
 
-  integer: op [
+  integer: opengap [
     additional: "Y"
     default: "-1"
     information: "cost to open a gap"
   ]
 
-  integer: ep [
+  integer: extendgap [
     additional: "Y"
     default: "-1"
     information: "cost to extend a gap"
@@ -84,29 +88,28 @@ section: advanced [
                   alignment (in bits)"
   ]
 
-  integer: q [
+  integer: penalty [
     additional: "Y"
     default: "-3"
     information: "penalty for a nucleotide
                   mismatch (blastn only)"
   ]
 
-  integer: r [
+  integer: reward [
     additional: "Y"
     default: "1"
     information: "reward for a nucleotide match
                   (blastn only)"
   ]
 
-  integer: v [
+  integer: numdescriptions [
     additional: "Y"
     default: "500"
-    information: "number of database sequences
-                  to show one-line descriptions
-                  for (V)"
+    information: "show one-line descriptions for
+                  this number of database sequences"
   ]
 
-  integer: b [
+  integer: numalignments [
     additional: "Y"
     default: "250"
     information: "number of database sequence to
@@ -140,11 +143,10 @@ section: advanced [
                   each program"
   ]
 
-  float: z [
+  float: dbsize [
     additional: "Y"
     default: "0"
-    information: "effective length of the
-                  database"
+    information: "effective size of the database"
   ]
 
   integer: k [
@@ -154,7 +156,7 @@ section: advanced [
                   region to keep"
   ]
 
-  float: y [
+  float: searchsp [
     additional: "Y"
     default: "0"
     information: "effective length of the search

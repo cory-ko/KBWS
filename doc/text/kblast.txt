@@ -37,7 +37,7 @@ Description
     
    This method can be alternatively accessed directly from programming
    languages as SOAP web service. Please refer to the KBWS online
-   documentations http://soap.g-language.org/kbws/ for more information.
+   documentations http://www.g-language.org/kbws/ for more information.
 
 Usage
 
@@ -204,7 +204,6 @@ Sbjct  61  ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVIT  100
 
  ( omitting... )
 
-
   Database: Non-redundant SwissProt sequences
     Posted date:  Feb 28, 2010  5:41 PM
   Number of letters in database: 159,864,915
@@ -247,12 +246,12 @@ Command line arguments
    Standard (Mandatory) qualifiers:
   [-sequence]          seqall     (Gapped) sequence(s) filename and optional
                                   format, or reference (input USA)
-  [-outfile]           outfile    [.] BLAST output format
+  [-outfile]           outfile    [*.kblast] BLAST output format
                                   
    Additional (Optional) qualifiers: (none)
-   -d                  string     [swissprot] database name about target for
+   -database           string     [swissprot] database name about target for
                                   your search.
-   -p                  string     [auto] program name. 'blastn', 'blastp',
+   -program            string     [auto] program name. 'blastn', 'blastp',
                                   'blastx' or 'auto'. 'auto' program selects
 				  an appropriate program automatically judged
 				  from your sequence and database.
@@ -260,8 +259,6 @@ Command line arguments
                                   'NCBI', 'EBI' or 'DDBJ'. If empty, an
 				  appropriate server is selected by information
 				  of your job.
-
-   Advanced (Unprompted) qualifiers:
    -format             string     [0] blast report format.
                                   0 : normal BLAST report
                                   8 : tabular
@@ -269,14 +266,14 @@ Command line arguments
                                   k2: ID list separated by conmma
    -eval               string     [10.0] expectation value
    -qfilter            string     [T] filter query sequence
-   -op                 integer    [-1] cost to open a gap
-   -ep                 integer    [-1] cost to extend a gap
+   -opengap            integer    [-1] cost to open a gap
+   -extendgap          integer    [-1] cost to extend a gap
    -dropoff            string     [0] X dropoff value for gapped alignment (in bits)
-   -q                  integer    [-3] penalty for a nucleotide mismatch (blastn only)
-   -r                  integer    [1] reward for a nucleotide match (blastn only)
-   -v                  integer    [500] number of database sequences to show one-line
+   -penalty            integer    [-3] penalty for a nucleotide mismatch (blastn only)
+   -reward             integer    [1] reward for a nucleotide match (blastn only)
+   -numdescriptions    integer    [500] number of database sequences to show one-line
                                   descriptions for (V)
-   -b                  integer    [250] number of database sequence to show alignments
+   -numalignments      integer    [250] number of database sequence to show alignments
                                   for (B)
    -threshold          integer    [0] threshold for extending hits, default if zero for
                                   each program
@@ -284,10 +281,15 @@ Command line arguments
    -matrix             string     [BLOSUM62] matrix
    -wordsize           integer    [0] word size, default if zero for each program.
                                   blastp is 3, and blastn is 11.
-   -z                  float      [0] effective length of the database
+   -dbsize             float      [0] effective length of the database
    -k                  integer    [0] number of best hits from a region to keep
-   -y                  float      [0] effective length of the search space
+   -searchsp           float      [0] effective length of the search space
 
+   Advanced (Unprompted) qualifiers: (none)
+   General qualifiers:
+   -help               boolean    Report command line options and exit. More
+                                  information on associated and general
+                                  qualifiers can be found with -help -verbose
 
 Input file format
 
@@ -350,6 +352,7 @@ History
    2009 - Written by Kazuki Oshita
    Sep 2010 - Added "-format 20" option
    Nov 2010 - Revised "-format" option
+   Mar 2013 - Changed options' name
 
 Target users
 

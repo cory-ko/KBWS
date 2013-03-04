@@ -131,7 +131,7 @@ USAGE EXAMPLE
      ( EMBOSS-6.4.0/test/data/* )
 
   1. kblast (BLAST)
-      % kblast swissprot:FOXP2_HUMAN -d swissprot -format 8 -eval 1e-100
+      % kblast swissprot:FOXP2_HUMAN -database swissprot -format 8 -eval 1e-100
       Search similar sequences in public repositories using BLAST
       Output file [foxp2_human.kblast]:
       Jobid: kbws_4981686
@@ -199,4 +199,3 @@ SAMPLE DATA
   Kazuki Oshita < cory@g-language.org >
     Institute for Advanced Biosciences, Keio University.
 -------------------------------------------------------------------------
-

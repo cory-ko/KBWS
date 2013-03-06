@@ -14,10 +14,10 @@ section: input [
     type: "gapany"
   ]
 
-  string: d [
+  string: database [
     parameter: "Y"
     default: ""
-    information: "database for search"
+    information: "Target database for search"
   ]
 
 endsection: input

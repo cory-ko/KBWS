@@ -1,71 +1,46 @@
-<!--START OF HEADER - DON'T ALTER -->
-
 <HTML>
-<HEAD>
-  <TITLE>
-  EMBOSS: kssearch
-  </TITLE>
-</HEAD>
-<BODY BGCOLOR="#FFFFFF" text="#000000">
+  <HEAD>
+    <TITLE>EMBOSS: kssearch</TITLE>
+  </HEAD>
+
+  <BODY BGCOLOR="#FFFFFF" text="#000000">
+    <table align=center border=0 cellspacing=0 cellpadding=0>
+      <tr>
+	<td valign=top>
+	  <a HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
+	</td>
+	<td align=left valign=middle>
+	  <b><font size="+6">kssearch</font></b>
+	</td>
+      </tr>
+    </table>
+
+    <br />
+
+    <H2>Function</H2>
+    compares query sequences to databases using SSEARCH
 
 
+    <h2>Description</h2>
 
-<table align=center border=0 cellspacing=0 cellpadding=0>
-<tr><td valign=top>
-<A HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
-</td>
-<td align=left valign=middle>
-<b><font size="+6">
-kssearch
-</font></b>
-</td></tr>
-</table>
-<br>&nbsp;
-<p>
+    <p>
+      kssearch compares query sequences with databases utilizing SSEARCH (Smith-Waterman Search). SSEARCH does a rigorous Smith-Waterman search for similarity between a query sequence and a group of sequences of the same type (nucleid acid or protein). kssearch utilizes SSEARCH method included in FASTA SOAP service provided by EBI (European Bioinformatics Institute).Original web-service is located at the following URL:
+    </p>
 
+    <p>
+      <a href="http://www.ebi.ac.uk/Tools/webservices/services/sss/fasta_rest">http://www.ebi.ac.uk/Tools/webservices/services/sss/fasta_rest</a>
+    </p>
 
-<!--END OF HEADER-->
+    <p> 
+      This tools is a subset of Keio Bioinformatics Web Service (KBWS) package, which contains interfaces to bioinformatics web services through a proxy server at Keio University. kssearch is an interface of "runSSearch" method included in KBWS SOAP service.<br />
+      This method can be alternatively accessed directly from programming languages as SOAP web service. Please refer to the KBWS online documentations <a href="http://www.g-language.org/kbws/">http://www.g-language.org/kbws/</a> for more information.
+    </p>
 
-
-
-
-
-
-<H2>
-    Function
-</H2>
-compares query sequences to databases using SSEARCH
-<!--
-DON'T WRITE ANYTHING HERE.
-IT IS DONE FOR YOU.
--->
-
-
-
-
-<h2>Description</h2>
-
-
-   kssearch compares query sequences with databases utilizing SSEARCH (Smith-Waterman Search). <br />
-   SSEARCH does a rigorous Smith-Waterman search for similarity between a query sequence and a group of sequences of the same type (nucleid acid or protein).
-</p>
-
-<p> 
-   kssearch utilizes SSEARCH method included in FASTA SOAP service provided by  EBI (European Bioinformatics Institute).Original web-service is located at the following URL:
-</p>
-
-<p>   http://www.ebi.ac.uk/Tools/webservices/services/sss/fasta_rest   </p>
-
-<p> 
-   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package, which contains interfaces to bioinformatics web services through a proxy server at Keio University. kssearch is an interface of "runSSearch" method included in KBWS SOAP service.<br />
-   This method can be alternatively accessed directly from programming languages as SOAP web service. Please refer to the KBWS online documentations http://soap.g-language.org/kbws/ for more information.
-</p>
-
-<p>
-
-<h2>Usage</h2>
-
-<table width="90%"><tr><td bgcolor="#CCFFFF"><pre>
+    <h2>Usage</h2>
+    <table width="90%">
+      <tr>
+	<td bgcolor="#CCFFFF">
+	  <pre>
 
    Here is a sample session with kssearch
 
@@ -78,304 +53,261 @@ Jobid: kbws_5626576
 
    ### output sample
 
+	  </pre>
+	</td>
+      </tr>
+    </table>
 
-</pre></td></tr></table>
+    <h2>Command line arguments</h2>
+    <table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+      <tr bgcolor="#FFFFCC">
+	<th align="left">Qualifier</th>
+	<th align="left">Type</th>
+	<th align="left">Description</th>
+	<th align="left">Allowed values</th>
+	<th align="left">Default</th>
+      </tr>
 
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
+      </tr>
 
-<h2>Command line arguments</h2>
+      <tr bgcolor="#FFFFCC">
+	<td>[-seqall]<br>(Parameter 1)</td>
+	<td>seqall</td>
+	<td>(Gapped) sequence(s) filename and optional format, or reference (input USA)</td>
+	<td>Readable sequence(s)</td>
+	<td><b>Required</b></td>
+      </tr>
 
-<table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
-<tr bgcolor="#FFFFCC">
-<th align="left">Qualifier</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-<th align="left">Allowed values</th>
-<th align="left">Default</th>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>[-database]<br>(Parameter 2)</td>
+	<td>string</td>
+	<td>Target database for search</td>
+	<td>Any string</td>
+	<td><b>Required</b></td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>[-outfile]<br>(Parameter 3)</td>
+	<td>outfile</td>
+	<td>Output file name</td>
+	<td>Output file</td>
+	<td><i>&lt;*&gt;</i>.kssearch</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>[-seqall]<br>(Parameter 1)</td>
-<td>seqall</td>
-<td>(Gapped) sequence(s) filename and optional format, or reference (input USA)</td>
-<td>Readable sequence(s)</td>
-<td>2</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Additional (Optional) qualifiers</th>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>[-d]<br>(Parameter 2)</td>
-<td>string</td>
-<td>database for search</td>
-<td>Any string</td>
-<td>&nbsp;</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-moltype</td>
+	<td>string</td>
+	<td>molecular type</td>
+	<td>Any string</td>
+	<td>&nbsp;</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>[-outfile]<br>(Parameter 3)</td>
-<td>outfile</td>
-<td>Output file name</td>
-<td>Output file</td>
-<td><i>&lt;*&gt;</i>.kssearch</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-histogram</td>
+	<td>boolean</td>
+	<td>Display histogram</td>
+	<td>Boolean value Yes/No</td>
+	<td>No</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Additional (Optional) qualifiers</th>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-nucleotide</td>
+	<td>boolean</td>
+	<td>your query is nucleotide or not(protein)</td>
+	<td>Boolean value Yes/No</td>
+	<td>No</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-moltype</td>
-<td>string</td>
-<td>molecular type</td>
-<td>Any string</td>
-<td>&nbsp;</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-topstrand</td>
+	<td>boolean</td>
+	<td>Nucleotide sequence strand to use for seqrch (top)</td>
+	<td>Boolean value Yes/No</td>
+	<td>No</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-histogram</td>
-<td>boolean</td>
-<td>Display histogram</td>
-<td>Boolean value Yes/No</td>
-<td>No</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-bottomstrand</td>
+	<td>boolean</td>
+	<td>Nucleotide sequence strand to use for seqrch (bottom)</td>
+	<td>Boolean value Yes/No</td>
+	<td>No</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-nucleotide</td>
-<td>boolean</td>
-<td>your query is nucleotide or not(protein)</td>
-<td>Boolean value Yes/No</td>
-<td>No</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-gapopen</td>
+	<td>integer</td>
+	<td>Score for the initiation of a gap</td>
+	<td>Any integer value</td>
+	<td>0</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-topstrand</td>
-<td>boolean</td>
-<td>Nucleotide sequence strand to use for seqrch (top)</td>
-<td>Boolean value Yes/No</td>
-<td>No</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-gapext</td>
+	<td>integer</td>
+	<td>Score for each base/residue in a gap</td>
+	<td>Any integer value</td>
+	<td>0</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-bottomstrand</td>
-<td>boolean</td>
-<td>Nucleotide sequence strand to use for seqrch (bottom)</td>
-<td>Boolean value Yes/No</td>
-<td>No</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-scores</td>
+	<td>integer</td>
+	<td>Maximum number of scores displayed in the output</td>
+	<td>Any integer value</td>
+	<td>0</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-gapopen</td>
-<td>integer</td>
-<td>Score for the initiation of a gap</td>
-<td>Any integer value</td>
-<td>0</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-alignments</td>
+	<td>integer</td>
+	<td>Maximum number of alignments displayed in the output</td>
+	<td>Any integer value</td>
+	<td>0</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-gapext</td>
-<td>integer</td>
-<td>Score for each base/residue in a gap</td>
-<td>Any integer value</td>
-<td>0</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-ktup</td>
+	<td>integer</td>
+	<td>Word size to use for sequence comparisons</td>
+	<td>Any integer value</td>
+	<td>0</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-scores</td>
-<td>integer</td>
-<td>Maximum number of scores displayed in the output</td>
-<td>Any integer value</td>
-<td>0</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-matrix</td>
+	<td>string</td>
+	<td>Scoring matrix to be used in the search</td>
+	<td>Any string</td>
+	<td>&nbsp;</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-alignments</td>
-<td>integer</td>
-<td>Maximum number of alignments displayed in the output</td>
-<td>Any integer value</td>
-<td>0</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-eupper</td>
+	<td>float</td>
+	<td>Upper E-value threshold</td>
+	<td>Any numeric value</td>
+	<td>0.000</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-ktup</td>
-<td>integer</td>
-<td>Word size to use for sequence comparisons</td>
-<td>Any integer value</td>
-<td>0</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-elower</td>
+	<td>float</td>
+	<td>Lower E-value threshold</td>
+	<td>Any numeric value</td>
+	<td>0.000</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-matrix</td>
-<td>string</td>
-<td>Scoring matrix to be used in the search</td>
-<td>Any string</td>
-<td>&nbsp;</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-dbrange</td>
+	<td>string</td>
+	<td>Range of sequence lengths in search database to include in search</td>
+	<td>Any string</td>
+	<td>&nbsp;</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-eupper</td>
-<td>float</td>
-<td>Upper E-value threshold</td>
-<td>Any numeric value</td>
-<td>0.000</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-seqrange</td>
+	<td>string</td>
+	<td>Region of the query sequence to use for the search</td>
+	<td>Any string</td>
+	<td>&nbsp;</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-elower</td>
-<td>float</td>
-<td>Lower E-value threshold</td>
-<td>Any numeric value</td>
-<td>0.000</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-dbrange</td>
-<td>string</td>
-<td>Range of sequence lengths in search database to include in search</td>
-<td>Any string</td>
-<td>&nbsp;</td>
-</tr>
+      <tr>
+	<td colspan=5>(none)</td>
+      </tr>
+    </table>
 
-<tr bgcolor="#FFFFCC">
-<td>-seqrange</td>
-<td>string</td>
-<td>Region of the query sequence to use for the search</td>
-<td>Any string</td>
-<td>&nbsp;</td>
-</tr>
+    <h2>Input file format</h2>
+    kssearch can use any genome sequence data that seqret can read.
 
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
-</tr>
+    <h2>Output file format</h2>
+    The output from kssearch is general SSEARCH output file.
 
-<tr>
-<td colspan=5>(none)</td>
-</tr>
+    <h2>Data files</h2>
+    None.
 
-</table>
+    <h2>Notes</h2>
+    None.
 
-
-<h2>Input file format</h2>
-
-
-  kssearch can use any genome sequence data that seqret can read.
-
-
-
-<h2>Output file format</h2>
-
-
-   The output from kssearch is general SSEARCH output file.
-
-
-
-<h2>Data files</h2>
-
-
-   None.
-
-
-
-<h2>Notes</h2>
-
-
-   None.
-
-
-
-<h2>References</h2>
-
-
-<pre>
-
-   Pearson, W.R., and Lipman, D.J.,(1988) Improved Tools for Biological
+    <h2>References</h2>
+    <pre>
+      Pearson, W.R., and Lipman, D.J.,(1988) Improved Tools for Biological
       Sequence Comparison, PNAS, 85, 2444-2448.
 
-   Pearson, W.R.,(1990), Rapid and Sensitive Sequence Comparison with FASTP
+      Pearson, W.R.,(1990), Rapid and Sensitive Sequence Comparison with FASTP
       and FASTA, Method in Enzymology, 183, 63-98.
 
-   Mackey, A.J., et al.,(2002) Getting more from less: algorithms for rapid
+      Mackey, A.J., et al.,(2002) Getting more from less: algorithms for rapid
       protein identification with multiple short peptide sequence. Molecular
       and Cellular Proteomics, 1(2), 139-147.
+    </pre>
+
+    <h2>Warnings</h2>
+    None.
+
+    <h2>Diagnostic Error Messages</h2>
+    None.
+
+    <h2>Exit status</h2>
+    It always exits with a status of 0.
+
+    <h2>Known bugs</h2>
+    None.
+
+    <h2>See also</h2>
+    <table border cellpadding=4 bgcolor="#FFFFF0">
+      <tr>
+	<th>Program name</th>
+	<th>Description</th>
+      </tr>
+
+      <tr>
+	<td><a href="kblast.html">kblast</a></td>
+	<td>Search similar sequences in public repositories using BLAST</td>
+      </tr>
+
+      <tr>
+	<td><a href="seqret.html">seqret</a></td>
+	<td>Reads and writes (returns) sequences</td>
+      </tr>
+    </table>
 
 
-</pre>
+    <h2>Author(s)</h2>
+    Kazuki Oshita (cory @ g-language.org)<br />
+    Institute for Advanced Biosciences, Keio University<br />
+    252-8520 Japan
+
+    <h2>History</h2>
+    <pre>
+    2009 - Written by Kazuki Oshita
+    Mar 2013 - Update document by Kazuki Oshita
+               Change option name(d => database) by Kazuki Oshita
+    </pre>
 
 
-<h2>Warnings</h2>
+    <h2>Target users</h2>
+    This program is intended to be used by everyone and everything, from naive users to embedded scripts.
 
+    <h2>Comments</h2>
+    None.
 
-   None.
+    <h2>Appendix</h2>
+    Ths list for databases about kssearch is available at following URL:<br />
+    <a href = "http://soap.g-language.org/kbws/data/db_ssearch">http://soap.g-language.org/kbws/data/db_ssearch</a><br />
 
-
-
-<h2>Diagnostic Error Messages</h2>
-
-
-   None.
-
-
-
-<h2>Exit status</h2>
-
-
-   It always exits with a status of 0.
-
-
-
-<h2>Known bugs</h2>
-
-
-   None.
-
-
-
-<h2>See also</h2>
-
-<table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
-<th>Description</th></tr>
-<tr>
-<td><a href="seqret.html">seqret</a></td>
-<td>Reads and writes (returns) sequences</td>
-</tr>
-
-</table>
-
-
-<h2>Author(s)</h2>
-
-
-   Kazuki Oshita (cory @ g-language.org)
-   Institute for Advanced Biosciences, Keio University
-   252-8520 Japan
-
-
-
-<h2>History</h2>
-
-
-   2009 - Written by Kazuki Oshita
-
-
-
-<h2>Target users</h2>
-
-
-   This program is intended to be used by everyone and everything, from
-   naive users to embedded scripts.
-
-
-
-<h2>Comments</h2>
-
-
-<h2>Appendix</h2>
-
-   Ths list for databases about kssearch is available at following URL:<br />
-      <a href = "http://soap.g-language.org/kbws/data/db_ssearch">http://soap.g-language.org/kbws/data/db_ssearch</a>
-<br />
-
-</BODY>
+  </BODY>
 </HTML>
 

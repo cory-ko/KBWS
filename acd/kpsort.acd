@@ -23,14 +23,16 @@ section: advanced [
 
   string: org [
     additional: "Y"
-    default: ""
-    information: "origin"
+    default: "anmal"
+    information: "Source for input sequence organisms.
+                  'Gram-positive bacterium', 'Gram-negative bacterium',
+		  'yeast', 'animal' or 'plant'"
   ]
 
   string: title [
     additional: "Y"
     default: "MYSEQ"
-    information: "title"
+    information: "Title for your job"
   ]
 
 endsection: advanced
@@ -42,7 +44,7 @@ section: output [
 
   outfile: outfile [
     parameter: "Y"
-    knowntype: "psort output"
+    knowntype: "PSORT output"
   ]
 
 endsection: output

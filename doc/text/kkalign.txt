@@ -25,7 +25,7 @@ Description
    method included in KBWS SOAP service.
    This method can be alternatively accessed directly from programming languages
    as SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
+   http://www.g-language.org/kbws/ for more information.
 
 Usage
 
@@ -81,16 +81,16 @@ Command line arguments
                                   format, or reference (input USA)
   [-outseq]            outfile    [.kalign] Kalign output filename
 
-   Additional (Optional) qualifiers: (none)
-   Advanced (Unprompted) qualifiers:
-   -moltype            string     [N/P] specify molecular type
-                                  "N"(nucleotide) or "P"(protein)
-                                  not to use this option, molecular
-                                  type is sugested by kkalign automaticaly
-   -gpo                float      gap creation penalty
-   -gpe                float      gap extension penalty
-   -tpge               float      terminal gap penalty
-   -bonus              float      bonus score
+   Additional (Optional) qualifiers:
+   -moltype            string     [auto] specify molecular type
+                                  'auto' (auto detection by input sequence),
+				  'N'(nucleotide) or 'P'(protein)
+   -gpo                float      Gap creation penalty
+   -gpe                float      Gap extension penalty
+   -tpge               float      Terminal gap penalty
+   -bonus              float      Bonus score
+
+   Advanced (Unprompted) qualifiers: (none)
 
 Input file format
 
@@ -136,6 +136,11 @@ Known bugs
 
 See also
 
+   emma             Multiple sequence alignment (ClustalW wrapper)
+   kclustalw        Multiple sequence alignment using ClustalW 2
+   kmafft           Multiple sequence alignment using MAFFT
+   kmuscle          Multiple sequence alignment using MUSCLE
+   ktcoffee         Multiple sequence alignment using T-COFFEE
    seqret           Reads and writes (returns) sequences
 
 Author(s)
@@ -147,6 +152,7 @@ Author(s)
 History
 
    2009 - Written by Kazuki Oshita
+   Mar 2013 - Update document by Kazuki Oshita
 
 Target users
 

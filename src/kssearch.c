@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
     AjPFile    outf;
     AjPStr     substr;
     AjPStr     inseq = NULL;
-    AjPStr     d;
+    AjPStr     database;
     AjPStr     moltype;
     AjBool     histogram;
     AjBool     nucleotide;
@@ -40,7 +40,7 @@ int main(int argc, char **argv) {
     float      elower;
     AjPStr     dbrange;
     AjPStr     seqrange;
-    d            = ajAcdGetString("d");
+    database     = ajAcdGetString("database");
     moltype      = ajAcdGetString("moltype");
     histogram    = ajAcdGetBoolean("histogram");
     nucleotide   = ajAcdGetBoolean("nucleotide");
@@ -59,7 +59,7 @@ int main(int argc, char **argv) {
 
     seqall   = ajAcdGetSeqall("seqall");
     outf     = ajAcdGetOutfile("outfile");
-    params.d = ajCharNewS(d);
+    params.d = ajCharNewS(database);
     params.moltype = ajCharNewS(moltype);
     if (histogram) {
       params.histogram = xsd__boolean__true_;

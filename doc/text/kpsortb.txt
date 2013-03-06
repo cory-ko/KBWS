@@ -76,15 +76,15 @@ Command line arguments
    Standard (Mandatory) qualifiers:
   [-sequence]          seqall     Protein sequence(s) filename and optional
                                   format, or reference (input USA)
-  [-outseq]            outfile    [.kpsortb] standard Psort output filename
-  [-gram  ]            string     chose GRAM stain [positive / negative]
-                                  (default: negative)
-   Additional (Optional) qualifiers: (none)
-   Advanced (Unprompted) qualifiers:
-   - format            string     output file format (default: normal)
+  [-gram]              string     [negative] Choose GRAM stain from
+                                  'positive' or 'negative'
+  [-outseq]            outfile    [.kpsortb] Standard PSORTB output filename
+   Additional (Optional) qualifiers:
+   -format             string     [normal] Output file format.
                                   - normal: general output format
                                   - short : Short Format (tab delimited)
                                   - long  : Long Format (tab delimited)
+   Advanced (Unprompted) qualifiers: (none)
 
 Input file format
 
@@ -135,6 +135,9 @@ Known bugs
 
 See also
 
+   kpsort           Predicts protein localization for PSORT
+   kpsort2          Predicts protein localization for PSORT2
+   kwolfpsort       Predicts protein localization for WoLF PSORT
    seqret           Reads and writes (returns) sequences
 
 Author(s)
@@ -146,6 +149,7 @@ Author(s)
 History
 
    2009 - Written by Kazuki Oshita
+   Mar 2013 - Update document by Kazuki Oshita
 
 Target users
 

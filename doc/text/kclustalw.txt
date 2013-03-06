@@ -134,7 +134,7 @@ Command line arguments
    Additional (Optional) qualifiers: (none)
    Advanced (Unprompted) qualifiers:
    -alignment          string     [full] method used for pairwise alignment stage
-   -output             string     [aln1] Alignment output format. Values: 'aln1',
+   -outformat          string     [aln1] Alignment output format. Values: 'aln1',
                                   'aln2', 'gcg', 'phylip', 'pir' or 'gde'
    -matrix             string     protein scoring matrix
    -outorder           string     order of sequences in the alignment
@@ -152,7 +152,7 @@ Command line arguments
    -outputtree         string     ['none'] Tree format. Values: 'none', 'nj', 'phylip' or 'dist'
    -tree               boolean    [N] generate phylogenetic tree
    -quicktree          boolean    [N] perform 'fast' alignment
-   -align              boolean    [N] perform alignment
+   -showalign          boolean    [N] perform alignment
    -clustering         string     Tree type. Values: 'nj' or 'upgmp'
    -numiter            integer    number or iterations
    -iteration          string     ['none'] iteration type. Value: 'none', 'alignment' or 'tree'
@@ -214,6 +214,7 @@ FOXP2_MOUSE      QQQQQQQQQQQ-HPGKQAKEQQQQQQQQQ-LAAQQLVFQQQLLQMQQLQQQQHLLSLQRQ 23
 FOXP2_GORGO      QQQQQQQQQ---HPGKQAKEQQQQQQQQQQLAAQQLVFQQQLLQMQQLQQQQHLLSLQRQ 237
 FOXP2_XENLA      QQQQQQPQP---HPGKQAKEQQQ-------LAAQQLVFQQQLLQMQQLQQQQHLLNLQRQ 230
                  ****** *    ***********       *************************.****
+
 FOXP2_PANPA      GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNNSSST 300
 FOXP2_PANTR      GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNNSSST 300
 FOXP2_MACMU      GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNNSSST 298
@@ -257,6 +258,7 @@ FOXP2_MOUSE      PKPLNLVSSVTMSKNMLETSPQSLPQTPTTPTAPVTPITQGPSVITPASVPNVGAIRRRH 47
 FOXP2_GORGO      PKPLNLVSSVTMSKNMLETSPQSLPQTPTTPTAPVTPITQGPSVITPASVPNVGAIRRRH 477
 FOXP2_XENLA      PKPLNLVSTVTMSKNMLETSPQSLPQTPTTPTAPVTPLAQGPSVITPASVPNVGAIRRRH 470
                  ********:****************************::*********************
+
 FOXP2_PANPA      SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA 540
 FOXP2_PANTR      SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA 540
 FOXP2_MACMU      SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA 538
@@ -327,7 +329,6 @@ FOXP2_PANTR:0.00000)
 :0.00078);
 
 
-
 Data files
 
    None.
@@ -366,8 +367,12 @@ Known bugs
 
 See also
 
+   emma             Multiple sequence alignment (ClustalW wrapper)
+   kkalign          Multiple sequence alignment using Kalign
+   kmafft           Multiple sequence alignment using MAFFT
+   kmuscle          Multiple sequence alignment using MUSCLE
+   ktcoffee         Multiple sequence alignment using T-COFFEE
    seqret           Reads and writes (returns) sequences
-   emma   Multiple sequence alignment (ClustalW wrapper)
 
 Author(s)
 
@@ -378,6 +383,9 @@ Author(s)
 History
 
    2009 - Written by Kazuki Oshita
+   Mar 2013 - Update document by Kazuki Oshita
+              Change option name ('output' => 'outformat',
+              'align' => 'showalign') by Kazuki Oshita
 
 Target users
 

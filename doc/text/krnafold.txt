@@ -26,7 +26,7 @@ Description
    method included in KBWS SOAP service.
    This method can be alternatively accessed directly from programming languages
    as SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
+   http://www.g-language.org/kbws/ for more information.
 
 Usage
 
@@ -222,8 +222,8 @@ Known bugs
 
 See also
 
-   seqret           Reads and writes (returns) sequences
    kcentroidfold    Predicts RNA 2D structure using CentroidFold
+   seqret           Reads and writes (returns) sequences
 
 Author(s)
 
@@ -235,7 +235,6 @@ History
 
    2010 - Written by Kazuki Oshita
    Feb 2013 - Update document by Kazuki Oshita
-
 
 Target users
 

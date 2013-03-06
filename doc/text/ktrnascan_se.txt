@@ -25,7 +25,7 @@ Description
    method included in KBWS SOAP service.
    This method can be alternatively accessed directly from programming languages as
    SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
+   http://www.g-language.org/kbws/ for more information.
 
 Usage
 
@@ -329,31 +329,20 @@ Command line arguments
                                   format, or reference (input USA)
   [-outseq]            outfile    [.] tRNAscan-SE output filename
 
-   Additional (Optional) qualifiers: (none)
-   Advanced (Unprompted) qualifiers:
-   -title              string     title of your job
-   -mode               string     specify search mode
-                                    [Default]
-                                    [Cove only (very slow)]
-                                    [tRNAscan only]
-                                    [EufindtRNA only]
-                                    [EufindtRNA -> Cove] 
-                                    [tRNAscan -> Cove]
-   -source             string     training data set
-                                    [Mixed (general tRNA model)] default
-                                    [Eukaryotic]
-                                    [Bacterial]
-                                    [Archaeal]
-                                    [Mito/Chloroplast]
-                                    [Nematode Mito]
-   -gcode              string     Genetic Code for tRNA Isotype Prediction
-                                    [Universal]
-                                    [Ciliate Nuclear]
-                                    [Vertebrate Mito]
-                                    [Invertebrate Mito]
-                                    [Yeast Mito]
-                                    [Echinoderm Mito]
-                                    [Mold & Protozoan Mito]
+   Additional (Optional) qualifiers:
+   -title              string     Title of your job
+   -mode               string     [Default] Search mode. 'Default',
+                                  'Cove only (very slow)', 'tRNAscan only',
+                                  'EufindtRNA only', 'EufindtRNA -> Cove'
+                                  or 'tRNAscan -> Cove'
+   -source             string     [Mixed (general tRNA model)] Training data set.
+                                  'Mixed (general tRNA model)', 'Eukaryotic',
+                                  'Bacterial', 'Archaeal', 'Mito/Chloroplast' or
+                                  'Nematode Mito'
+   -gcode              string     Genetic Code for tRNA Isotype Prediction.
+                                  'Universal', 'Ciliate Nuclear', 'Vertebrate Mito',
+                                  'Invertebrate Mito', 'Yeast Mito', 'Echinoderm Mito'
+                                  or 'Mold & Protozoan Mito'
    -pesudogene         boolean    [N] Disable pseudo gene checking
    -origin             boolean    [N] Show origin of first-pass hits
    -ace                boolean    [N] Display results in ACeDB format
@@ -361,14 +350,14 @@ Command line arguments
    -fpos               boolean    [N] Show false positives from tRNAscan/EufindtRNA
    -breakdown          boolean    [N] Show primary and secondary structure
                                   components to Cove scores
-   -covescore          string     Cove score cutoff. Default cut-off values should
-                                  only be changed for execptional conditions
-   -euparams           string     EufindtRNA search parameters
-                                    [Default] default value
-                                    [Relaxed]
-                                    [Strict (Pavesi params)]
+   -covescore          string     Cove score cutoff.
+                                  Default cut-off values should only be changed for
+                                  execptional conditions
+   -euparams           string     [Default] EufindtRNA search parameters.
+                                  'Default', 'Relaxed' or 'Strict (Pavesi params)'
    -euscore            string     Intermediate score cutoff
 
+   Advanced (Unprompted) qualifiers: (none)
 
 Input file format
 
@@ -409,6 +398,8 @@ Known bugs
 
 See also
 
+   kgenemarkhmm     Finds genes in prokaryotic genomes using GeneMarkhmm
+   kglimmer         Finds genes in prokaryotic genomes using Glimmer
    seqret           Reads and writes (returns) sequences
 
 Author(s)
@@ -420,6 +411,7 @@ Author(s)
 History
 
    2009 - Written by Kazuki Oshita
+   Mar 2013 - Update document by Kazuki Oshita
 
 Target users
 

@@ -1,79 +1,52 @@
-<!--START OF HEADER - DON'T ALTER -->
-
 <HTML>
-<HEAD>
-  <TITLE>
-  EMBOSS: kmafft
-  </TITLE>
-</HEAD>
-<BODY BGCOLOR="#FFFFFF" text="#000000">
+  <HEAD>
+    <TITLE>EMBOSS: kmafft</TITLE>
+  </HEAD>
+
+  <BODY BGCOLOR="#FFFFFF" text="#000000">
+
+    <table align=center border=0 cellspacing=0 cellpadding=0>
+      <tr>
+	<td valign=top>
+	  <a HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
+	</td>
+	<td align=left valign=middle>
+	  <b><font size="+6">kmafft</font></b>
+	</td>
+      </tr>
+    </table>
+
+    <br />
+
+    <H2>Function</H2>
+    Multiple sequence alignment using MAFFT
 
 
+    <h2>Description</h2>
 
-<table align=center border=0 cellspacing=0 cellpadding=0>
-<tr><td valign=top>
-<A HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
-</td>
-<td align=left valign=middle>
-<b><font size="+6">
-kmafft
-</font></b>
-</td></tr>
-</table>
-<br>&nbsp;
-<p>
+    <p>
+      kmafft calculates the multiple sequence alignment utilizing MAFFT. MAFFT has various multiple sequence alignment. They are classified to three types, the progressive method, the iterative refinement method with the WSP score, and the iterative refinement method using both the WSP and consistency score.
+    </p>
 
+    <p>
+      kmafft utilizes MAFFT version 6 Online version provided by Kyushu Univ. Original web-service is located at the following URL:
+    </p>
 
-<!--END OF HEADER-->
+    <p>
+      <a href="http://align.bmr.kyushu-u.ac.jp/mafft/online/server/index.html">http://align.bmr.kyushu-u.ac.jp/mafft/online/server/index.html</a>
+    </p>
 
+    <p>
+      This tools is a subset of Keio Bioinformatics Web Service (KBWS) package, which contains interfaces to bioinformatics web services through a proxy server at Keio University. kmafft is thus an interface of "runMafft" method included in KBWS SOAP service.<br />
+      This method can be alternatively accessed directly from programming languages as SOAP web service. Please refer to the KBWS online documentations <a href="http://www.g-language.org/kbws/">http://www.g-language.org/kbws/</a> for more information.
+    </p>
 
+    <h2>Usage</h2>
 
-
-
-
-<H2>
-    Function
-</H2>
-Multiple sequence alignment using MAFFT
-<!--
-DON'T WRITE ANYTHING HERE.
-IT IS DONE FOR YOU.
--->
-
-
-
-
-<h2>Description</h2>
-
-
-   kmafft calculates the multiple sequence alignment utilizing MAFFT.
-   MAFFT has various multiple sequence alignment. They are classified
-   to three types, the progressive method, the iterative refinement
-   method with the WSP score, and the iterative refinement method using
-   both the WSP and consistency score.
-</p>
-
-<p>   kmafft utilizes MAFFT version 6 Online version provided by Kyushu Univ.
-   Original web-service is located at the following URL:
-</p>
-
-<p>   http://align.bmr.kyushu-u.ac.jp/mafft/online/server/index.html
-</p>
-
-<p>   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
-   which contains interfaces to bioinformatics web services through a proxy
-   server at Keio University. kmafft is thus an interface of "runMafft" method
-   included in KBWS SOAP service.
-   This method can be alternatively accessed directly from programming languages
-   as SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
-</p>
-
-<p>
-
-<h2>Usage</h2>
-
-<table width="90%"><tr><td bgcolor="#CCFFFF"><pre>
+    <table width="90%">
+      <tr>
+	<td bgcolor="#CCFFFF">
+	  <pre>
 
    Here is a sample session with kmafft
 
@@ -118,273 +91,266 @@ FOXP2_PONPY     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLL--QQQQQQQQQQQQQQQQQQQQQQQQQQQ
 FOXP2_MOUSE     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLL-QQQQQQQQQQQQQQQQQQQQQQQQQQQQ
 FOXP2_HUMAN     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLL-QQQQQQQQQQQQQQQQQQQQQQQQQQQQ
 
+	  </pre>
+	</td>
+      </tr>
+    </table>
 
+    <h2>Command line arguments</h2>
 
-</pre></td></tr></table>
+    <table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+      <tr bgcolor="#FFFFCC">
+	<th align="left">Qualifier</th>
+	<th align="left">Type</th>
+	<th align="left">Description</th>
+	<th align="left">Allowed values</th>
+	<th align="left">Default</th>
+      </tr>
 
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
+      </tr>
 
-<h2>Command line arguments</h2>
+      <tr bgcolor="#FFFFCC">
+	<td>[-seqall]<br>(Parameter 1)</td>
+	<td>seqall</td>
+	<td>(Gapped) sequences filename and optional format, or reference (input USA)</td>
+	<td>Readable sequence(s)</td>
+	<td><b>Required</b></td>
+      </tr>
 
-<table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
-<tr bgcolor="#FFFFCC">
-<th align="left">Qualifier</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-<th align="left">Allowed values</th>
-<th align="left">Default</th>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>[-outfile]<br>(Parameter 2)</td>
+	<td>outfile</td>
+	<td>MAFFT Output filename</td>
+	<td>Output file</td>
+	<td><i>&lt;*&gt;</i>.kmafft</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Additional (Optional) qualifiers</th>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>[-seqall]<br>(Parameter 1)</td>
-<td>seqall</td>
-<td>(Gapped) sequence(s) filename and optional format, or reference (input USA)</td>
-<td>Readable sequence(s)</td>
-<td>2</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-strategy</td>
+	<td>string</td>
+	<td>
+	  Calculation strategy.
+	  <ul>
+            <li>Strategy (automatic)</li>
+            <ul>
+	      <li>"auto"    : Moderately accurate (FFT-NS-2, FFT-NS-i or L-INS-i; depends on data size)</li>
+              <li>"FFT-NS-2": Moderately fast</li>
+	    </ul>
+	    <li>Strategy (manual)</li>
+	    <ul>
+              <li>"FFT-NS-1": Very fast; recommended for >2,000 sequences; progressive method</li>
+              <li>"FFT-NS-2": Fast; progressive method</li>
+              <li>"Medium"  : Medium; iterative refinement method, two cycles only</li>
+              <li>"FFT-NS-i": Slow; iterative refinement method</li>
+              <li>"E-INS-i" : Very slow; recommended for &lt;200 sequences with multiple conserved domains and long gaps</li>
+              <li>"L-INS-i" : Very slow; recommended for &lt;200 sequences with one conserved domain and long gaps</li>
+	      <li>"G-INS-i" : Very slow; recommended for &lt;200 sequences with global homology</li>
+              <li>"Q-INS-i" : Extremely slow; secondary structure of RNA is considered; recommended for a global alignment of highly diverged ncRNAs with &lt;200 sequences × &lt;1,000 nucleotid</li>
+	    </ul>
+	</td>
+	<td>Any string</td>
+	<td>auto</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>[-outfile]<br>(Parameter 2)</td>
-<td>outfile</td>
-<td>Output file name</td>
-<td>Output file</td>
-<td><i>&lt;*&gt;</i>.kmafft</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-outorder</td>
+	<td>string</td>
+	<td>
+	  output order
+	  <ul>
+            <li>"input" : same as input</li>
+            <li>"aligned" : aligned</li>
+	  </ul>
+	</td>
+	<td>Any string</td>
+	<td>aligned</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Additional (Optional) qualifiers</th>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-op</td>
+	<td>float</td>
+	<td>Gap opening penalty </td>
+	<td>Float (1.0 - 3.0)</td>
+	<td>1.53</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-strategy</td>
-<td>string</td>
-<td>strategy to calculate</td>
-<td>Any string</td>
-<td>auto</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-ep</td>
+	<td>float</td>
+	<td>Offset value</td>
+	<td>Float (0.0 - 1.0)</td>
+	<td>0.0</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-outorder</td>
-<td>string</td>
-<td>output order</td>
-<td>Any string</td>
-<td>aligned</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-scorematrix</td>
+	<td>string</td>
+	<td>
+	  Scoring matrix.<br />
+	  If you don't not use this option, kmafft judges whether your sequence is amino acid or nucleotide automatically, and uses appropriate default value.
+	  <ul>
+	    <li>Protein seq</li>
+	      <ul>
+		<li>"BLOSUM30"</li>
+		<li>"BLOSUM45"</li>
+		<li>"BLOSUM62"(default)</li>
+		<li>"BLOSUM80"</li>
+		<li>"JTT100"</li>
+		<li>"JTT200"</li>
+	    </ul>
+	    <li>Nucleotide seq</li>
+	    <ul>
+	      <li>"1PAM"</li>
+	      <li>"20PAM"</li>
+	      <li>"200PAM"(default)</li>
+	  </ul>
+	</td>
+	<td>Any string</td>
+	<td>["BLOSUM62"(protein) or "200PAM"(nuc)]</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-op</td>
-<td>float</td>
-<td>gap opening penalty (1.0 - 3.0)</td>
-<td>Any numeric value</td>
-<td>1.53</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-homologs</td>
+	<td>boolean</td>
+	<td>Collects homologs from SwissProt by BLAST and performs profile-based alignments.<br />
+	  This option performs only given sequence is protein.</td>
+	<td>Boolean value Yes/No</td>
+	<td>No</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-ep</td>
-<td>float</td>
-<td>offset value (0.0 - 1.0)</td>
-<td>Any numeric value</td>
-<td>0.0</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-showhomologs</td>
+	<td>boolean</td>
+	<td>Show homologs sequence.<br />
+	  This option performs only given sequence is protein.</td>
+	<td>Boolean value Yes/No</td>
+	<td>No</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-scorematrix</td>
-<td>string</td>
-<td>scoring matrix</td>
-<td>Any string</td>
-<td>&nbsp;</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-numhomologs</td>
+	<td>integer</td>
+	<td>Number of homologs sequences.<br />
+	  This option performs only -showhomologs is 'on'.</td>
+	<td>Any integer value</td>
+	<td>50</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-homologs</td>
-<td>boolean</td>
-<td>collects homologs (only protein)</td>
-<td>Boolean value Yes/No</td>
-<td>No</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-threshold</td>
+	<td>float</td>
+	<td>Threshold of homologs sequences.<br />
+	  This option performs only -showhomologs is 'on'.</td>
+	<td>Any numeric value</td>
+	<td>1e-10</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-showhomologs</td>
-<td>boolean</td>
-<td>show homologs (if any)</td>
-<td>Boolean value Yes/No</td>
-<td>No</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-numhomologs</td>
-<td>integer</td>
-<td>number of homologs</td>
-<td>Any integer value</td>
-<td>50</td>
-</tr>
+      <tr>
+	<td colspan=5>(none)</td>
+      </tr>
+    </table>
 
-<tr bgcolor="#FFFFCC">
-<td>-threshold</td>
-<td>float</td>
-<td>threshold of homologs</td>
-<td>Any numeric value</td>
-<td>1e-10</td>
-</tr>
+    <h2>Input file format</h2>
+    kmafft can use any genome sequence data that seqret can read.
 
-<tr bgcolor="#FFFFCC">
-<td>-referenceseq</td>
-<td>string</td>
-<td>sorry. this option is not ready</td>
-<td>Any string</td>
-<td>&nbsp;</td>
-</tr>
+    <h2>Output file format</h2>
+    The output from kmafft is general MAFFT output format (CLUSTAL format alignment).
 
-<tr bgcolor="#FFFFCC">
-<td>-harrplot</td>
-<td>string</td>
-<td>sorry. this option is not ready.</td>
-<td>Any string</td>
-<td>&nbsp;</td>
-</tr>
+    <h2>Data files</h2>
+    None.
 
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
-</tr>
+    <h2>Notes</h2>
+    None.
 
-<tr>
-<td colspan=5>(none)</td>
-</tr>
-
-</table>
-
-
-<h2>Input file format</h2>
-
-
-  kmafft can use any genome sequence data that seqret can read.
-
-
-
-<h2>Output file format</h2>
-
-
-   The output from kmafft is general MAFFT output format (CLUSTAL format alignment).
-
-
-
-<h2>Data files</h2>
-
-
-   None.
-
-
-
-<h2>Notes</h2>
-
-
-   None.
-
-
-
-<h2>References</h2>
-
-
-<pre>
-
-   Katoh, K.,(2009) Multiple Alignment of DNA Sequences with MAFFT,
+    <h2>References</h2>
+    <pre>
+      Katoh, K.,(2009) Multiple Alignment of DNA Sequences with MAFFT,
       Methods in Molecular Biology, 537, 39-64.
 
-   Katoh, K., and Toh, H.,(2008) Recent developments in the MAFFT multiple
+      Katoh, K., and Toh, H.,(2008) Recent developments in the MAFFT multiple
       sequence alignment program, Briefings in Bioinformatics, 9, 286-298.
 
-   Katoh, K., et al.,(2005) MAFFT version 5: improvement in accuracy of multiple
+      Katoh, K., et al.,(2005) MAFFT version 5: improvement in accuracy of multiple
       sequence alignment, Nucleic Acids Res, 33, 511-518.
 
-   Katoh, K., et al.,(2002) MAFFT: a novel method for rapid multiple sequence
+      Katoh, K., et al.,(2002) MAFFT: a novel method for rapid multiple sequence
       alignment based on fast, Nucleic Acids Res, 30, 3059-3066.
+    </pre>
 
+    <h2>Warnings</h2>
+    None.
 
-</pre>
+    <h2>Diagnostic Error Messages</h2>
+    None.
 
+    <h2>Exit status</h2>
+    It always exits with a status of 0.
 
-<h2>Warnings</h2>
+    <h2>Known bugs</h2>
+    None.
 
+    <h2>See also</h2>
+    <table border cellpadding=4 bgcolor="#FFFFF0">
+      <tr>
+	<th>Program name</th>
+	<th>Description</th>
+      </tr>
 
-   None.
+      <tr>
+        <td><a href="emma.html">emma</a></td>
+        <td>Multiple sequence alignment (ClustalW wrapper)</td>
+      </tr>
 
+      <tr>
+        <td><a href="kclustalw.html">kclustalw</a></td>
+        <td>Multiple sequence alignment using ClustalW 2</td>
+      </tr>
 
+      <tr>
+        <td><a href="kkalign.html">kkalign</a></td>
+        <td>Multiple sequence alignment using Kalign</td>
+      </tr>
 
-<h2>Diagnostic Error Messages</h2>
+      <tr>
+        <td><a href="kmuscle.html">kmuscle</a></td>
+        <td>Multiple sequence alignment using MUSCLE</td>
+      </tr>
 
+      <tr>
+        <td><a href="ktcoffee.html">ktcoffee</a></td>
+        <td>Multiple sequence alignment using T-COFFEE</td>
+      </tr>
 
-   None.
+      <tr>
+	<td><a href="seqret.html">seqret</a></td>
+	<td>Reads and writes (returns) sequences</td>
+      </tr>
+    </table>
 
+    <h2>Author(s)</h2>
+    Kazuki Oshita (cory @ g-language.org)<br />
+    Institute for Advanced Biosciences, Keio University<br />
+    252-8520 Japan
 
+    <h2>History</h2>
+    2009 - Written by Kazuki Oshita<br />
+    Mar 2013 - Update document by Kazuki Oshita
 
-<h2>Exit status</h2>
+    <h2>Target users</h2>
+    This program is intended to be used by everyone and everything, from naive users to embedded scripts.
 
+    <h2>Comments</h2>
+    None.
 
-   It always exits with a status of 0.
-
-
-
-<h2>Known bugs</h2>
-
-
-   None.
-
-
-
-<h2>See also</h2>
-
-<table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
-<th>Description</th></tr>
-<tr>
-<td><a href="seqret.html">seqret</a></td>
-<td>Reads and writes (returns) sequences</td>
-</tr>
-
-</table>
-
-
-<h2>Author(s)</h2>
-
-
-   Kazuki Oshita (cory @ g-language.org)
-   Institute for Advanced Biosciences, Keio University
-   252-8520 Japan
-
-
-
-<h2>History</h2>
-
-
-   2009 - Written by Kazuki Oshita
-
-
-
-<h2>Target users</h2>
-
-
-   This program is intended to be used by everyone and everything, from
-   naive users to embedded scripts.
-
-
-
-<h2>Comments</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</BODY>
+  </BODY>
 </HTML>
-

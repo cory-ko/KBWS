@@ -28,8 +28,10 @@ section: additional [
 
   string: outorder [
     additional: "Y"
+    default: "aligned"
     information: "Sequence order in output alignment (aligned or input)"
   ]
+
 endsection: additional
 
 section: output [

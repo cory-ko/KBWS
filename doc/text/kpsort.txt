@@ -143,6 +143,11 @@ Command line arguments
   [-outseq]            outfile    [.kpsort] standard Psort output filename
 
    Additional (Optional) qualifiers: (none)
+   -org                string     [animal] Source for input sequence organisms.
+                                  'Gram-positive bacterium', 'Gram-negative bacterium',
+				  'yeast', 'animal' or 'plant'
+   -title              string     [MYSEQ] Title for your job
+   
    Advanced (Unprompted) qualifiers: (none)
 
 Input file format
@@ -184,6 +189,9 @@ Known bugs
 
 See also
 
+   kpsort2          Predicts protein localization for PSORT2
+   kpsortb          Predicts protein localization for PSORT B
+   kwolfpsort       Predicts protein localization for WoLF PSORT
    seqret           Reads and writes (returns) sequences
 
 Author(s)
@@ -195,6 +203,8 @@ Author(s)
 History
 
    2009 - Written by Kazuki Oshita
+   Mar 2013 - Update document by Kazuki Oshita
+
 
 Target users
 

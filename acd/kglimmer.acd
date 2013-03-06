@@ -23,13 +23,15 @@ section: advanced [
 
   string: topology [
     additional: "Y"
-    default: ""
-    information: "liner or circular"
+    default: "circular"
+    information: "Genome topology ('circular' or 'linear')"
   ]
+
   integer: gencode [
     additional: "Y"
-    default: ""
-    information: "11"
+    default: "11"
+    information: "Genetic code. '11': Bacteria or Archaea,
+                 '4': Mycoplasma/Spiroplasma"
   ]
 
 endsection: advanced
@@ -42,6 +44,7 @@ section: output [
   outfile: outfile [
     parameter: "Y"
     knowntype: "glimmer output"
+    information: "Glimmer output filename"
   ]
 
 endsection: output

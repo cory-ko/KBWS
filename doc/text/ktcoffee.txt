@@ -28,7 +28,7 @@ Description
    method included in KBWS SOAP service.
    This method can be alternatively accessed directly from programming languages
    as SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
+   http://www.g-language.org/kbws/ for more information.
 
 Usage
 
@@ -48,13 +48,17 @@ Command line arguments
    Standard (Mandatory) qualifiers:
   [-sequence]          seqall     (Gapped) sequence(s) filename and optional
                                   format, or reference (input USA)
-  [-outseq]            outfile    [.ktcoffee] T-Coffee output filename
+  [-outfile]           outfile    [.ktcoffee] T-Coffee output filename
+  [-dndoutfile]        outfile    [.dnd] Dendrogram (tree file) from T-Coffee
+                                  output file
+  [-alnoutfile]        outfile    [.aln] (Aligned) output sequence set
 
-   Additional (Optional) qualifiers: (none)
-   Advanced (Unprompted) qualifiers:
+   Additional (Optional) qualifiers:
    -matrix             string     Scoring matrix to use (blosum' or 'pam')
    -outorder           string     [aligned] Sequence order in output alignment
                                   ('aligned' or 'input')
+
+   Advanced (Unprompted) qualifiers: (none)
 
 Input file format
 
@@ -373,8 +377,12 @@ Known bugs
 
 See also
 
-   seqret           Reads and writes (returns) sequences
    emma             Multiple sequence alignment (ClustalW wrapper)
+   kclustalw        Multiple sequence alignment using ClustalW 2
+   kkalign          Multiple sequence alignment using Kalign
+   kmafft           Multiple sequence alignment using MAFFT
+   kmuscle          Multiple sequence alignment using MUSCLE
+   seqret           Reads and writes (returns) sequences
 
 Author(s)
 
@@ -385,6 +393,7 @@ Author(s)
 History
 
    2009 - Written by Kazuki Oshita
+   Mar 2013 - Update document by Kazuki Oshita
 
 Target users
 

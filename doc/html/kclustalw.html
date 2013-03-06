@@ -1,81 +1,51 @@
-<!--START OF HEADER - DON'T ALTER -->
-
 <HTML>
-<HEAD>
-  <TITLE>
-  EMBOSS: kclustalw
-  </TITLE>
-</HEAD>
-<BODY BGCOLOR="#FFFFFF" text="#000000">
+  <HEAD>
+    <TITLE>EMBOSS: kclustalw</TITLE>
+  </HEAD>
+
+  <BODY BGCOLOR="#FFFFFF" text="#000000">
+
+    <table align=center border=0 cellspacing=0 cellpadding=0>
+      <tr>
+	<td valign=top>
+	  <a HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
+	</td>
+	<td align=left valign=middle>
+	  <b><font size="+6">kclustalw</font></b>
+	</td>
+      </tr>
+    </table>
+
+    <br />
+
+    <H2>Function</H2>
+    Multiple sequence alignment using ClustalW 2
 
 
+    <h2>Description</h2>
 
-<table align=center border=0 cellspacing=0 cellpadding=0>
-<tr><td valign=top>
-<A HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
-</td>
-<td align=left valign=middle>
-<b><font size="+6">
-kclustalw
-</font></b>
-</td></tr>
-</table>
-<br>&nbsp;
-<p>
+    <p>
+      kclustalw calculates global multiple sequence alignment of DNA and protein sequence utilizing ClustalW 2. ClustalW 2 is a general purpose multiple sequence alignment program for DNA or protein. It calculates the best match for the selected sequence, and lines them up so that identifers, similarities, and differences can be seen.
+    </p>
 
+    <p>
+      kclustalw utilizes ClustalW 2 SOAP service provided by EBI (European Bioinformatics Institute). Original web-service is located at the following URL:
+    </p>
 
-<!--END OF HEADER-->
+    <p>
+      <a href="http://www.ebi.ac.uk/Tools/clustalw2/index.html">http://www.ebi.ac.uk/Tools/clustalw2/index.html</a>
+    </p>
 
+    <p>
+      This tools is a subset of Keio Bioinformatics Web Service (KBWS) package, which contains interfaces to bioinformatics web services through a proxy server at Keio University. kclustalw is thus an interface of "runClustalw" method included in KBWS SOAP service.<br />
+      This method can be alternatively accessed directly from programming languages as SOAP web service. Please refer to the KBWS online documentations <a href="http://www.g-language.org/kbws/">http://www.g-language.org/kbws/</a> for more information.
+    </p>
 
-
-
-
-
-<H2>
-    Function
-</H2>
-Multiple sequence alignment using ClustalW 2
-<!--
-DON'T WRITE ANYTHING HERE.
-IT IS DONE FOR YOU.
--->
-
-
-
-
-<h2>Description</h2>
-
-
-   kclustalw calculates global multiple sequence alignment of DNA and
-   protein sequence utilizing ClustalW 2.
-   ClustalW 2 is a general purpose multiple sequence alignment program
-   for DNA or protein. It calculates the best match for the selected
-   sequence, and lines them up so that identifers, similarities, and
-   differences can be seen.
-</p>
-
-<p>   kclustalw utilizes ClustalW 2 SOAP service provided by EBI (European
-   Bioinformatics Institute). Original web-service is located at the
-   following URL:
-</p>
-
-<p>   http://www.ebi.ac.uk/Tools/clustalw2/index.html
-</p>
-
-<p>   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
-   which contains interfaces to bioinformatics web services through a proxy
-   server at Keio University. kclustalw is thus an interface of "runClustalw"
-   method included in KBWS SOAP service.
-   This method can be alternatively accessed directly from programming languages
-   as SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
-</p>
-
-<p>
-
-<h2>Usage</h2>
-
-<table width="90%"><tr><td bgcolor="#CCFFFF"><pre>
+    <h2>Usage</h2>
+    <table width="90%">
+      <tr>
+	<td bgcolor="#CCFFFF">
+	  <pre>
 
    Here is a sample session with kclustalw
 
@@ -164,255 +134,391 @@ Alignment Score 153560
 
 CLUSTAL-Alignment file created  [/ebi/extserv/clustalw-work/interactive/2010010801/clustalw2-20100108-0149342273.aln]
 
+	  </pre>
+	</td>
+      </tr>
+    </table>
 
 
+    <h2>Command line arguments</h2>
+    <table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+      <tr bgcolor="#FFFFCC">
+	<th align="left">Qualifier</th>
+	<th align="left">Type</th>
+	<th align="left">Description</th>
+	<th align="left">Allowed values</th>
+	<th align="left">Default</th>
+      </tr>
 
-</pre></td></tr></table>
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
+      </tr>
 
+      <tr bgcolor="#FFFFCC">
+	<td>[-seqall]<br>(Parameter 1)</td>
+	<td>seqall</td>
+	<td>(Gapped) sequence(s) filename and optional format, or reference (input USA)</td>
+	<td>Readable sequence(s)</td>
+	<td><b>Required</b></td>
+      </tr>
 
-<h2>Command line arguments</h2>
+      <tr bgcolor="#FFFFCC">
+	<td>[-outfile]<br>(Parameter 2)</td>
+	<td>outfile</td>
+	<td>Output file name</td>
+	<td>Output file</td>
+	<td><i>&lt;*&gt;</i>.kclustalw</td>
+      </tr>
 
-<table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
-<tr bgcolor="#FFFFCC">
-<th align="left">Qualifier</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-<th align="left">Allowed values</th>
-<th align="left">Default</th>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>[-dndoutfile]<br>(Parameter 3)</td>
+	<td>outfile</td>
+	<td>Dendrogram (tree file) from clustalw output file</td>
+	<td>Output file</td>
+	<td><i>&lt;*&gt;</i>.kclustalw</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Additional (Optional) qualifiers</th>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>[-seqall]<br>(Parameter 1)</td>
-<td>seqall</td>
-<td>(Gapped) sequence(s) filename and optional format, or reference (input USA)</td>
-<td>Readable sequence(s)</td>
-<td>2</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-alignment</td>
+	<td>string</td>
+	<td>method used for pairwise alignment stage</td>
+	<td>Any string</td>
+	<td>full</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>[-outfile]<br>(Parameter 2)</td>
-<td>outfile</td>
-<td>Output file name</td>
-<td>Output file</td>
-<td><i>&lt;*&gt;</i>.kclustalw</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-outformat</td>
+	<td>string</td>
+	<td>Alignment output format. Values: 'aln1', 'aln2', 'gcg', 'phylip', 'pir' or 'gde'</td>
+	<td>Any string</td>
+	<td>aln1</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>[-dndoutfile]<br>(Parameter 3)</td>
-<td>outfile</td>
-<td>Dendrogram (tree file) from clustalw output file</td>
-<td>Output file</td>
-<td><i>&lt;*&gt;</i>.kclustalw</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-matrix</td>
+	<td>string</td>
+	<td>protein scoring matrix</td>
+	<td>Any string</td>
+	<td>&nbsp;</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Additional (Optional) qualifiers</th>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-outorder</td>
+	<td>string</td>
+	<td>order of sequences in the alignment</td>
+	<td>Any string</td>
+	<td>aligned</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-alignment</td>
-<td>string</td>
-<td>method used for pairwise alignment stage</td>
-<td>Any string</td>
-<td>full</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-ktup</td>
+	<td>integer</td>
+	<td>word size</td>
+	<td>Any integer value</td>
+	<td>0</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-output</td>
-<td>string</td>
-<td>Alignment output format. Values: 'aln1', 'aln2', 'gcg', 'phylip', 'pir' or 'gde'</td>
-<td>Any string</td>
-<td>aln1</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-window</td>
+	<td>integer</td>
+	<td>window size around best diagonals</td>
+	<td>Any integer value</td>
+	<td>0</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-matrix</td>
-<td>string</td>
-<td>protein scoring matrix</td>
-<td>Any string</td>
-<td>&nbsp;</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-gapopen</td>
+	<td>integer</td>
+	<td>gap creation penalty</td>
+	<td>Any integer value</td>
+	<td>0</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-outorder</td>
-<td>string</td>
-<td>order of sequences in the alignment</td>
-<td>Any string</td>
-<td>aligned</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-gapext</td>
+	<td>float</td>
+	<td>gap extension penalty</td>
+	<td>Any numeric value</td>
+	<td>0.000</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-ktup</td>
-<td>integer</td>
-<td>word size</td>
-<td>Any integer value</td>
-<td>0</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-gapdist</td>
+	<td>integer</td>
+	<td>gap separation penalty</td>
+	<td>Any integer value</td>
+	<td>0</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-window</td>
-<td>integer</td>
-<td>window size around best diagonals</td>
-<td>Any integer value</td>
-<td>0</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-endgaps</td>
+	<td>boolean</td>
+	<td>Do not score end gaps</td>
+	<td>Boolean value Yes/No</td>
+	<td>No</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-gapopen</td>
-<td>integer</td>
-<td>gap creation penalty</td>
-<td>Any integer value</td>
-<td>0</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-pairgap</td>
+	<td>integer</td>
+	<td>Gap penalty</td>
+	<td>Any integer value</td>
+	<td>0</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-gapext</td>
-<td>float</td>
-<td>gap extension penalty</td>
-<td>Any numeric value</td>
-<td>0.000</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-topdiags</td>
+	<td>integer</td>
+	<td>Top diagonals to consider</td>
+	<td>Any integer value</td>
+	<td>0</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-gapdist</td>
-<td>integer</td>
-<td>gap separation penalty</td>
-<td>Any integer value</td>
-<td>0</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-score</td>
+	<td>string</td>
+	<td>score type</td>
+	<td>Any string</td>
+	<td>&nbsp;</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-endgaps</td>
-<td>boolean</td>
-<td>Do not score end gaps</td>
-<td>Boolean value Yes/No</td>
-<td>No</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-tossgaps</td>
+	<td>boolean</td>
+	<td>Discard gap regions when calculating tree</td>
+	<td>Boolean value Yes/No</td>
+	<td>No</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-pairgap</td>
-<td>integer</td>
-<td>Gap penalty</td>
-<td>Any integer value</td>
-<td>0</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-kimura</td>
+	<td>boolean</td>
+	<td>Use Kimura's correction</td>
+	<td>Boolean value Yes/No</td>
+	<td>No</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-topdiags</td>
-<td>integer</td>
-<td>Top diagonals to consider</td>
-<td>Any integer value</td>
-<td>0</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-outputtree</td>
+	<td>string</td>
+	<td>Tree format. Values: 'none', 'nj', 'phylip' or 'dist'</td>
+	<td>Any string</td>
+	<td>none</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-score</td>
-<td>string</td>
-<td>score type</td>
-<td>Any string</td>
-<td>&nbsp;</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-tree</td>
+	<td>boolean</td>
+	<td>Generate phylogenetic tree</td>
+	<td>Boolean value Yes/No</td>
+	<td>No</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-tossgaps</td>
-<td>boolean</td>
-<td>Discard gap regions when calculating tree</td>
-<td>Boolean value Yes/No</td>
-<td>No</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-quicktree</td>
+	<td>boolean</td>
+	<td>Perform 'fast' alignment</td>
+	<td>Boolean value Yes/No</td>
+	<td>No</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-kimura</td>
-<td>boolean</td>
-<td>Use Kimura's correction</td>
-<td>Boolean value Yes/No</td>
-<td>No</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-showalign</td>
+	<td>boolean</td>
+	<td>Perform alignment</td>
+	<td>Boolean value Yes/No</td>
+	<td>No</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-outputtree</td>
-<td>string</td>
-<td>Tree format. Values: 'none', 'nj', 'phylip' or 'dist'</td>
-<td>Any string</td>
-<td>none</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-clustering</td>
+	<td>string</td>
+	<td>Tree type. Values: 'nj' or 'upgmp'</td>
+	<td>Any string</td>
+	<td>&nbsp;</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-tree</td>
-<td>boolean</td>
-<td>Generate phylogenetic tree</td>
-<td>Boolean value Yes/No</td>
-<td>No</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-numiter</td>
+	<td>integer</td>
+	<td>Number of iterations</td>
+	<td>Any integer value</td>
+	<td>0</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-quicktree</td>
-<td>boolean</td>
-<td>Perform 'fast' alignment</td>
-<td>Boolean value Yes/No</td>
-<td>No</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-iteration</td>
+	<td>string</td>
+	<td>Iteration type. Values: 'none', 'alignment' or 'tree'</td>
+	<td>Any string</td>
+	<td>none</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-align</td>
-<td>boolean</td>
-<td>Perform alignment</td>
-<td>Boolean value Yes/No</td>
-<td>No</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-clustering</td>
-<td>string</td>
-<td>Tree type. Values: 'nj' or 'upgmp'</td>
-<td>Any string</td>
-<td>&nbsp;</td>
-</tr>
+      <tr>
+	<td colspan=5>(none)</td>
+      </tr>
+    </table>
 
-<tr bgcolor="#FFFFCC">
-<td>-numiter</td>
-<td>integer</td>
-<td>Number of iterations</td>
-<td>Any integer value</td>
-<td>0</td>
-</tr>
+    <h2>Input file format</h2>
+    kclustalw can use any genome sequence data that seqret can read.
 
-<tr bgcolor="#FFFFCC">
-<td>-iteration</td>
-<td>string</td>
-<td>Iteration type. Values: 'none', 'alignment' or 'tree'</td>
-<td>Any string</td>
-<td>none</td>
-</tr>
+    <h2>Output file format</h2>
+    <h3>Output files for usage example</h3>
+    <h4>File: foxp2_gorgo.aln</h4>
+    <table width="90%">
+      <tr>
+	<td bgcolor="#CCFFCC">
+	  <pre>
+FOXP2_PANPA      MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA 60
+FOXP2_PANTR      MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA 60
+FOXP2_MACMU      MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA 60
+FOXP2_HUMAN      MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA 60
+FOXP2_HYLLA      MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA 60
+FOXP2_PONPY      MMQESVTETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA 60
+FOXP2_MOUSE      MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA 60
+FOXP2_GORGO      MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSGDTSSEVSTVELLHLQQQQALQA 60
+FOXP2_XENLA      MMQESATETISNSSMNQNGMSTLSSQLDAGSRDGRSSSDTSSEVSTVELLHLQQQQALQA 60
+                 *****.*******************************.**********************
 
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
-</tr>
+FOXP2_PANPA      ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA 120
+FOXP2_PANTR      ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA 120
+FOXP2_MACMU      ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA 120
+FOXP2_HUMAN      ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA 120
+FOXP2_HYLLA      ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA 120
+FOXP2_PONPY      ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA 120
+FOXP2_MOUSE      ARQLLLQQQTSGLKSPKSSEKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA 120
+FOXP2_GORGO      ARQLLLQQQTSGLKSPKSSDKQRPLQVPVSVAMMTPQVITPQQMQQILQQQVLSPQQLQA 120
+FOXP2_XENLA      ARQLLLQQQTSGLKSPKNNEKQRPLQVPVSMAMMTPQVITPQQMQQILQQQVLSPQQLQA 120
+                 *****************..:**********:*****************************
 
-<tr>
-<td colspan=5>(none)</td>
-</tr>
+FOXP2_PANPA      LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ 180
+FOXP2_PANTR      LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ 180
+FOXP2_MACMU      LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ 180
+FOXP2_HUMAN      LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ 180
+FOXP2_HYLLA      LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ 180
+FOXP2_PONPY      LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ 180
+FOXP2_MOUSE      LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ 180
+FOXP2_GORGO      LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ 180
+FOXP2_XENLA      LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLLQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ 180
+                 ************************************************************
 
-</table>
+FOXP2_PANPA      QQQQQQQQQQQQHPGKQAKEQQQQQQQQQQLAAQQLVFQQQLLQMQQLQQQQHLLSLQRQ 240
+FOXP2_PANTR      QQQQQQQQQQQQHPGKQAKEQQQQQQQQQQLAAQQLVFQQQLLQMQQLQQQQHLLSLQRQ 240
+FOXP2_MACMU      QQQQQQQQQQ--HPGKQAKEQQQQQQQQQQLAAQQLVFQQQLLQMQQLQQQQHLLSLQRQ 238
+FOXP2_HUMAN      QQQQQQQQQQQ-HPGKQAKEQQQQQQQQQQLAAQQLVFQQQLLQMQQLQQQQHLLSLQRQ 239
+FOXP2_HYLLA      QQQQQQQQQQ--HPGKQAKEQQQQQQQQQ-LAAQQLVFQQQLLQMQQLQQQQHLLSLQRQ 237
+FOXP2_PONPY      QQQQQQQQQQ--HPGKQAKEQQQQQQQQQ-LAAQQLVFQQQLLQMQQLQQQQHLLSLQRQ 237
+FOXP2_MOUSE      QQQQQQQQQQQ-HPGKQAKEQQQQQQQQQ-LAAQQLVFQQQLLQMQQLQQQQHLLSLQRQ 238
+FOXP2_GORGO      QQQQQQQQQ---HPGKQAKEQQQQQQQQQQLAAQQLVFQQQLLQMQQLQQQQHLLSLQRQ 237
+FOXP2_XENLA      QQQQQQPQP---HPGKQAKEQQQ-------LAAQQLVFQQQLLQMQQLQQQQHLLNLQRQ 230
+                 ****** *    ***********       *************************.****
 
+FOXP2_PANPA      GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNNSSST 300
+FOXP2_PANTR      GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNNSSST 300
+FOXP2_MACMU      GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNNSSST 298
+FOXP2_HUMAN      GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNNSSST 299
+FOXP2_HYLLA      GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNNSSST 297
+FOXP2_PONPY      GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNNSSST 297
+FOXP2_MOUSE      GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNNSSST 298
+FOXP2_GORGO      GLISIPPGQAALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNNSSST 297
+FOXP2_XENLA      GLISIPPSQSALPVQSLPQAGLSPAEIQQLWKEVTGVHSMEDNGIKHGGLDLTTNISSST 290
+                 *******.*:********************************************* ****
 
-<h2>Input file format</h2>
+FOXP2_PANPA      TSSTTSKASPPITHHSIVNGQSSVLNARRDSSSHEETGASHTLYGHGVCKWPGCESICED 360
+FOXP2_PANTR      TSSTTSKASPPITHHSIVNGQSSVLNARRDSSSHEETGASHTLYGHGVCKWPGCESICED 360
+FOXP2_MACMU      TSSTTSKASPPITHHSIVNGQSSVLNARRDSSSHEETGASHTLYGHGVCKWPGCESICED 358
+FOXP2_HUMAN      TSSNTSKASPPITHHSIVNGQSSVLSARRDSSSHEETGASHTLYGHGVCKWPGCESICED 359
+FOXP2_HYLLA      TSSTTSKASPPITHHSIVNGQSSVLNARRDSSSHEETGASHTLYGHGVCKWPGCESICED 357
+FOXP2_PONPY      TSSTTSKASPPITHHSIVNGQSSVLNARRDSSSHEETGASHTLYGHGVCKWPGCESICED 357
+FOXP2_MOUSE      TSSTTSKASPPITHHSIVNGQSSVLNARRDSSSHEETGASHTLYGHGVCKWPGCESICED 358
+FOXP2_GORGO      TSSTTSKASPPITHHSIVNGQSSVLNARRDSSSHEETGASHTLYGHGVCKWPGCESICED 357
+FOXP2_XENLA      TSTTTSKASPPITHHSLLNGQASVLSARRDSSSHEETGASHTLYGHGVCKWPGCENICED 350
+                 **:.************::***:***.*****************************.****
 
+FOXP2_PANPA      FGQFLKHLNNEHALDDRSTAQCRVQMQVVQQLEIQLSKERERLQAMMTHLHMRPSEPKPS 420
+FOXP2_PANTR      FGQFLKHLNNEHALDDRSTAQCRVQMQVVQQLEIQLSKERERLQAMMTHLHMRPSEPKPS 420
+FOXP2_MACMU      FGQFLKHLNNEHALDDRSTAQCRVQMQVVQQLEIQLSKERERLQAMMTHLHMRPSEPKPS 418
+FOXP2_HUMAN      FGQFLKHLNNEHALDDRSTAQCRVQMQVVQQLEIQLSKERERLQAMMTHLHMRPSEPKPS 419
+FOXP2_HYLLA      FGQFLKHLNNEHALDDRSTAQCRVQMQVVQQLEIQLSKERERLQAMMTHLHMRPSEPKPS 417
+FOXP2_PONPY      FGQFLKHLNNEHALDDRSTAQCRVQMQVVQQLEIQLSKERERLQAMMTHLHMRPSEPKPS 417
+FOXP2_MOUSE      FGQFLKHLNNEHALDDRSTAQCRVQMQVVQQLEIQLSKERERLQAMMTHLHMRPSEPKPS 418
+FOXP2_GORGO      FGQFLKHLNNEHALDDRSTAQCRVQMQVVQQLEIQLSKERERLQAMMTHLHMRPSEPKPS 417
+FOXP2_XENLA      FGQFLKHLNNEHALDDRSTAQCRVQMQVVQQLEIQLSKERERLQAMMTHLHMRPSEPKPS 410
+                 ************************************************************
 
-  kclustalw can use any genome sequence data that seqret can read.
+FOXP2_PANPA      PKPLNLVSSVTMSKNMLETSPQSLPQTPTTPTAPVTPITQGPSVITPASVPNVGAIRRRH 480
+FOXP2_PANTR      PKPLNLVSSVTMSKNMLETSPQSLPQTPTTPTAPVTPITQGPSVITPASVPNVGAIRRRH 480
+FOXP2_MACMU      PKPLNLVSSVTMSKNMLETSPQSLPQTPTTPTAPVTPITQGPSVITPASVPNVGAIRRRH 478
+FOXP2_HUMAN      PKPLNLVSSVTMSKNMLETSPQSLPQTPTTPTAPVTPITQGPSVITPASVPNVGAIRRRH 479
+FOXP2_HYLLA      PKPLNLVSSVTMSKNMLETSPQSLPQTPTTPTAPVTPITQGPSVITPASVPNVGAIRRRH 477
+FOXP2_PONPY      PKPLNLVSSVTMSKNMLETSPQSLPQTPTTPTAPVTPITQGPSVITPASVPNVGAIRRRH 477
+FOXP2_MOUSE      PKPLNLVSSVTMSKNMLETSPQSLPQTPTTPTAPVTPITQGPSVITPASVPNVGAIRRRH 478
+FOXP2_GORGO      PKPLNLVSSVTMSKNMLETSPQSLPQTPTTPTAPVTPITQGPSVITPASVPNVGAIRRRH 477
+FOXP2_XENLA      PKPLNLVSTVTMSKNMLETSPQSLPQTPTTPTAPVTPLAQGPSVITPASVPNVGAIRRRH 470
+                 ********:****************************::*********************
 
+FOXP2_PANPA      SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA 540
+FOXP2_PANTR      SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA 540
+FOXP2_MACMU      SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA 538
+FOXP2_HUMAN      SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA 539
+FOXP2_HYLLA      SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA 537
+FOXP2_PONPY      SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA 537
+FOXP2_MOUSE      SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA 538
+FOXP2_GORGO      SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA 537
+FOXP2_XENLA      SDKYNIPMSSEIAPNYEFYKNADVRPPFTYATLIRQAIMESSDRQLTLNEIYSWFTRTFA 530
+                 ************************************************************
+FOXP2_PANPA      YFRRNAATWKNAVRHNLSLHKCFVRVENVKGAVWTVDEVEYQKRRSQKITGSPTLVKNIP 600
+FOXP2_PANTR      YFRRNAATWKNAVRHNLSLHKCFVRVENVKGAVWTVDEVEYQKRRSQKITGSPTLVKNIP 600
+FOXP2_MACMU      YFRRNAATWKNAVRHNLSLHKCFVRVENVKGAVWTVDEVEYQKRRSQKITGSPTLVKNIP 598
+FOXP2_HUMAN      YFRRNAATWKNAVRHNLSLHKCFVRVENVKGAVWTVDEVEYQKRRSQKITGSPTLVKNIP 599
+FOXP2_HYLLA      YFRRNAATWKNAVRHNLSLHKCFVRVENVKGAVWTVDEVEYQKRRSQKITGSPTLVKNIP 597
+FOXP2_PONPY      YFRRNAATWKNAVRHNLSLHKCFVRVENVKGAVWTVDEVEYQKRRSQKITGSPTLVKNIP 597
+FOXP2_MOUSE      YFRRNAATWKNAVRHNLSLHKCFVRVENVKGAVWTVDEVEYQKRRSQKITGSPTLVKNIP 598
+FOXP2_GORGO      YFRRNAATWKNAVRHNLSLHKCFVRVENVKGAVWTVDEVEYQKRRSQKITGSPTLVKNIP 597
+FOXP2_XENLA      YFRRNAATWKNAVRHNLSLHKCFVRVENVKGAVWTVDEAEYQKRRSQKITASPTLVKNIP 590
+                 **************************************.***********.*********
 
+FOXP2_PANPA      TSLGYGAALNASLQAALAESSLPLLSNPGLINNASSGLLQAVHEDLNGSLDHIDSNGNSS 660
+FOXP2_PANTR      TSLGYGAALNASLQAALAESSLPLLSNPGLINNASSGLLQAVHEDLNGSLDHIDSNGNSS 660
+FOXP2_MACMU      TSLGYGAALNASLQAALAESSLPLLSNPGLINNASSGLLQAVHEDLNGSLDHIDSNGNSS 658
+FOXP2_HUMAN      TSLGYGAALNASLQAALAESSLPLLSNPGLINNASSGLLQAVHEDLNGSLDHIDSNGNSS 659
+FOXP2_HYLLA      TSLGYGAALNASLQAALAESSLPLLSNPGLINNASSGLLQAVHEDLNGSLDHIDSNGNSS 657
+FOXP2_PONPY      TSLGYGAALNASLQAALAESSLPLLSNPGLINNASSGLLQAVHEDLNGSLDHIDSNGNSS 657
+FOXP2_MOUSE      TSLGYGAALNASLQAALAESSLPLLSNPGLINNASSGLLQAVHEDLNGSLDHIDSNGNSS 658
+FOXP2_GORGO      TSLGYGAALNASLQAALAESSLPLLSNPGLINNASSGLLQAVHEDLNGSLDHIDSNGNSS 657
+FOXP2_XENLA      TSLGYGAALNASLQAALAESSLPLLSNTGLLNNASTGLLQAVHEDLNGSLDHIDSNGNSS 650
+                 ***************************.**:****:************************
 
-<h2>Output file format</h2>
+FOXP2_PANPA      PGCSPQPHIHSIHVKEEPVIAEDEDCPMSLVTTANHSPELEDDREIEEEPLSEDLE 716
+FOXP2_PANTR      PGCSPQPHIHSIHVKEEPVIAEDEDCPMSLVTTANHSPELEDDREIEEEPLSEDLE 716
+FOXP2_MACMU      PGCSPQPHIHSIHVKEEPVIAEDEDCPMSLVTTANHSPELEDDREIEEEPLSEDLE 714
+FOXP2_HUMAN      PGCSPQPHIHSIHVKEEPVIAEDEDCPMSLVTTANHSPELEDDREIEEEPLSEDLE 715
+FOXP2_HYLLA      PGCSPQPHIHSIHVKEEPVIAEDEDCPMSLVTTANHSPELEDDREIEEEPLSEDLE 713
+FOXP2_PONPY      PGCSPQPHIHSIHVKEEPVIAEDEDCPMSLVTTANHSPELEDDREIEEEPLSEDLE 713
+FOXP2_MOUSE      PGCSPQPHIHSIHVKEEPVIAEDEDCPMSLVTTANHSPELEDDREIEEEPLSEDLE 714
+FOXP2_GORGO      PGCSPQPHIHSIHVKEEPVIAEDEDCPMSLVTTANHSPELEDDREIEEEPLSEDLE 713
+FOXP2_XENLA      AGCSPQPHIHSIHVKEEPLIADDEDCPMSLVTTANHSPELEEDRELEEEPLSEDLE 706
+                 .*****************:**:*******************:***:**********
 
-<h3>Output files for usage example</h3>
-<p><h3>File: foxp2_gorgo.dnd</h3>
-<table width="90%"><tr><td bgcolor="#CCFFCC">
-<pre>(
+	  </pre>
+	</td>
+      </tr>
+    </table>
+
+    <h4>File: foxp2_gorgo.dnd</h4>
+    <table width="90%">
+      <tr>
+	<td bgcolor="#CCFFCC">
+	  <pre>
+(
 (
 (
 FOXP2_GORGO:0.00138,
@@ -435,128 +541,97 @@ FOXP2_PANTR:0.00000)
 :0.00315)
 :0.00078);
 
-
-
-</pre>
-</td></tr></table><p>
-
-<h2>Data files</h2>
-
-
-   None.
-
-
-
-<h2>Notes</h2>
-
-
-   None.
-
-
-
-<h2>References</h2>
-
-
-<pre>
-
-   Saitou, N., and Nei, M.,(1987) The neighbor-joining method: a new method 
-      for reconstructing phylogenetic trees, Mol. Evol. Biol, 4(4), 406-425.
-
-   Higgins, D., et al.,(1994) CLUSTAL W: improving the sensitivity of progressive
-      multiple sequence alignment through sequence weighting,position-specific
-      gap penalties and weight matrix choice, Nucleic Acids Research, 22, 4673-4680.
-
-   Larkin, M.A., et al.,(2007) ClustalW and ClustalX version 2,
-      Bioinformatics 2007, 23(21), 2947-2948.
-
-
-</pre>
-
-
-<h2>Warnings</h2>
-
-
-   None.
-
-
-
-<h2>Diagnostic Error Messages</h2>
-
-
-   None.
-
-
-
-<h2>Exit status</h2>
-
-
-   It always exits with a status of 0.
-
-
-
-<h2>Known bugs</h2>
-
-
-   None.
-
-
-
-<h2>See also</h2>
-
-<table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
-<th>Description</th></tr>
-<tr>
-<td><a href="seqret.html">seqret</a></td>
-<td>Reads and writes (returns) sequences</td>
-</tr>
-
-<tr>
-<td><a href="emma.html">emma</a></td>
-<td>Multiple sequence alignment (ClustalW wrapper)</td>
-</tr>
-
-</table>
-
-
-<h2>Author(s)</h2>
-
-
-   Kazuki Oshita (cory @ g-language.org)
-   Institute for Advanced Biosciences, Keio University
-   252-8520 Japan
-
-
-
-<h2>History</h2>
-
-
-   2009 - Written by Kazuki Oshita
-
-
-
-<h2>Target users</h2>
-
-
-   This program is intended to be used by everyone and everything, from
-   naive users to embedded scripts.
-
-
-
-<h2>Comments</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</BODY>
+	    </pre>
+	  </td>
+	</tr>
+      </table>
+      
+      <h2>Data files</h2>
+      None.
+
+      <h2>Notes</h2>
+      None.
+
+      <h2>References</h2>
+      <pre>
+	Saitou, N., and Nei, M.,(1987) The neighbor-joining method: a new method 
+	for reconstructing phylogenetic trees, Mol. Evol. Biol, 4(4), 406-425.
+
+	Higgins, D., et al.,(1994) CLUSTAL W: improving the sensitivity of progressive
+	multiple sequence alignment through sequence weighting,position-specific
+	gap penalties and weight matrix choice, Nucleic Acids Research, 22, 4673-4680.
+
+	Larkin, M.A., et al.,(2007) ClustalW and ClustalX version 2,
+	Bioinformatics 2007, 23(21), 2947-2948.
+      </pre>
+
+
+      <h2>Warnings</h2>
+      None.
+
+      <h2>Diagnostic Error Messages</h2>
+      None.
+
+      <h2>Exit status</h2>
+      It always exits with a status of 0.
+
+      <h2>Known bugs</h2>
+      None.
+
+      <h2>See also</h2>
+      <table border cellpadding=4 bgcolor="#FFFFF0">
+	<tr>
+	  <th>Program name</th>
+	  <th>Description</th>
+	</tr>
+
+	<tr>
+          <td><a href="emma.html">emma</a></td>
+          <td>Multiple sequence alignment (ClustalW wrapper)</td>
+	</tr>
+
+	<tr>
+          <td><a href="kkalign.html">kkalign</a></td>
+          <td>Multiple sequence alignment using Kalign</td>
+	</tr>
+
+	<tr>
+          <td><a href="kmafft.html">kmafft</a></td>
+          <td>Multiple sequence alignment using MAFFT</td>
+	</tr>
+
+	<tr>
+          <td><a href="kmuscle.html">kmuscle</a></td>
+          <td>Multiple sequence alignment using MUSCLE</td>
+	</tr>
+
+	<tr>
+          <td><a href="ktcoffee.html">ktcoffee</a></td>
+          <td>Multiple sequence alignment using T-COFFEE</td>
+	</tr>
+
+	<tr>
+	  <td><a href="seqret.html">seqret</a></td>
+	  <td>Reads and writes (returns) sequences</td>
+	</tr>
+      </table>
+
+      <h2>Author(s)</h2>
+      Kazuki Oshita (cory @ g-language.org)<br />
+      Institute for Advanced Biosciences, Keio University<br />
+      252-8520 Japan
+
+      <h2>History</h2>
+      2009 - Written by Kazuki Oshita<br />
+      Mar 2013 - Update document by Kazuki Oshita<br />
+                 Change option name ('output' => 'outformat',<br />
+                 'align' => 'showalign') by Kazuki Oshita
+
+      <h2>Target users</h2>
+      This program is intended to be used by everyone and everything, from naive users to embedded scripts.
+
+      <h2>Comments</h2>
+      None.
+
+  </BODY>
 </HTML>
-

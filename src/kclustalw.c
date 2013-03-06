@@ -45,12 +45,12 @@ int main(int argc, char **argv) {
   AjPStr     outputtree;
   AjBool     tree;
   AjBool     quicktree;
-  AjBool     align;
+  AjBool     showalign;
   AjPStr     clustering;
   ajint      numiter;
   AjPStr     iteration;
   alignment  = ajAcdGetString("alignment");
-  output     = ajAcdGetString("output");
+  output     = ajAcdGetString("outformat");
   matrix     = ajAcdGetString("matrix");
   outorder   = ajAcdGetString("outorder");
   ktup       = ajAcdGetInt("ktup");
@@ -67,7 +67,7 @@ int main(int argc, char **argv) {
   outputtree = ajAcdGetString("outputtree");
   tree       = ajAcdGetBoolean("tree");
   quicktree  = ajAcdGetBoolean("quicktree");
-  align      = ajAcdGetBoolean("align");
+  showalign      = ajAcdGetBoolean("showalign");
   clustering = ajAcdGetString("clustering");
   numiter    = ajAcdGetInt("numiter");
   iteration  = ajAcdGetString("iteration");
@@ -114,7 +114,7 @@ int main(int argc, char **argv) {
   } else {
     params.quicktree = xsd__boolean__false_;
   }
-  if (align) {
+  if (showalign) {
     params.align = xsd__boolean__true_;
   } else {
     params.align = xsd__boolean__false_;

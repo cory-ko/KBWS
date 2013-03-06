@@ -14,6 +14,13 @@ section: input [
     type: "gapany"
   ]
 
+  string: output [
+    additional: "Y"
+    default: "fasta"
+    information: "File type of output alignment (clw, fasta, msf, html)"
+    help: "fasta (FASTA), clw (ClustalW), html (HTML) or msf (MSF)"
+  ]
+
 endsection: input
 
 section: additional [
@@ -21,23 +28,10 @@ section: additional [
   type: "page"
 ]
 
-  string: output [
-    additional: "Y"
-    default: "fasta"
-    information: "File type of output alignment (clw, fasta, msf, html)"
-  ]
-
-endsection: additional
-
-section: advanced [
-  information: "Advanced section"
-  type: "page"
-]
-
   string: outorder [
     additional: "Y"
     default: "aligned"
-    information: "output order (aligned or input)"
+    information: "Output order (aligned or input)"
   ]
 
   float: gapopen [
@@ -52,7 +46,7 @@ section: advanced [
     information: "Gap Extension Penalty"
   ]
 
-endsection: advanced
+endsection: additional
 
 section: output [
   information: "Output section"

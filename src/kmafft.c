@@ -27,7 +27,7 @@ static AjPStr getUniqueFileName(void);
     AjPStr     inseq = NULL;
     AjPStr     strategy;
     AjPStr     outorder;
-    float      op;
+    float      opengap;
     float      ep;
     AjPStr     scorematrix;
     AjBool     homologs;
@@ -38,7 +38,7 @@ static AjPStr getUniqueFileName(void);
 
     strategy     =      ajAcdGetString("strategy");
     outorder     =      ajAcdGetString("outorder");
-    op           =      ajAcdGetFloat("op");
+    opengap      =      ajAcdGetFloat("opengap");
     ep           =      ajAcdGetFloat("ep");
     scorematrix  =      ajAcdGetString("scorematrix");
     homologs     =      ajAcdGetBoolean("homologs");
@@ -52,7 +52,7 @@ static AjPStr getUniqueFileName(void);
 
     params.strategy = ajCharNewS(strategy);
     params.outorder = ajCharNewS(outorder);
-    params.op = op;
+    params.op = opengap;
     params.ep = ep;
     params.scorematrix = ajCharNewS(scorematrix);
     if (homologs) {

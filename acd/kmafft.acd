@@ -23,67 +23,87 @@ section: advanced [
   string: strategy [
     additional: "Y"
     default: "auto"
-    information: "strategy to calculate"
+    information: "Calculation strategy."
+    help: "
+          Strategy (automatic)
+            'auto'    : Moderately accurate (FFT-NS-2, FFT-NS-i
+                        or L-INS-i; depends on data size)
+            'FFT-NS-2': Moderately fast
+          Strategy (manual)
+            'FFT-NS-1': Very fast; recommended for >2,000 sequences;
+                        progressive method
+            'FFT-NS-2': Fast; progressive method
+            'Medium'  : Medium; iterative refinement method,
+                        two cycles only
+            'FFT-NS-i': Slow; iterative refinement method
+            'E-INS-i' : Very slow; recommended for <200 sequences
+                        with multiple conserved domains and long gaps
+            'L-INS-i' : Very slow; recommended for <200 sequences with
+                        one conserved domain and long gaps
+            'G-INS-i' : Very slow; recommended for <200 sequences with
+                        global homology
+            'Q-INS-i' : Extremely slow; secondary structure of RNA is
+                        considered; recommended for a global alignment
+                        of highly diverged ncRNAs with
+                        <200 sequences × <1,000 nucleotid"
   ]
 
   string: outorder [
     additional: "Y"
     default: "aligned"
-    information: "output order"
+    information: "Output order. 'input': same as input, 'aligned': aligned"
   ]
 
-  float: op [
+  float: opengap [
     additional: "Y"
     default: "1.53"
-    information: "gap opening penalty (1.0 - 3.0)"
+    information: "Gap opening penalty (1.0 - 3.0)"
   ]
 
   float: ep [
     additional: "Y"
     default: "0.0"
-    information: "offset value (0.0 - 1.0)"
+    information: "Offset value (0.0 - 1.0)"
   ]
 
   string: scorematrix [
     additional: "Y"
     default: ""
-    information: "scoring matrix"
+    information: "Scoring matrix.
+                  Protein seq:    'BLOSUM30', 'BLOSUM45',
+                                  'BLOSUM62'(default), 'BLOSUM80',
+                                  'JTT100' or 'JTT200'
+                  Nucleotide seq: '1PAM', '20PAM' or '200PAM'(default)"
+    help:"If you don't not use this option, kmafft judges whether your sequence
+          is protein or nucleotide automatically, and uses appropriate default value."
   ]
 
   boolean: homologs [
     additional: "Y"
     default: "N"
-    information: "collects homologs (only protein)"
+    information: "Collects homologs from SwissProt by BLAST and performs
+                  profile-based alignments."
   ]
 
   boolean: showhomologs [
     additional: "Y"
     default: "N"
-    information: "show homologs (if any)"
+    information: "Show homologs  sequence"
+    help: "This option performs only given sequence is protein."
   ]
 
   integer: numhomologs [
     additional: "Y"
     default: "50"
-    information: "number of homologs"
+    information: "Number of homologs sequences"
+    help: "This option performs only -showhomologs is 'on'."
   ]
 
   float: threshold [
     additional: "Y"
     default: "1e-10"
-    information: "threshold of homologs"
-  ]
-
-  string: referenceseq [
-    additional: "Y"
-    default: ""
-    information: "sorry. this option is not ready"
-  ]
-
-  string: harrplot [
-    additional: "Y"
-    default: ""
-    information: "sorry. this option is not ready."
+    information: "Threshold of homologs sequences"
+    help: "This option performs only -showhomologs is 'on'."
   ]
 
 endsection: advanced
@@ -95,7 +115,7 @@ section: output [
 
   outfile: outfile [
     parameter: "Y"
-    knowntype: "kmafft output"
+    knowntype: "MAFFT output file"
   ]
 
 endsection: output

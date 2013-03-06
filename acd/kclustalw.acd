@@ -1,4 +1,4 @@
-application: kclustalw [
+0;95;capplication: kclustalw [
   documentation: "Multiple sequence alignment using ClustalW 2"
   groups: "ALIGNMENT MULTIPLE"
   embassy: "kbws"
@@ -26,7 +26,7 @@ section: advanced [
     information: "method used for pairwise alignment stage"
   ]
 
-  string: output [
+  string: outformat [
     additional: "Y"
     default: "aln1"
     information: "Alignment output format. Values: 'aln1', 'aln2', 'gcg', 'phylip', 'pir' or 'gde'"
@@ -128,7 +128,7 @@ section: advanced [
     information: "Perform 'fast' alignment"
   ]
 
-  boolean: align [
+  boolean: showalign [
     additional: "Y"
     default: "N"
     information: "Perform alignment"

@@ -27,7 +27,7 @@ Description
    method included in KBWS SOAP service.
    This method can be alternatively accessed directly from programming languages
    as SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
+   http://www.g-language.org/kbws/ for more information.
 
 Usage
 
@@ -267,16 +267,15 @@ Command line arguments
   [-idlist]            string     A string containing a comma separated
                                   list of entry identifiers.
                                   (e.g. “WAP_MOUSE,WAP_RAT”)
-  [-outseq]            outfile    [.kfetchbatch] output filename
+  [-outfile]           outfile    [.kfetchbatch] Output filename
 
-   Additional (Optional) qualifiers: (none)
-   Advanced (Unprompted) qualifiers:
-   -format             string     [default] specify output file format
-                                  list of available formats are
-				  preparing.
-   -style              string     [default] specify output file style
-                                  list of available styles are
-				  preparing.
+   Additional (Optional) qualifiers:
+   -format             string     [default] Output data format. 'default',
+                                  'annot', 'embl', 'emblxml-1.1', emblxml-1.2',
+                                  'fasta', 'insdxml', 'seqxml' or 'entrysize'
+   -style              string     [raw] Output data style. 'raw' or 'html'
+
+   Advanced (Unprompted) qualifiers: (none)
 
 Input file format
 
@@ -318,6 +317,7 @@ Known bugs
 
 See also
 
+   kfetchdata       Fetch an entry in a defined format and style
    seqret           Reads and writes (returns) sequences
 
 Author(s)
@@ -329,6 +329,7 @@ Author(s)
 History
 
    2009 - Written by Kazuki Oshita
+   Mar 2013 - Update document by Kazuki Oshita
 
 Target users
 

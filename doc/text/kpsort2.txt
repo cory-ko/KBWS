@@ -185,7 +185,7 @@ Command line arguments
    Standard (Mandatory) qualifiers:
   [-sequence]          seqall     Protein sequence(s) filename and optional
                                   format, or reference (input USA)
-  [-outseq]            outfile    [.kpsort2] standard Psort II output filename
+  [-outseq]            outfile    [.kpsort2] Standard Psort II output filename
 
    Additional (Optional) qualifiers: (none)
    Advanced (Unprompted) qualifiers: (none)
@@ -230,6 +230,9 @@ Known bugs
 
 See also
 
+   kpsort           Predicts protein localization for PSORT
+   kpsortb          Predicts protein localization for PSORT B
+   kwolfpsort       Predicts protein localization for WoLF PSORT
    seqret           Reads and writes (returns) sequences
 
 Author(s)
@@ -241,6 +244,7 @@ Author(s)
 History
 
    2009 - Written by Kazuki Oshita
+   Mar 2013 - Update document by Kazuki Oshita
 
 Target users
 

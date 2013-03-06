@@ -1,81 +1,48 @@
-<!--START OF HEADER - DON'T ALTER -->
-
 <HTML>
-<HEAD>
-  <TITLE>
-  EMBOSS: ktcoffee
-  </TITLE>
-</HEAD>
-<BODY BGCOLOR="#FFFFFF" text="#000000">
+  <HEAD>
+    <TITLE>EMBOSS: ktcoffee</TITLE>
+  </HEAD>
+  
+  <BODY BGCOLOR="#FFFFFF" text="#000000">
+    <table align=center border=0 cellspacing=0 cellpadding=0>
+      <tr>
+	<td valign=top>
+	  <a HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
+	</td>
+	<td align=left valign=middle>
+	  <b><font size="+6">ktcoffee</font></b>
+	</td>
+      </tr>
+    </table>
+    
+    <br />
+    
+    <H2>Function</H2>
+    Multiple sequence alignment using T-COFFEE
+    
+    <h2>Description</h2>
+    <p>
+      ktcoffee computes a multiple sequence alignment utilizing T-Coffee. T-Coffee is a multiple sequence alignment package. T-Coffee is able to align Protein, DNA and RNA sequences or to combine the output of several alignment methods (Clustal, Mafft, Muscle, Probcons...).
+    </p>
+    
+    <p>
+      ktcoffee utilizes T-Coffee SOAP server provided by EBI (European Bioinformatics Institute).Original web-service is located at the following URL:
+    </p>
+    
+    <p>
+      <a href="http://www.ebi.ac.uk/Tools/webservices/services/msa/tcoffee_soap">http://www.ebi.ac.uk/Tools/webservices/services/msa/tcoffee_soap</a>
+    </p>
+    
+    <p>
+      This tools is a subset of Keio Bioinformatics Web Service (KBWS) package, which contains interfaces to bioinformatics web services through a proxy server at Keio University. ktcoffee is thus an interface of "runTcoffee" method included in KBWS SOAP service.<br />
+      This method can be alternatively accessed directly from programming languages as SOAP web service. Please refer to the KBWS online documentations <a href="http://www.g-language.org/kbws/">http://www.g-language.org/kbws/</a> for more information.
+    </p>
 
-
-
-<table align=center border=0 cellspacing=0 cellpadding=0>
-<tr><td valign=top>
-<A HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
-</td>
-<td align=left valign=middle>
-<b><font size="+6">
-ktcoffee
-</font></b>
-</td></tr>
-</table>
-<br>&nbsp;
-<p>
-
-
-<!--END OF HEADER-->
-
-
-
-
-
-
-<H2>
-    Function
-</H2>
-Multiple sequence alignment using T-COFFEE
-<!--
-DON'T WRITE ANYTHING HERE.
-IT IS DONE FOR YOU.
--->
-
-
-
-
-<h2>Description</h2>
-
-
-   ktcoffee computes a multiple sequence alignment utilizing
-   T-Coffee.
-   T-Coffee is a multiple sequence alignment package. T-Coffee
-   is able to align Protein, DNA and RNA sequences or to combine
-   the output of several alignment methods (Clustal, Mafft, Muscle,
-   Probcons...).
-</p>
-
-<p>   ktcoffee utilizes T-Coffee SOAP server provided by EBI (European
-   Bioinformatics Institute).Original web-service is located at the
-   following URL:
-</p>
-
-<p>   http://www.ebi.ac.uk/Tools/webservices/services/msa/tcoffee_soap
-</p>
-
-<p>   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
-   which contains interfaces to bioinformatics web services through a proxy
-   server at Keio University. ktcoffee is thus an interface of "runTcoffee"
-   method included in KBWS SOAP service.
-   This method can be alternatively accessed directly from programming languages
-   as SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
-</p>
-
-<p>
-
-<h2>Usage</h2>
-
-<table width="90%"><tr><td bgcolor="#CCFFFF"><pre>
+    <h2>Usage</h2>
+    <table width="90%">
+      <tr>
+	<td bgcolor="#CCFFFF">
+	  <pre>
 
    Here is a sample session with ktcoffee
 
@@ -88,94 +55,93 @@ Dendrogram (tree file) from T-Coffee output file [test0.dnd]:
 Jobid: kbws_7768256
 ***********
 
+	  </pre>
+	</td>
+      </tr>
+    </table>
 
-</pre></td></tr></table>
+    <h2>Command line arguments</h2>
+    <table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+      <tr bgcolor="#FFFFCC">
+	<th align="left">Qualifier</th>
+	<th align="left">Type</th>
+	<th align="left">Description</th>
+	<th align="left">Allowed values</th>
+	<th align="left">Default</th>
+      </tr>
 
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
+      </tr>
 
-<h2>Command line arguments</h2>
+      <tr bgcolor="#FFFFCC">
+	<td>[-sequence]<br>(Parameter 1)</td>
+	<td>seqall</td>
+	<td>(Gapped) sequence(s) filename and optional format, or reference (input USA)</td>
+	<td>Readable sequence(s)</td>
+	<td><b>Required</b></td>
+      </tr>
 
-<table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
-<tr bgcolor="#FFFFCC">
-<th align="left">Qualifier</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-<th align="left">Allowed values</th>
-<th align="left">Default</th>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>[-outfile]<br>(Parameter 2)</td>
+	<td>outfile</td>
+	<td>Output file name</td>
+	<td>Output file</td>
+	<td><i>&lt;*&gt;</i>.ktcoffee</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>[-dndoutfile]<br>(Parameter 3)</td>
+	<td>outfile</td>
+	<td>Dendrogram (tree file) from T-Coffee output file</td>
+	<td>Output file</td>
+	<td><i>&lt;*&gt;</i>.dnd</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>[-sequence]<br>(Parameter 1)</td>
-<td>seqall</td>
-<td>(Gapped) sequence(s) filename and optional format, or reference (input USA)</td>
-<td>Readable sequence(s)</td>
-<td>2</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>[-alnoutfile]<br>(Parameter 4)</td>
+	<td>outfile</td>
+	<td>(aligned) output sequence set</td>
+	<td>Output file</td>
+	<td><i>&lt;*&gt;</i>.aln</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>[-outfile]<br>(Parameter 2)</td>
-<td>outfile</td>
-<td>Output file name</td>
-<td>Output file</td>
-<td><i>&lt;*&gt;</i>.ktcoffee</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Additional (Optional) qualifiers</th>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>[-dndoutfile]<br>(Parameter 3)</td>
-<td>outfile</td>
-<td>Dendrogram (tree file) from T-Coffee output file</td>
-<td>Output file</td>
-<td><i>&lt;*&gt;</i>.ktcoffee</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-matrix</td>
+	<td>string</td>
+	<td>Scoring matrix to use (blosum or pam)</td>
+	<td>Any string</td>
+	<td></td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>[-alnoutfile]<br>(Parameter 4)</td>
-<td>outfile</td>
-<td>(aligned) output sequence set</td>
-<td>Output file</td>
-<td><i>&lt;*&gt;</i>.ktcoffee</td>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-outorder</td>
+	<td>string</td>
+	<td>Sequence order in output alignment (aligned or input)</td>
+	<td>Any string</td>
+	<td>aligned</td>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Additional (Optional) qualifiers</th>
-</tr>
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
+      </tr>
 
-<tr bgcolor="#FFFFCC">
-<td>-matrix</td>
-<td>string</td>
-<td>Scoring matrix to use (blosum or pam)</td>
-<td>Any string</td>
-<td>&nbsp;</td>
-</tr>
+      <tr>
+	<td colspan=5>(none)</td>
+      </tr>
+    </table>
 
-<tr bgcolor="#FFFFCC">
-<td>-outorder</td>
-<td>string</td>
-<td>Sequence order in output alignment (aligned or input)</td>
-<td>Any string</td>
-<td>&nbsp;</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
-</tr>
-
-<tr>
-<td colspan=5>(none)</td>
-</tr>
-
-</table>
-
-
-<h2>Input file format</h2>
-
-<h3>Input files for usage example</h3>
-<p><h3>File: multiNuc.fasta</h3>
-<table width="90%"><tr><td bgcolor="#FFCCFF">
-<pre>
+    <h2>Input file format</h2>
+    <h3>Input files for usage example</h3>
+    <h4>File: multiNuc.fasta</h4>
+    <table width="90%">
+      <tr>
+	<td bgcolor="#FFCCFF">
+	  <pre>
 >test0
 taagttattatttagttaatacttttaacaatattattaaggtatttaaaaaatactatt
 atagtatttaacatagttaaataccttccttaatactgttaaattatattcaatcaatac
@@ -235,15 +201,21 @@ tgaactttctttagcttccttttgaagtttaatgtagttgttagcacgatcaacaattgc
 ttgttctagtttttctatattagctaaatctgttctaaagttattaagtttattagcagc
 tttaatataagactcataacttgattttatttgtgaaagtgaattattaaaatcttgttg
 ttttttaatagtttcagataaattggtattgttttttaaaagttttttagctaaatcaca
-tacatctttttgaccgttattattagaagttccattttctaacatagttgttaaagctgt</pre>
-</td></tr></table><p>
+tacatctttttgaccgttattattagaagttccattttctaacatagttgttaaagctgt
+	  </pre>
+	</td>
+      </tr>
+    </table>
 
-<h2>Output file format</h2>
+    <h2>Output file format</h2>
 
-<h3>Output files for usage example</h3>
-<p><h3>File: test0.dnd</h3>
-<table width="90%"><tr><td bgcolor="#CCFFCC">
-<pre>(
+    <h3>Output files for usage example</h3>
+    <h4>File: test0.dnd</h4>
+    <table width="90%">
+      <tr>
+	<td bgcolor="#CCFFCC">
+	  <pre>
+(
 (
 (
 (
@@ -265,121 +237,87 @@ testB:0.08417,
 testJ:0.09583)
 :0.00312,
 testI:0.09187);
+	  </pre>
+	</td>
+      </tr>
+    </table>
 
+    <h2>Data files</h2>
+    None.
 
-</pre>
-</td></tr></table><p>
+    <h2>Notes</h2>
+    None.
 
-<h2>Data files</h2>
-
-
-   None.
-
-
-
-<h2>Notes</h2>
-
-
-   None.
-
-
-
-<h2>References</h2>
-
-
-<pre>
-
-   Notredam, C., et al.,(2000) T-Coffee: A novel method for fast and accurate
+    <h2>References</h2>
+    <pre>
+      Notredam, C., et al.,(2000) T-Coffee: A novel method for fast and accurate
       multiple sequence alignment, 302(1), 205-217.
+    </pre>
 
+    <h2>Warnings</h2>
+    None.
 
-</pre>
+    <h2>Diagnostic Error Messages</h2>
+    None.
 
+    <h2>Exit status</h2>
+    It always exits with a status of 0.
 
-<h2>Warnings</h2>
+    <h2>Known bugs</h2>
+    None.
 
+    <h2>See also</h2>
+    <table border cellpadding=4 bgcolor="#FFFFF0">
+      <tr>
+	<th>Program name</th>
+	<th>Description</th>
+      </tr>
 
-   None.
+      <tr>
+        <td><a href="emma.html">emma</a></td>
+        <td>Multiple sequence alignment (ClustalW wrapper)</td>
+      </tr>
 
+      <tr>
+        <td><a href="kclustalw.html">kclustalw</a></td>
+        <td>Multiple sequence alignment using ClustalW 2</td>
+      </tr>
 
+      <tr>
+        <td><a href="kkalign.html">kkalign</a></td>
+        <td>Multiple sequence alignment using Kalign</td>
+      </tr>
 
-<h2>Diagnostic Error Messages</h2>
+      <tr>
+        <td><a href="kmafft.html">kmafft</a></td>
+        <td>Multiple sequence alignment using MAFFT</td>
+      </tr>
 
+      <tr>
+        <td><a href="kmuscle.html">kmuscle</a></td>
+        <td>Multiple sequence alignment using MUSCLE</td>
+      </tr>
 
-   None.
+      <tr>
+	<td><a href="seqret.html">seqret</a></td>
+	<td>Reads and writes (returns) sequences</td>
+      </tr>
+    </table>
 
+    <h2>Author(s)</h2>
+    Kazuki Oshita (cory @ g-language.org)<br />
+    Institute for Advanced Biosciences, Keio University<br />
+    252-8520 Japan
 
+    <h2>History</h2>
+    2009 - Written by Kazuki Oshita<br />
+    Mar 2013 - Update document by Kazuki Oshita
 
-<h2>Exit status</h2>
+    <h2>Target users</h2>
+    This program is intended to be used by everyone and everything, from naive users to embedded scripts.
+    
+    <h2>Comments</h2>
+    None.
 
-
-   It always exits with a status of 0.
-
-
-
-<h2>Known bugs</h2>
-
-
-   None.
-
-
-
-<h2>See also</h2>
-
-<table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
-<th>Description</th></tr>
-<tr>
-<td><a href="seqret.html">seqret</a></td>
-<td>Reads and writes (returns) sequences</td>
-</tr>
-
-<tr>
-<td><a href="emma.html">emma</a></td>
-<td>Multiple sequence alignment (ClustalW wrapper)</td>
-</tr>
-
-</table>
-
-
-<h2>Author(s)</h2>
-
-
-   Kazuki Oshita (cory @ g-language.org)
-   Institute for Advanced Biosciences, Keio University
-   252-8520 Japan
-
-
-
-<h2>History</h2>
-
-
-   2009 - Written by Kazuki Oshita
-
-
-
-<h2>Target users</h2>
-
-
-   This program is intended to be used by everyone and everything, from
-   naive users to embedded scripts.
-
-
-
-<h2>Comments</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</BODY>
+  </BODY>
 </HTML>
-

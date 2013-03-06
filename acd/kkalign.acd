@@ -23,7 +23,7 @@ section: advanced [
   string: moltype [
     additional: "Y"
     default: "auto"
-    information: "[auto/N/P] molecular (sequence) type"
+    information: "Molecular (sequence) type. 'auto' (auto detection by input sequence), 'N'(nucleotide) or 'P'(protein)"
   ]
 
   float: gpo [

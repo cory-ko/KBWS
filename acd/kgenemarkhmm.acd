@@ -14,6 +14,13 @@ section: input [
     type: "gapany"
   ]
 
+  string: org [
+    additional: "Y"
+    default: "Escherichia_coli_K12"
+    information: "Species of prediction models"
+    help: "List of available species can be shown by using '-list' option"
+  ]
+
 endsection: input
 
 section: advanced [
@@ -24,25 +31,19 @@ section: advanced [
   string: title [
     additional: "Y"
     default: ""
-    information: "your job title"
-  ]
-
-  string: org [
-    additional: "Y"
-    default: ""
-    information: "species of prediction models"
+    information: "Your job title"
   ]
 
   boolean: list [
     additional: "Y"
-    default: ""
-    information: "show list about species of prediction models"
+    default: "N"
+    information: "Show list about species of prediction models"
   ]
 
   boolean: rbs [
     additional: "Y"
-    default: ""
-    information: "use RBS model, if available"
+    default: "Y"
+    information: "Use RBS model if available"
   ]
 
 endsection: advanced

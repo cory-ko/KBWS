@@ -17,7 +17,7 @@ section: input [
   string: gram [
     parameter: "Y"
     default: "negative"
-    information: "negative or positive"
+    information: "Choose GRAM stain from 'positive' or 'negative'"
   ]
 
 endsection: input
@@ -42,7 +42,7 @@ section: output [
 
   outfile: outfile [
     parameter: "Y"
-    knowntype: "psortb output"
+    knowntype: "Standard PSORTB output filename"
   ]
 
 endsection: output

@@ -23,7 +23,7 @@ section: advanced [
   string: outputformat [
     additional: "Y"
     default: "grp"
-    information: "The output format: long, short, raw or grp"
+    information: "The output format: 'long', 'short', 'raw' or 'grp'"
   ]
 
 endsection: advanced
@@ -35,7 +35,7 @@ section: output [
 
   outfile: outfile [
     parameter: "Y"
-    knowntype: "phobius output"
+    knowntype: "Phobius output filename"
   ]
 
 endsection: output

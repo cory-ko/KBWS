@@ -20,13 +20,13 @@ Description
 
    http://align.bmr.kyushu-u.ac.jp/mafft/online/server/index.html
 
-   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
-   which contains interfaces to bioinformatics web services through a proxy
-   server at Keio University. kmafft is thus an interface of "runMafft" method
-   included in KBWS SOAP service.
-   This method can be alternatively accessed directly from programming languages
-   as SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
+   This tools is a subset of Keio Bioinformatics Web Service (KBWS)
+   package, which contains interfaces to bioinformatics web services
+   through a proxy server at Keio University. kmafft is thus an
+   interface of "runMafft" method included in KBWS SOAP service.
+   This method can be alternatively accessed directly from programming
+   languages as SOAP web service. Please refer to the KBWS online
+   documentations http://www.g-language.org/kbws/ for more information.
 
 Usage
 
@@ -77,17 +77,16 @@ FOXP2_HUMAN     LLQQQQAVMLQQQQLQEFYKKQQEQLHLQLL-QQQQQQQQQQQQQQQQQQQQQQQQQQQQ
 Command line arguments
 
    Standard (Mandatory) qualifiers:
-  [-sequence]          seqall     (Gapped) sequence(s) filename and optional
+  [-sequence]          seqall     (Gapped) sequences filename and optional
                                   format, or reference (input USA)
   [-outseq]            outfile    [.kmafft] MAFFT output filename
 
    Additional (Optional) qualifiers: (none)
-   Advanced (Unprompted) qualifiers:
-   -strategy          string      [auto] select strategy from below.
+   -strategy          string      [auto] Calculation strategy.
                                    Strategy (automatic)
-                                    "FFT-NS-2": Moderately fast
                                     "auto"    : Moderately accurate (FFT-NS-2, FFT-NS-i
                                                  or L-INS-i; depends on data size)
+                                    "FFT-NS-2": Moderately fast
                                    Strategy (manual)
                                     "FFT-NS-1": Very fast; recommended for >2,000 sequences;
                                                  progressive method
@@ -105,24 +104,29 @@ Command line arguments
                                                  considered; recommended for a global alignment
                                                  of highly diverged ncRNAs with
                                                  <200 sequences × <1,000 nucleotide
-   -outorder          string      [aligned] output order.
+   -outorder          string      [aligned] Output order.
                                    "input"   : same as input
                                    "aligned" : aligned
-   -op                float       [1.53] gap opening penalty (1.0 - 3.0)
-   -ep                float       [0.0]  offset value (0.0 - 1.0)
-   -scorematrix       string      Scoring matrix.  if you don't not specify this option, kmafft judges
-                                  whether your sequence is amino acid or nucleotide automatically, and
-                                  uses appropriate default value.
-                                   For amino acid is "BLOSUM30", "BLOSUM45", "BLOSUM62"(default),
-                                   "BLOSUM80", "JTT100" and "JTT200".
-                                   For nucleotide is "1PAM", "20PAM", "200PAM"(default).
+   -opengap           float       [1.53] Gap opening penalty (1.0 - 3.0)
+   -ep                float       [0.0]  Offset value (0.0 - 1.0)
+   -scorematrix       string      ["BLOSUM62"(protein) or "200PAM"(nuc)] Scoring matrix.
+                                  If you don't not use this option, kmafft judges whether your
+				  sequence is protein or nucleotide automatically, and uses
+				  appropriate default value.
+                                    Protein seq:    "BLOSUM30", "BLOSUM45", "BLOSUM62"(default),
+                                                    "BLOSUM80", "JTT100" or "JTT200"
+                                    Nucleotide seq: "1PAM", "20PAM" or "200PAM"(default)
    -homologs          boolean     [N] Collects homologs from SwissProt by BLAST and performs
-                                  profile-based alignments. This option is protein only.
-   -showhomologs      boolean     [N] show homologs (if any). This option is protein only.
-   -numhomologs       integer     [50] number of homologs. This option is available when -showhomologs
-                                  is "on".
-   -threshold         float       [1e-10] threshold of homologs. This option is available when
-                                  -showhomologs is "on".
+                                  profile-based alignments.
+                                  This option performs only given sequence is protein.
+   -showhomologs      boolean     [N] Show homologs sequence.
+                                  This option performs only given sequence is protein.
+   -numhomologs       integer     [50] Number of homologs sequences.
+                                  This option performs only -showhomologs is 'on'.
+   -threshold         float       [1e-10] Threshold of homologs sequences.
+                                  This option performs only -showhomologs is 'on'.
+
+   Advanced (Unprompted) qualifiers: (none)
 
 Input file format
 
@@ -172,6 +176,11 @@ Known bugs
 
 See also
 
+   emma             Multiple sequence alignment (ClustalW wrapper)
+   kclustalw        Multiple sequence alignment using ClustalW 2
+   kkalign          Multiple sequence alignment using Kalign
+   kmuscle          Multiple sequence alignment using MUSCLE
+   ktcoffee         Multiple sequence alignment using T-COFFEE
    seqret           Reads and writes (returns) sequences
 
 Author(s)
@@ -183,6 +192,7 @@ Author(s)
 History
 
    2009 - Written by Kazuki Oshita
+   Mar 2013 - Update document by Kazuki Oshita
 
 Target users
 

@@ -23,25 +23,28 @@ section: advanced [
   string: title [
     additional: "Y"
     default: ""
-    information: "title of your job"
+    information: "Title of your job"
   ]
 
   string: mode [
     additional: "Y"
     default: "Default"
-    information: "search mode"
+    information: "Search mode"
+    help: "'Default', 'Cove only (very slow)', 'tRNAscan only', 'EufindtRNA only', 'EufindtRNA -> Cove' or 'tRNAscan -> Cove'"
   ]
 
   string: source [
     additional: "Y"
     default: "Mixed (general tRNA model)"
-    information: "training data set"
+    information: "Training data set"
+    help: "'Mixed (general tRNA model)', 'Eukaryotic', 'Bacterial', 'Archaeal', 'Mito/Chloroplast' or 'Nematode Mito'"
   ]
 
   string: gcode [
     additional: "Y"
-    default: ""
+    default: "Universal"
     information: "Genetic Code for tRNA Isotype Prediction"
+    help: " 'Universal', 'Ciliate Nuclear', 'Vertebrate Mito', 'Invertebrate Mito', 'Yeast Mito', 'Echinoderm Mito' or 'Mold & Protozoan Mito'"
   ]
 
   boolean: pesudogene [
@@ -90,6 +93,7 @@ section: advanced [
     additional: "Y"
     default: "Default"
     information: "EufindtRNA search parameters"
+    help: "'Default', 'Relaxed' or 'Strict (Pavesi params)'"
   ]
 
   string: euscore [

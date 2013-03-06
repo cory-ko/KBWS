@@ -9,10 +9,10 @@ Function
 
 Description
 
-   kglimmer finds genes in prokaryotic genomes utilizing
-   Glimmer (Gene Locator and Interpolated Markov Modeler).
-   Glimmer identifies coding regions from given DNA sequence using
-   Interpolated Markov Models (IMM).
+   kglimmer finds genes in prokaryotic genomes utilizing Glimmer
+   (Gene Locator and Interpolated Markov Modeler). Glimmer identifies
+   coding regions from given DNA sequence using Interpolated Markov Models
+   (IMM).
 
    kglimmer utilizes GLIMMER web service provided by NCBI (National Center
    for Biotechnology Information). Therefore, users can use kglimmer without
@@ -27,7 +27,7 @@ Description
    method included in KBWS SOAP service.
    This method can be alternatively accessed directly from programming languages
    as SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
+   http://www.g-language.org/kbws/ for more information.
 
 Usage
 
@@ -94,13 +94,13 @@ Command line arguments
                                   format, or reference (input USA)
   [-outseq]            outfile    [.kglimmer] Glimmer output filename
 
-   Additional (Optional) qualifiers: (none)
-   Advanced (Unprompted) qualifiers:
-   -topology           string     specify "circular" or "linear"
-                                  about input sequence (default "circular")
-   -gencode            integer    specify genetic code
-                                  11: Bacteria, Archaea (default)
+   Additional (Optional) qualifiers:
+   -topology           string     [circular] Genome topology ('circular' or 'linear')
+   -gencode            integer    [11] Genetic code
+                                  11: Bacteria, Archaea
                                    4: Mycoplasma/Spiroplasma
+
+   Advanced (Unprompted) qualifiers: (none)
 
 Input file format
 
@@ -143,6 +143,8 @@ Known bugs
 
 See also
 
+   kgenemarkhmm     Finds genes in prokaryotic genomes using GeneMarkhmm
+   ktrnascan_se     Finds tRNA genes using tRNAscan-SE
    seqret           Reads and writes (returns) sequences
 
 Author(s)
@@ -154,6 +156,7 @@ Author(s)
 History
 
    2009 - Written by Kazuki Oshita
+   Mar 2013 - Update document by Kazuki Oshita
 
 Target users
 

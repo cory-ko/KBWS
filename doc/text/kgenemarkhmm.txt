@@ -28,7 +28,7 @@ Description
    method included in KBWS SOAP service.
    This method can be alternatively accessed directly from programming languages
    as SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
+   http://www.g-language.org/kbws/ for more information.
 
 Usage
 
@@ -136,18 +136,17 @@ Command line arguments
    Standard (Mandatory) qualifiers:
   [-sequence]          seqall     (Gapped) sequence(s) filename and optional
                                   format, or reference (input USA)
+  [-org]               string     [Escherichia_coli_K12] Species of prediction
+                                  models. List of available species can be shown
+                                  by using '-list' option
   [-outseq]            outfile    [.kgenemarkhmm] GeneMark.hmm output filename
 
    Additional (Optional) qualifiers: (none)
    Advanced (Unprompted) qualifiers:
-   -title              string     itle of your job
-   -org                string     species of prediction models.
-                                  available list can be shown
-                                  to use -list option
-   -list               boolean    [N] show list of species of
-                                  prediction model for -org option
-				  ( Under construction )
-   -rbs                boolean    [Y] use RBS model, if available
+   -title              string     Your job title
+   -list               boolean    [N] Show list of species of prediction model
+                                  for '-org' option
+   -rbs                boolean    [Y] Use RBS model if available
 
 Input file format
 
@@ -188,6 +187,8 @@ Known bugs
 
 See also
 
+   kglimmer         Finds genes in prokaryotic genomes using Glimmer #
+   ktrnascan_se     Finds tRNA genes using tRNAscan-SE
    seqret           Reads and writes (returns) sequences
 
 Author(s)
@@ -199,6 +200,7 @@ Author(s)
 History
 
    2009 - Written by Kazuki Oshita
+   Mar 2013 - Update document by Kazuki Oshita
 
 Target users
 

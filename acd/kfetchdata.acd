@@ -24,13 +24,13 @@ section: advanced [
   string: format [
     additional: "Y"
     default: "default"
-    information: "output format"
+    information: "Output data format. 'default', 'annot', 'embl', 'emblxml-1.1', emblxml-1.2', 'fasta', 'insdxml', 'seqxml' or 'entrysize'"
   ]
 
   string: style [
     additional: "Y"
-    default: "default"
-    information: "output data style"
+    default: "raw"
+    information: "Output data style. 'raw' or 'html'"
   ]
 
 endsection: advanced
@@ -42,6 +42,7 @@ section: output [
 
   outfile: outfile [
     parameter: "Y"
+    information: "DBfetch output file"
   ]
 
 endsection: output

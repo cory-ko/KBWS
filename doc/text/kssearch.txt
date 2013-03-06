@@ -48,11 +48,10 @@ Command line arguments
    Standard (Mandatory) qualifiers:
   [-sequence]          seqall     (Gapped) sequence(s) filename and optional
                                   format, or reference (input USA)
-  [-d]                 string     database list
+  [-database]          string     Target database for search
   [-outseq]            outfile    [.kssearch] SSEARCH output filename
 
-   Additional (Optional) qualifiers: (none)
-   Advanced (Unprompted) qualifiers:
+   Additional (Optional) qualifiers:
    -moltype            string     molecular type
    -histgram           boolean    Display histogram
    -nucleotide         boolean    your query is nucleotide or not(protein)
@@ -69,6 +68,8 @@ Command line arguments
    -dbrange            string     [all sequences] Range of sequence lengths in search
                                   database to include in search. Default: all sequences
    -seqrange           string     [whole sequence] Region of the query sequence to use for the search
+
+   Advanced (Unprompted) qualifiers: (none)
 
 
 Input file format
@@ -117,6 +118,7 @@ Known bugs
 
 See also
 
+   kblast           Search similar sequences in public repositories using BLAST
    seqret           Reads and writes (returns) sequences
 
 Author(s)
@@ -127,7 +129,9 @@ Author(s)
 
 History
 
-   2009 - Written by Kazuki Oshita
+    2009 - Written by Kazuki Oshita
+    Mar 2013 - Update document by Kazuki Oshita
+               Change option name(d => database) by Kazuki Oshita
 
 Target users
 

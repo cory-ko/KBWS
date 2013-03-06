@@ -26,7 +26,7 @@ Description
    interface of "runMuscle" method included in KBWS SOAP service.
    This method can be alternatively accessed directly from programming
    languages as SOAP web service. Please refer to the KBWS online
-   documentations http://soap.g-language.org/kbws/ for more information.
+   documentations http://www.g-language.org/kbws/ for more information.
 
 Usage
 
@@ -97,20 +97,17 @@ Command line arguments
    Standard (Mandatory) qualifiers:
   [-sequence]          seqall     (Gapped) sequence(s) filename and optional
                                   format, or reference (input USA)
+  [-output]            string     [fasta] Output alignment format. 'fasta'(FASTA),
+                                  'clw'(ClustalW), 'html'(HTML) or 'msf'(MSF)
   [-outseq]            outfile    [.kmuscle] output filename
 
-   Additional (Optional) qualifiers: (none)
-  [-output]            string     [fasta] output alignment format
-                                     'fasta'     (FASTA)
-                                     'clw'       (ClustalW)
-                                     'html'      (HTML)
-                                     'msf'       (MSF)
-
-   Advanced (Unprompted) qualifiers:
-   -outorder           string     [aligned] Sequence Order
-                                    'aligned' or 'input' (input order)
+   Additional (Optional) qualifiers:
+   -outorder           string     [aligned] Sequence Order 'aligned' or
+                                  'input'(input order)
    -gapopen            float      [-3.00] Gap Open Penalty
    -gapextend          float      [-0.275] Gap Extension Penalty
+
+   Advanced (Unprompted) qualifiers: (none)
 
 Input file format
 
@@ -152,6 +149,11 @@ Known bugs
 
 See also
 
+   emma             Multiple sequence alignment (ClustalW wrapper)
+   kclustalw        Multiple sequence alignment using ClustalW 2
+   kkalign          Multiple sequence alignment using Kalign
+   kmafft           Multiple sequence alignment using MAFFT
+   ktcoffee         Multiple sequence alignment using T-COFFEE
    seqret           Reads and writes (returns) sequences
 
 Author(s)
@@ -164,6 +166,7 @@ History
 
    2009 - Written by Kazuki Oshita
    Nov 2010 - Change original web-based service
+   Mar 2013 - Update document by Kazuki Oshita
 
 Target users
 
@@ -173,4 +176,3 @@ Target users
 Comments
 
    None.
-

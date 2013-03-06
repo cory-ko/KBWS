@@ -28,14 +28,17 @@ section: advanced [
 
   string: format [
     additional: "Y"
-    default: ""
-    information: "output data format"
+    default: "default"
+    information: "Output data format. 'default',
+                  'annot', 'embl', 'emblxml-1.1',
+                  'emblxml-1.2', 'fasta', 'insdxml',
+                  'seqxml' or 'entrysize'"
   ]
 
   string: style [
     additional: "Y"
-    default: ""
-    information: "output file style"
+    default: "raw"
+    information: "Output data style. 'raw' or 'html'"
   ]
 
 endsection: advanced
@@ -47,7 +50,7 @@ section: output [
 
   outfile: outfile [
     parameter: "Y"
-    knowntype: "psort output"
+    knowntype: "DBfetch output file"
   ]
 
 endsection: output

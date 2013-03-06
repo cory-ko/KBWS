@@ -1,324 +1,240 @@
-<!--START OF HEADER - DON'T ALTER -->
-
 <HTML>
-<HEAD>
-  <TITLE>
-  EMBOSS: kglimmer
-  </TITLE>
-</HEAD>
-<BODY BGCOLOR="#FFFFFF" text="#000000">
-
-
-
-<table align=center border=0 cellspacing=0 cellpadding=0>
-<tr><td valign=top>
-<A HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
-</td>
-<td align=left valign=middle>
-<b><font size="+6">
-kglimmer
-</font></b>
-</td></tr>
-</table>
-<br>&nbsp;
-<p>
-
-
-<!--END OF HEADER-->
-
-
-
-
-
-
-<H2>
-    Function
-</H2>
-Finding gene in prokaryotic genomes using glimmer
-<!--
-DON'T WRITE ANYTHING HERE.
-IT IS DONE FOR YOU.
--->
-
-
-
-
-<h2>Description</h2>
-
-
-   kglimmer finds genes in prokaryotic genomes utilizing
-   Glimmer (Gene Locator and Interpolated Markov Modeler).
-   Glimmer identifies coding regions from given DNA sequence using
-   Interpolated Markov Models (IMM).
-</p>
-
-<p>   kglimmer utilizes GLIMMER web service provided by NCBI (National Center
-   for Biotechnology Information). Therefore, users can use kglimmer without
-   preparing their own training data set. Original web-service is located at
-   the following URL:
-</p>
-
-<p>   http://www.ncbi.nlm.nih.gov/genomes/MICROBES/glimmer_3.cgi
-</p>
-
-<p>   This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
-   which contains interfaces to bioinformatics web services through a proxy
-   server at Keio University. kglimmer is thus an interface of "runGlimmer"
-   method included in KBWS SOAP service.
-   This method can be alternatively accessed directly from programming languages
-   as SOAP web service. Please refer to the KBWS online documentations
-   http://soap.g-language.org/kbws/ for more information.
-</p>
-
-<p>
-
-<h2>Usage</h2>
-
-<table width="90%"><tr><td bgcolor="#CCFFFF"><pre>
-
-   Here is a sample session with kglimmer
-
-% kglimmer 
-Finding genes in prokaryotic genomes using glimmer
-Input (gapped) sequence(s): refseq:NC_000908
-output sequence(s) [nc_000908.kglimmer]: 
-Jobid: kbws_5626576
-**************
-
-
-GLIMMER (ver. 3.02; iterated)  predictions:
- orfID      start     end  frame  score
---------    -----    -----  --    -----
->NC_000908
-orf00001   579846        3  +1     3.70
-orf00002      686     1828  +2     5.73
-orf00003     1828     2073  +1     9.65
-orf00005     2605     2760  +1     1.81
-orf00006     2845     2979  +1     5.92
-orf00007     3010     3255  +1     6.99
-orf00009     3319     3513  +1     7.25
-orf00010     3529     4557  +1     9.81
-orf00012     4645     4797  +1    14.04
-orf00014     4812     7322  +3     7.39
-orf00015     7294     7857  +1     9.49
-orf00016     8107     8295  +1     8.36
-orf00018     8296     8547  +1    11.93
-orf00020     8551     9183  +1    10.33
-orf00021     9156     9323  +3     3.04
-orf00022     9468     9755  +3     9.01
-orf00023     9923    11059  +2    10.73
-orf00024    11251    11892  +1     9.46
-orf00025    12068    12244  +2     7.11
-orf00026    12681    12505  -1     0.96
-orf00027    13564    13256  -2     7.28
-orf00028    14057    13569  -3     9.56
-orf00030    14432    14217  -3     8.97
-orf00032    15138    14503  -1     8.88
-orf00033    15280    15396  +1     0.08
-orf00034    15555    16310  +3     7.73
-orf00035    16536    16967  +3     5.36
-orf00036    17001    17426  +3    12.93
-orf00037    17512    17784  +1     5.96
-orf00038    17809    18414  +1     7.06
-orf00039    18886    19242  +1     8.09
-orf00040    19252    19623  +1    10.59
-orf00041    19825    20736  +1     9.48
-orf00042    20743    21177  +1    10.57
-orf00043    21208    21321  +1     5.16
-orf00044    21577    22128  +1    12.77
-orf00045    22389    23558  +3     8.26
-orf00046    23638    23838  +1    12.55
-orf00047    23968    24135  +1    11.86
-orf00049    24214    24468  +1    10.41
-
-
-
-</pre></td></tr></table>
-
-
-<h2>Command line arguments</h2>
-
-<table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
-<tr bgcolor="#FFFFCC">
-<th align="left">Qualifier</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-<th align="left">Allowed values</th>
-<th align="left">Default</th>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<td>[-seqall]<br>(Parameter 1)</td>
-<td>seqall</td>
-<td>(Gapped) sequence(s) filename and optional format, or reference (input USA)</td>
-<td>Readable sequence(s)</td>
-<td>2</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<td>[-outfile]<br>(Parameter 2)</td>
-<td>outfile</td>
-<td>Output file name</td>
-<td>Output file</td>
-<td><i>&lt;*&gt;</i>.kglimmer</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Additional (Optional) qualifiers</th>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<td>-topology</td>
-<td>string</td>
-<td>liner or circular</td>
-<td>Any string</td>
-<td>&nbsp;</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<td>-gencode</td>
-<td>integer</td>
-<td>11</td>
-<td>Any integer value</td>
-<td>0</td>
-</tr>
-
-<tr bgcolor="#FFFFCC">
-<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
-</tr>
-
-<tr>
-<td colspan=5>(none)</td>
-</tr>
-
-</table>
-
-
-<h2>Input file format</h2>
-
-
-  kglimmer can use any genome sequence data that seqret can read.
-
-
-
-<h2>Output file format</h2>
-
-
-   The output from kglimmer is general Glimmer output file. That has
-   header and 5 column tablar file (orgID, start position, end position,
-   frame, score).
-
-
-
-<h2>Data files</h2>
-
-
-   None.
-
-
-
-<h2>Notes</h2>
-
-
-   None.
-
-
-
-<h2>References</h2>
-
-
-<pre>
-
-   Delcher, AL., et al.,(1999) Improved microbial gene identification with
+  <HEAD>
+    <TITLE>EMBOSS: kglimmer</TITLE>
+  </HEAD>
+
+  <BODY BGCOLOR="#FFFFFF" text="#000000">
+    <table align=center border=0 cellspacing=0 cellpadding=0>
+      <tr>
+	<td valign=top>
+	  <a HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
+	</td>
+	<td align=left valign=middle>
+	  <b><font size="+6">kglimmer</font></b>
+	</td>
+      </tr>
+    </table>
+
+    <br />
+
+    <H2>Function</H2>
+    Finding gene in prokaryotic genomes using glimmer
+
+    <h2>Description</h2>
+    <p>
+      kglimmer finds genes in prokaryotic genomes utilizing Glimmer (Gene Locator and Interpolated Markov Modeler). Glimmer identifies coding regions from given DNA sequence using Interpolated Markov Models (IMM).
+    </p>
+
+    <p>
+      kglimmer utilizes GLIMMER web service provided by NCBI (National Center for Biotechnology Information). Therefore, users can use kglimmer without preparing their own training data set. Original web-service is located at the following URL:
+    </p>
+
+    <p>
+      <a href="http://www.ncbi.nlm.nih.gov/genomes/MICROBES/glimmer_3.cgi">http://www.ncbi.nlm.nih.gov/genomes/MICROBES/glimmer_3.cgi</a>
+    </p>
+
+    <p>
+      This tools is a subset of Keio Bioinformatics Web Service (KBWS) package, which contains interfaces to bioinformatics web services through a proxy server at Keio University. kglimmer is thus an interface of "runGlimmer" method included in KBWS SOAP service.<br />
+      This method can be alternatively accessed directly from programming languages as SOAP web service. Please refer to the KBWS online documentations <a href="http://www.g-language.org/kbws/">http://www.g-language.org/kbws/</a> for more information.
+    </p>
+
+    <h2>Usage</h2>
+    <table width="90%">
+      <tr>
+	<td bgcolor="#CCFFFF">
+	  <pre>
+
+	    Here is a sample session with kglimmer
+
+	    % kglimmer 
+	    Finding genes in prokaryotic genomes using glimmer
+	    Input (gapped) sequence(s): refseq:NC_000908
+	    output sequence(s) [nc_000908.kglimmer]: 
+	    Jobid: kbws_5626576
+	    **************
+
+
+	    GLIMMER (ver. 3.02; iterated)  predictions:
+	    orfID      start     end  frame  score
+	    --------    -----    -----  --    -----
+	    >NC_000908
+	    orf00001   579846        3  +1     3.70
+	    orf00002      686     1828  +2     5.73
+	    orf00003     1828     2073  +1     9.65
+	    orf00005     2605     2760  +1     1.81
+	    orf00006     2845     2979  +1     5.92
+	    orf00007     3010     3255  +1     6.99
+	    orf00009     3319     3513  +1     7.25
+	    orf00010     3529     4557  +1     9.81
+	    orf00012     4645     4797  +1    14.04
+	    orf00014     4812     7322  +3     7.39
+	    orf00015     7294     7857  +1     9.49
+	    orf00016     8107     8295  +1     8.36
+	    orf00018     8296     8547  +1    11.93
+	    orf00020     8551     9183  +1    10.33
+	    orf00021     9156     9323  +3     3.04
+	    orf00022     9468     9755  +3     9.01
+	    orf00023     9923    11059  +2    10.73
+	    orf00024    11251    11892  +1     9.46
+	    orf00025    12068    12244  +2     7.11
+	    orf00026    12681    12505  -1     0.96
+	    orf00027    13564    13256  -2     7.28
+	    orf00028    14057    13569  -3     9.56
+	    orf00030    14432    14217  -3     8.97
+	    orf00032    15138    14503  -1     8.88
+	    orf00033    15280    15396  +1     0.08
+	    orf00034    15555    16310  +3     7.73
+	    orf00035    16536    16967  +3     5.36
+	    orf00036    17001    17426  +3    12.93
+	    orf00037    17512    17784  +1     5.96
+	    orf00038    17809    18414  +1     7.06
+	    orf00039    18886    19242  +1     8.09
+	    orf00040    19252    19623  +1    10.59
+	    orf00041    19825    20736  +1     9.48
+	    orf00042    20743    21177  +1    10.57
+	    orf00043    21208    21321  +1     5.16
+	    orf00044    21577    22128  +1    12.77
+	    orf00045    22389    23558  +3     8.26
+	    orf00046    23638    23838  +1    12.55
+	    orf00047    23968    24135  +1    11.86
+	    orf00049    24214    24468  +1    10.41
+
+	  </pre>
+	</td>
+      </tr>
+    </table>
+
+
+    <h2>Command line arguments</h2>
+    <table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+      <tr bgcolor="#FFFFCC">
+	<th align="left">Qualifier</th>
+	<th align="left">Type</th>
+	<th align="left">Description</th>
+	<th align="left">Allowed values</th>
+	<th align="left">Default</th>
+      </tr>
+
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
+      </tr>
+
+      <tr bgcolor="#FFFFCC">
+	<td>[-seqall]<br>(Parameter 1)</td>
+	<td>seqall</td>
+	<td>(Gapped) sequence(s) filename and optional format, or reference (input USA)</td>
+	<td>Readable sequence(s)</td>
+	<td><b>Required</b></td>
+      </tr>
+
+      <tr bgcolor="#FFFFCC">
+	<td>[-outfile]<br>(Parameter 2)</td>
+	<td>outfile</td>
+	<td>Output file name</td>
+	<td>Output file</td>
+	<td><i>&lt;*&gt;</i>.kglimmer</td>
+      </tr>
+
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Additional (Optional) qualifiers</th>
+      </tr>
+
+      <tr bgcolor="#FFFFCC">
+	<td>-topology</td>
+	<td>string</td>
+	<td>Genome topology ('circular' or 'linear')</td>
+	<td>Any string</td>
+	<td>circular</td>
+      </tr>
+
+      <tr bgcolor="#FFFFCC">
+	<td>-gencode</td>
+	<td>integer</td>
+	<td>Genetic code. '11': Bacteria or Archaea, '4': Mycoplasma/Spiroplasma</td>
+	<td>Any integer value</td>
+	<td>11</td>
+      </tr>
+
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
+      </tr>
+
+      <tr>
+	<td colspan=5>(none)</td>
+      </tr>
+
+    </table>
+
+
+    <h2>Input file format</h2>
+    kglimmer can use any genome sequence data that seqret can read.
+
+    <h2>Output file format</h2>
+    The output from kglimmer is general Glimmer output file. That has header and 5 column tablar file (orgID, start position, end position, frame, score).
+
+    <h2>Data files</h2>
+    None.
+
+    <h2>Notes</h2>
+    None.
+
+    <h2>References</h2>
+    <pre>
+      Delcher, AL., et al.,(1999) Improved microbial gene identification with
       GLIMMER, Nucleic Acids Research, 27:23, 4636-4641.
+    </pre>
 
+    <h2>Warnings</h2>
+    None.
 
-</pre>
+    <h2>Diagnostic Error Messages</h2>
+    None.
 
+    <h2>Exit status</h2>
+    It always exits with a status of 0.
 
-<h2>Warnings</h2>
+    <h2>Known bugs</h2>
+    None.
 
+    <h2>See also</h2>
 
-   None.
+    <table border cellpadding=4 bgcolor="#FFFFF0">
+      <tr>
+	<th>Program name</th>
+	<th>Description</th>
+      </tr>
 
+      <tr>
+	<td><a href="kgenemarkhmm.html">kgenemarkhmm</a></td>
+	<td>Finds genes in prokaryotic genomes using GeneMarkhmm</td>
+      </tr>
 
+      <tr>
+	<td><a href="ktrnascan_se.html">ktrnascan_se</a></td>
+	<td>Finds tRNA genes using tRNAscan-SE</td>
+      </tr>
 
-<h2>Diagnostic Error Messages</h2>
+      <tr>
+	<td><a href="seqret.html">seqret</a></td>
+	<td>Reads and writes (returns) sequences</td>
+      </tr>
+    </table>
 
+    <h2>Author(s)</h2>
+    Kazuki Oshita (cory @ g-language.org)<br />
+    Institute for Advanced Biosciences, Keio University<br />
+    252-8520 Japan
+    
+    <h2>History</h2>
+    2009 - Written by Kazuki Oshita<br />
+    Mar 2013 - Update document by Kazuki Oshita
 
-   None.
+    <h2>Target users</h2>
+    This program is intended to be used by everyone and everything, from
+    naive users to embedded scripts.
 
+    <h2>Comments</h2>
+    None.
 
-
-<h2>Exit status</h2>
-
-
-   It always exits with a status of 0.
-
-
-
-<h2>Known bugs</h2>
-
-
-   None.
-
-
-
-<h2>See also</h2>
-
-<table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
-<th>Description</th></tr>
-<tr>
-<td><a href="seqret.html">seqret</a></td>
-<td>Reads and writes (returns) sequences</td>
-</tr>
-
-</table>
-
-
-<h2>Author(s)</h2>
-
-
-   Kazuki Oshita (cory @ g-language.org)
-   Institute for Advanced Biosciences, Keio University
-   252-8520 Japan
-   
-
-
-<h2>History</h2>
-
-
-   2009 - Written by Kazuki Oshita
-
-
-
-<h2>Target users</h2>
-
-
-   This program is intended to be used by everyone and everything, from
-   naive users to embedded scripts.
-
-
-
-<h2>Comments</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</BODY>
+  </BODY>
 </HTML>
-

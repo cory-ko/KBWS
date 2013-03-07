@@ -74,7 +74,7 @@ section: advanced [
                                   'BLOSUM62'(default), 'BLOSUM80',
                                   'JTT100' or 'JTT200'
                   Nucleotide seq: '1PAM', '20PAM' or '200PAM'(default)"
-    help:"If you don't not use this option, kmafft judges whether your sequence
+    help: "If you don't not use this option, kmafft judges whether your sequence
           is protein or nucleotide automatically, and uses appropriate default value."
   ]
 

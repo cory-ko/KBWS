@@ -1,4 +1,4 @@
-#include <stdio.h>
+]#include <stdio.h>
 #include <stdlib.h>
 
 #include "soapH.h"
@@ -42,21 +42,18 @@ int main(int argc, char **argv) {
     char* in1;
     in1 = ajCharNewS(idlist);
       if ( soap_call_ns1__runFetchBatch( &soap, NULL, NULL, in0, in1, &params, &jobid ) == SOAP_OK ) {
-      fprintf(stderr,"Jobid: %s\n",jobid);
-    } else {
+     } else {
       soap_print_fault(&soap, stderr);
     }
 
     int check = 0;
     while ( check == 0 ) {
       if ( soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check ) == SOAP_OK ) {
-	fprintf(stderr,"*");
       } else {
 	soap_print_fault(&soap, stderr);
       }
       sleep(3);
     }
-    fprintf(stderr,"\n");
 
     if ( soap_call_ns1__getResult( &soap, NULL, NULL, jobid,  &result ) == SOAP_OK ) {
       substr = ajStrNewC(result);

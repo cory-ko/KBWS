@@ -1,7 +1,7 @@
 version 1.0.9 beta
 	20-Feb-2013
 	Add image download function to "kweblogo".
-	(This patch is written by Hidetoshi Itaya (github:@celery-kotone)).
+          (This patch is written by Hidetoshi Itaya (github:@celery-kotone)).
 
 	21-Feb-2013
 	Add image download function to "kcentroidfold".
@@ -16,6 +16,12 @@ version 1.0.9 beta
 
 	07-Mar-2013
 	Change '-org' option from optional to required about "kglimmer".
+
+	Keep up with EMBOSS-6.5.7.
+          (Change option name about "kmafft", "kclustalw", "kssearch" and "ktcoffee")
+          (Update documents about many tools)
+
+	Delete progress bar from all tools.
 
 version 1.0.8 17-Jul-2011
 	Keeping up with EMBOSS 6.4.0.

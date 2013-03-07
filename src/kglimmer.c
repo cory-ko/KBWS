@@ -53,7 +53,6 @@ int main(int argc, char **argv) {
       in0 = ajCharNewS(multi);
       
       if(soap_call_ns1__runGlimmer( &soap, NULL, NULL, in0, &params, &jobid )== SOAP_OK) {
-	fprintf(stderr,"Jobid: %s\n",jobid);
       } else {
 	soap_print_fault(&soap, stderr); 
       }
@@ -61,13 +60,11 @@ int main(int argc, char **argv) {
       int check = 0;
       while (check == 0) {
 	if(soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check )== SOAP_OK) {
-	  fprintf(stderr,"*");
 	} else {
 	  soap_print_fault(&soap, stderr); 
 	}
 	sleep(3);
       }
-      fprintf(stderr,"\n");
 
       if(soap_call_ns1__getResult( &soap, NULL, NULL, jobid,  &result )== SOAP_OK) {
 	substr = ajStrNewC(result);

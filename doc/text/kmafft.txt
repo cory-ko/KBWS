@@ -81,7 +81,7 @@ Command line arguments
                                   format, or reference (input USA)
   [-outseq]            outfile    [.kmafft] MAFFT output filename
 
-   Additional (Optional) qualifiers: (none)
+   Additional (Optional) qualifiers:
    -strategy          string      [auto] Calculation strategy.
                                    Strategy (automatic)
                                     "auto"    : Moderately accurate (FFT-NS-2, FFT-NS-i

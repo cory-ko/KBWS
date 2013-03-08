@@ -45,9 +45,9 @@ int main(int argc, char **argv) {
   params.topdiags=   ajAcdGetInt("topdiags");
   params.score=      ajCharNewS(ajAcdGetString("score"));
   params.outputtree= ajCharNewS(ajAcdGetString("outputtree"));
-  params.clustering= ajCharNewS(ajAcdGetString("clustering"););
+  params.clustering= ajCharNewS(ajAcdGetString("clustering"));
   params.numiter=    ajAcdGetInt("numiter");
-  params.iteration = ajCharNewS(ajAcdGetString("iteration"));
+  params.iteration=  ajCharNewS(ajAcdGetString("iteration"));
 
   if (ajAcdGetBoolean("endgaps")) {
     params.endgaps= xsd__boolean__true_;

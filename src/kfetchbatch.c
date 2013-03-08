@@ -1,4 +1,4 @@
-]#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 #include "soapH.h"
@@ -18,50 +18,45 @@ int main(int argc, char **argv) {
   struct ns1__fetchBatchInputParams params;
   char* jobid;
   char* result;
+  AjPStr substr;
 
-  AjPStr   dbname;
-  AjPStr   idlist;
-  AjPFile  outf;
-  AjPStr   substr;
-  AjPStr   format;
-  AjPStr   style;
+  AjPStr dbname;
+  AjPStr idlist;
+  AjPFile outf;
 
-  dbname = ajAcdGetString("dbname");
-  idlist = ajAcdGetString("idlist");
-  outf   = ajAcdGetOutfile("outfile");
-  format = ajAcdGetString("format");
-  style  = ajAcdGetString("style");
+  dbname= ajAcdGetString("dbname");
+  idlist= ajAcdGetString("idlist");
+  outf=   ajAcdGetOutfile("outfile");
 
-  params.format = ajCharNewS(format);
-  params.style  = ajCharNewS(style);
+  // get/set parameters
+  params.format = ajCharNewS(ajAcdGetString("format"));
+  params.style  = ajCharNewS(ajAcdGetString("style"));
 
   soap_init(&soap);
 
-  char* in0;
-  in0 = ajCharNewS(dbname);
-  char* in1;
-  in1 = ajCharNewS(idlist);
-  if ( soap_call_ns1__runFetchBatch( &soap, NULL, NULL, in0, in1, &params, &jobid ) == SOAP_OK ) {
+  char* in0; in0= ajCharNewS(dbname);
+  char* in1; in1= ajCharNewS(idlist);
+
+  if (soap_call_ns1__runFetchBatch(&soap, NULL, NULL, in0, in1, &params, &jobid) == SOAP_OK) {
   } else {
     soap_print_fault(&soap, stderr);
   }
 
-  int check = 0;
-  while ( check == 0 ) {
-    if ( soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check ) == SOAP_OK ) {
+  int check= 0;
+  while (check == 0) {
+    if (soap_call_ns1__checkStatus(&soap, NULL, NULL, jobid, &check) == SOAP_OK) {
     } else {
       soap_print_fault(&soap, stderr);
     }
     sleep(3);
   }
 
-  if ( soap_call_ns1__getResult( &soap, NULL, NULL, jobid,  &result ) == SOAP_OK ) {
-    substr = ajStrNewC(result);
-    ajFmtPrintF(outf,"%S\n",substr);
+  if (soap_call_ns1__getResult(&soap, NULL, NULL, jobid, &result) == SOAP_OK) {
+    substr= ajStrNewC(result);
+    ajFmtPrintF(outf, "%S\n", substr);
   } else {
     soap_print_fault(&soap, stderr);
   }
-
 
   soap_destroy(&soap);
   soap_end(&soap);

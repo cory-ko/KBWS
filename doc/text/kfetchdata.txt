@@ -37,8 +37,6 @@ Usage
 Fetch an entry in a defined format and style
 dbName:ID: UniProtKB:WAP_RAT
 Output file [outfile.kfetchdata]: 
-Jobid: kbws_12654644
-***
 
 
 ID   WAP_RAT                 Reviewed;         137 AA.

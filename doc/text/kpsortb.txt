@@ -42,8 +42,6 @@ prediction protein localization sets for bacterial sequences
 Input protein sequence(s): swissprot:P50930
 negative or positive [negative]: 
 Output file [17kd_ricpa.kpsortb]: 
-Jobid: kbws_4131647
-**
 
 
 SeqID: YourSeq 

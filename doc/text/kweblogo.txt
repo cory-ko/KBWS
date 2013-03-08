@@ -38,8 +38,10 @@ Usage
 Generation of sequence logos using WebLogo
 Input (gapped) sequence(s): test.fasta
 Output file name [kweblogo.png]:
-Jobid: kbws_7350341
-****
+
+% ls kweblogo.png
+kweblogo.png
+
 
 Command line arguments
 

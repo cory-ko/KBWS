@@ -37,8 +37,6 @@ Usage
 Finding genes in prokaryotic genomes using glimmer
 Input (gapped) sequence(s): refseq:NC_000908
 output sequence(s) [nc_000908.kglimmer]: 
-Jobid: kbws_5626576
-**************
 
 
 GLIMMER (ver. 3.02; iterated)  predictions:

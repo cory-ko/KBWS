@@ -1,5 +1,3 @@
-<!--START OF HEADER - DON'T ALTER -->
-
 <HTML>
 
   <HEAD>
@@ -8,37 +6,28 @@
 
   <BODY BGCOLOR="#FFFFFF" text="#000000">
     <table align=center border=0 cellspacing=0 cellpadding=0>
-      <tr><td valign=top>
-	  <A HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
+      <tr>
+	<td valign=top>
+	  <a HREF="/" ONMOUSEOVER="self.status='Go to the EMBOSS home page';return true"><img border=0 src="emboss_icon.jpg" alt="" width=150 height=48></a>
 	</td>
 	<td align=left valign=middle>
-	  <b><font size="+6">
-	      kcentroidfold
-	  </font></b>
-      </td></tr>
+	  <b><font size="+6">kcentroidfold</font></b>
+	</td>
+      </tr>
     </table>
-    <br>&nbsp;
-    <p>
-  <!--END OF HEADER-->
 
-  <H2>Function</H2>
-  Predicts RNA 2D structure using CentroidFold
-  <!--
-      DON'T WRITE ANYTHING HERE.
-      IT IS DONE FOR YOU.
-    -->
+    <br />&nbsp;
 
-  <h2>Description</h2>
+    <H2>Function</H2>
+    Predicts RNA 2D structure using CentroidFold
+
+    <h2>Description</h2>
     <p>
-      kcentroidfold predicts an RNA 2D structure from given RNA sequence
-      utilizing CentroidFold.
-      CentroidFold is based on the gamma-centroid estimator for high-dimensional
-      discrete spaces.
+      kcentroidfold predicts an RNA 2D structure from given RNA sequence utilizing CentroidFold. CentroidFold is based on the gamma-centroid estimator for high-dimensional discrete spaces.
     </p>
 
     <p>
-      kcentroidfold utilizes CentroidFold Web Server provided by ncRNA.org.
-      Original web-service is located at the following URL:
+      kcentroidfold utilizes CentroidFold Web Server provided by ncRNA.org. Original web-service is located at the following URL:
     </p>
 
     <p>
@@ -46,18 +35,10 @@
     </p>
 
     <p>
-      This tools is a subset of Keio Bioinformatics Web Service (KBWS) package,
-      which contains interfaces to bioinformatics web services through a proxy
-      server at Keio University. kcentroidfold is thus an interface of "runCentroidFold"
-      method included in KBWS SOAP service.
-    </p>
-    <p>
-      This method can be alternatively accessed directly from programming languages
-      as SOAP web service. Please refer to the KBWS online documentations
-      <a href="http://www.g-language.org/kbws/">http://www.g-language.org/kbws/</a> for more information.
+      This tools is a subset of Keio Bioinformatics Web Service (KBWS) package, which contains interfaces to bioinformatics web services through a proxy server at Keio University. kcentroidfold is thus an interface of "runCentroidFold" method included in KBWS SOAP service.<br />
+      This method can be alternatively accessed directly from programming languages as SOAP web service. Please refer to the KBWS online documentations <a href="http://www.g-language.org/kbws/">http://www.g-language.org/kbws/</a> for more information.
     </p>
 
-    <p>
       <h2>Usage</h2>
 
       <table width="90%">
@@ -65,23 +46,22 @@
 	  <td bgcolor="#CCFFFF">
 	    <pre>
 
-    Here is a sample session with kcentroidfold
+   Here is a sample session with kcentroidfold
 
-    % kcentroidfold
-    RNA 2D structure prediction from an RNA sequence using CentroidFold
-    Input (gapped) sequence(s): test.fasta
-    Output image file name [kcentroidfold.png]:
-    Output file [55-110.centroidfold]:
-    Jobid: kbws_12547145
-    ****
+% kcentroidfold
+RNA 2D structure prediction from an RNA sequence using CentroidFold
+Input (gapped) sequence(s): test.fasta
+Output image file name [kcentroidfold.png]:
+Output file [55-110.centroidfold]:
 
-    % cat 55-110.centroidfold
-    >M33000.1/55-110
-    ACGCUGUCUGUACUUGUAUCAGUACACUGACGAGUCCCUAAAGGACGAAACAGCGC
-    .(((((((((((((.(...)))))))..).(..((((.....)))))..)))))).
+% cat 55-110.centroidfold
+>M33000.1/55-110
+ACGCUGUCUGUACUUGUAUCAGUACACUGACGAGUCCCUAAAGGACGAAACAGCGC
+.(((((((((((((.(...)))))))..).(..((((.....)))))..)))))).
 
-    % ls kcentroidfold.png
-    kcentroidfold.png
+% ls kcentroidfold.png
+kcentroidfold.png
+
 	    </pre>
 	  </td>
 	</tr>

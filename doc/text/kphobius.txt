@@ -37,8 +37,6 @@ Usage
 Predicts transmembrance topology and signal peptides using Phobius
 Input protein sequence(s): swissprot:MTH_DROME
 Output file [mth_drome.kphobius]: 
-Jobid: kbws_5008285
-****
 
 ID   MTH_DROME
 FT   SIGNAL        1     24       

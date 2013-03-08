@@ -38,7 +38,6 @@ compares query sequences to databases using SSEARCH
 Input (gapped) sequence(s): test.fasta
 database for search: uniprotkb
 output sequence(s) [nc_000908.kssearch]:
-Jobid: kbws_5626576
 
 
    ### output sample

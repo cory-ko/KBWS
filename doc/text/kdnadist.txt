@@ -48,8 +48,7 @@ Usage
 Nucleic acid sequence Distance Matrix program using dnadist
 Input (gapped) sequence(s): test.fasta
 Output file [55-110.kdnadist]:
-Jobid: kbws_12547145
-***********
+
 
 Command line arguments
 

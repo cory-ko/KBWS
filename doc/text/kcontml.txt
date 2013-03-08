@@ -47,8 +47,6 @@ Usage
 Gene frequency and continuous character Maximum Likelihood using contml
 Input (gapped) sequence(s): test.fasta
 Output file [55-110.kcontml]:
-Jobid: kbws_12547145
-***********
 
 Command line arguments
 

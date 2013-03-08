@@ -36,8 +36,6 @@ Usage
 prediction of protein localization sets for animal/yeast sequences
 Input protein sequence(s): swissprot:FOXP2_HUMAN
 Output file [foxp2_human.kpsort2]: 
-Jobid: kbws_1284690
-***
 
 
  PSORT II server 

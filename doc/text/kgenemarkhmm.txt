@@ -38,8 +38,6 @@ Usage
 Finds genes in prokaryotic genomes using GeneMarkhmm
 Input (gapped) sequence(s): refseq:NC_000908
 Output file [nc_000908.kgenemarkhmm]: 
-Jobid: kbws_11620578
-****
 
 
 Gene Predictions in Text Format

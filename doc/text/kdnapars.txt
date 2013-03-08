@@ -44,8 +44,7 @@ Usage
 DNA parsimony algorithm using dnapars
 Input (gapped) sequence(s): test.fasta
 Output file [55-110.kdnapars]:
-Jobid: kbws_12547145
-***********
+
 
 Command line arguments
 

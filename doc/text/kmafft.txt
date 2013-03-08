@@ -36,8 +36,6 @@ Usage
 Multiple sequence alignment using MAFFT
 Input (gapped) sequence(s): swissprot:FOXP2_*
 Output file [foxp2_gorgo.kmafft]: 
-Jobid: kbws_3935052
-**
 
 CLUSTAL format alignment by MAFFT (v6.713b)
 

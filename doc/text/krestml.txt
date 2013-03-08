@@ -43,8 +43,6 @@ Usage
 Restriction site maximum Likelihood method using restml
 Input file: sample.dat
 Output file [55-110.krestml]:
-Jobid: kbws_12547145
-***********
 
 Command line arguments
 

@@ -38,8 +38,6 @@ Fetch a set of entries in a defined format and style
 dbname (e.g. uniprotkb): uniprotkb
 id list (e.g. 1433T_RAT,WAP_RAT):  WAP_MOUSE,WAP_RAT
 Output file [outfile.kfetchbatch]: stdout
-Jobid: kbws_4590232
-***
 
 
 ID   WAP_MOUSE               Reviewed;         134 AA.

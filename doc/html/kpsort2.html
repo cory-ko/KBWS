@@ -45,154 +45,151 @@
 	<td bgcolor="#CCFFFF">
 	  <pre>
 
-	    Here is a sample session with kpsort2
+  Here is a sample session with kpsort2
 
-	    % kpsort2
-	    prediction of protein localization sets for animal/yeast sequences
-	    Input protein sequence(s): swissprot:FOXP2_HUMAN
-	    Output file [foxp2_human.kpsort2]: 
-	    Jobid: kbws_1284690
-	    ***
+% kpsort2
+prediction of protein localization sets for animal/yeast sequences
+Input protein sequence(s): swissprot:FOXP2_HUMAN
+Output file [foxp2_human.kpsort2]: 
 
-
-	    PSORT II server 
-	    Input Sequence
-	    QUERY (715 aa) 
-	    MMQESATETI SNSSMNQNGM STLSSQLDAG SRDGRSSGDT SSEVSTVELL
-	    HLQQQQALQA ARQLLLQQQT SGLKSPKSSD KQRPLQVPVS VAMMTPQVIT
-	    PQQMQQILQQ QVLSPQQLQA LLQQQQAVML QQQQLQEFYK KQQEQLHLQL
-	    LQQQQQQQQQ QQQQQQQQQQ QQQQQQQQQQ QQQQQQQQQQ QHPGKQAKEQ
-	    QQQQQQQQQL AAQQLVFQQQ LLQMQQLQQQ QHLLSLQRQG LISIPPGQAA
-	    LPVQSLPQAG LSPAEIQQLW KEVTGVHSME DNGIKHGGLD LTTNNSSSTT
-	    SSNTSKASPP ITHHSIVNGQ SSVLSARRDS SSHEETGASH TLYGHGVCKW
-	    PGCESICEDF GQFLKHLNNE HALDDRSTAQ CRVQMQVVQQ LEIQLSKERE
-	    RLQAMMTHLH MRPSEPKPSP KPLNLVSSVT MSKNMLETSP QSLPQTPTTP
-	    TAPVTPITQG PSVITPASVP NVGAIRRRHS DKYNIPMSSE IAPNYEFYKN
-	    ADVRPPFTYA TLIRQAIMES SDRQLTLNEI YSWFTRTFAY FRRNAATWKN
-	    AVRHNLSLHK CFVRVENVKG AVWTVDEVEY QKRRSQKITG SPTLVKNIPT
-	    SLGYGAALNA SLQAALAESS LPLLSNPGLI NNASSGLLQA VHEDLNGSLD
-	    HIDSNGNSSP GCSPQPHIHS IHVKEEPVIA EDEDCPMSLV TTANHSPELE
-	    DDREIEEEPL SEDLE
-	    Results of Subprograms
-	    PSG:  a new signal peptide prediction method
-	    N-region:  length 8;  pos.chg 0;  neg.chg 2
-	    H-region:  length 19;  peak value   0.00
-	    PSG score:  -4.40
-	    GvH:  von Heijne's method for signal seq. recognition
-	    GvH score (threshold: -2.1):  -6.15
-	    possible cleavage site: between 60 and 61
-	    >>> Seems to have no N-terminal signal peptide
-	    ALOM: Klein et al's method for TM region allocation
-	    Init position for calculation: 1
-	    Tentative number of TMS(s) for the threshold  0.5:   0
-	    number of TMS(s) .. fixed
-	    PERIPHERAL  Likelihood =  5.41 (at 84)
-	    ALOM score:   5.41  (number of TMSs: 0)
-	    MITDISC: discrimination of mitochondrial targeting seq
-	    R content:       0       Hyd Moment(75): 12.63
-	    Hyd Moment(95): 10.36    G content:       0
-	    D/E content:     2       S/T content:     2
-	    Score: -5.04
-	    Gavel: prediction of cleavage sites for mitochondrial preseq
-	    cleavage site motif not found
-	    NUCDISC: discrimination of nuclear localization signals
-	    pat4: RRRH (3) at  476
-	    pat7: none
-	    bipartite: none
-	    content of basic residues:   7.1%
-	    NLS Score: -0.29
-	    KDEL: ER retention motif in the C-terminus: none
-	    ER Membrane Retention Signals: none
-	    SKL: peroxisomal targeting signal in the C-terminus: none
-	    SKL2: 2nd peroxisomal targeting signal:  found
-	    RLQAMMTHL at 401
-	    VAC: possible vacuolar targeting motif: none
-	    RNA-binding motif: none
-	    Actinin-type actin-binding motif:
-	    type 1: none
-	    type 2: none
-	    NMYR: N-myristoylation pattern : none
-	    Prenylation motif: none
-	    memYQRL: transport motif from cell surface to Golgi: none
-	    Tyrosines in the tail: none
-	    Dileucine motif in the tail: none
-	    checking 63 PROSITE DNA binding motifs: 
-	    Zinc finger, C2H2 type, domain (PS00028):  *** found ***
-            CKWPGCESICEDFGQFLKHLNNEH at 348
-	    checking 71 PROSITE ribosomal protein motifs:  none
-	    checking 33 PROSITE prokaryotic DNA binding motifs:  none
-	    NNCN: Reinhardt's method for Cytplasmic/Nuclear discrimination
-	    Prediction: nuclear
-	    Reliability: 94.1
-	    COIL: Lupas's algorithm to detect coiled-coil regions
-	    147 L  0.63
-	    148 Q  0.63
-	    149 L  0.63
-	    150 L  0.63
-	    151 Q  0.63
-	    152 Q  0.63
-	    153 Q  0.63
-	    154 Q  0.63
-	    155 Q  0.63
-	    156 Q  0.63
-	    157 Q  0.63
-	    158 Q  0.63
-	    159 Q  0.63
-	    160 Q  0.63
-	    161 Q  0.63
-	    162 Q  0.63
-	    163 Q  0.63
-	    164 Q  0.63
-	    165 Q  0.63
-	    166 Q  0.63
-	    167 Q  0.63
-	    168 Q  0.63
-	    169 Q  0.63
-	    170 Q  0.63
-	    171 Q  0.63
-	    172 Q  0.63
-	    173 Q  0.63
-	    174 Q  0.63
-	    175 Q  0.56
-	    176 Q  0.56
-	    177 Q  0.56
-	    377 T  0.55
-	    378 A  0.55
-	    379 Q  0.55
-	    380 C  0.55
-	    381 R  0.55
-	    382 V  0.55
-	    383 Q  0.55
-	    384 M  0.55
-	    385 Q  0.55
-	    386 V  0.55
-	    387 V  0.55
-	    388 Q  0.55
-	    389 Q  0.55
-	    390 L  0.55
-	    391 E  0.55
-	    392 I  0.55
-	    393 Q  0.55
-	    394 L  0.55
-	    395 S  0.55
-	    396 K  0.55
-	    397 E  0.55
-	    398 R  0.55
-	    399 E  0.55
-	    400 R  0.55
-	    401 L  0.55
-	    402 Q  0.55
-	    403 A  0.55
-	    404 M  0.55
-	    total: 59 residues 
-	    Results of the k-NN Prediction
-	    k = 9/23
-            65.2 %: nuclear
-            17.4 %: mitochondrial
-            8.7 %: cytoplasmic
-            4.3 %: vesicles of secretory system
-            4.3 %: endoplasmic reticulum
-	    >> prediction for QUERY is nuc (k=23)
+PSORT II server 
+Input Sequence
+QUERY (715 aa) 
+MMQESATETI SNSSMNQNGM STLSSQLDAG SRDGRSSGDT SSEVSTVELL
+HLQQQQALQA ARQLLLQQQT SGLKSPKSSD KQRPLQVPVS VAMMTPQVIT
+PQQMQQILQQ QVLSPQQLQA LLQQQQAVML QQQQLQEFYK KQQEQLHLQL
+LQQQQQQQQQ QQQQQQQQQQ QQQQQQQQQQ QQQQQQQQQQ QHPGKQAKEQ
+QQQQQQQQQL AAQQLVFQQQ LLQMQQLQQQ QHLLSLQRQG LISIPPGQAA
+LPVQSLPQAG LSPAEIQQLW KEVTGVHSME DNGIKHGGLD LTTNNSSSTT
+SSNTSKASPP ITHHSIVNGQ SSVLSARRDS SSHEETGASH TLYGHGVCKW
+PGCESICEDF GQFLKHLNNE HALDDRSTAQ CRVQMQVVQQ LEIQLSKERE
+RLQAMMTHLH MRPSEPKPSP KPLNLVSSVT MSKNMLETSP QSLPQTPTTP
+TAPVTPITQG PSVITPASVP NVGAIRRRHS DKYNIPMSSE IAPNYEFYKN
+ADVRPPFTYA TLIRQAIMES SDRQLTLNEI YSWFTRTFAY FRRNAATWKN
+AVRHNLSLHK CFVRVENVKG AVWTVDEVEY QKRRSQKITG SPTLVKNIPT
+SLGYGAALNA SLQAALAESS LPLLSNPGLI NNASSGLLQA VHEDLNGSLD
+HIDSNGNSSP GCSPQPHIHS IHVKEEPVIA EDEDCPMSLV TTANHSPELE
+DDREIEEEPL SEDLE
+Results of Subprograms
+PSG:  a new signal peptide prediction method
+N-region:  length 8;  pos.chg 0;  neg.chg 2
+H-region:  length 19;  peak value   0.00
+PSG score:  -4.40
+GvH:  von Heijne's method for signal seq. recognition
+GvH score (threshold: -2.1):  -6.15
+possible cleavage site: between 60 and 61
+>>> Seems to have no N-terminal signal peptide
+ALOM: Klein et al's method for TM region allocation
+Init position for calculation: 1
+Tentative number of TMS(s) for the threshold  0.5:   0
+number of TMS(s) .. fixed
+PERIPHERAL  Likelihood =  5.41 (at 84)
+ALOM score:   5.41  (number of TMSs: 0)
+MITDISC: discrimination of mitochondrial targeting seq
+R content:       0       Hyd Moment(75): 12.63
+Hyd Moment(95): 10.36    G content:       0
+D/E content:     2       S/T content:     2
+Score: -5.04
+Gavel: prediction of cleavage sites for mitochondrial preseq
+cleavage site motif not found
+NUCDISC: discrimination of nuclear localization signals
+pat4: RRRH (3) at  476
+pat7: none
+bipartite: none
+content of basic residues:   7.1%
+NLS Score: -0.29
+KDEL: ER retention motif in the C-terminus: none
+ER Membrane Retention Signals: none
+SKL: peroxisomal targeting signal in the C-terminus: none
+SKL2: 2nd peroxisomal targeting signal:  found
+RLQAMMTHL at 401
+VAC: possible vacuolar targeting motif: none
+RNA-binding motif: none
+Actinin-type actin-binding motif:
+type 1: none
+type 2: none
+NMYR: N-myristoylation pattern : none
+Prenylation motif: none
+memYQRL: transport motif from cell surface to Golgi: none
+Tyrosines in the tail: none
+Dileucine motif in the tail: none
+checking 63 PROSITE DNA binding motifs: 
+Zinc finger, C2H2 type, domain (PS00028):  *** found ***
+CKWPGCESICEDFGQFLKHLNNEH at 348
+checking 71 PROSITE ribosomal protein motifs:  none
+checking 33 PROSITE prokaryotic DNA binding motifs:  none
+NNCN: Reinhardt's method for Cytplasmic/Nuclear discrimination
+Prediction: nuclear
+Reliability: 94.1
+COIL: Lupas's algorithm to detect coiled-coil regions
+147 L  0.63
+148 Q  0.63
+149 L  0.63
+150 L  0.63
+151 Q  0.63
+152 Q  0.63
+153 Q  0.63
+154 Q  0.63
+155 Q  0.63
+156 Q  0.63
+157 Q  0.63
+158 Q  0.63
+159 Q  0.63
+160 Q  0.63
+161 Q  0.63
+162 Q  0.63
+163 Q  0.63
+164 Q  0.63
+165 Q  0.63
+166 Q  0.63
+167 Q  0.63
+168 Q  0.63
+169 Q  0.63
+170 Q  0.63
+171 Q  0.63
+172 Q  0.63
+173 Q  0.63
+174 Q  0.63
+175 Q  0.56
+176 Q  0.56
+177 Q  0.56
+377 T  0.55
+378 A  0.55
+379 Q  0.55
+380 C  0.55
+381 R  0.55
+382 V  0.55
+383 Q  0.55
+384 M  0.55
+385 Q  0.55
+386 V  0.55
+387 V  0.55
+388 Q  0.55
+389 Q  0.55
+390 L  0.55
+391 E  0.55
+392 I  0.55
+393 Q  0.55
+394 L  0.55
+395 S  0.55
+396 K  0.55
+397 E  0.55
+398 R  0.55
+399 E  0.55
+400 R  0.55
+401 L  0.55
+402 Q  0.55
+403 A  0.55
+404 M  0.55
+total: 59 residues 
+Results of the k-NN Prediction
+k = 9/23
+65.2 %: nuclear
+17.4 %: mitochondrial
+8.7 %: cytoplasmic
+4.3 %: vesicles of secretory system
+4.3 %: endoplasmic reticulum
+>> prediction for QUERY is nuc (k=23)
 
 	  </pre>
 	</td>

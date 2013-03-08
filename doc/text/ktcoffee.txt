@@ -40,8 +40,7 @@ Input (gapped) sequence(s): multiNuc.fasta
 Output file [test0.ktcoffee]:
 Dendrogram (tree file) from T-Coffee output file [test0.dnd]:
 (aligned) output sequence set [test0.aln]:
-Jobid: kbws_7768256
-***********
+
 
 Command line arguments
 

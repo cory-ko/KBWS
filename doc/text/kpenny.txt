@@ -42,8 +42,7 @@ Usage
 Penny algorithm, branch-and-bound using penny
 Input file: sample.dat
 Output file [55-110.kpenny]:
-Jobid: kbws_12547145
-***********
+
 
 Command line arguments
 

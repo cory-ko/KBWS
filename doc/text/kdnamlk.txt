@@ -49,8 +49,7 @@ Usage
 Estimates nucleotide phylogeny by maximum likelihood using dnamlk
 Input (gapped) sequence(s): test.fasta
 Output file [55-110.kdnamlk]:
-Jobid: kbws_12547145
-***********
+
 
 Command line arguments
 

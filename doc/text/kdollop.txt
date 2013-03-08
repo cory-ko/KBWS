@@ -44,8 +44,7 @@ Usage
 Dollo and polymorphism parsimony algorithm using dollop
 Input file: sample.dat
 Output file [55-110.kdollop]:
-Jobid: kbws_12547145
-***********
+
 
 Command line arguments
 

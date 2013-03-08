@@ -52,107 +52,105 @@
 	<td bgcolor="#CCFFFF">
 	  <pre>
 
-	      Here is a sample session with kpsort
+  Here is a sample session with kpsort
 
-	      % kpsort
-	      prediction protein localization sets for bacterial/plant sequences
-	      Input protein sequence(s): swissprot:FOXP2_HUMAN
-	      Output file [foxp2_human.kpsort]:
-	      Jobid: kbws_1284690
-	      ***
+% kpsort
+prediction protein localization sets for bacterial/plant sequences
+Input protein sequence(s): swissprot:FOXP2_HUMAN
+Output file [foxp2_human.kpsort]:
 
-	      Nakai server 
+Nakai server 
 
-	      Query Information
+Query Information
 
-	      ORIGIN animal
-	      BEGIN
-	      >MYSEQ
-	      MMQESATETI SNSSMNQNGM STLSSQLDAG SRDGRSSGDT SSEVSTVELL
-	      HLQQQQALQA ARQLLLQQQT SGLKSPKSSD KQRPLQVPVS VAMMTPQVIT
-	      PQQMQQILQQ QVLSPQQLQA LLQQQQAVML QQQQLQEFYK KQQEQLHLQL
-	      LQQQQQQQQQ QQQQQQQQQQ QQQQQQQQQQ QQQQQQQQQQ QHPGKQAKEQ
-	      QQQQQQQQQL AAQQLVFQQQ LLQMQQLQQQ QHLLSLQRQG LISIPPGQAA
-	      LPVQSLPQAG LSPAEIQQLW KEVTGVHSME DNGIKHGGLD LTTNNSSSTT
-	      SSNTSKASPP ITHHSIVNGQ SSVLSARRDS SSHEETGASH TLYGHGVCKW
-	      PGCESICEDF GQFLKHLNNE HALDDRSTAQ CRVQMQVVQQ LEIQLSKERE
-	      RLQAMMTHLH MRPSEPKPSP KPLNLVSSVT MSKNMLETSP QSLPQTPTTP
-	      TAPVTPITQG PSVITPASVP NVGAIRRRHS DKYNIPMSSE IAPNYEFYKN
-	      ADVRPPFTYA TLIRQAIMES SDRQLTLNEI YSWFTRTFAY FRRNAATWKN
-	      AVRHNLSLHK CFVRVENVKG AVWTVDEVEY QKRRSQKITG SPTLVKNIPT
-	      SLGYGAALNA SLQAALAESS LPLLSNPGLI NNASSGLLQA VHEDLNGSLD
-	      HIDSNGNSSP GCSPQPHIHS IHVKEEPVIA EDEDCPMSLV TTANHSPELE
-	      DDREIEEEPL SEDLE
+ORIGIN animal
+BEGIN
+>MYSEQ
+MMQESATETI SNSSMNQNGM STLSSQLDAG SRDGRSSGDT SSEVSTVELL
+HLQQQQALQA ARQLLLQQQT SGLKSPKSSD KQRPLQVPVS VAMMTPQVIT
+PQQMQQILQQ QVLSPQQLQA LLQQQQAVML QQQQLQEFYK KQQEQLHLQL
+LQQQQQQQQQ QQQQQQQQQQ QQQQQQQQQQ QQQQQQQQQQ QHPGKQAKEQ
+QQQQQQQQQL AAQQLVFQQQ LLQMQQLQQQ QHLLSLQRQG LISIPPGQAA
+LPVQSLPQAG LSPAEIQQLW KEVTGVHSME DNGIKHGGLD LTTNNSSSTT
+SSNTSKASPP ITHHSIVNGQ SSVLSARRDS SSHEETGASH TLYGHGVCKW
+PGCESICEDF GQFLKHLNNE HALDDRSTAQ CRVQMQVVQQ LEIQLSKERE
+RLQAMMTHLH MRPSEPKPSP KPLNLVSSVT MSKNMLETSP QSLPQTPTTP
+TAPVTPITQG PSVITPASVP NVGAIRRRHS DKYNIPMSSE IAPNYEFYKN
+ADVRPPFTYA TLIRQAIMES SDRQLTLNEI YSWFTRTFAY FRRNAATWKN
+AVRHNLSLHK CFVRVENVKG AVWTVDEVEY QKRRSQKITG SPTLVKNIPT
+SLGYGAALNA SLQAALAESS LPLLSNPGLI NNASSGLLQA VHEDLNGSLD
+HIDSNGNSSP GCSPQPHIHS IHVKEEPVIA EDEDCPMSLV TTANHSPELE
+DDREIEEEPL SEDLE
 
 
-	      Result Information
+Result Information
 
-	      PSORT --- Prediction of Protein Localization Sites
-              version 6.4(WWW)
-	      MYSEQ          715 Residues
-	      Species classification: 4
+PSORT --- Prediction of Protein Localization Sites
+version 6.4(WWW)
+MYSEQ          715 Residues
+Species classification: 4
 
-	      *** Reasoning Step: 1
+*** Reasoning Step: 1
 
-	      Preliminary Calculation of ALOM (threshold: 0.5)
-	      count: 0
-	      McG: Examining signal sequence (McGeoch)
-	      Length  of  UR:   19
-	      Peak Value of UR:  -0.16
-	      Net Charge of CR: -2
-	      Discriminant Score:    -14.88
-	      GvH: Examining signal sequence (von Heijne)
-	      Signal Score (-3.5): -2.15
-	      Possible cleavage site: 60
-	      >>> Seems to have no N-terminal signal seq.
-	      Amino Acid Composition of Predicted Mature Form:
-	      calculated from 1
-	      ALOM new cnt: 0 ** thrshld changed to -2
-	      Cleavable signal was detected in ALOM?: 0B
-	      ALOM: finding transmembrane regions (Klein et al.)
-	      count: 0  value:   5.41  threshold: -2.0
-	      PERIPHERAL  Likelihood =  5.41
-	      modified ALOM score:  -1.98
-	      ( 3) or uncleavable?
-	      Gavel: Examining the boundary of mitochondrial targeting seq.
-	      motif at: 3
-	      Uncleavable? Ipos set to: 13
-	      Discrimination of mitochondrial target seq.: 
-	      negative (-1.91)
+Preliminary Calculation of ALOM (threshold: 0.5)
+count: 0
+McG: Examining signal sequence (McGeoch)
+Length  of  UR:   19
+Peak Value of UR:  -0.16
+Net Charge of CR: -2
+Discriminant Score:    -14.88
+GvH: Examining signal sequence (von Heijne)
+Signal Score (-3.5): -2.15
+Possible cleavage site: 60
+>>> Seems to have no N-terminal signal seq.
+Amino Acid Composition of Predicted Mature Form:
+calculated from 1
+ALOM new cnt: 0 ** thrshld changed to -2
+Cleavable signal was detected in ALOM?: 0B
+ALOM: finding transmembrane regions (Klein et al.)
+count: 0  value:   5.41  threshold: -2.0
+PERIPHERAL  Likelihood =  5.41
+modified ALOM score:  -1.98
+( 3) or uncleavable?
+Gavel: Examining the boundary of mitochondrial targeting seq.
+motif at: 3
+Uncleavable? Ipos set to: 13
+Discrimination of mitochondrial target seq.: 
+negative (-1.91)
 
-	      *** Reasoning Step: 2
+*** Reasoning Step: 2
 
-	      KDEL   Count: 0
-	      Checking apolar signal for intramitochondrial sorting
-	      Mitochondrial matrix?  Score:  0.10
-	      SKL motif (signal for peroxisomal protein): 
-	      pos: -1(715), count: 0   
-	      Amino Acid Composition Tendency for Peroxisome:  -5.66
-	      Peroxisomal proteins?   Status: negative
-	      Amino Acid Composition tendency for lysosomal proteins
-	      score:  0.33  Status: notclr
-	      Modified score for lysosome: 0.183
-	      Checking the amount of Basic Residues (nucleus)
-	      Checking the 4 residue pattern for Nuclear Targeting
-	      Found: pos: 475 (3) RRRH
-	      Checking the 7 residue pattern for Nuclear Targeting
-	      Checking the Robbins & Dingwall consensus (nucleus)
-	      Checking the RNA binding motif (nucleus or cytoplasm)
-	      nuc modified.   Score:  0.60
-	      Nuclear Signal   Status: notclr ( 0.30)
-	      Checking CaaX motif..
-	      Checking N-myristoylation..
-	      Checking CaaX motif..
+KDEL   Count: 0
+Checking apolar signal for intramitochondrial sorting
+Mitochondrial matrix?  Score:  0.10
+SKL motif (signal for peroxisomal protein): 
+pos: -1(715), count: 0   
+Amino Acid Composition Tendency for Peroxisome:  -5.66
+Peroxisomal proteins?   Status: negative
+Amino Acid Composition tendency for lysosomal proteins
+score:  0.33  Status: notclr
+Modified score for lysosome: 0.183
+Checking the amount of Basic Residues (nucleus)
+Checking the 4 residue pattern for Nuclear Targeting
+Found: pos: 475 (3) RRRH
+Checking the 7 residue pattern for Nuclear Targeting
+Checking the Robbins & Dingwall consensus (nucleus)
+Checking the RNA binding motif (nucleus or cytoplasm)
+nuc modified.   Score:  0.60
+Nuclear Signal   Status: notclr ( 0.30)
+Checking CaaX motif..
+Checking N-myristoylation..
+Checking CaaX motif..
 
-	      ----- Final Results -----
+----- Final Results -----
 
-              nucleus --- Certainty= 0.300(Affirmative) 
-              lysosome (lumen) --- Certainty= 0.183(Affirmative) 
-	      mitochondrial matrix space --- Certainty= 0.100(Affirmative) 
-	      endoplasmic reticulum (membrane) --- Certainty= 0.000(Not Clear) 
+nucleus --- Certainty= 0.300(Affirmative) 
+lysosome (lumen) --- Certainty= 0.183(Affirmative) 
+mitochondrial matrix space --- Certainty= 0.100(Affirmative) 
+endoplasmic reticulum (membrane) --- Certainty= 0.000(Not Clear) 
 
 
-	      ----- The End -----
+----- The End -----
 
 	  </pre>
 	</td>

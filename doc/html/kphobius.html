@@ -38,162 +38,158 @@
       This method can be alternatively accessed directly from programming languages as SOAP web service. Please refer to the KBWS online documentations <a href="http://www.g-language.org/kbws/">http://www.g-language.org/kbws/</a> for more information.
     </p>
 
-    <p>
+    <h2>Usage</h2>
 
-      <h2>Usage</h2>
+    <table width="90%">
+      <tr>
+	<td bgcolor="#CCFFFF">
+	  <pre>
 
-      <table width="90%">
-	<tr>
-	  <td bgcolor="#CCFFFF">
-	    <pre>
+  Here is a sample session with kphobius
 
-	      Here is a sample session with kphobius
+% kphobius
+Predicts transmembrance topology and signal peptides using Phobius
+Input protein sequence(s): swissprot:MTH_DROME
+Output file [mth_drome.kphobius]: 
 
-	      % kphobius
-	      Predicts transmembrance topology and signal peptides using Phobius
-	      Input protein sequence(s): swissprot:MTH_DROME
-	      Output file [mth_drome.kphobius]: 
-	      Jobid: kbws_5008285
-	      ****
+ID   MTH_DROME
+FT   SIGNAL        1     24       
+FT   DOMAIN        1      3       N-REGION.
+FT   DOMAIN        4     19       H-REGION.
+FT   DOMAIN       20     24       C-REGION.
+FT   DOMAIN       25    218       NON CYTOPLASMIC.
+FT   TRANSMEM    219    238       
+FT   DOMAIN      239    249       CYTOPLASMIC.
+FT   TRANSMEM    250    269       
+FT   DOMAIN      270    280       NON CYTOPLASMIC.
+FT   TRANSMEM    281    302       
+FT   DOMAIN      303    321       CYTOPLASMIC.
+FT   TRANSMEM    322    342       
+FT   DOMAIN      343    371       NON CYTOPLASMIC.
+FT   TRANSMEM    372    391       
+FT   DOMAIN      392    421       CYTOPLASMIC.
+FT   TRANSMEM    422    439       
+FT   DOMAIN      440    450       NON CYTOPLASMIC.
+FT   TRANSMEM    451    476       
+FT   DOMAIN      477    514       CYTOPLASMIC.
+//
 
-	      ID   MTH_DROME
-	      FT   SIGNAL        1     24       
-	      FT   DOMAIN        1      3       N-REGION.
-	      FT   DOMAIN        4     19       H-REGION.
-	      FT   DOMAIN       20     24       C-REGION.
-	      FT   DOMAIN       25    218       NON CYTOPLASMIC.
-	      FT   TRANSMEM    219    238       
-	      FT   DOMAIN      239    249       CYTOPLASMIC.
-	      FT   TRANSMEM    250    269       
-	      FT   DOMAIN      270    280       NON CYTOPLASMIC.
-	      FT   TRANSMEM    281    302       
-	      FT   DOMAIN      303    321       CYTOPLASMIC.
-	      FT   TRANSMEM    322    342       
-	      FT   DOMAIN      343    371       NON CYTOPLASMIC.
-	      FT   TRANSMEM    372    391       
-	      FT   DOMAIN      392    421       CYTOPLASMIC.
-	      FT   TRANSMEM    422    439       
-	      FT   DOMAIN      440    450       NON CYTOPLASMIC.
-	      FT   TRANSMEM    451    476       
-	      FT   DOMAIN      477    514       CYTOPLASMIC.
-	      //
+	  </pre>
+	</td>
+      </tr>
+    </table>
 
-	    </pre>
-	  </td>
-	</tr>
-      </table>
+    <h2>Command line arguments</h2>
+    <table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
+      <tr bgcolor="#FFFFCC">
+	<th align="left">Qualifier</th>
+	<th align="left">Type</th>
+	<th align="left">Description</th>
+	<th align="left">Allowed values</th>
+	<th align="left">Default</th>
+      </tr>
+      
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
+      </tr>
+      
+      <tr bgcolor="#FFFFCC">
+	<td>[-seqall]<br>(Parameter 1)</td>
+	<td>seqall</td>
+	<td>Protein sequence(s) filename and optional format, or reference (input USA)</td>
+	<td>Readable protein sequence(s)</td>
+	<td><b>Required</b></td>
+      </tr>
 
-      <h2>Command line arguments</h2>
-      <table border cellspacing=0 cellpadding=3 bgcolor="#ccccff">
-	<tr bgcolor="#FFFFCC">
-	  <th align="left">Qualifier</th>
-	  <th align="left">Type</th>
-	  <th align="left">Description</th>
-	  <th align="left">Allowed values</th>
-	  <th align="left">Default</th>
-	</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>[-outfile]<br>(Parameter 2)</td>
+	<td>outfile</td>
+	<td>Output file name</td>
+	<td>Phobius output file</td>
+	<td><i>&lt;*&gt;</i>.kphobius</td>
+      </tr>
 
-	<tr bgcolor="#FFFFCC">
-	  <th align="left" colspan=5>Standard (Mandatory) qualifiers</th>
-	</tr>
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Additional (Optional) qualifiers</th>
+      </tr>
 
-	<tr bgcolor="#FFFFCC">
-	  <td>[-seqall]<br>(Parameter 1)</td>
-	  <td>seqall</td>
-	  <td>Protein sequence(s) filename and optional format, or reference (input USA)</td>
-	  <td>Readable protein sequence(s)</td>
-	  <td><b>Required</b></td>
-	</tr>
+      <tr bgcolor="#FFFFCC">
+	<td>-outputformat</td>
+	<td>string</td>
+	<td>The output format: 'long', 'short', 'raw' or 'grp'</td>
+	<td>Any string</td>
+	<td>grp</td>
+      </tr>
 
-	<tr bgcolor="#FFFFCC">
-	  <td>[-outfile]<br>(Parameter 2)</td>
-	  <td>outfile</td>
-	  <td>Output file name</td>
-	  <td>Phobius output file</td>
-	  <td><i>&lt;*&gt;</i>.kphobius</td>
-	</tr>
+      <tr bgcolor="#FFFFCC">
+	<th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
+      </tr>
 
-	<tr bgcolor="#FFFFCC">
-	  <th align="left" colspan=5>Additional (Optional) qualifiers</th>
-	</tr>
+      <tr>
+	<td colspan=5>(none)</td>
+      </tr>
 
-	<tr bgcolor="#FFFFCC">
-	  <td>-outputformat</td>
-	  <td>string</td>
-	  <td>The output format: 'long', 'short', 'raw' or 'grp'</td>
-	  <td>Any string</td>
-	  <td>grp</td>
-	</tr>
-
-	<tr bgcolor="#FFFFCC">
-	  <th align="left" colspan=5>Advanced (Unprompted) qualifiers</th>
-	</tr>
-
-	<tr>
-	  <td colspan=5>(none)</td>
-	</tr>
-
-      </table>
+    </table>
 
 
-      <h2>Input file format</h2>
-      kphobius can use any genome sequence data that seqret can read.
+    <h2>Input file format</h2>
+    kphobius can use any genome sequence data that seqret can read.
 
-      <h2>Output file format</h2>
-      The output from kphobius has three format. Default format (long) is a list of the location of the predicted transmembrane helices, the predicted location of the intervening loop regions and signal peptide.
+    <h2>Output file format</h2>
+    The output from kphobius has three format. Default format (long) is a list of the location of the predicted transmembrane helices, the predicted location of the intervening loop regions and signal peptide.
 
-      <h2>Data files</h2>
-      None.
+    <h2>Data files</h2>
+    None.
 
-      <h2>Notes</h2>
-      None.
+    <h2>Notes</h2>
+    None.
 
-      <h2>References</h2>
-      <pre>
-	Kåll, K., et al.,(2004) A combined transmembrane topology and signal peptide
-	prediction method, Journal of Molecular Biology, 338(5), 1027-1036.
+    <h2>References</h2>
+    <pre>
+      Kåll, K., et al.,(2004) A combined transmembrane topology and signal peptide
+      prediction method, Journal of Molecular Biology, 338(5), 1027-1036.
 
-	Kåll, K., et al.,(2005) An HMM posterior decoder for sequence feature prediction
-	that includes homology information, Bioinformatics, 21, i251-i257.
-      </pre>
+      Kåll, K., et al.,(2005) An HMM posterior decoder for sequence feature prediction
+      that includes homology information, Bioinformatics, 21, i251-i257.
+    </pre>
 
-      <h2>Warnings</h2>
-      None.
+    <h2>Warnings</h2>
+    None.
 
-      <h2>Diagnostic Error Messages</h2>
-      None.
+    <h2>Diagnostic Error Messages</h2>
+    None.
 
-      <h2>Exit status</h2>
-      It always exits with a status of 0.
+    <h2>Exit status</h2>
+    It always exits with a status of 0.
 
-      <h2>Known bugs</h2>
-      None.
+    <h2>Known bugs</h2>
+    None.
 
-      <h2>See also</h2>
+    <h2>See also</h2>
 
-      <table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
-	  <th>Description</th></tr>
-	<tr>
-	  <td><a href="seqret.html">seqret</a></td>
-	  <td>Reads and writes (returns) sequences</td>
-	</tr>
+    <table border cellpadding=4 bgcolor="#FFFFF0"><tr><th>Program name</th>
+	<th>Description</th></tr>
+      <tr>
+	<td><a href="seqret.html">seqret</a></td>
+	<td>Reads and writes (returns) sequences</td>
+      </tr>
 
-      </table>
+    </table>
 
-      <h2>Author(s)</h2>
-      Kazuki Oshita (cory @ g-language.org)<br />
-      Institute for Advanced Biosciences, Keio University<br />
-      252-8520 Japan
+    <h2>Author(s)</h2>
+    Kazuki Oshita (cory @ g-language.org)<br />
+    Institute for Advanced Biosciences, Keio University<br />
+    252-8520 Japan
 
-      <h2>History</h2>
-      2009 - Written by Kazuki Oshita<br />
-      Mar 2013 - Update document by Kazuki Oshita
+    <h2>History</h2>
+    2009 - Written by Kazuki Oshita<br />
+    Mar 2013 - Update document by Kazuki Oshita
 
-      <h2>Target users</h2>
-      This program is intended to be used by everyone and everything, from naive users to embedded scripts.
+    <h2>Target users</h2>
+    This program is intended to be used by everyone and everything, from naive users to embedded scripts.
 
-      <h2>Comments</h2>
-      None.
+    <h2>Comments</h2>
+    None.
 
   </BODY>
 </HTML>

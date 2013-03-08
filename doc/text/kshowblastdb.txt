@@ -87,16 +87,16 @@ env_nr               Protein    NCBI    (env protein)
 
 Command line arguments
 
-   Standard (Mandatory) qualifiers:
-  [-outfile]           outfile    [.] Database list for kblast
-                                  
-   Additional (Optional) qualifiers: (none)
+   Standard (Mandatory) qualifiers: (none)
 
-   Advanced (Unprompted) qualifiers:
-   -nucleotide         boolean    [Y] displays information on
+   Additional (Optional) qualifiers:
+   -[no]nucleotide     boolean    [Y] Displays information on
                                       nucleotide databases
-   -protein            boolean    [Y] not displays information on
+   -[no]protein        boolean    [Y] Displays information on
                                       protein databases
+   -outfile            outfile    [stdout] Database list for kblast
+
+   Advanced (Unprompted) qualifiers: (none)
 
 Data files
 
@@ -124,8 +124,8 @@ Known bugs
 
 See also
 
-   showdb           Displays information on configured databases
    kblast           Search similar sequences in public repositories using BLAST
+   showdb           Displays information on configured databases
 
 Author(s)
 
@@ -136,6 +136,7 @@ Author(s)
 History
 
    2010 - Written by Kazuki Oshita
+   Mar 2013 - Update document by Kazuki Oshita
 
 Target users
 

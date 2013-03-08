@@ -38,8 +38,7 @@ Input (gapped) sequence(s): test_sequence.fasta
 RNAfold output [test_sequence.krnafold]: stdout
 Minimum free energy (MFE) structure in Ct format [test_sequence.ct]: 
 Minimum free energy (MFE) structure in Vienna format [test_sequence.vienna]:
-Jobid: kbws_7512092
-******
+
 
 >test_sequenc
 GGGCUAUUAGCUCAGUUGGUUAGAGCGCACCCCUGAUAAGGGUGAGGUCGCUGAUUCGAAUUCAGCAUAGCCC

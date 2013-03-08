@@ -47,8 +47,6 @@ Usage
 Fitch-Margoliash and Least-Squares Distance Methods using fitch
 Input file: sample.dat
 Output file [55-110.kfitch]:
-Jobid: kbws_12547145
-***********
 
 Command line arguments
 

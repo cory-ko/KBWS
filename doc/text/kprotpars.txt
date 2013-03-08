@@ -43,8 +43,6 @@ Usage
 Protein parsimony algorithm using protpars
 Input (gapped) sequence(s): test.fasta
 Output file [55-110.kprotpars]:
-Jobid: kbws_12547145
-***********
 
 Command line arguments
 

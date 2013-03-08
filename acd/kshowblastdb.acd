@@ -1,4 +1,4 @@
-application: kshowblastdb [
+0;95;capplication: kshowblastdb [
   documentation: "Displays information on databases for kblast"
   groups: "Display, Information"
   embassy: "kbws"
@@ -19,13 +19,13 @@ section: advanced [
   boolean: nucleotide [
     additional: "Y"
     default: "Y"
-    information: "displays information on nucleotide databases"
+    information: "Displays information on nucleotide databases"
   ]
 
   boolean: protein [
     additional: "Y"
     default: "Y"
-    information: "displays information on protein databases"
+    information: "Displays information on protein databases"
   ]
 
 endsection: advanced
@@ -39,6 +39,7 @@ section: output [
     additional: "Y"
     default: "stdout"
     knowntype: "kshowblastdb format"
+    information: "Database list for kblast"
   ]
 
 endsection: output

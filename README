@@ -173,6 +173,7 @@ USAGE EXAMPLE
   3. kweblogo (WebLogo)
       % kweblogo dna.m-fasta -filename kweblogo.png
       make the generation of sequence logos using WebLogo
+      Output file name [kweblogo.png]:
 
       % ls kweblogo.png
       kweblogo.png

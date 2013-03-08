@@ -11,63 +11,63 @@
 #include "../gsoap/stdsoap2.c"
 
 int main(int argc, char **argv) {
+  // initialize EMBASSY info
+  embInitPV("kfetchdata", argc, argv, "KBWS", "1.0.9");
+    
+  struct soap soap;
+  struct ns1__fetchDataInputParams params;
+  char* jobid;
+  char* result;
 
-    embInitPV("kfetchdata", argc, argv, "KBWS", "1.0.8");
+  AjPStr   id;
+  AjPFile  outf;
+  AjPStr   substr;
+  AjPStr   format;
+  AjPStr   style;
 
-    struct soap soap;
-    struct ns1__fetchDataInputParams params;
-    char* jobid;
-    char* result;
+  id     = ajAcdGetString("id");
+  outf   = ajAcdGetOutfile("outfile");
+  format = ajAcdGetString("format");
+  style  = ajAcdGetString("style");
 
-    AjPStr   id;
-    AjPFile  outf;
-    AjPStr   substr;
-    AjPStr   format;
-    AjPStr   style;
+  params.format = ajCharNewS(format);
+  params.style  = ajCharNewS(style);
 
-    id     = ajAcdGetString("id");
-    outf   = ajAcdGetOutfile("outfile");
-    format = ajAcdGetString("format");
-    style  = ajAcdGetString("style");
+  soap_init(&soap);
 
-    params.format = ajCharNewS(format);
-    params.style  = ajCharNewS(style);
+  char* in0;
+  in0 = ajCharNewS(id);
+  if ( soap_call_ns1__runFetchData( &soap, NULL, NULL, in0, &params, &jobid ) == SOAP_OK ) {
+  } else {
+    soap_print_fault(&soap, stderr);
+  }
 
-    soap_init(&soap);
-
-    char* in0;
-    in0 = ajCharNewS(id);
-    if ( soap_call_ns1__runFetchData( &soap, NULL, NULL, in0, &params, &jobid ) == SOAP_OK ) {
+  int check = 0;
+  while ( check == 0 ) {
+    if ( soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check ) == SOAP_OK ) {
     } else {
       soap_print_fault(&soap, stderr);
     }
+    sleep(3);
+  }
 
-    int check = 0;
-    while ( check == 0 ) {
-      if ( soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check ) == SOAP_OK ) {
-      } else {
-	soap_print_fault(&soap, stderr);
-      }
-      sleep(3);
-    }
-
-    if ( soap_call_ns1__getResult( &soap, NULL, NULL, jobid,  &result ) == SOAP_OK ) {
-      substr = ajStrNewC(result);
-      ajFmtPrintF(outf,"%S\n",substr);
-    } else {
-      soap_print_fault(&soap, stderr);
-    }
+  if ( soap_call_ns1__getResult( &soap, NULL, NULL, jobid,  &result ) == SOAP_OK ) {
+    substr = ajStrNewC(result);
+    ajFmtPrintF(outf,"%S\n",substr);
+  } else {
+    soap_print_fault(&soap, stderr);
+  }
 
 
-    soap_destroy(&soap);
-    soap_end(&soap);
-    soap_done(&soap);
+  soap_destroy(&soap);
+  soap_end(&soap);
+  soap_done(&soap);
 
-    ajStrDel(&id);
-    ajFileClose(&outf);
-    ajStrDel(&substr);
+  ajStrDel(&id);
+  ajFileClose(&outf);
+  ajStrDel(&substr);
 
-    embExit();
+  embExit();
 
-    return 0;
+  return 0;
 }

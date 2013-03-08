@@ -13,8 +13,8 @@
 static AjPStr getUniqueFileName(void);
 
 int main(int argc, char **argv) {
-
-  embInitPV("kclique", argc, argv, "KBWS", "1.0.8");
+  // initialize EMBASSY info
+  embInitPV("kclique", argc, argv, "KBWS", "1.0.9");
 
   struct soap soap;
   char*  jobid;

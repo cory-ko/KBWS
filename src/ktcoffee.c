@@ -13,146 +13,146 @@
 static AjPStr getUniqueFileName(void);
 
 int main(int argc, char **argv) {
+  // initialize EMBASSY info
+  embInitPV("ktcoffee", argc, argv, "KBWS", "1.0.9");
 
-    embInitPV("ktcoffee", argc, argv, "KBWS", "1.0.8");
+  AjPSeqall  seqall;
+  AjPSeq     seq;
+  AjPFile    outf;
+  AjPFile    outf_aln;
+  AjPFile    outf_dnd;
+  AjPStr     substr;
+  AjPStr     line = NULL; /* if "AjPStr line; -> ajReadline is not success!" */
 
-    AjPSeqall  seqall;
-    AjPSeq     seq;
-    AjPFile    outf;
-    AjPFile    outf_aln;
-    AjPFile    outf_dnd;
-    AjPStr     substr;
-    AjPStr     line = NULL; /* if "AjPStr line; -> ajReadline is not success!" */
+  AjPStr     sizestr = NULL;
+  ajint      thissize;
 
-    AjPStr     sizestr = NULL;
-    ajint      thissize;
+  AjPStr     tmp = NULL;
+  AjPStr     tmpFileName = NULL;
+  AjPSeqout  fil_file;
 
-    AjPStr     tmp = NULL;
-    AjPStr     tmpFileName = NULL;
-    AjPSeqout  fil_file;
+  ajint      nb = 0;
+  AjBool     are_prot = ajFalse;
+  ajint      size = 0;
+  AjPFile    infile;
+  AjPStr     multi = NULL;
 
-    ajint      nb = 0;
-    AjBool     are_prot = ajFalse;
-    ajint      size = 0;
-    AjPFile    infile;
-    AjPStr     multi = NULL;
+  AjPStr     outorder;
+  AjPStr     matrix;
 
-    AjPStr     outorder;
-    AjPStr     matrix;
+  struct soap soap;
+  struct ns1__tcoffeeInputParams params;
+  char* jobid;
+  char* result;
 
-    struct soap soap;
-    struct ns1__tcoffeeInputParams params;
-    char* jobid;
-    char* result;
+  outorder        = ajAcdGetString("outorder");
+  matrix          = ajAcdGetString("matrix");
+  params.outorder = ajCharNewS(outorder);
+  params.matrix   = ajCharNewS(matrix);
 
-    outorder        = ajAcdGetString("outorder");
-    matrix          = ajAcdGetString("matrix");
-    params.outorder = ajCharNewS(outorder);
-    params.matrix   = ajCharNewS(matrix);
+  seqall          = ajAcdGetSeqall("sequence");
+  outf            = ajAcdGetOutfile("outfile");
+  outf_aln        = ajAcdGetOutfile("alnoutfile");
+  outf_dnd        = ajAcdGetOutfile("dndoutfile");
 
-    seqall          = ajAcdGetSeqall("sequence");
-    outf            = ajAcdGetOutfile("outfile");
-    outf_aln        = ajAcdGetOutfile("alnoutfile");
-    outf_dnd        = ajAcdGetOutfile("dndoutfile");
+  tmp = ajStrNewC("fasta");
 
-    tmp = ajStrNewC("fasta");
+  soap_init(&soap);
 
-    soap_init(&soap);
+  fil_file = ajSeqoutNew();
+  tmpFileName = getUniqueFileName();
 
-    fil_file = ajSeqoutNew();
-    tmpFileName = getUniqueFileName();
+  if( !ajSeqoutOpenFilename(fil_file, tmpFileName) ) {
+    embExitBad();
+  }
 
-    if( !ajSeqoutOpenFilename(fil_file, tmpFileName) ) {
-      embExitBad();
+  ajSeqoutSetFormatS(fil_file, tmp);
+
+  while (ajSeqallNext(seqall, &seq)) {
+    if (!nb) {
+      are_prot  = ajSeqIsProt(seq);
     }
-
-    ajSeqoutSetFormatS(fil_file, tmp);
-
-    while (ajSeqallNext(seqall, &seq)) {
-      if (!nb) {
-	are_prot  = ajSeqIsProt(seq);
-      }
-      ajSeqoutWriteSeq(fil_file, seq);
-      ++nb;
-    }
-    ajSeqoutClose(fil_file);
-    ajSeqoutDel(&fil_file);
+    ajSeqoutWriteSeq(fil_file, seq);
+    ++nb;
+  }
+  ajSeqoutClose(fil_file);
+  ajSeqoutDel(&fil_file);
     
-    if (nb < 2) {
-      ajFatal("Multiple alignments need at least two sequences");
-    }
+  if (nb < 2) {
+    ajFatal("Multiple alignments need at least two sequences");
+  }
 
-    infile = ajFileNewInNameS(tmpFileName);
+  infile = ajFileNewInNameS(tmpFileName);
 
-    while (ajReadline(infile, &line)) {
-      ajStrAppendS(&multi,line);
-      ajStrAppendC(&multi,"\n");
-    }
+  while (ajReadline(infile, &line)) {
+    ajStrAppendS(&multi,line);
+    ajStrAppendC(&multi,"\n");
+  }
     
-    char* in0;
-    in0 = ajCharNewS(multi);
+  char* in0;
+  in0 = ajCharNewS(multi);
       
-    if(soap_call_ns1__runTcoffee( &soap, NULL, NULL, in0, &params, &jobid )== SOAP_OK) {
+  if(soap_call_ns1__runTcoffee( &soap, NULL, NULL, in0, &params, &jobid )== SOAP_OK) {
+  } else {
+    soap_print_fault(&soap, stderr); 
+  }
+
+  int check = 0;
+  while (check == 0) {
+    if(soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check )== SOAP_OK) {
     } else {
       soap_print_fault(&soap, stderr); 
     }
+    sleep(3);
+  }
 
-    int check = 0;
-    while (check == 0) {
-      if(soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check )== SOAP_OK) {
-      } else {
-	soap_print_fault(&soap, stderr); 
-      }
-      sleep(3);
-    }
+  char* type;
+  type = "out";
+  if(soap_call_ns1__getMultiResult( &soap, NULL, NULL, jobid, type, &result )== SOAP_OK) {
+    substr = ajStrNewC(result);
+    ajFmtPrintF(outf,"%S\n",substr);
+  } else {
+    soap_print_fault(&soap, stderr); 
+  }
 
-    char* type;
-    type = "out";
-    if(soap_call_ns1__getMultiResult( &soap, NULL, NULL, jobid, type, &result )== SOAP_OK) {
-      substr = ajStrNewC(result);
-      ajFmtPrintF(outf,"%S\n",substr);
-    } else {
-      soap_print_fault(&soap, stderr); 
-    }
+  type = "aln";
+  if(soap_call_ns1__getMultiResult( &soap, NULL, NULL, jobid, type, &result )== SOAP_OK) {
+    substr = ajStrNewC(result);
+    ajFmtPrintF(outf_aln,"%S\n",substr);
+  } else {
+    soap_print_fault(&soap, stderr); 
+  }
 
-    type = "aln";
-    if(soap_call_ns1__getMultiResult( &soap, NULL, NULL, jobid, type, &result )== SOAP_OK) {
-      substr = ajStrNewC(result);
-      ajFmtPrintF(outf_aln,"%S\n",substr);
-    } else {
-      soap_print_fault(&soap, stderr); 
-    }
-
-    type = "dnd";
-    if(soap_call_ns1__getMultiResult( &soap, NULL, NULL, jobid, type, &result )== SOAP_OK) {
-      substr = ajStrNewC(result);
-      ajFmtPrintF(outf_dnd,"%S\n",substr);
-    } else {
-      soap_print_fault(&soap, stderr); 
-    }
+  type = "dnd";
+  if(soap_call_ns1__getMultiResult( &soap, NULL, NULL, jobid, type, &result )== SOAP_OK) {
+    substr = ajStrNewC(result);
+    ajFmtPrintF(outf_dnd,"%S\n",substr);
+  } else {
+    soap_print_fault(&soap, stderr); 
+  }
     
-    soap_destroy(&soap); 
-    soap_end(&soap); 
-    soap_done(&soap); 
+  soap_destroy(&soap); 
+  soap_end(&soap); 
+  soap_done(&soap); 
     
-    ajSysFileUnlinkS(tmpFileName);
+  ajSysFileUnlinkS(tmpFileName);
 
-    ajFileClose(&outf);
-    ajFileClose(&outf_aln);
-    ajFileClose(&outf_dnd);
+  ajFileClose(&outf);
+  ajFileClose(&outf_aln);
+  ajFileClose(&outf_dnd);
    
-    ajSeqallDel(&seqall);
-    ajSeqDel(&seq);
-    ajStrDel(&substr);
+  ajSeqallDel(&seqall);
+  ajSeqDel(&seq);
+  ajStrDel(&substr);
 
-    ajStrDel(&matrix);
-    ajStrDel(&outorder);
+  ajStrDel(&matrix);
+  ajStrDel(&outorder);
 
-    ajSeqoutDel(&fil_file);
+  ajSeqoutDel(&fil_file);
 
-    embExit();
+  embExit();
 
-    return 0;
+  return 0;
 }
 
 static AjPStr getUniqueFileName(void) {

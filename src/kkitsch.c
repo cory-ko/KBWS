@@ -13,8 +13,8 @@
 static AjPStr getUniqueFileName(void);
 
 int main(int argc, char **argv) {
-
-  embInitPV("kkitsch", argc, argv, "KBWS", "1.0.8");
+  // initialize EMBASSY info
+  embInitPV("kkitsch", argc, argv, "KBWS", "1.0.9");
 
   struct soap soap;
   char*  jobid;

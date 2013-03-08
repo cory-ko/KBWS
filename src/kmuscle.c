@@ -13,120 +13,120 @@
 static AjPStr 	getUniqueFileName(void);
 
 int main(int argc, char **argv) {
+  // initialize EMBASSY info
+  embInitPV("kmuscle", argc, argv, "KBWS", "1.0.9");
 
-    embInitPV("kmuscle", argc, argv, "KBWS", "1.0.8");
+  struct soap 			soap;
+  struct ns1__muscleInputParams 	params;
+  char* 				jobid;
+  char* 				result;
 
-    struct soap 			soap;
-    struct ns1__muscleInputParams 	params;
-    char* 				jobid;
-    char* 				result;
-
-    AjPSeqall seqall;
-    AjPSeq    seq;
-    AjPFile   outf;
-    AjPStr    substr;
-    AjPStr    inseq = NULL;
-    AjPStr    output;
-    AjPStr    outorder;
-    float     gapopen;
-    float     gapextend;
+  AjPSeqall seqall;
+  AjPSeq    seq;
+  AjPFile   outf;
+  AjPStr    substr;
+  AjPStr    inseq = NULL;
+  AjPStr    output;
+  AjPStr    outorder;
+  float     gapopen;
+  float     gapextend;
     
-    output    = ajAcdGetString("output");
-    outorder  = ajAcdGetString("outorder");
-    gapopen   = ajAcdGetFloat("gapopen");
-    gapextend = ajAcdGetFloat("gapextend");
+  output    = ajAcdGetString("output");
+  outorder  = ajAcdGetString("outorder");
+  gapopen   = ajAcdGetFloat("gapopen");
+  gapextend = ajAcdGetFloat("gapextend");
 
-    seqall           = ajAcdGetSeqall("seqall");
-    outf   	     = ajAcdGetOutfile("outfile");
-    params.output    = ajCharNewS(output);
-    params.outorder  = ajCharNewS(outorder);
-    params.gapopen   = gapopen;
-    params.gapextend = gapextend;
+  seqall           = ajAcdGetSeqall("seqall");
+  outf   	     = ajAcdGetOutfile("outfile");
+  params.output    = ajCharNewS(output);
+  params.outorder  = ajCharNewS(outorder);
+  params.gapopen   = gapopen;
+  params.gapextend = gapextend;
 
-    AjPStr     	tmp 	    = NULL;
-    AjPStr     	tmpFileName = NULL;
-    AjPSeqout  	fil_file;
-    AjPStr     	line 	    = NULL;	/* if "AjPStr line; -> ajReadline is not success!" */
-    AjPStr 	sizestr     = NULL;
-    ajint 	thissize;
+  AjPStr     	tmp 	    = NULL;
+  AjPStr     	tmpFileName = NULL;
+  AjPSeqout  	fil_file;
+  AjPStr     	line 	    = NULL;	/* if "AjPStr line; -> ajReadline is not success!" */
+  AjPStr 	sizestr     = NULL;
+  ajint 	thissize;
 
-    ajint      	nb 	 = 0;
-    AjBool     	are_prot = ajFalse;
-    ajint      	size 	 = 0;
-    AjPFile    	infile;
+  ajint      	nb 	 = 0;
+  AjBool     	are_prot = ajFalse;
+  ajint      	size 	 = 0;
+  AjPFile    	infile;
 
-    tmp = ajStrNewC("fasta");
+  tmp = ajStrNewC("fasta");
 
-    fil_file 	= ajSeqoutNew();
-    tmpFileName = getUniqueFileName();
+  fil_file 	= ajSeqoutNew();
+  tmpFileName = getUniqueFileName();
 
-    if( !ajSeqoutOpenFilename(fil_file, tmpFileName) ) {
-        embExitBad();
+  if( !ajSeqoutOpenFilename(fil_file, tmpFileName) ) {
+    embExitBad();
+  }
+
+  ajSeqoutSetFormatS(fil_file, tmp);
+
+  while (ajSeqallNext(seqall, &seq)) {
+    if (!nb) {
+      are_prot = ajSeqIsProt(seq);
     }
+    ajSeqoutWriteSeq(fil_file, seq);
+    ++nb;
+  }
+  ajSeqoutClose(fil_file);
+  ajSeqoutDel(&fil_file);
 
-    ajSeqoutSetFormatS(fil_file, tmp);
+  if (nb < 2) {
+    ajFatal("Multiple alignments need at least two sequences");
+  }
 
-    while (ajSeqallNext(seqall, &seq)) {
-      if (!nb) {
-        are_prot = ajSeqIsProt(seq);
-      }
-      ajSeqoutWriteSeq(fil_file, seq);
-      ++nb;
-    }
-    ajSeqoutClose(fil_file);
-    ajSeqoutDel(&fil_file);
+  infile = ajFileNewInNameS(tmpFileName);
 
-    if (nb < 2) {
-      ajFatal("Multiple alignments need at least two sequences");
-    }
+  while (ajReadline(infile, &line)) {
+    ajStrAppendS(&inseq,line);
+    ajStrAppendC(&inseq,"\n");
+  }
 
-    infile = ajFileNewInNameS(tmpFileName);
+  soap_init(&soap);
 
-    while (ajReadline(infile, &line)) {
-      ajStrAppendS(&inseq,line);
-      ajStrAppendC(&inseq,"\n");
-    }
+  char* in0;
+  in0 = ajCharNewS(inseq);
+  if ( soap_call_ns1__runMuscle( &soap, NULL, NULL, in0, &params, &jobid ) == SOAP_OK ) {
+  } else {
+    soap_print_fault(&soap, stderr);
+  }
 
-    soap_init(&soap);
-
-    char* in0;
-    in0 = ajCharNewS(inseq);
-    if ( soap_call_ns1__runMuscle( &soap, NULL, NULL, in0, &params, &jobid ) == SOAP_OK ) {
+  int check = 0;
+  while ( check == 0 ) {
+    if ( soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check ) == SOAP_OK ) {
     } else {
-       soap_print_fault(&soap, stderr);
-    }
-
-    int check = 0;
-    while ( check == 0 ) {
-      if ( soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check ) == SOAP_OK ) {
-      } else {
-          soap_print_fault(&soap, stderr);
-      }
-      sleep(3);
-   }
-
-   if ( soap_call_ns1__getResult( &soap, NULL, NULL, jobid,  &result ) == SOAP_OK ) {
-      substr = ajStrNewC(result);
-      ajFmtPrintF(outf,"%S\n",substr);
-   } else {
       soap_print_fault(&soap, stderr);
-   }
+    }
+    sleep(3);
+  }
 
-   ajSysFileUnlinkS(tmpFileName);
+  if ( soap_call_ns1__getResult( &soap, NULL, NULL, jobid,  &result ) == SOAP_OK ) {
+    substr = ajStrNewC(result);
+    ajFmtPrintF(outf,"%S\n",substr);
+  } else {
+    soap_print_fault(&soap, stderr);
+  }
 
-   soap_destroy(&soap);
-   soap_end(&soap);
-   soap_done(&soap);
+  ajSysFileUnlinkS(tmpFileName);
 
-   ajFileClose(&outf);
+  soap_destroy(&soap);
+  soap_end(&soap);
+  soap_done(&soap);
 
-   ajSeqallDel(&seqall);
-   ajSeqDel(&seq);
-   ajStrDel(&substr);
+  ajFileClose(&outf);
 
-   embExit();
+  ajSeqallDel(&seqall);
+  ajSeqDel(&seq);
+  ajStrDel(&substr);
 
-   return 0;
+  embExit();
+
+  return 0;
 }
 
 static AjPStr getUniqueFileName(void) {

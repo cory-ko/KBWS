@@ -6,7 +6,7 @@ dnl Process this file with autoconf to produce a configure script.
 #CC=cc
 
 AC_PREREQ([2.59])
-AC_INIT([KBWS], [1.0.8], [cory@g-language.org],
+AC_INIT([KBWS], [1.0.9], [cory@g-language.org],
     [KBWS], [http://www.g-language.org/kbws/])
 AC_REVISION([$Revision: 1.36 $])
 AC_CONFIG_HEADERS([src/config.h])

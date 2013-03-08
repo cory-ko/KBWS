@@ -12,8 +12,8 @@
 
 
 int main(int argc, char **argv) {
-
-  embInitPV("kgenemarkhmm", argc, argv, "KBWS", "1.0.8");
+  // initialize EMBASSY info
+  embInitPV("kgenemarkhmm", argc, argv, "KBWS", "1.0.9");
 
   AjPSeqall  seqall;
   AjPSeq     seq;

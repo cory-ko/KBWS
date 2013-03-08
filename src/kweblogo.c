@@ -14,7 +14,7 @@ static AjPStr getUniqueFileName(void);
 
 int main(int argc, char **argv) {
   // initialize EMBASSY info
-  embInitPV("kweblogo", argc, argv, "KBWS", "1.0.8");
+  embInitPV("kweblogo", argc, argv, "KBWS", "1.0.9");
 
   // soap driver and parameter object
   struct soap soap;
@@ -26,15 +26,12 @@ int main(int argc, char **argv) {
   AjPSeq    seq;
   AjPStr    substr;
   AjPStr    inseq = NULL;
-  AjPStr    format;
 
   // get input sequence
   seqall= ajAcdGetSeqall("seqall");
 
-
   // get/set parameters
-  format= ajAcdGetString("format");
-  params.format = ajCharNewS(format);
+  params.format = ajCharNewS(ajAcdGetString("format"));
 
   AjPStr     tmp= NULL;
   AjPStr     tmpFileName= NULL;

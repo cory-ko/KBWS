@@ -10,75 +10,74 @@
 #include "soapC.c"
 #include "../gsoap/stdsoap2.c"
 
-
 int main(int argc, char **argv) {
+  // initialize EMBASSY info
+  embInitPV("kpsort", argc, argv, "KBWS", "1.0.9");
 
-    embInitPV("kpsort", argc, argv, "KBWS", "1.0.8");
+  AjPSeqall  seqall;
+  AjPSeq     seq;
+  AjPFile    outf;
+  AjPStr     substr;
 
-    AjPSeqall  seqall;
-    AjPSeq     seq;
-    AjPFile    outf;
-    AjPStr     substr;
+  AjPStr     org;
+  AjPStr     title;
 
-    AjPStr     org;
-    AjPStr     title;
+  struct soap soap;
+  struct ns1__psortInputParams params;
 
-    struct soap soap;
-    struct ns1__psortInputParams params;
+  org = ajAcdGetString("org");
+  title = ajAcdGetString("title");
+  params.org = ajCharNewS(org);
+  params.title = ajCharNewS(title);
 
-    org = ajAcdGetString("org");
-    title = ajAcdGetString("title");
-    params.org = ajCharNewS(org);
-    params.title = ajCharNewS(title);
+  char* jobid;
+  char* result;
 
-    char* jobid;
-    char* result;
+  seqall = ajAcdGetSeqall("seqall");
+  outf   = ajAcdGetOutfile("outfile");
 
-    seqall = ajAcdGetSeqall("seqall");
-    outf   = ajAcdGetOutfile("outfile");
+  while(ajSeqallNext(seqall, &seq)) {
 
-    while(ajSeqallNext(seqall, &seq)) {
+    soap_init(&soap);
 
-      soap_init(&soap);
+    char* in0;
+    in0 = ajSeqGetSeqCopyC(seq);
 
-      char* in0;
-      in0 = ajSeqGetSeqCopyC(seq);
-
-      if(soap_call_ns1__runPsort( &soap, NULL, NULL, in0, &params, &jobid )== SOAP_OK) {
-      } else {
-	soap_print_fault(&soap, stderr); 
-      }
-
-      int check = 0;
-      while (check == 0) {
-        if(soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check )== SOAP_OK) {
-        } else {
-          soap_print_fault(&soap, stderr); 
-        }
-        sleep(3);
-      }
-
-      if(soap_call_ns1__getResult( &soap, NULL, NULL, jobid,  &result )== SOAP_OK) {
-	substr = ajStrNewC(result);
-
-	ajFmtPrintF(outf,"%S\n",substr);
-      } else {
-	soap_print_fault(&soap, stderr); 
-      }
-
-      soap_destroy(&soap); 
-      soap_end(&soap); 
-      soap_done(&soap); 
-    
+    if(soap_call_ns1__runPsort( &soap, NULL, NULL, in0, &params, &jobid )== SOAP_OK) {
+    } else {
+      soap_print_fault(&soap, stderr); 
     }
 
-    ajFileClose(&outf);
+    int check = 0;
+    while (check == 0) {
+      if(soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check )== SOAP_OK) {
+      } else {
+	soap_print_fault(&soap, stderr); 
+      }
+      sleep(3);
+    }
 
-    ajSeqallDel(&seqall);
-    ajSeqDel(&seq);
-    ajStrDel(&substr);
+    if(soap_call_ns1__getResult( &soap, NULL, NULL, jobid,  &result )== SOAP_OK) {
+      substr = ajStrNewC(result);
 
-    embExit();
+      ajFmtPrintF(outf,"%S\n",substr);
+    } else {
+      soap_print_fault(&soap, stderr); 
+    }
 
-    return 0;
+    soap_destroy(&soap); 
+    soap_end(&soap); 
+    soap_done(&soap); 
+    
+  }
+
+  ajFileClose(&outf);
+
+  ajSeqallDel(&seqall);
+  ajSeqDel(&seq);
+  ajStrDel(&substr);
+
+  embExit();
+
+  return 0;
 }

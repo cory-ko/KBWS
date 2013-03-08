@@ -11,7 +11,7 @@
 
 int main(int argc, char **argv) {
   // initialize EMBASSY info
-  embInitPV("kblast", argc, argv, "KBWS", "1.0.8");
+  embInitPV("kblast", argc, argv, "KBWS", "1.0.9");
 
   // soap driver and parameter object
   struct soap soap;

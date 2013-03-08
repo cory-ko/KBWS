@@ -12,7 +12,7 @@
 
 int main(int argc, char **argv) {
   // initialize EMBASSY info
-  embInitPV("kcentroidfold", argc, argv, "KBWS", "1.0.8");
+  embInitPV("kcentroidfold", argc, argv, "KBWS", "1.0.9");
 
   // soap driver and parameter object
   struct soap soap;

@@ -10,61 +10,61 @@
 #include "../gsoap/stdsoap2.c"
 
 int main(int argc, char **argv) {
+  // initialize EMBASSY info
+  embInitPV("kpathwayprojector", argc, argv, "KBWS", "1.0.9");
 
-    embInitPV("kpathwayprojector", argc, argv, "KBWS", "1.0.8");
+  struct soap soap;
+  char*  jobid;
+  char*  result;
 
-    struct soap soap;
-    char*  jobid;
-    char*  result;
+  AjPFile infile;
+  AjPStr  substr;
+  AjPStr  indata = NULL;
+  AjPStr  line   = NULL;
 
-    AjPFile infile;
-    AjPStr  substr;
-    AjPStr  indata = NULL;
-    AjPStr  line   = NULL;
+  infile = ajAcdGetInfile("infile");
+  while (ajReadline(infile, &line)) {
+    ajStrAppendS(&indata, line);
+    ajStrAppendC(&indata, "\n");
+  }
 
-    infile = ajAcdGetInfile("infile");
-    while (ajReadline(infile, &line)) {
-      ajStrAppendS(&indata, line);
-      ajStrAppendC(&indata, "\n");
-    }
+  soap_init(&soap);
 
-    soap_init(&soap);
+  char* in0;
+  in0 = ajCharNewS(indata);
+  if ( soap_call_ns1__map2PathwayProjector( &soap, NULL, NULL, in0, &jobid ) == SOAP_OK ) {
+  } else {
+    soap_print_fault(&soap, stderr);
+  }
 
-    char* in0;
-    in0 = ajCharNewS(indata);
-    if ( soap_call_ns1__map2PathwayProjector( &soap, NULL, NULL, in0, &jobid ) == SOAP_OK ) {
+  int check = 0;
+  while ( check == 0 ) {
+    if ( soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check ) == SOAP_OK ) {
     } else {
       soap_print_fault(&soap, stderr);
     }
-
-    int check = 0;
-    while ( check == 0 ) {
-      if ( soap_call_ns1__checkStatus( &soap, NULL, NULL, jobid,  &check ) == SOAP_OK ) {
-      } else {
-	soap_print_fault(&soap, stderr);
-      }
-      sleep(3);
-    }
+    sleep(3);
+  }
     
-    if ( soap_call_ns1__getResult( &soap, NULL, NULL, jobid,  &result ) == SOAP_OK ) {
-      substr = ajStrNewC(result);
-      fprintf(stdout, "Pathway Projector's URL : %s\n", ajStrGetPtr(substr));
-    } else {
-      soap_print_fault(&soap, stderr);
-    }
+  if ( soap_call_ns1__getResult( &soap, NULL, NULL, jobid,  &result ) == SOAP_OK ) {
+    substr = ajStrNewC(result);
+    fprintf(stdout, "Pathway Projector's URL : %s\n", ajStrGetPtr(substr));
+  } else {
+    soap_print_fault(&soap, stderr);
+  }
 
-    fprintf(stdout,"Image File : http://soap.g-language.org/result/");
-    fprintf(stdout,jobid);
-    fprintf(stdout,".png\n");
+  fprintf(stdout,"Image File : http://soap.g-language.org/result/");
+  fprintf(stdout,jobid);
+  fprintf(stdout,".png\n");
 
-    soap_destroy(&soap);
-    soap_end(&soap);
-    soap_done(&soap);
+  soap_destroy(&soap);
+  soap_end(&soap);
+  soap_done(&soap);
 
-    ajStrDel(&substr);
+  ajStrDel(&substr);
 
-    embExit();
+  embExit();
 
-    return 0;
+  return 0;
 }
 
